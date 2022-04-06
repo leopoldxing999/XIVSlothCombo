@@ -1178,7 +1178,7 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("沥血剑 Combo", "Replace 沥血剑 with its combo chain.", PLD.JobID, 0, "These aren't heals... huh?", "Just take the armour off and don a robe, we all know you're green on the inside.")]
         PaladinGoringBladeCombo = 11000,
 
-        [CustomComboInfo("王权剑 Combo", "Replace Royal Authority/战女神之怒 with its combo chain.", PLD.JobID, 0, "", "Lmao, 'Authority'... If you say so, buddy.")]
+        [CustomComboInfo("王权剑 Combo", "Replace 王权剑/战女神之怒 with its combo chain.", PLD.JobID, 0, "", "Lmao, 'Authority'... If you say so, buddy.")]
         PaladinRoyalAuthorityCombo = 11001,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
@@ -1190,24 +1190,24 @@ namespace XIVSlothComboPlugin
         PaladinProminenceCombo = 11003,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [CustomComboInfo("安魂祈祷 Feature", "Replace Royal Authority/Goring Blade combo with 神圣 Spirit and Prominence combo with 神圣 Circle while Requiescat is active \n And when Fight Or Flight is not Active.\nRequires said combos to be activated to work.", PLD.JobID, 0, "Auto-PLD", "出卡s the whole job for you.\nJust stand there and take damage, right?")]
+        [CustomComboInfo("安魂祈祷 Feature", "Replace 王权剑/沥血剑 combo with 圣灵 and Prominence combo with 圣环 while Requiescat is active \n And when Fight Or Flight is not Active.\nRequires said combos to be activated to work.", PLD.JobID, 0, "Auto-PLD", "出卡s the whole job for you.\nJust stand there and take damage, right?")]
         PaladinRequiescatFeature = 11004,
 
         [ParentCombo(PaladinRequiescatFeature)]
-        [CustomComboInfo("悔罪 Feature", "Replace 神圣 Spirit/Circle with Confiteor when Requiescat is up and MP is under 2000 or only one stack remains \nand adds Faith/Truth/Valor Combo after Confiteor. \n Requiescat Feature Needs to be Enabled for this one to work!!!  ", PLD.JobID, 0, "Confetti Feature", "This is gonna be a nightmare to clean up.")]
+        [CustomComboInfo("悔罪 Feature", "Replace 圣灵/圣环 with Confiteor when Requiescat is up and MP is under 2000 or only one stack remains \nand adds Faith/Truth/Valor Combo after Confiteor. \n Requiescat Feature Needs to be Enabled for this one to work!!!  ", PLD.JobID, 0, "Confetti Feature", "This is gonna be a nightmare to clean up.")]
         PaladinConfiteorFeature = 11005,
 
         [CustomComboInfo("Scornful Spirits Feature", "Replace Spirits Within and 厄运流转 with whichever is available soonest.", PLD.JobID, 0, "", "Two for the price of one!")]
         PaladinScornfulSpiritsFeature = 11006,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [CustomComboInfo("Royal Goring Option", "Insert 沥血剑 into the main combo when appropriate.\nRequires Royal Authority Combo", PLD.JobID, 0, "", "")]
+        [CustomComboInfo("沥血剑 Option", "Insert 沥血剑 into the main combo when appropriate.\nRequires 王权剑 Combo", PLD.JobID, 0, "", "")]
         PaladinRoyalGoringOption = 11007,
 
-        [CustomComboInfo("Standalone 神圣 Spirit Feature", "Replaces 神圣 Spirit with Confiteor and Confiteor combo", PLD.JobID, 0, "", "It's Christmas already?")]
+        [CustomComboInfo("Standalone 圣灵 Feature", "Replaces 圣灵 with Confiteor and Confiteor combo", PLD.JobID, 0, "", "It's Christmas already?")]
         PaladinStandaloneHolySpiritFeature = 11008,
 
-        [CustomComboInfo("Standalone 神圣 Circle Feature", "Replaces 神圣 Circle with Confiteor and Confiteor combo", PLD.JobID, 0, "", "This is MY circle.")]
+        [CustomComboInfo("Standalone 圣环 Feature", "Replaces 圣环 with Confiteor and Confiteor combo", PLD.JobID, 0, "", "This is MY circle.")]
         PaladinStandaloneHolyCircleFeature = 11009,
 
         [ConflictingCombos(PaladinInterveneFeatureOption)]
@@ -1219,7 +1219,7 @@ namespace XIVSlothComboPlugin
         PaladinInterveneFeatureOption = 11011,
 
         [ConflictingCombos(PaladinRangedUptimeFeature2)]
-        [CustomComboInfo("投盾 Uptime Feature", "Replace Royal Authority/战女神之怒 Feature with Shield Lob when out of range.", PLD.JobID, 0, "", "Don't throw your shield, you're not Captain America.\nJust get close!")]
+        [CustomComboInfo("投盾 Uptime Feature", "Replace 王权剑/战女神之怒 Feature with Shield Lob when out of range.", PLD.JobID, 0, "", "Don't throw your shield, you're not Captain America.\nJust get close!")]
         PaladinRangedUptimeFeature = 11012,
 
         [ParentCombo(PaladinFightOrFlightMainComboFeature)]
@@ -1238,7 +1238,7 @@ namespace XIVSlothComboPlugin
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
         [ConflictingCombos(PaladinRangedUptimeFeature)]
-        [CustomComboInfo("神圣 Spirit Uptime Feature", "Replace Royal Authority/战女神之怒 Feature with Holy Spirit when out of range.", PLD.JobID, 0, "(Un)神圣 Halone", "Who is Halone and why are they so angry?")]
+        [CustomComboInfo("圣灵 Uptime Feature", "Replace 王权剑/战女神之怒 Feature with Holy Spirit when out of range.", PLD.JobID, 0, "(Un)神圣 Halone", "Who is Halone and why are they so angry?")]
         PaladinRangedUptimeFeature2 = 11016,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
