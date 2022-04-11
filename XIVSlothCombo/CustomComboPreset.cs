@@ -90,7 +90,7 @@ namespace XIVSlothComboPlugin
         InterruptFeature = 90000,
 
         [ConflictingCombos(SchRaiseFeature, WHMRaiseFeature, AstrologianAscendFeature, SageEgeiroFeature)]
-        [CustomComboInfo("Global Raise Feature", "Replaces Swiftcast with Raise/Resurrection/Verraise/Ascend/Egeiro when appropriate.", All.JobID)]
+        [CustomComboInfo("Global 复活 Feature", "Replaces Swiftcast with 复活/Resurrection/Verraise/Ascend/Egeiro when appropriate.", All.JobID)]
         DoMSwiftcastFeature = 90001,
 
         #endregion
@@ -98,58 +98,58 @@ namespace XIVSlothComboPlugin
         // ====================================================================================
         #region ASTROLOGIAN
 
-        [CustomComboInfo("Draw on Play", "Play turns into Draw when no card is drawn, as well as the usual Play behavior.", AST.JobID, 0, "Pot of Greed", "Draw some cards, or something. Idk, you're the one that chose to play AST.")]
+        [CustomComboInfo("抽卡 on Play", "Play turns into 抽卡 when no card is drawn, as well as the usual 出卡 behavior.", AST.JobID, 0, "Pot of Greed", "抽卡 some cards, or something. Idk, you're the one that chose to play AST.")]
         AstrologianCardsOnDrawFeaturelikewhat = 1000,
 
-        [CustomComboInfo("Crown Play to Minor Arcana", "Changes Crown Play to Minor Arcana when a card is not drawn or has Lord Or Lady Buff.", AST.JobID, 0, "Bestow Royalty", "This one's for the Lords and Ladies, lemme get a HYEEEAAAAAH!")]
+        [CustomComboInfo("小奥秘卡 to Crown Play", "Changes 小奥秘卡 to Crown Play when a card is not drawn or has Lord Or Lady Buff.", AST.JobID, 0, "Bestow Royalty", "This one's for the Lords and Ladies, lemme get a HYEEEAAAAAH!")]
         AstrologianCrownPlayFeature = 1001,
 
-        [CustomComboInfo("Benefic 2 to Benefic Level Sync", "Changes Benefic 2 to Benefic when below level 26 in synced content.", AST.JobID, 0, "Sprout's Benedict Cumberbatch", "Changes Big Benedict into Little Benedict when you visit the sprout universe.")]
+        [CustomComboInfo("吉星 2 to 吉星 Level Sync", "Changes 吉星 2 to 吉星 when below level 26 in synced content.", AST.JobID, 0, "Sprout's Benedict Cumberbatch", "Changes Big Benedict into Little Benedict when you visit the sprout universe.")]
         AstrologianBeneficFeature = 1002,
 
         [ConflictingCombos(AstrologianAlternateAscendFeature)]
-        [CustomComboInfo("AST Raise Feature", "Changes Swiftcast to Ascend", AST.JobID, 0, "Rez-bot-3000", "Does your job for you, but faster. You're welcome, little sloth.")]
+        [CustomComboInfo("AST 复活 Feature", "Changes Swiftcast to 生辰", AST.JobID, 0, "Rez-bot-3000", "Does your job for you, but faster. You're welcome, little sloth.")]
         AstrologianAscendFeature = 1003,
 
         [ConflictingCombos(AstrologianAscendFeature)]
-        [CustomComboInfo("AST Raise Alternate Feature", "Changes Resurrection To Swiftcast when Swiftcast is available", AST.JobID, 0, "Rez-bot-0003", "Same same, but different!")]
+        [CustomComboInfo("AST 复活 Alternate Feature", "Changes 复生 To Swiftcast when Swiftcast is available", AST.JobID, 0, "Rez-bot-0003", "Same same, but different!")]
         AstrologianAlternateAscendFeature = 1019,
 
         [ConflictingCombos(AstrologianAlternateDpsFeature, CustomValuesTest)]
-        [CustomComboInfo("DPS Feature(On Malefic)", "Adds Combust to the main malefic combo whenever the debuff is not present or about to expire", AST.JobID, 0, "Green DPS? Look no further", "Adds fatter deeps to your combo. Just pick another job already...")]
+        [CustomComboInfo("DPS Feature(On 凶星)", "Adds 烧灼 to the main malefic combo whenever the debuff is not present or about to expire", AST.JobID, 0, "Green DPS? Look no further", "Adds fatter deeps to your combo. Just pick another job already...")]
         AstrologianDpsFeature = 1004,
 
         [ParentCombo(AstrologianDpsFeature)]
         [CustomComboInfo("Lucid Dreaming Feature", "Adds Lucid dreaming to the DPS feature when below set MP value.", AST.JobID, 0, "Lucid SCREAMING Feature", "I heard once you could control your dreams... But then I woke up.")]
         AstrologianLucidFeature = 1008,
 
-        [CustomComboInfo("Astrodyne Feature", "Adds Astrodyne to the DPS feature when ready", AST.JobID, 0, "Astro-whine Feature", "Astro-whining again? Sorry, everyone's busy looking at the SGE's cool floating sticks.")]
+        [CustomComboInfo("星力 Feature", "Adds 星力 to the DPS feature when ready", AST.JobID, 0, "Astro-whine Feature", "Astro-whining again? Sorry, everyone's busy looking at the SGE's cool floating sticks.")]
         AstrologianAstrodyneFeature = 1009,
 
-        [CustomComboInfo("Aspected Helios Feature", "Replaces Aspected Helios whenever you are under Aspected Helios regen with Helios", AST.JobID, 0, "HELIOSCOPTER", "HELIOSCOPTER HELIOSCOPTER")]
+        [CustomComboInfo("Aspected 阳星 Feature", "Replaces Aspected 阳星 whenever you are under Aspected 阳星 regen with 阳星", AST.JobID, 0, "HELIOSCOPTER", "HELIOSCOPTER HELIOSCOPTER")]
         AstrologianHeliosFeature = 1010,
 
-        [CustomComboInfo("Auto Card Draw", "Adds Auto Card Draw Onto Main DPS Feature", AST.JobID, 0, "Kaiba Feature", "You just activated my trap card!")]
+        [CustomComboInfo("Auto Card 抽卡", "Adds Auto Card 抽卡 Onto Main DPS Feature", AST.JobID, 0, "Kaiba Feature", "You just activated my trap card!")]
         AstrologianAutoDrawFeature = 1011,
 
-        [CustomComboInfo("Auto Crown Card Draw", "Adds Auto Crown Card Draw Onto Main DPS Feature ", AST.JobID, 0, "Kaiba 2, Electric Boogaloo", "It's a trap!")]
+        [CustomComboInfo("Auto Crown Card 抽卡", "Adds Auto Crown Card 抽卡 Onto Main DPS Feature ", AST.JobID, 0, "Kaiba 2, Electric Boogaloo", "It's a trap!")]
         AstrologianAutoCrownDrawFeature = 1012,
 
-        [CustomComboInfo("AoE DPS Feature", "Adds AutoDraws/Astrodyne to the AoE Gravity combo", AST.JobID, 0, "A bowlful of cards", "Oops! All AoE!")]
+        [CustomComboInfo("AoE DPS Feature", "Adds Auto抽卡s/Astrodyne to the AoE Gravity combo", AST.JobID, 0, "A bowlful of cards", "Oops! All AoE!")]
         AstrologianDpsAoEFeature = 1013,
 
         [CustomComboInfo("Lazy Lord Feature", "Adds Lord Of Crowns Onto Main DPS/AoE Feature", AST.JobID, 0, "Brainless Lord Feature", "You're like that tiny guy from Shrek. - E -")]
         AstrologianLazyLordFeature = 1014,
 
-        [CustomComboInfo("Astrodyne on Play", "Play becomes Astrodyne when you have 3 seals.", AST.JobID, 0, "Astro-whine on Play", "Seal me up and let me die, baby")]
+        [CustomComboInfo("Astrodyne on 出卡", "出卡 becomes Astrodyne when you have 3 seals.", AST.JobID, 0, "Astro-whine on 出卡", "Seal me up and let me die, baby")]
         AstrologianAstrodyneOnPlayFeature = 1015,
 
         [ConflictingCombos(AstrologianDpsFeature, CustomValuesTest)]
-        [CustomComboInfo("Alternate DPS Feature (On Combust)", "Adds Combust to the main malefic combo whenever the debuff is not present or about to expire", AST.JobID, 0, "Alternate Deeps, buddy", "Now we're really doing your job for you. Damn.")]
+        [CustomComboInfo("Alternate DPS Feature (On 烧灼)", "Adds 烧灼 to the main malefic combo whenever the debuff is not present or about to expire", AST.JobID, 0, "Alternate Deeps, buddy", "Now we're really doing your job for you. Damn.")]
         AstrologianAlternateDpsFeature = 1016,
 
         [ConflictingCombos(AstrologianDpsFeature, AstrologianAlternateDpsFeature, DisableCombustOnDpsFeature)]
-        [CustomComboInfo("DPS Feature Custom Values Testing", "Same as DPSFeature (On Malefic).Allows you to customize target MaxHp & CurrentPercentageHp & CurrentHp checks. Testing Only! ", AST.JobID, 0, "Green DPS? But you looked further...", "Same as that other guy, but with NUMBERS.")]
+        [CustomComboInfo("DPS Feature Custom Values Testing", "Same as DPSFeature (On 凶星).Allows you to customize target MaxHp & CurrentPercentageHp & CurrentHp checks. Testing Only! ", AST.JobID, 0, "Green DPS? But you looked further...", "Same as that other guy, but with NUMBERS.")]
         CustomValuesTest = 1017,
 
         [ParentCombo(AstrologianDpsFeature)]
@@ -157,88 +157,79 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("Removes DoT From DPS Feature", "Removed DoT From the DPS Feature, You can still use all other features that are on malefic! ", AST.JobID, 0, "DPS Less", "Oh, look, guys! Look! This one's actually healing!")]
         DisableCombustOnDpsFeature = 1018,
 
-        [CustomComboInfo("Lightspeed Feature", "Adds Lightspeed to the DPS Feature", AST.JobID, 0, "Warp-speed", "GO FASTER! FASTER!")]
+        [CustomComboInfo("光速 Feature", "Adds 光速 to the DPS Feature", AST.JobID, 0, "Warp-speed", "GO FASTER! FASTER!")]
         AstrologianLightSpeedFeature = 1020,
 
         [ParentCombo(AstrologianHeliosFeature)]
-        [CustomComboInfo("Celestial Opposition Feature", "Adds Celestial Opposition", AST.JobID, 0)]
+        [CustomComboInfo("天星冲日 Feature", "Adds 天星冲日", AST.JobID, 0)]
         AstrologianCelestialOppositionFeature = 1021,
 
         [ParentCombo(AstrologianHeliosFeature)]
-        [CustomComboInfo("Lazy Lady Feature", "Adds Lady of Crowns, if the card is drawn", AST.JobID, 0)]
+        [CustomComboInfo("Lazy Lady Feature", "Adds 王冠之贵妇, if the card is drawn", AST.JobID, 0)]
         AstrologianLazyLadyFeature = 1022,
 
         [CustomComboInfo("Simple Heal", "Single target healing", AST.JobID, 0)]
         AstrologianSimpleSingleTargetHeal = 1023,
 
         [ParentCombo(AstrologianSimpleSingleTargetHeal)]
-        [CustomComboInfo("Essential Dignity Feature", "Essential Dignity will be added when the target is at or below the value set", AST.JobID, 0)]
+        [CustomComboInfo("先天禀赋 Feature", "先天禀赋 will be added when the target is at or below the value set", AST.JobID, 0)]
         AstroEssentialDignity = 1024,
 
         [ParentCombo(AstrologianSimpleSingleTargetHeal)]
-        [CustomComboInfo("Celestial Intersection Feature", "Adds Celestial Intersection.", AST.JobID, 0)]
+        [CustomComboInfo("天星交错 Feature", "Adds 天星交错.", AST.JobID, 0)]
         CelestialIntersectionFeature = 1025,
 
         [ParentCombo(AstrologianHeliosFeature)]
-        [CustomComboInfo("Horoscope Feature", "Adds Horoscope.", AST.JobID, 0)]
+        [CustomComboInfo("天宫图 Feature", "Adds 天宫图.", AST.JobID, 0)]
         AstrologianHoroscopeFeature = 1026,
-        
-        [ParentCombo(AstrologianSimpleSingleTargetHeal)]
-        [CustomComboInfo("Aspected Benefic Feature", "Adds Aspected Benefic & refreshes it if needed.", AST.JobID, 0)]
-        AspectedBeneficFeature = 1027,
-
-        [ParentCombo(AstrologianSimpleSingleTargetHeal)]
-        [CustomComboInfo("Exaltation Feature", "Adds Exaltation.", AST.JobID, 0)]
-        ExaltationFeature = 1028,
-
 
         #endregion
         // ====================================================================================
         #region BLACK MAGE
 
         [ConflictingCombos(BlackSimpleFeature)]
-        [CustomComboInfo("Enochian Stance Switcher ++", "Change Scathe to Fire 4 or Blizzard 4 depending on stance.\nScathe becomes all in one rotation.\nIf Thunder Feature is turned on it also adds Thunder3 proces onto all in one combo when DoT is about to expire or dosen't exist\nThis REQUIRES other features to be turned on!!!", BLM.JobID, 0, "BrainLess Mage", "One button, BAYBEE!")]
+        [CustomComboInfo("天语 Stance Switcher ++", "Change Scathe to 火炎 4 or Blizzard 4 depending on stance.\nScathe becomes all in one rotation.\nIf Thunder Feature is turned on it also adds Thunder3 proces onto all in one combo when DoT is about to expire or dosen't exist\nThis REQUIRES other features to be turned on!!!", BLM.JobID, 0, "BrainLess Mage", "One button, BAYBEE!")]
         BlackEnochianFeature = 2000,
 
-        [CustomComboInfo("Umbral Soul/Transpose Switcher", "Change Transpose into Umbral Soul when Umbral Soul is usable.", BLM.JobID, 0, "Eh? Huh?", "Just does BLM things. Probably.")]
+        [CustomComboInfo("Umbral Soul/星灵移位 Switcher", "Change 星灵移位 into Umbral Soul when Umbral Soul is usable.", BLM.JobID, 0, "Eh? Huh?", "Just does BLM things. Probably.")]
         BlackManaFeature = 2001,
 
-        [CustomComboInfo("(Between the) Ley Lines", "Change Ley Lines into BTL when Ley Lines is active.", BLM.JobID, 0, "BLT Sandwich feature", "Look between, and you shall find")]
+        [CustomComboInfo("(Between the) 黑魔纹", "Change 黑魔纹 into BTL when 黑魔纹 is active.", BLM.JobID, 0, "BLT Sandwich feature", "Look between, and you shall find")]
         BlackLeyLinesFeature = 2002,
 
         [ParentCombo(BlackEnochianFeature)]
-        [CustomComboInfo("Blizzard 1/2/3 Feature", "Blizzard 1 becomes Blizzard 3 when out of Umbral Ice. Freeze becomes Blizzard 2 when synced.", BLM.JobID, 0, "Chilly boi", "Chill out, for real. It's sleepy sloth time")]
+        [CustomComboInfo("冰结 1/2/3 Feature", "冰结 1 becomes 冰结 3 when out of Umbral Ice. Freeze becomes 冰结 2 when synced.", BLM.JobID, 0, "地之印lly boi", "地之印ll out, for real. It's sleepy sloth time")]
         BlackBlizzardFeature = 2003,
 
         [ConflictingCombos(BlackEnochianFeature, BlackSimpleFeature)]
-        [CustomComboInfo("Scathe/Xenoglossy Feature", "Scathe becomes Xenoglossy when available.", BLM.JobID, 0, "Glossy paint", "So shiny, so glossy...")]
+        [CustomComboInfo("崩溃/Xenoglossy Feature", "崩溃 becomes Xenoglossy when available.", BLM.JobID, 0, "Glossy paint", "So shiny, so glossy...")]
         BlackScatheFeature = 2004,
 
         [ParentCombo(BlackEnochianFeature)]
-        [CustomComboInfo("Fire 1/3", "Fire 1 becomes Fire 3 outside of Astral Fire, OR when Firestarter proc is up.", BLM.JobID, 0, "Burna boi", "It's getting hot in here...")]
+        [CustomComboInfo("火炎 1/3", "火炎 1 becomes 火炎 3 outside of Astral 火炎, OR when 火炎starter proc is up.", BLM.JobID, 0, "Burna boi", "It's getting hot in here...")]
         BlackFire13Feature = 2005,
 
         [ParentCombo(BlackEnochianFeature)]
-        [CustomComboInfo("Thunder", "Thunder 1/3 replaces Enochian/Fire 4/Blizzard 4 on Enochian switcher.\n Occurs when Thundercloud is up and either\n- Thundercloud buff on you is about to run out, or\n- Thunder debuff on your CURRENT target is about to run out\nAssuming it won't interrupt timer upkeep.\nEnochian Stance Switcher must be active.", BLM.JobID, 0, "Plug Socket Mode", "Forks at the ready!")]
+        [CustomComboInfo("闪雷", "Thunder 1/3 replaces Enochian/火炎 4/Blizzard 4 on Enochian switcher.\n Occurs when Thundercloud is up and either\n- Thundercloud buff on you is about to run out, or\n- 闪雷 debuff on your CURRENT target is about to run out\nAssuming it won't interrupt timer upkeep.\nEnochian Stance Switcher must be active.", BLM.JobID, 0, "Plug Socket Mode", "Forks at the ready!")]
         BlackThunderFeature = 2006,
 
         [ParentCombo(BlackEnochianFeature)]
-        [CustomComboInfo("Despair Feature", "Despair replaces Fire 4 when below 2400 MP.\nEnochian Stance Switcher must be active.", BLM.JobID, 0, "My MP!", "The horror! The despair!")]
+        [CustomComboInfo("绝望 Feature", "Despair replaces 火炎 4 when below 2400 MP.\nEnochian Stance Switcher must be active.", BLM.JobID, 0, "My MP!", "The horror! The despair!")]
         BlackDespairFeature = 2007,
 
         [CustomComboInfo("AoE Combo Feature", "One Button AoE Feature that adds whole AoE rotation onto FLARE (TESTING ONLY!!!)", BLM.JobID, 0, "Dungeon Tesla Mode", "Asleep at the wheel? We've got you!")]
         BlackAoEComboFeature = 2008,
 
         [ParentCombo(BlackEnochianFeature)]
-        [CustomComboInfo("Blizzard Paradox Feature", "Adds Paradox onto ice phase combo", BLM.JobID, 0, "The sentence below is false.", "The sentence above is true.")]
+        [CustomComboInfo("冰结 Paradox Feature", "Adds Paradox onto ice phase combo", BLM.JobID, 0, "The sentence below is false.", "The sentence above is true.")]
         BlackBlizzardParadoxFeature = 2009,
 
         [ParentCombo(BlackEnochianFeature)]
-        [CustomComboInfo("Aspect Swap Feature", "Changes Scathe to Blizzard 3 when at 0 MP in Astral Fire or to Fire 3 when at 10000 MP in Umbral Ice with 3 Umbral Hearts.", BLM.JobID, 0, "", "")]
+        [CustomComboInfo("Aspect Swap Feature", "Changes Scathe to Blizzard 3 when at 0 MP in Astral 火炎 or to 火炎 3 when at 10000 MP in Umbral Ice with 3 Umbral Hearts.", BLM.JobID, 0, "", "")]
         BlackAspectSwapFeature = 2010,
 
         [ParentCombo(BlackThunderFeature)]
-        [CustomComboInfo("Thunder Uptime Feature", "Changes Scathe to Thunder 1/3 when not detected on target.", BLM.JobID, 0, "Bzzt", "Shocking!")]
+        [CustomComboInfo("闪雷 Uptime Feature", "Changes Scathe to 闪雷 1/3 when not detected on target.", BLM.JobID, 0, "Bzzt", "Shocking!")]
         BlackThunderUptimeFeature = 2011,
 
         [ConflictingCombos(BlackEnochianFeature, BlackScatheFeature)]
@@ -246,19 +237,19 @@ namespace XIVSlothComboPlugin
         BlackSimpleFeature = 2012,
 
         [ParentCombo(BlackSimpleFeature)]
-        [CustomComboInfo("Simple Buffs Feature", "Adds Manafont, Sharpcast, Amplifier onto the Simple BLM feature.", BLM.JobID, 0, "", "!")]
+        [CustomComboInfo("Simple Buffs Feature", "Adds 魔泉, 激情咏唱, 详述 onto the Simple BLM feature.", BLM.JobID, 0, "", "!")]
         BlackSimpleBuffsFeature = 2013,
 
         [ParentCombo(BlackSimpleFeature)]
-        [CustomComboInfo("Simple Buffs - Ley Lines", "Adds Ley Lines onto the Simple BLM feature.", BLM.JobID, 0, "", "!")]
+        [CustomComboInfo("Simple Buffs - 黑魔纹", "Adds 黑魔纹 onto the Simple BLM feature.", BLM.JobID, 0, "", "!")]
         BlackSimpleBuffsLeylinesFeature = 2014,
 
         [ParentCombo(BlackSimpleFeature)]
-        [CustomComboInfo("Simple Casts Feature", "Adds Triplecast/Swiftcast onto the Simple BLM feature.", BLM.JobID, 0, "", "!")]
+        [CustomComboInfo("Simple 抛竿s Feature", "Adds 三连咏唱/Swiftcast onto the Simple BLM feature.", BLM.JobID, 0, "", "!")]
         BlackSimpleCastsFeature = 2015,
 
         [ParentCombo(BlackSimpleFeature)]
-        [CustomComboInfo("Simple Casts - Pooling", "Keep one triplecast usage for movement in the Simple BLM feature.", BLM.JobID, 0, "", "!")]
+        [CustomComboInfo("Simple 抛竿s - Pooling", "Keep one triplecast usage for movement in the Simple BLM feature.", BLM.JobID, 0, "", "!")]
         BlackSimpleCastPoolingFeature = 2016,
 
         [ParentCombo(BlackSimpleFeature)]
@@ -266,53 +257,45 @@ namespace XIVSlothComboPlugin
         BlackSimplePoolingFeature = 2017,
 
         [ParentCombo(BlackSimpleFeature)]
-        [CustomComboInfo("Simple Fire3 Opener", "Adds the Fire III Opener to Simple BLM.", BLM.JobID, 0, "", "")]
+        [CustomComboInfo("Simple 火炎3 Opener", "Adds the 火炎 III Opener to Simple BLM.", BLM.JobID, 0, "", "")]
         BlackSimpleOpenerFeature = 2018,
-
-        [ParentCombo(BlackSimpleFeature)]
-        [CustomComboInfo("Simple Fire3 Opener - 1 Triplecast", "Modifies the Simple Fire3 Opener to only use 1 Triplecast.", BLM.JobID, 0, "", "")]
-        BlackSimpleAltOpenerFeature = 2019,
-
-        [ParentCombo(BlackAoEComboFeature)]
-        [CustomComboInfo("Foul / Manafont to Flare Option", "Adds foul when available during Astral Fire. Weaves manafont after foul for additional Flare", BLM.JobID, 0, "", "")]
-        BlackAoEFoulOption = 2020,
 
         #endregion
         // ====================================================================================
         #region BLUE MAGE
 
-        [CustomComboInfo("Buffed Song of Torment", "Turns Song of Torment into Bristle so SoT is buffed. \nSpells Required: Song of Torment.", BLU.JobID)]
+        [CustomComboInfo("Buffed 苦闷之歌", "Turns 苦闷之歌 into Bristle so SoT is buffed. \nSpells Required: 苦闷之歌.", BLU.JobID)]
         BluBuffedSoT = 70000,
 
-        [CustomComboInfo("Moon Flute Opener", "Puts the Full Moon Flute Opener on Moon Flute or Whistle. \nSpells Required: Whistle, Tingle, Moon Flute, J Kick, Triple Trident, Nightbloom, Rose of Destruction, Feather Rain, Bristle, Glass Dance, Surpanakha, Matra Magic, Shock Strike, Phantom Flurry.", BLU.JobID)]
+        [CustomComboInfo("月之笛 Opener", "Puts the Full 月之笛 Opener on 月之笛 or Whistle. \nSpells Required: Whistle, 哔哩哔哩, 月之笛, 正义飞踢, 渔叉三段, 月下彼岸花, Rose of Destruction, 飞翎雨, 怒发冲冠, 冰雪乱舞, 穿甲散弹, 马特拉魔术, 轰雷, 鬼宿脚.", BLU.JobID)]
         BluOpener = 70001,
 
-        [CustomComboInfo("Final Sting Combo", "Turns Final Sting into the buff combo of: Moon Flute, Tingle, Whistle, Final Sting. Will use any primals off CD before casting Final Sting. \nSpells Required: Moon Flute, Tingle, Whistle, Final Sting", BLU.JobID)]
+        [CustomComboInfo("终极针 Combo", "Turns 终极针 into the buff combo of: Moon Flute, 哔哩哔哩, 口笛, 终极针. Will use any primals off CD before casting 终极针. \nSpells Required: Moon Flute, 哔哩哔哩, 口笛, 终极针", BLU.JobID)]
         BluFinalSting = 70002,
 
         [ParentCombo(BluFinalSting)]
-        [CustomComboInfo("Off CD Primal Additions", "Adds any Primals that are off CD to the Final Sting Combo. \nPrimals Used: Feather Rain, Shock Strike, Glass Dance, J Kick, Rose of Destruction. ", BLU.JobID)]
+        [CustomComboInfo("Off CD Primal Additions", "Adds any Primals that are off CD to the 终极针 Combo. \nPrimals Used: Feather Rain, 轰雷, 冰雪乱舞, 正义飞踢, Rose of Destruction. ", BLU.JobID)]
         BluPrimals = 70003,
 
-        [CustomComboInfo("Swiftcasted Angel Whisper", "Turns Angel Whisper to Swiftcast when Swiftcast and Angel Whisper are available. \nSpells required: Angel Whisper ", BLU.JobID)]
+        [CustomComboInfo("Swiftcasted 天使低语", "Turns 天使低语 to Swiftcast when Swiftcast and 天使低语 are available. \nSpells required: 天使低语 ", BLU.JobID)]
         BluRez = 70004,
 
-        [CustomComboInfo("Ram's Voice into Ultravibration", "Turns Ultravibration into Ram's Voice if Deep Freeze isn't on the target. Will swiftcast Ultravibration if available. \nSpells Required: Ram's Voice, Ultravibration. ", BLU.JobID)]
+        [CustomComboInfo("Ram's Voice into 超振动", "Turns Ultravibration into Ram's Voice if Deep 玄冰 isn't on the target. Will swiftcast Ultravibration if available. \nSpells Required: Ram's Voice, 超振动. ", BLU.JobID)]
         BluUltravibrate = 70005,
 
-        [CustomComboInfo("Tank Debuff Feature", "Puts Devour, Off-Guard, Lucid Dreaming, and Bad Breath into one button when under Tank Mimicry. \nSpells Required: Devour, Off-Guard, Bad Breath.", BLU.JobID)]
+        [CustomComboInfo("Tank Debuff Feature", "Puts 捕食, Off-Guard, Lucid Dreaming, and 臭气 into one button when under Tank Mimicry. \nSpells Required: Devour, Off-Guard, 臭气.", BLU.JobID)]
         BluDebuffCombo = 70006,
 
-        [CustomComboInfo("Addle/Magic Hammer Debuff Feature", "Turns Magic Hammer into Addle when off CD. \nSpells Required: Magic Hammer.", BLU.JobID)]
+        [CustomComboInfo("Addle/魔法锤 Debuff Feature", "Turns 魔法锤 into Addle when off CD. \nSpells Required: 魔法锤.", BLU.JobID)]
         BluAddleFeature = 70007,
 
-        [CustomComboInfo("Primal Feature", "Turns Feather Rain into any Primals that are off CD. \nSpells Required: Feather Rain, Shock Strike, The Rose of Destruction, Glass Dance, J Kick. \nWill cause primals to desync from Moon Flute burst phases if used on CD.", BLU.JobID)]
+        [CustomComboInfo("Primal Feature", "Turns 飞翎雨 into any Primals that are off CD. \nSpells Required: 飞翎雨, 轰雷, 斗灵弹, 冰雪乱舞, J Kick. \nWill cause primals to desync from 月之笛 burst phases if used on CD.", BLU.JobID)]
         BluPrimalFeature = 70008,
 
-        [CustomComboInfo("Knight's Tour Feature", "Turns Black Knight's Tour or White Knight's Tour into its counterpart when the enemy is under the effect of the spell's debuff. \nSpells Required: White Knight's Tour, Black Knight's Tour", BLU.JobID)]
+        [CustomComboInfo("Knight's Tour Feature", "Turns Black Knight's Tour or 白骑士之旅 into its counterpart when the enemy is under the effect of the spell's debuff. \nSpells Required: 白骑士之旅, 黑骑士之旅", BLU.JobID)]
         BluKnightFeature = 70009,
 
-        [CustomComboInfo("Peripheral Synthesis into Mustard Bomb", "Turns Peripheral Synthesis into Mustard Bomb when target is under the effect of Lightheaded. \nSpells Required: Peripheral Synthesis, Mustard Bomb.", BLU.JobID)]
+        [CustomComboInfo("Peripheral Synthesis into 芥末爆弹", "Turns Peripheral Synthesis into 芥末爆弹 when target is under the effect of Lightheaded. \nSpells Required: Peripheral Synthesis, 芥末爆弹.", BLU.JobID)]
         BluLightheadedCombo = 70010,
 
 
@@ -320,44 +303,44 @@ namespace XIVSlothComboPlugin
         // ====================================================================================
         #region BARD
 
-        [CustomComboInfo("Wanderer's into Pitch Perfect", "Replaces Wanderer's Minuet with Pitch Perfect while in WM.", BRD.JobID, 0, "Braindead Minuet", "Songs for idiots")]
+        [CustomComboInfo("Wanderer's into 完美音调", "Replaces Wanderer's Minuet with 完美音调 while in WM.", BRD.JobID, 0, "Braindead Minuet", "Songs for idiots")]
         BardWanderersPitchPerfectFeature = 3000,
 
         [ConflictingCombos(SimpleBardFeature)]
-        [CustomComboInfo("Heavy Shot into Straight Shot", "Replaces Heavy Shot/Burst Shot with Straight Shot/Refulgent Arrow when procced.", BRD.JobID, 0, "This shot into that shot", "You're still using a bow? In this day and age?\nJust play MCH. They have guns, dude.")]
+        [CustomComboInfo("强力射击 into Straight Shot", "Replaces 强力射击/Burst Shot with Straight Shot/Refulgent Arrow when procced.", BRD.JobID, 0, "This shot into that shot", "You're still using a bow? In this day and age?\nJust play MCH. They have guns, dude.")]
         BardStraightShotUpgradeFeature = 3001,
 
         [ConflictingCombos(SimpleBardFeature)]
         [ParentCombo(BardStraightShotUpgradeFeature)]
-        [CustomComboInfo("DoT Maintenance Option", "Enabling this option will make Heavy Shot into Straight Shot refresh your DoTs on your current.", BRD.JobID, 0, "Butter Maintenance Option", "Slathers butter on your target if butter is not present.")]
+        [CustomComboInfo("DoT Maintenance Option", "Enabling this option will make 强力射击 into Straight Shot refresh your DoTs on your current.", BRD.JobID, 0, "Butter Maintenance Option", "Slathers butter on your target if butter is not present.")]
         BardDoTMaintain = 3002,
 
         [ConflictingCombos(BardIronJawsAlternateFeature)]
-        [CustomComboInfo("Iron Jaws Feature", "Iron Jaws is replaced with Caustic Bite/Stormbite if one or both are not up.\nAlternates between the two if Iron Jaws isn't available.", BRD.JobID, 0, "Jaws", "Wasn't this guy a James Bond villain in the '70s?")]
+        [CustomComboInfo("伶牙俐齿 Feature", "伶牙俐齿 is replaced with Caustic Bite/Stormbite if one or both are not up.\nAlternates between the two if 伶牙俐齿 isn't available.", BRD.JobID, 0, "Jaws", "Wasn't this guy a James Bond villain in the '70s?")]
         BardIronJawsFeature = 3003,
 
         [ConflictingCombos(BardIronJawsFeature)]
-        [CustomComboInfo("Iron Jaws Alternate Feature", "Iron Jaws is replaced with Caustic Bite/Stormbite if one or both are not up.\nIron Jaws will only show up when debuffs are about to expire.", BRD.JobID, 0, "Mr. Larson", "Oh, and Happy Gilmore!!")]
+        [CustomComboInfo("伶牙俐齿 Alternate Feature", "伶牙俐齿 is replaced with Caustic Bite/Stormbite if one or both are not up.\n伶牙俐齿 will only show up when debuffs are about to expire.", BRD.JobID, 0, "Mr. Larson", "Oh, and Happy Gilmore!!")]
         BardIronJawsAlternateFeature = 3004,
 
         [ConflictingCombos(SimpleBardFeature)]
-        [CustomComboInfo("Burst Shot/Quick Nock into Apex Arrow", "Replaces Burst Shot and Quick Nock with Apex Arrow when gauge is full and Blast Arrow when you are Blast Arrow ready.", BRD.JobID, 0, "Robin Hood Feature", "Steal from Lolorito and give to Garlemald, I guess?\nGood on ya.")]
+        [CustomComboInfo("Burst Shot/连珠箭 into Apex Arrow", "Replaces Burst Shot and 连珠箭 with Apex Arrow when gauge is full and Blast Arrow when you are Blast Arrow ready.", BRD.JobID, 0, "Robin Hood Feature", "Steal from Lolorito and give to Garlemald, I guess?\nGood on ya.")]
         BardApexFeature = 3005,
 
         [ConflictingCombos(SimpleBardFeature, BardSimpleOpener)]
-        [CustomComboInfo("Single Target oGCD Feature", "All oGCD's on Bloodletter (+ Songs rotation) depending on their CD.", BRD.JobID, 0, "oGCD's spilling everywhere", "The Algorithm between the lines. Trademark")]
+        [CustomComboInfo("Single Target oGCD Feature", "All oGCD's on 失血箭 (+ Songs rotation) depending on their CD.", BRD.JobID, 0, "oGCD's spilling everywhere", "The Algorithm between the lines. Trademark")]
         BardoGCDSingleTargetFeature = 3006,
 
         [ConflictingCombos(BardAoEComboFeature)]
-        [CustomComboInfo("AoE oGCD Feature", "All AoE oGCD's on Rain of Death depending on their CD.", BRD.JobID, 0, "", "Arrows! Everywhere! Run!")]
+        [CustomComboInfo("AoE oGCD Feature", "All AoE oGCD's on 死亡箭雨 depending on their CD.", BRD.JobID, 0, "", "Arrows! Everywhere! Run!")]
         BardoGCDAoEFeature = 3007,
 
         [ConflictingCombos(BardSimpleAoEFeature)]
-        [CustomComboInfo("AoE Combo Feature", "Replaces Quick Nock/Ladonsbite with Shadowbite when ready", BRD.JobID, 0, "", "C-C-C-Combo!")]
+        [CustomComboInfo("AoE Combo Feature", "Replaces 连珠箭/Ladonsbite with Shadowbite when ready", BRD.JobID, 0, "", "C-C-C-Combo!")]
         BardAoEComboFeature = 3008,
 
         [ConflictingCombos(BardStraightShotUpgradeFeature, BardDoTMaintain, BardApexFeature, BardoGCDSingleTargetFeature)]
-        [CustomComboInfo("Simple Bard", "Adds every single target ability to one button,\nIf there are DoTs on target Simple Bard will try to maintain their uptime.", BRD.JobID, 0, "Sbimple Sbard", "Goodbye, brain. And then there's this feature, too!")]
+        [CustomComboInfo("Simple Bard", "Adds every single target ability except DoTs to one button,\nIf there are DoTs on target Simple Bard will try to maintain their uptime.", BRD.JobID, 0, "Sbimple Sbard", "Goodbye, brain. And then there's this feature, too!")]
         SimpleBardFeature = 3009,
 
         [ParentCombo(SimpleBardFeature)]
@@ -372,13 +355,13 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("Song Feature", "Adds Songs onto AoE oGCD Feature.", BRD.JobID, 0, "", "Get your MIDI files ready, it's song time.")]
         BardSongsFeature = 3012,
 
-        [CustomComboInfo("Bard Buffs Feature", "Adds Raging Strikes and Battle Voice onto Barrage.", BRD.JobID, 0, "", "Buff me up, Judy")]
+        [CustomComboInfo("Bard Buffs Feature", "Adds 猛者强击 and Battle Voice onto Barrage.", BRD.JobID, 0, "", "Buff me up, Judy")]
         BardBuffsFeature = 3013,
 
-        [CustomComboInfo("One Button Songs", "Add Mage's Ballad and Army's Paeon to Wanderer's Minuet depending on cooldowns", BRD.JobID, 0, "EDM songs", "They all sound the same, anyway.")]
+        [CustomComboInfo("One Button Songs", "Add 贤者的叙事谣 and Army's Paeon to Wanderer's Minuet depending on cooldowns", BRD.JobID, 0, "EDM songs", "They all sound the same, anyway.")]
         BardOneButtonSongs = 3014,
 
-        [CustomComboInfo("Simple AoE Bard", "Weaves oGCDs onto Quick Nock/Ladonsbite", BRD.JobID, 0, "", "Group attacks to make you feel like you're not the worst Ranged DPS in the room")]
+        [CustomComboInfo("Simple AoE Bard", "Weaves oGCDs onto 连珠箭/Ladonsbite", BRD.JobID, 0, "", "Group attacks to make you feel like you're not the worst Ranged DPS in the room")]
         BardSimpleAoEFeature = 3015,
 
         [ParentCombo(BardSimpleAoEFeature)]
@@ -390,7 +373,7 @@ namespace XIVSlothComboPlugin
         BardSimpleBuffsFeature = 3017,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("Simple Buffs - Radiant", "Adds Radiant Finale to the Simple Buffs feature.", BRD.JobID, 0, "", "Nothing radiant about it, if you ask me.")]
+        [CustomComboInfo("Simple Buffs - Radiant", "Adds 光明神的最终乐章 to the Simple Buffs feature.", BRD.JobID, 0, "", "Nothing radiant about it, if you ask me.")]
         BardSimpleBuffsRadiantFeature = 3018,
 
         [ParentCombo(SimpleBardFeature)]
@@ -401,24 +384,24 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("Simple Interrupt", "Uses interrupt during simple bard rotation if applicable", BRD.JobID, 0, "Simple Interr-", "Excuse me, I wa-")]
         BardSimpleInterrupt = 3020,
 
-        [CustomComboInfo("Disable Apex Arrow", "Removes Apex Arrow from Simple Bard and AoE Feature.", BRD.JobID, 0, "Disable Apex Legends", "Removing features? You? Surely not")]
+        [CustomComboInfo("Disable 绝峰箭", "Removes 绝峰箭 from Simple Bard and AoE Feature.", BRD.JobID, 0, "Disable Apex Legends", "Removing features? You? Surely not")]
         BardRemoveApexArrowFeature = 3021,
 
         [ConflictingCombos(BardoGCDSingleTargetFeature)]
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("Simple Opener", "Adds the optimum opener to simple bard.\nThis conflicts with pretty much everything outside of simple bard options due to the nature of the opener.", BRD.JobID, 0, "Totally hands-off feature", "It's like watching a YouTube video!")]
+        [CustomComboInfo("Simple Opener", "BETA - Adds the optimum opener to simple bard.\nThis conflicts with pretty much everything outside of simple bard options due to the nature of the opener.", BRD.JobID, 0, "Totally hands-off feature", "It's like watching a YouTube video!")]
         BardSimpleOpener = 3022,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("Simple Pooling", "Pools bloodletter chargers to allow for optimum burst phases", BRD.JobID, 0, "Dancer pooling feature", "NOW you're Dancing.")]
+        [CustomComboInfo("Simple Pooling", "BETA - Pools bloodletter chargers to allow for optimum burst phases", BRD.JobID, 0, "Dancer pooling feature", "NOW you're Dancing.")]
         BardSimplePooling = 3023,
 
         [ParentCombo(BardIronJawsFeature)]
-        [CustomComboInfo("Iron Jaws Apex", "Adds Apex and Blast Arrow to Iron Jaws when available", BRD.JobID, 0, "", "Arrows this, jaws that.\nTruly the apex of BRD technology")]
+        [CustomComboInfo("伶牙俐齿 Apex", "Adds Apex and Blast Arrow to 伶牙俐齿 when available", BRD.JobID, 0, "", "Arrows this, jaws that.\nTruly the apex of BRD technology")]
         BardIronJawsApexFeature = 3024,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("Simple RagingJaws", "Enable the snapshotting of DoTs, within the remaining time of Raging Strikes below:", BRD.JobID, 0, "No thanks, DoTs", "Wish you'd had changes like SMN in Endwalker? Wish no more!")]
+        [CustomComboInfo("Simple RagingJaws", "BETA - Enable the snapshotting of DoTs, within the remaining time of 猛者强击 below:", BRD.JobID, 0, "No thanks, DoTs", "Wish you'd had changes like SMN in Endwalker? Wish no more!")]
         BardSimpleRagingJaws = 3025,
 
         #endregion
@@ -426,269 +409,235 @@ namespace XIVSlothComboPlugin
         #region DANCER
 
         // Single Target Multibutton Section
-        [ConflictingCombos(DancerSimpleFeature, DancerSimpleAoEFeature)]
-        [CustomComboInfo("Single Target Multibutton", "Change Cascade into procs and combos as available.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("Single Target Multibutton", "Change 瀑泻 into procs and combos as available.", DNC.JobID, 0, "All the buttons!", "Now with less buttons!")]
         DancerSingleTargetMultibutton = 4000,
 
         [ParentCombo(DancerSingleTargetMultibutton)]
-        [CustomComboInfo("ST Esprit Overcap Option", "Adds Saber Dance to the Cascade combo if you are at 85 or more Esprit.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("ST Esprit Overcap Option", "Adds Saber Dance to the 瀑泻 combo if you are at 85 or more Esprit.", DNC.JobID, 0, "Anti-Bean-Spilling Feature", "Uses your magical dancing beans when you're nearly full of 'em")]
         DancerEspritOvercapSTFeature = 4001,
 
         [ParentCombo(DancerEspritOvercapSTFeature)]
-        [CustomComboInfo("ST Instant Saber Option", "Adds Saber Dance to the Cascade combo if you have at least 50 Esprit.\nOverrides 'ST Esprit Overcap Option'.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("ST Instant Saber Option", "Adds Saber Dance to the 瀑泻 combo if you have at least 50 Esprit.\nOverrides 'ST Instant Saber Option'.", DNC.JobID, 0, "Early Beans Feature", "You in a hurry or something?")]
         DancerEspritOvercapSTInstantOption = 4002,
 
         [ParentCombo(DancerSingleTargetMultibutton)]
-        [CustomComboInfo("Fan Dance Overcap Protection", "Adds Fan Dance 1 onto Cascade when Fourfold Feathers are full.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("扇舞·序 Overcap Protection", "Adds Fan Dance 1 onto 瀑泻 when Fourfold Feathers are full.", DNC.JobID, 0, "Fangirl", "Oh my god! Slothy! I'm your biggest fan!")]
         DancerFanDanceMainComboOvercapFeature = 4003,
 
         [ParentCombo(DancerSingleTargetMultibutton)]
-        [CustomComboInfo("Fan Dance On Cascade Feature", "Adds Fan Dance 3/4 onto Cascade when available.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("Fan Dance On 瀑泻 Feature", "Adds Fan Dance 3/4 onto 瀑泻 when available.", DNC.JobID, 0, "Dan Fance Free/Thour", "Even more feathers? But how?!")]
         DancerFanDance34OnMainComboFeature = 4004,
 
-
         // AoE Multibutton Section
-        [ConflictingCombos(DancerSimpleFeature, DancerSimpleAoEFeature)]
-        [CustomComboInfo("AoE Multibutton", "Change Windmill into procs and combos as available.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("AoE Multibutton", "Change 风车 into procs and combos as available.", DNC.JobID, 0, "All the buttons! But wider this time!", "Share with your friends! More-less buttons for everyone!")]
         DancerAoEMultibutton = 4010,
 
         [ParentCombo(DancerAoEMultibutton)]
-        [CustomComboInfo("AoE Esprit Overcap Option", "Adds Saber Dance to the Windmill combo if you are at 85 or more Esprit.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("AoE Esprit Overcap Option", "Adds Saber Dance to the 风车 combo if you are at 85 or more Esprit.", DNC.JobID, 0, "Anti-Bean-Spilling Feature", "Uses your magical dancing beans when you're nearly full of 'em")]
         DancerEspritOvercapAoEFeature = 4011,
 
         [ParentCombo(DancerEspritOvercapAoEFeature)]
-        [CustomComboInfo("AoE Instant Saber Option", "Adds Saber Dance to the Windmill combo if you have at least 50 Esprit.\nOverrides 'AoE Esprit Overcap Option'.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("AoE Instant Saber Option", "Adds Saber Dance to the 风车 combo if you have at least 50 Esprit.\nOverrides 'AoE Esprit Overcap Option'.", DNC.JobID, 0, "Early Beans Feature", "You in a hurry or something?")]
         DancerEspritOvercapAoEInstantOption = 4012,
 
         [ParentCombo(DancerAoEMultibutton)]
-        [CustomComboInfo("AoE Fan Dance Overcap Protection", "Adds Fan Dance 2 onto Windmill when Fourfold Feathers are full.", DNC.JobID, 0, "", "")]
-        DancerFanDanceAoEComboOvercapFeature = 4013,
-
-        [ParentCombo(DancerAoEMultibutton)]
-        [CustomComboInfo("AoE Fan Dance On Windmill Feature", "Adds FanDance 3/4 Onto Windmill When available.", DNC.JobID, 0, "", "")]
-        DancerFanDanceOnAoEComboFeature = 4014,
-
+        [CustomComboInfo("FanDance On 风车 Feature", "Adds FanDance 2/3/4 Onto 风车 When available", DNC.JobID, 0, "Fangirls", "Oh my god! Slothy! We're your biggest fans!")]
+        DancerFanDanceOnAoEComboFeature = 4013,
 
         // Dance Features Section (SS/TS)
-        [CustomComboInfo("Dance Features", "Features and options involving Standard Step and Technical Step.\nCollapsing this category does NOT disable the features inside.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("Dance Features", "Features and options involving 标准舞步 and Technical Step.\nCollapsing this category does NOT disable the features inside.", DNC.JobID, 0, "Reinventing the wheel", "Stuff in here will make you dizzy. Careful.")]
         DancerMenuDanceFeatures = 4020,
 
         [ParentCombo(DancerMenuDanceFeatures)]
-        [ConflictingCombos(DancerCombinedDanceFeature, DancerDanceComboCompatibility)]
-        [CustomComboInfo("Dance Step Combo", "Change Standard Step and Technical Step into each dance step while dancing.\nWorks with Simple Dancer and Simple Dancer AoE.", DNC.JobID, 0, "", "")]
+        [ConflictingCombos(DancerDanceComboCompatibility, DancerCombinedDanceFeature)]
+        [CustomComboInfo("Dance Step Combo", "Change 标准舞步 and Technical Step into each dance step while dancing.", DNC.JobID, 0, "Ez-clap Prancing", "Colorblind? Just an idiot? We've got you covered, little sloth!")]
         DancerDanceStepCombo = 4021,
 
         [ParentCombo(DancerMenuDanceFeatures)]
-        [ConflictingCombos(DancerDanceStepCombo, DancerDanceComboCompatibility, DancerSimpleFeature, DancerSimpleAoEFeature)]
-        [CustomComboInfo("Combined Dance Feature", "Standard And Technical Dance on one button (SS). Standard > Technical. This combos out into Tillana and Starfall Dance.", DNC.JobID, 0, "", "")]
+        [ConflictingCombos(DancerDanceComboCompatibility, DancerDanceStepCombo)]
+        [CustomComboInfo("Combined Dance Feature", "Standard And Technical Dance on one button (SS). Standard > Technical. This combos out into Tillana and 流星舞.", DNC.JobID, 0, "Stechnicandard Steppe", "You spin me right round, baby, right round...")]
         DancerCombinedDanceFeature = 4022,
 
         [ParentCombo(DancerCombinedDanceFeature)]
-        [CustomComboInfo("Devilment Plus Option", "Adds Devilment right after Technical finish.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("进攻之探戈 Plus Option", "Adds 进攻之探戈 right after Technical finish.", DNC.JobID, 0, "BUT MUH CRIT", "Throw a lil' evil in there.")]
         DancerDevilmentOnCombinedDanceFeature = 4023,
 
         [ParentCombo(DancerCombinedDanceFeature)]
-        [CustomComboInfo("Flourish Plus Option", "Adds Flourish to the Combined Dance Feature.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("百花争艳 Plus Option", "Adds 百花争艳 to the Combined Dance Feature.", DNC.JobID, 0, "Custard Option", "It's yellow. I wonder what it tastes like")]
         DancerFlourishOnCombinedDanceFeature = 4024,
 
         [ParentCombo(DancerMenuDanceFeatures)]
-        [ConflictingCombos(DancerDanceStepCombo, DancerCombinedDanceFeature, DancerSimpleFeature, DancerSimpleAoEFeature)]
+        [ConflictingCombos(DancerDanceStepCombo, DancerCombinedDanceFeature)]
         [CustomComboInfo("Custom Dance Step Feature",
         "Change custom actions into dance steps while dancing." +
         "\nThis helps ensure you can still dance with combos on, without using auto dance." +
         "\nYou can change the respective actions by inputting action IDs below for each dance step." +
         "\nThe defaults are Cascade, Flourish, Fan Dance and Fan Dance II. If set to 0, they will reset to these actions." +
-        "\nYou can get Action IDs with Garland Tools by searching for the action and clicking the cog.", DNC.JobID, 0, "", "")]
+        "\nYou can get Action IDs with Garland Tools by searching for the action and clicking the cog.", DNC.JobID, 0, "Obsessive DNC Feature", "Dude, just code the damn thing yourself at this point. What do you need us for?")]
         DancerDanceComboCompatibility = 4025,
 
-
         // Flourishing Features Section
-        [ConflictingCombos(DancerSimpleFeature, DancerSimpleAoEFeature)]
-        [CustomComboInfo("Flourishing Features", "Features and options involving Fourfold Feathers and Flourish.\nCollapsing this category does NOT disable the features inside.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("百花争艳ing Features", "Features and options involving Fourfold Feathers and 百花争艳.\nCollapsing this category does NOT disable the features inside.", DNC.JobID, 0, "Big Bird Features", "It's BIRDIN' Time, y'all.")]
         DancerMenuFlourishingFeatures = 4030,
 
         [ParentCombo(DancerMenuFlourishingFeatures)]
-        [ConflictingCombos(DancerSimpleFeature, DancerSimpleAoEFeature)]
-        [CustomComboInfo("Flourish Proc Saver Feature", "Change Flourish into any available Feather-generating procs before using.", DNC.JobID, 0, "", "")]
-        DancerFlourishProcFeature = 4031,
+        [CustomComboInfo("百花争艳 Proc Saver Feature", "Change 百花争艳 into any available Feather-generating procs before using.", DNC.JobID, 0, "百花争艳, but not", "Think it's 百花争艳? Think again!")]
+        DancerFlourishProcFeature = 4032,
 
+        [ConflictingCombos(DancerFlourishProcFanDanceWeaveOption)]
         [ParentCombo(DancerFlourishProcFeature)]
-        [CustomComboInfo("Proc Saver Fan Dance Option", "Include Fan Dance 3 & 4 in the proc saver during weave-windows.", DNC.JobID, 0, "", "")]
-        DancerFlourishProcFanDanceWeaveOption = 4032,
+        [CustomComboInfo("Proc Saver 扇舞·序 Option", "Include 扇舞·序 3 & 4 in the proc saver (disregards weave windows).", DNC.JobID, 0, "Big-Bird Pathetic Mode", "This one sucks.")]
+        DancerFlourishProcFanDanceOption = 4033,
 
+        [ConflictingCombos(DancerFlourishProcFanDanceOption)]
+        [ParentCombo(DancerFlourishProcFeature)]
+        [CustomComboInfo("Proc Saver 扇舞·序 Weave Option", "Include 扇舞·序 3 & 4 in the proc saver during weave-windows.", DNC.JobID, 0, "Big-Bird Pro Mode", "This one rules!")]
+        DancerFlourishProcFanDanceWeaveOption = 4034,
 
-        // Fan Dance Combo Features Section
         [ParentCombo(DancerMenuFlourishingFeatures)]
-        [ConflictingCombos(DancerSimpleFeature, DancerSimpleAoEFeature)]
-        [CustomComboInfo("Fan Dance Combo Features", "Options for Fan Dance combos. Fan Dance 3 takes priority over Fan Dance 4.\nCollapsing this category disables the options inside.", DNC.JobID, 0, "", "")]
-        DancerFanDanceComboFeatures = 4033,
+        [CustomComboInfo("扇舞·序 Combo Features", "Options for 扇舞·序 combos. 扇舞·序 3 takes priority over 扇舞·序 4.\nCollapsing this category disables the options inside.", DNC.JobID, 0, "", "")]
+        DancerFanDanceComboFeatures = 4035,
 
         [ParentCombo(DancerFanDanceComboFeatures)]
-        [CustomComboInfo("Fan Dance 1 -> 3", "Changes Fan Dance 1 to Fan Dance 3 when available.", DNC.JobID, 0, "", "")]
-        DancerFanDance1_3Combo = 4034,
+        [CustomComboInfo("扇舞·序 1 -> 3", "Changes 扇舞·序 1 to 扇舞·序 3 when available.", DNC.JobID, 0, "扇舞·序 6 -> 9", "Yeah, we went there.")]
+        DancerFanDance1_3Combo = 4036,
 
         [ParentCombo(DancerFanDanceComboFeatures)]
-        [CustomComboInfo("Fan Dance 1 -> 4", "Changes Fan Dance 1 to Fan Dance 4 when available.", DNC.JobID, 0, "", "")]
-        DancerFanDance1_4Combo = 4035,
+        [CustomComboInfo("扇舞·序 1 -> 4", "Changes 扇舞·序 1 to 扇舞·序 4 when available.", DNC.JobID, 0, "扇舞·序 4 -> 20", "冰焰 it, or fan dance it, or something. We don't care")]
+        DancerFanDance1_4Combo = 4037,
 
         [ParentCombo(DancerFanDanceComboFeatures)]
-        [CustomComboInfo("Fan Dance 2 -> 3", "Changes Fan Dance 2 to Fan Dance 3 when available.", DNC.JobID, 0, "", "")]
-        DancerFanDance2_3Combo = 4036,
+        [CustomComboInfo("扇舞·序 2 -> 3", "Changes 扇舞·序 2 to 扇舞·序 3 when available.", DNC.JobID, 0, "扇舞·序 9 -> 6", "!sdrawkcab lla s'tI")]
+        DancerFanDance2_3Combo = 4038,
 
         [ParentCombo(DancerFanDanceComboFeatures)]
-        [CustomComboInfo("Fan Dance 2 -> 4", "Changes Fan Dance 2 to Fan Dance 4 when available.", DNC.JobID, 0, "", "")]
-        DancerFanDance2_4Combo = 4037,
+        [CustomComboInfo("扇舞·序 2 -> 4", "Changes 扇舞·序 2 to 扇舞·序 4 when available.", DNC.JobID, 0, "扇舞·序 20 -> 4", "It's all backwards!")]
+        DancerFanDance2_4Combo = 4039,
 
-        [ConflictingCombos(DancerSimpleFeature, DancerSimpleAoEFeature)]
-        [CustomComboInfo("Devilment to Starfall Feature", "Change Devilment into Starfall Dance after use.", DNC.JobID, 0, "", "")]
-        DancerDevilmentFeature = 4038,
+        [CustomComboInfo("进攻之探戈 to Starfall Feature", "Change 进攻之探戈 into Starfall Dance after use.", DNC.JobID, 0, "ooooh implicit combo or something", "Just press the other button 4hed why is this even a feature")]
+        DancerDevilmentFeature = 4040,
 
-
-        // Simple Dancer Section
-        [ConflictingCombos(DancerSingleTargetMultibutton, DancerAoEMultibutton, DancerCombinedDanceFeature, DancerDanceComboCompatibility, DancerMenuFlourishingFeatures, DancerDevilmentFeature)]
-        [CustomComboInfo("Simple Dancer (Single Target)", "BETA - Single button, single target dancer. Includes songs, flourishes and overprotections.\nConflicts with all other non-simple toggles, except 'Dance Step Combo'\nUse at your own risk!", DNC.JobID, 0, "", "")]
-        DancerSimpleFeature = 4050,
+        [CustomComboInfo("Simple Dancer (Single Target)", "BETA - Single button, single target dancer. Includes songs, flourishes and overprotections.\nConflicts with all other non-simple toggles. Use at your own risk!", DNC.JobID, 0, "Supid Idiot mode", "Oh no! My brain! It's gone!")]
+        DancerSimpleFeature = 4060,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple Interrupt", "Includes an interrupt in the rotation (if your current target can be interrupted).", DNC.JobID, 0, "", "")]
-        DancerSimpleInterruptFeature = 4051,
+        [CustomComboInfo("Simple Interrupt", "Includes an interrupt in the rotation", DNC.JobID, 0, "Simple Interr-", "Excuse me, I wa-")]
+        DancerSimpleInterruptFeature = 4061,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple Standard Step", "Includes Standard Step in the rotation.", DNC.JobID, 0, "", "")]
-        DancerSimpleStandardFeature = 4052,
+        [CustomComboInfo("Simple 标准舞步", "Includes 标准舞步 in the rotation", DNC.JobID, 0, "Braindead...brain?", "It's standard, really")]
+        DancerSimpleStandardFeature = 4062,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple Technical Step", "Includes Technical Step in the rotation.", DNC.JobID, 0, "", "")]
-        DancerSimpleTechnicalFeature = 4053,
+        [CustomComboInfo("Simple 技巧舞步", "Includes 技巧舞步 in the rotation", DNC.JobID, 0, "Braindead Techie", "Well, technically...")]
+        DancerSimpleTechnicalFeature = 4063,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple Tech Devilment", "Includes Devilment in the rotation (during Technical Finish).", DNC.JobID, 0, "", "")]
-        DancerSimpleDevilmentFeature = 4054,
+        [CustomComboInfo("Simple Tech 进攻之探戈", "Includes 进攻之探戈 in the rotation (during Technical Finish).", DNC.JobID, 0, "Little Devil...", "Evil, but smarter.")]
+        DancerSimpleDevilmentFeature = 4064,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple Flourish", "Includes Flourish in the rotation.", DNC.JobID, 0, "", "")]
-        DancerSimpleFlourishFeature = 4055,
+        [CustomComboInfo("Simple 百花争艳", "Includes 百花争艳 in the rotation", DNC.JobID, 0, "Dummy 百花争艳", "Darling, you're FLOURISHING!")]
+        DancerSimpleFlourishFeature = 4065,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple Feathers", "Includes Feather usage in the rotation.", DNC.JobID, 0, "", "")]
-        DancerSimpleFeatherFeature = 4056,
+        [CustomComboInfo("Simple Feather", "Includes feather usage in the rotation", DNC.JobID, 0, "Did someone say Feather?", "YOU get a feather! And YOU get a feather!")]
+        DancerSimpleFeatherFeature = 4066,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple Feather Pooling", "Makes the rotation only use feathers when you have more than 3, or when you're under the effects of Technical Step.", DNC.JobID, 0, "")]
-        DancerSimpleFeatherPoolingFeature = 4057,
+        [CustomComboInfo("Simple Feather Pooling", "Makes the rotation only use feathers when you have more than 3, or when under the effects of 技巧舞步", DNC.JobID, 0, "Feather Hoarder", "Mine, all mine...")]
+        DancerSimpleFeatherPoolingFeature = 4067,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple Panic Heals", "Includes Curing Waltz and Second Wind in the rotation when available and below 30 and 50 percent HP, respectively.", DNC.JobID, 0, "", "")]
-        DancerSimplePanicHealsFeature = 4058,
+        [CustomComboInfo("Simple Panic Heals", "Includes 治疗之华尔兹 and Second Wind in the rotation when available and below 30 and 50 percent HP, respectively.", DNC.JobID, 0, "panik.mp4", "oh god oh fuck oh no quick quick the medkit")]
+        DancerSimplePanicHealsFeature = 4069,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple Improvisation", "Includes Improvisation in the rotation when available.", DNC.JobID, 0, "", "")]
-        DancerSimpleImprovFeature = 4059,
+        [CustomComboInfo("Simple 即兴表演", "Includes 即兴表演 in the rotation when available", DNC.JobID, 0, "Camera... ACTION!", "Thinking on your feet? We love that.")]
+        DancerSimpleImprovFeature = 4070,
 
+        [CustomComboInfo("Simple Dancer (AOE)", "BETA - Single button aoe dancer, including songs, flourishes and overprotections.\nConflicts with all other non-simple toggles. Use at your own risk!\nExtra features like in simple single target coming soon (after other fixes!)", DNC.JobID, 0, "Stupid Idiot mode WIDEPEEPO", "It's stupid idiot mode again, but for all the family!")]
+        DancerSimpleAoeFeature = 4080,
 
-        // Simple Dancer AoE Section
-        [ConflictingCombos(DancerSingleTargetMultibutton, DancerAoEMultibutton, DancerCombinedDanceFeature, DancerDanceComboCompatibility, DancerMenuFlourishingFeatures, DancerDevilmentFeature)]
-        [CustomComboInfo("Simple Dancer (AoE)", "BETA - Single button aoe dancer, including songs, flourishes and overprotections.\nConflicts with all other non-simple toggles, except 'Dance Step Combo'.\nUse at your own risk!", DNC.JobID, 0, "", "")]
-        DancerSimpleAoEFeature = 4070,
+        [ParentCombo(DancerSimpleAoeFeature)]
+        [CustomComboInfo("Simple AOE Standard", "Includes 标准舞步 in the AoE rotation", DNC.JobID, 0, "Standard for everyone", "Y'know...")]
+        DancerSimpleAoeStandardFeature = 4081,
 
-        [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE Interrupt", "Includes an interrupt in the AoE rotation (if your current target can be interrupted).", DNC.JobID, 0, "", "")]
-        DancerSimpleAoEInterruptFeature = 4071,
+        [ParentCombo(DancerSimpleAoeFeature)]
+        [CustomComboInfo("Simple AOE Technical", "Includes 技巧舞步 in the AoE rotation", DNC.JobID, 0, "One-step two-step three-step four", "I'm getting really sick")]
+        DancerSimpleAoeTechnicalFeature = 4082,
 
-        [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE Standard Step", "Includes Standard Step in the AoE rotation.", DNC.JobID, 0, "")]
-        DancerSimpleAoEStandardFeature = 4072,
+        [ParentCombo(DancerSimpleAoeFeature)]
+        [CustomComboInfo("Simple AOE Buffs", "Includes 进攻之探戈 and Flourish in the AoE rotation", DNC.JobID, 0, "So buffed, so sleek", "Of writing these damn skill descriptions")]
+        DancerSimpleAoeBuffsFeature = 4083,
 
-        [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE Technical Step", "Includes Technical Step in the AoE rotation.", DNC.JobID, 0, "")]
-        DancerSimpleAoETechnicalFeature = 4073,
+        [ParentCombo(DancerSimpleAoeFeature)]
+        [CustomComboInfo("Simple AOE Feathers", "Includes feather usage in the AoE rotation", DNC.JobID, 0, "Literally shitting feathers", "And I'm running out of ideas, too, y'know?")]
+        DancerSimpleAoeFeatherFeature = 4084,
 
-        [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE Tech Devilment", "Includes Devilment in the AoE rotation (during Technical Finish).", DNC.JobID, 0, "", "")]
-        DancerSimpleAoEDevilmentFeature = 4074,
-
-        [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE Flourish", "Includes Flourish in the AoE rotation.", DNC.JobID, 0, "", "")]
-        DancerSimpleAoEFlourishFeature = 4075,
-
-        [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE Feathers", "Includes feather usage in the AoE rotation.", DNC.JobID, 0, "", "")]
-        DancerSimpleAoEFeatherFeature = 4076,
-
-        [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE Feather Pooling", "Makes it so the AoE rotation only uses feathers when you have more than 3.", DNC.JobID, 0, "", "")]
-        DancerSimpleAoEFeatherPoolingFeature = 4077,
-
-        [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE Panic Heals", "Includes Curing Waltz and Second Wind in the rotation when available and below 30 and 50 percent HP, respectively.", DNC.JobID, 0, "", "")]
-        DancerSimpleAoEPanicHealsFeature = 4078,
-
-        [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE Improvisation", "Includes Improvisation in the AoE rotation when available.", DNC.JobID, 0, "", "")]
-        DancerSimpleAoEImprovFeature = 4079,
+        [ParentCombo(DancerSimpleAoeFeature)]
+        [CustomComboInfo("Simple AOE Feather Pooling", "Makes it so the AoE rotation only uses feathers when you have more than 3", DNC.JobID, 0, "Pool's closed", "Happy April fools! Gotcha!")]
+        DancerSimpleAoeFeatherPoolingFeature = 4085,
 
         #endregion
         // ====================================================================================
         #region DARK KNIGHT
 
-        [ParentCombo(DarkSouleaterCombo)]
-        [CustomComboInfo("Buffs on Main Combo", "Collection of Buffs to add to Main Combo", DRK.JobID)]
-        DarkMainComboBuffsGroup = 5098,
-
-        [ParentCombo(DarkSouleaterCombo)]
-        [CustomComboInfo("CDs on Main Combo", "Collection of CDs to add to Main Combo", DRK.JobID)]
-        DarkMainComboCDsGroup = 5099,
-
-        [CustomComboInfo("Souleater Combo", "Replace Souleater with its combo chain. \nIf all sub options are selected will turn into a full one button rotation (Simple Dark Knight)", DRK.JobID, 0, "Fetch me their souls!", "Heheheheheh")]
+        [CustomComboInfo("噬魂斩 Combo", "Replace 噬魂斩 with its combo chain.", DRK.JobID, 0, "Fetch me their souls!", "Heheheheheh")]
         DarkSouleaterCombo = 5000,
 
-        [CustomComboInfo("Stalwart Soul Combo", "Replace Stalwart Soul with its combo chain.", DRK.JobID, 0, "", "Ugly name for an ugly job")]
+        [CustomComboInfo("刚魂 Combo", "Replace 刚魂 with its combo chain.", DRK.JobID, 0, "", "Ugly name for an ugly job")]
         DarkStalwartSoulCombo = 5001,
 
-        [ParentCombo(DarkMainComboBuffsGroup)]
-        [CustomComboInfo("Delirium Feature", "Replace Souleater and Stalwart Soul with Bloodspiller and Quietus when Delirium is active.", DRK.JobID, 0, "", "Delirium is what you have if you choose to play DRK.\nDoc's words, not mine")]
+        [ParentCombo(DarkSouleaterCombo)]
+        [ConflictingCombos(DeliriumFeatureOption)]
+        [CustomComboInfo("血乱 Feature", "Replace 噬魂斩 and Stalwart Soul with Bloodspiller and Quietus when Delirium is active.", DRK.JobID, 0, "", "血乱 is what you have if you choose to play DRK.\nDoc's words, not mine")]
         DeliriumFeature = 5002,
 
-        [ParentCombo(DarkStalwartSoulCombo)]
         [CustomComboInfo("Dark Knight Gauge Overcap Feature", "Replace AoE combo with gauge spender if you are about to overcap.", DRK.JobID, 0, "", "Hey big spenderrrrr")]
         DRKOvercapFeature = 5003,
 
-        [ParentCombo(DarkMainComboCDsGroup)]
-        [CustomComboInfo("Living Shadow Feature", "Living Shadow will now be on main combo if its not on CD and you have gauge for it.", DRK.JobID, 0, "", "Trick everyone into thinking a party member is standing where they shouldn't be!")]
+        [ParentCombo(DarkSouleaterCombo)]
+        [CustomComboInfo("掠影示现 Feature", "Living shadow will now be on main combo if its not on CD and you have gauge for it.", DRK.JobID, 0, "", "Trick everyone into thinking a party member is standing where they shouldn't be!")]
         DRKLivingShadowFeature = 5004,
 
         [ParentCombo(DarkSouleaterCombo)]
         [CustomComboInfo("EoS Overcap Feature", "Uses EoS if you are above 8.5k mana or Darkside is about to expire (10sec or less)", DRK.JobID, 0, "Something about mana", "You're basically a black mage! Well done!")]
         DarkManaOvercapFeature = 5005,
 
-        [CustomComboInfo("oGCD Feature", "Adds Living Shadow > Salted Earth > Carve And Spit > Salt And Darkness to Carve And Spit and Abysal Drain", DRK.JobID, 0, "", "Just does your whole job for you, really")]
+        [CustomComboInfo("oGCD Feature", "Adds Living Shadow > 腐秽大地 > Carve And Spit > Salt And Darkness to Carve And Spit and Abysal Drain", DRK.JobID, 0, "", "Just does your whole job for you, really")]
         DarkoGCDFeature = 5006,
 
         [ParentCombo(DarkoGCDFeature)]
-        [CustomComboInfo("Shadowbringer Feature", "Adds Shadowbringer to oGCD Feature ", DRK.JobID, 0, "", "Wasn't this last expansion?")]
+        [CustomComboInfo("暗影使者 Feature", "Adds 暗影使者 to oGCD Feature ", DRK.JobID, 0, "", "Wasn't this last expansion?")]
         DarkShadowbringeroGCDFeature = 5007,
 
-        [ParentCombo(DarkMainComboCDsGroup)]
-        [CustomComboInfo("Plunge Feature", "Adds Plunge onto main combo whenever its available and Darkside is up.", DRK.JobID, 0, "", "Take the plunge. All the way!")]
+        [ParentCombo(DarkSouleaterCombo)]
+        [ConflictingCombos(DarkPlungeFeatureOption)]
+        [CustomComboInfo("跳斩 Feature", "Adds 跳斩 onto main combo whenever its available (Uses all stacks).", DRK.JobID, 0, "", "Take the plunge. All the way!")]
         DarkPlungeFeature = 5008,
 
-        [ParentCombo(DeliriumFeature)]
-        [CustomComboInfo("Delayed Delirium Feature", "Delays Bloodspiller by 2 GCDs when Delirium is used during even windows, uses it regularly during odd windows. Useful for feeding into raid buffs at level 90.", DRK.JobID, 0)]
-        DelayedDeliriumFeatureOption = 5010,
+        [ParentCombo(DarkSouleaterCombo)]
+        [ConflictingCombos(DarkPlungeFeature)]
+        [CustomComboInfo("跳斩 Option", "Adds 跳斩 onto main combo whenever its available (Leaves 1 stack).", DRK.JobID, 0, "", "Take the plunge. Or, just dip your toes in. Whatever.")]
+        DarkPlungeFeatureOption = 5009,
 
         [ParentCombo(DarkSouleaterCombo)]
-        [CustomComboInfo("Unmend Uptime Feature", "Replace Souleater Combo Feature with Unmend when you are out of range.", DRK.JobID, 0, "Ranged DPS job now, duh", "Stubby little arms, huh")]
+        [ConflictingCombos(DeliriumFeature)]
+        [CustomComboInfo("血乱 Feature Option", "Replaces Souleather with Bloodspiller when 血乱 has 10sec or less remaining.", DRK.JobID, 0, "", "血乱 is what you have if you choose to play DRK.\nDoc's words, not mine")]
+        DeliriumFeatureOption = 5010,
+
+        [ParentCombo(DarkSouleaterCombo)]
+        [CustomComboInfo("伤残 Uptime Feature", "Replace Souleater Combo Feature with 伤残 when you are out of range.", DRK.JobID, 0, "Ranged DPS job now, duh", "Stubby little arms, huh")]
         DarkRangedUptimeFeature = 5011,
 
         [CustomComboInfo("Interrupt Feature", "Replaces Low Blow with Interject when target can be interrupted .", DRK.JobID, 0, "Lower blow", "Blow, but low.")]
         DarkKnightInterruptFeature = 5012,
 
-        [ParentCombo(DarkStalwartSoulCombo)]
-        [CustomComboInfo("Abyssal Drain Feature", "Adds abyssal drain to the AoE Combo when you fall below 60 percent hp.", DRK.JobID, 0, "", "Even the un-cool kids got heals these days")]
+        [CustomComboInfo("吸血深渊 Feature", "Adds abyssal drain to the AoE Combo when you fall below 60 percent hp.", DRK.JobID, 0, "", "Even the un-cool kids got heals these days")]
         DRKStalwartabyssalDrainFeature = 5013,
 
-        [ParentCombo(DarkStalwartSoulCombo)]
-        [CustomComboInfo("AoE Shadowbringer Feature", "Adds Shadowbringer to the AoE Combo.", DRK.JobID, 0, "", "Wasn't this last expansion?")]
+        [CustomComboInfo("AoE 暗影使者 Feature", "Adds 暗影使者 to the AoE Combo.", DRK.JobID, 0, "", "Wasn't this last expansion?")]
         DRKStalwartShadowbringerFeature = 5014,
 
         [ParentCombo(DarkStalwartSoulCombo)]
@@ -696,86 +645,42 @@ namespace XIVSlothComboPlugin
         DarkManaOvercapAoEFeature = 5015,
 
         [ParentCombo(DarkSouleaterCombo)]
-        [CustomComboInfo("Blood Gauge Overcap Feature", "Adds Bloodspiller onto main combo when at 80 blood gauge or higher", DRK.JobID, 0, "", "Take the plunge. Or, just dip your toes in. Whatever.")]
+        [CustomComboInfo("Blood Gauge Overcap Feature", "Adds 血溅 onto main combo when at 80 blood gauge or higher", DRK.JobID, 0, "", "Take the plunge. Or, just dip your toes in. Whatever.")]
         DarkBloodGaugeOvercapFeature = 5016,
-
-        [ParentCombo(DarkSouleaterCombo)]
-        [CustomComboInfo("Level 90 Dark Knight Opener", "Adds the Level 90 Dark Knight Opener to the Main Combo. \nOpener triggered by using The Blackest Night or Blood Weapon before combat.", DRK.JobID, 0)]
-        DarkOpenerFeature = 5017,
-
-        [ParentCombo(DarkOpenerFeature)]
-        [CustomComboInfo("Blood Weapon out of Combat Feature", "If TBN is used outside of combat, turns the main combo into Blood Weapon in preparation for the opener.", DRK.JobID, 0)]
-        DarkBloodWeaponOpener = 5018,
-
-        [ParentCombo(DarkMainComboCDsGroup)]
-        [CustomComboInfo("Shadowbringer Feature", "Adds Shadowbringer on Main Combo while Darkside is up. Will use all stacks on CD.", DRK.JobID, 0)]
-        DarkShBFeature = 5019,
-
-        [ParentCombo(DarkManaOvercapFeature)]
-        [CustomComboInfo("EoS Burst Option", "Uses EoS until chosen MP limit is reached during even minute window bursts.", DRK.JobID, 0)]
-        DarkEoSPoolOption = 5020,
-
-        [ParentCombo(DarkShBFeature)]
-        [CustomComboInfo("Shadowbringer Burst Option", "Pools Shadowbringer to use during even minute window bursts.", DRK.JobID, 0)]
-        DarkBurstShBOption = 5021,
-
-        [ParentCombo(DarkMainComboCDsGroup)]
-        [CustomComboInfo("Carve and Spit Feature", "Adds Carve and Spit on Main Combo while Darkside is up.", DRK.JobID, 0)]
-        DarkCnSFeature = 5022,
-
-        [ParentCombo(DarkPlungeFeature)]
-        [CustomComboInfo("Plunge Burst Option", "Pools Plunge to use during minute window bursts.", DRK.JobID, 0)]
-        DarkPlungeBurstOption = 5023,
-
-        [ParentCombo(DarkMainComboCDsGroup)]
-        [CustomComboInfo("Salted Earth Feature", "Adds Salted Earth on Main Combo while Darkside is up, will use Salt and Darkness if unlocked.", DRK.JobID, 0)]
-        DarkSaltedEarthFeature = 5024,
-
-        [ParentCombo(DeliriumFeature)]
-        [CustomComboInfo("Delirium on CD", "Adds Delirium to Main Combo on CD and when Darkside is up. Will also spend 50 blood gauge if Delirium is nearly ready to protect from overcap.", DRK.JobID, 0)]
-        DarkDeliriumOnCD = 5025,
-
-        [ParentCombo(DarkMainComboBuffsGroup)]
-        [CustomComboInfo("Blood Weapon on CD", "Adds Blood Weapon to Main Combo on CD and when Darkside is up.", DRK.JobID, 0)]
-        DarkBloodWeaponOption = 5026,
-        
-        [CustomComboInfo("Double Reprisal Protection", "Prevents the use of Reprisal when target already has the effectby replacing it with Stone", DRK.JobID)]
-        DarkKnightReprisalProtection = 5030,
-
         #endregion
         // ====================================================================================
         #region DRAGOON
 
         [ConflictingCombos(DragoonSimple)]
-        [CustomComboInfo("Jump + Mirage Dive", "Replace (High) Jump with Mirage Dive when Dive Ready.", DRG.JobID, 0, "Jump off map", "Oh no, muh double-weaves!")]
+        [CustomComboInfo("跳跃 + Mirage Dive", "Replace (High) 跳跃 with Mirage Dive when Dive Ready.", DRG.JobID, 0, "跳跃 off map", "Oh no, muh double-weaves!")]
         DragoonJumpFeature = 6000,
 
         [ConflictingCombos(DragoonSimpleAoE)]
-        [CustomComboInfo("Coerthan Torment Combo", "Replace Coerthan Torment with its combo chain.", DRG.JobID, 1, "", "One combo!")]
+        [CustomComboInfo("山境酷刑 Combo", "Replace 山境酷刑 with its combo chain.", DRG.JobID, 1, "", "One combo!")]
         DragoonCoerthanTormentCombo = 6100,
 
         [ConflictingCombos(DragoonSimple)]
-        [CustomComboInfo("Chaos Thrust Combo", "Replace Chaos Thrust with its combo chain.", DRG.JobID, 2, "", "Two combo!")]
+        [CustomComboInfo("樱花怒放 Combo", "Replace 樱花怒放 with its combo chain.", DRG.JobID, 2, "", "Two combo!")]
         DragoonChaosThrustCombo = 6200,
 
         [ParentCombo(DragoonChaosThrustCombo)]
-        [CustomComboInfo("Chaos Piercing Talon Uptime", "Replaces Chaos Thrust Combo with Piercing Talon when you are out of range.", DRG.JobID, 3, "", "Never stop hitting them.")]
+        [CustomComboInfo("Chaos 贯穿尖 Uptime", "Replaces 樱花怒放 Combo with Piercing Talon when you are out of range.", DRG.JobID, 3, "", "Never stop hitting them.")]
         DragoonPiercingTalonChaosFeature = 6201,
 
         [ConflictingCombos(DragoonFullThrustComboPlus, DragoonSimple)]
-        [CustomComboInfo("Full Thrust Combo", "Replace Full Thrust with its combo chain.", DRG.JobID, 4, "", "Wait... Three combo?")]
+        [CustomComboInfo("直刺 Combo", "Replace 直刺 with its combo chain.", DRG.JobID, 4, "", "Wait... Three combo?")]
         DragoonFullThrustCombo = 6300,
 
         [ParentCombo(DragoonFullThrustCombo)]
-        [CustomComboInfo("Full Piercing Talon Uptime", "Replaces Full Thrust Combo with Piercing Talon when you are out of range.", DRG.JobID, 5, "", "Never stop hitting them.")]
+        [CustomComboInfo("Full 贯穿尖 Uptime", "Replaces 直刺 Combo with Piercing Talon when you are out of range.", DRG.JobID, 5, "", "Never stop hitting them.")]
         DragoonPiercingTalonFullFeature = 6301,
 
         [ConflictingCombos(DragoonFullThrustCombo, DragoonSimple)]
-        [CustomComboInfo("Full Thrust Combo Plus", "Replace Full Thrust Plus Combo with its combo chain (Disembowel/Chaosthrust/life surge added).", DRG.JobID, 6, "", "F- Three combo MORE!")]
+        [CustomComboInfo("直刺 Combo Plus", "Replace 直刺 Plus Combo with its combo chain (Disembowel/Chaosthrust/life surge added).", DRG.JobID, 6, "", "F- Three combo MORE!")]
         DragoonFullThrustComboPlus = 6400,
 
         [ParentCombo(DragoonFullThrustComboPlus)]
-        [CustomComboInfo("High Jump Plus Feature", "Includes High Jump in the rotation.", DRG.JobID, 7, "", "Jumping, but higher.")]
+        [CustomComboInfo("High 跳跃 Plus Feature", "Includes High 跳跃 in the rotation.", DRG.JobID, 7, "", "跳跃ing, but higher.")]
         DragoonHighJumpPlusFeature = 6401,
 
         [ParentCombo(DragoonHighJumpPlusFeature)]
@@ -783,258 +688,238 @@ namespace XIVSlothComboPlugin
         DragoonMiragePlusFeature = 6402,
 
         [ParentCombo(DragoonFullThrustComboPlus)]
-        [CustomComboInfo("Life Surge Plus Feature", "Includes Life Surge, while under proper buffs, onto proper GCDs, to the rotation.", DRG.JobID, 9, "", "Hit them harder still.")]
-        DragoonLifeSurgePlusFeature = 6404,
-
-        [ParentCombo(DragoonFullThrustComboPlus)]
-        [CustomComboInfo("Plus Piercing Talon Uptime", "Replaces Full Thrust with Piercing Talon when you are out of range.", DRG.JobID, 10, "", "Never stop hitting them.")]
+        [CustomComboInfo("Plus 贯穿尖 Uptime", "Replaces 直刺 with Piercing Talon when you are out of range.", DRG.JobID, 9, "", "Never stop hitting them.")]
         DragoonPiercingTalonPlusFeature = 6403,
 
         [ConflictingCombos(DragoonFullThrustCombo, DragoonFullThrustComboPlus, DragoonJumpFeature, DragoonChaosThrustCombo, DragoonFangThrustFeature, DragoonFangAndClawFeature)]
-        [CustomComboInfo("Simple Dragoon", "One Button, One Dragoon. Conflicts with every non-AoE feature.", DRG.JobID, 11, "", "Nidhogg never stood a chance.")]
+        [CustomComboInfo("Simple Dragoon", "One Button, One Dragoon. Conflicts with every non-AoE feature.", DRG.JobID, 10, "", "Nidhogg never stood a chance.")]
         DragoonSimple = 6500,
 
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Simple Opener", "Level 88+. Includes an opener to the Simple Dragoon rotation. OPTIONAL: USE REACTION OR MOACTION FOR OPTIMAL TARGETING.", DRG.JobID, 12, "", "Open with a backjump into the wall!")]
+        [CustomComboInfo("Simple Opener", "Level 88+. Includes an opener to the Simple Dragoon rotation. OPTIONAL: USE REACTION OR MOACTION FOR OPTIMAL TARGETING.", DRG.JobID, 11, "", "Open with a backjump into the wall!")]
         DragoonOpenerFeature = 6501,
 
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Wyrmwind Thrust Feature", "Includes Wyrmwind Thrust to the Simple Dragoon rotation.", DRG.JobID, 13, "", "Blue and red Dragons! Oh my.")]
+        [CustomComboInfo("天龙点睛 Feature", "Includes 天龙点睛 to the Simple Dragoon rotation.", DRG.JobID, 12, "", "Blue and red Dragons! Oh my.")]
         DragoonWyrmwindFeature = 6502,
 
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Geirskogul and Nastrond Feature", "Includes Geirskogul and Nastrond in the rotation.", DRG.JobID, 18, "", "Let me chuck another dragon soul at them!")]
+        [CustomComboInfo("武神枪 and Nastrond Feature", "Includes 武神枪 and Nastrond in the rotation.", DRG.JobID, 13, "", "Let me chuck another dragon soul at them!")]
         DragoonGeirskogulNastrondFeature = 6503,
 
         [ConflictingCombos(DragoonLitanyDiveFeature, DragoonLanceDiveFeature, DragoonLifeLitanyDiveFeature)]
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Dives Feature", "Single Weave Friendly, but not optimal: Includes Spineshatter Dive, Dragonfire Dive and Stardiver in the rotation.", DRG.JobID, 14, "", "Don't jump to your death!")]
+        [CustomComboInfo("Dives Feature", "Single Weave Friendly, but not optimal: Includes 破碎冲, 龙炎冲 and Stardiver in the rotation.", DRG.JobID, 14, "", "Don't jump to your death!")]
         DragoonDiveFeature = 6504,
 
         [ConflictingCombos(DragoonDiveFeature, DragoonLitanyDiveFeature, DragoonLifeLitanyDiveFeature)]
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Dives under Lance Charge Feature", "Single Weave Friendly: Includes Spineshatter Dive and Dragonfire Dive in the rotation, while under Lance Charge, and Stardiver while under Life of the Dragon.", DRG.JobID, 17, "", "Don't jump to your death!")]
+        [CustomComboInfo("Dives under 猛枪 Feature", "Single Weave Friendly: Includes 破碎冲 and Dragonfire Dive in the rotation, while under 猛枪, and 坠星冲 while under Life of the Dragon.", DRG.JobID, 15, "", "Don't jump to your death!")]
         DragoonLanceDiveFeature = 6505,
 
         [ConflictingCombos(DragoonDiveFeature, DragoonLanceDiveFeature, DragoonLifeLitanyDiveFeature)]
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Dives under Litany Feature", "Double Weaves Required: Includes Spineshatter Dive and Dragonfire Dive in the rotation, while under Battle Litany, and Stardiver while under Life of the Dragon.", DRG.JobID, 15, "", "Don't jump to your death!")]
+        [CustomComboInfo("Dives under Litany Feature", "Double Weaves Required: Includes 破碎冲 and Dragonfire Dive in the rotation, while under 战斗连祷, and 坠星冲 while under Life of the Dragon.", DRG.JobID, 16, "", "Don't jump to your death!")]
         DragoonLitanyDiveFeature = 6506,
 
         [ConflictingCombos(DragoonDiveFeature, DragoonLanceDiveFeature, DragoonLitanyDiveFeature)]
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Dives under Litany and Life of the Dragon Feature", "Double Weaves Required: Includes Spineshatter Dive and Dragonfire Dive in the rotation, while under Battle Litany and Life of the Dragon, and Stardiver while under Life of the Dragon.", DRG.JobID, 16, "", "Don't jump to your death!")]
+        [CustomComboInfo("Dives under Litany and Life of the Dragon Feature", "Double Weaves Required: Includes 破碎冲 and Dragonfire Dive in the rotation, while under 战斗连祷 and Life of the Dragon, and 坠星冲 while under Life of the Dragon.", DRG.JobID, 17, "", "Don't jump to your death!")]
         DragoonLifeLitanyDiveFeature = 6507,
 
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("High Jump Feature", "Includes High Jump in the rotation.", DRG.JobID, 19, "", "Jumping, but higher.")]
+        [CustomComboInfo("High 跳跃 Feature", "Includes High 跳跃 in the rotation.", DRG.JobID, 18, "", "跳跃ing, but higher.")]
         DragoonHighJumpFeature = 6508,
 
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Mirage Feature", "Includes Mirage in the rotation.", DRG.JobID, 20, "", "They thought they saw it coming.")]
+        [CustomComboInfo("Mirage Feature", "Includes Mirage in the rotation.", DRG.JobID, 19, "", "They thought they saw it coming.")]
         DragoonMirageFeature = 6509,
 
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Buffs Feature", "Includes Lance Charge and Battle Litany to the rotation.", DRG.JobID, 21, "", "This is why your team loves you.")]
+        [CustomComboInfo("Buffs Feature", "Includes 猛枪 and Battle Litany to the rotation.", DRG.JobID, 20, "", "This is why your team loves you.")]
         DragoonBuffsFeature = 6510,
 
         [ParentCombo(DragoonBuffsFeature)]
-        [CustomComboInfo("Dragon Sight Feature", "Includes Dragon Sight to the rotation. OPTIONAL: USE REACTION OR MOACTION FOR OPTIMAL TARGETING.", DRG.JobID, 22, "", "This is why your team loves you, too.")]
+        [CustomComboInfo("巨龙视线 Feature", "Includes 巨龙视线 to the rotation. OPTIONAL: USE REACTION OR MOACTION FOR OPTIMAL TARGETING.", DRG.JobID, 21, "", "This is why your team loves you, too.")]
         DragoonDragonSightFeature = 6511,
 
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Life Surge Feature", "Includes Life Surge, while under proper buffs, onto proper GCDs, to the rotation.", DRG.JobID, 23, "", "Hit them with more feeling!")]
+        [CustomComboInfo("龙剑 Feature", "Includes 龙剑, while under proper buffs, onto proper GCDs, to the rotation.", DRG.JobID, 22, "", "Hit them with more feeling!")]
         DragoonLifeSurgeFeature = 6512,
 
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Simple Piercing Talon Feature", "Replaces Full Thrust Combo with Piercing Talon when you are out of range. NOT OPTIMAL", DRG.JobID, 24, "", "Never stop hitting them.")]
+        [CustomComboInfo("Simple 贯穿尖 Feature", "Replaces 直刺 Combo with Piercing Talon when you are out of range. NOT OPTIMAL", DRG.JobID, 23, "", "Never stop hitting them.")]
         DragoonSimplePiercingTalonFeature = 6513,
 
         [ConflictingCombos(DragoonCoerthanTormentCombo)]
-        [CustomComboInfo("Simple Dragoon AoE", "One Button, many enemies hit.", DRG.JobID, 25, "", "Never stop hitting them ALL.")]
+        [CustomComboInfo("Simple Dragoon AoE", "One Button, many enemies hit.", DRG.JobID, 24, "", "Never stop hitting them ALL.")]
         DragoonSimpleAoE = 6600,
 
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("Wyrmwind Thrust AoE Feature", "Includes Wyrmwind Thrust to the Simple Dragoon AoE rotation.", DRG.JobID, 26, "", "Blue and red Dragons! Oh my.")]
+        [CustomComboInfo("天龙点睛 AoE Feature", "Includes 天龙点睛 to the Simple Dragoon AoE rotation.", DRG.JobID, 25, "", "Blue and red Dragons! Oh my.")]
         DragoonAoEWyrmwindFeature = 6601,
 
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("Geirskogul and Nastrond AoE Feature", "Includes Geirskogul and Nastrond in the AoE rotation.", DRG.JobID, 27, "", "Let me chuck another dragon soul at them!")]
+        [CustomComboInfo("武神枪 and Nastrond AoE Feature", "Includes 武神枪 and Nastrond in the AoE rotation.", DRG.JobID, 26, "", "Let me chuck another dragon soul at them!")]
         DragoonAoEGeirskogulNastrondFeature = 6602,
 
         [ConflictingCombos(DragoonAoELitanyDiveFeature, DragoonAoELifeLitanyDiveFeature)]
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("Dives AoE Feature", "Includes Spineshatter Dive, Dragonfire Dive and Stardiver in the AoE rotation.", DRG.JobID, 28, "", "Don't jump to your death!")]
+        [CustomComboInfo("Dives AoE Feature", "Includes 破碎冲, 龙炎冲 and Stardiver in the AoE rotation.", DRG.JobID, 27, "", "Don't jump to your death!")]
         DragoonAoEDiveFeature = 6603,
 
         [ConflictingCombos(DragoonAoEDiveFeature, DragoonAoELitanyDiveFeature, DragoonAoELifeLitanyDiveFeature)]
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("Dives under Lance Charge AoE Feature", "Single Weave Friendly: Includes Spineshatter Dive and Dragonfire Dive in the AoE rotation, while under Lance Charge, and Stardiver while under Life of the Dragon.", DRG.JobID, 29, "", "Don't jump to your death!")]
+        [CustomComboInfo("Dives under 猛枪 AoE Feature", "Single Weave Friendly: Includes 破碎冲 and Dragonfire Dive in the AoE rotation, while under 猛枪, and 坠星冲 while under Life of the Dragon.", DRG.JobID, 28, "", "Don't jump to your death!")]
         DragoonAoELanceDiveFeature = 6604,
 
         [ConflictingCombos(DragoonAoEDiveFeature, DragoonAoELanceDiveFeature, DragoonAoELifeLitanyDiveFeature)]
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("Dives under Litany AoE Features", "Includes Spineshatter Dive and Dragonfire Dive in the AoE rotation, while under Battle Litany, and Stardiver while under Life of the Dragon.", DRG.JobID, 30, "", "Don't jump to your death!")]
+        [CustomComboInfo("Dives under Litany AoE Features", "Includes 破碎冲 and Dragonfire Dive in the AoE rotation, while under 战斗连祷, and 坠星冲 while under Life of the Dragon.", DRG.JobID, 29, "", "Don't jump to your death!")]
         DragoonAoELitanyDiveFeature = 6605,
 
         [ConflictingCombos(DragoonAoEDiveFeature, DragoonAoELanceDiveFeature, DragoonAoELitanyDiveFeature)]
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("Dives under Litany and Life of the Dragon AoE Features", "Includes Spineshatter Dive and Dragonfire Dive in the AoE rotation, while under Battle Litany and Life of the Dragon, and Stardiver while under Life of the Dragon.", DRG.JobID, 31, "", "Don't jump to your death!")]
+        [CustomComboInfo("Dives under Litany and Life of the Dragon AoE Features", "Includes 破碎冲 and Dragonfire Dive in the AoE rotation, while under 战斗连祷 and Life of the Dragon, and 坠星冲 while under Life of the Dragon.", DRG.JobID, 30, "", "Don't jump to your death!")]
         DragoonAoELifeLitanyDiveFeature = 6606,
 
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("High Jump AoE Feature", "Includes High Jump in the AoE rotation.", DRG.JobID, 32, "", "Jumping, but higher.")]
+        [CustomComboInfo("High 跳跃 AoE Feature", "Includes High 跳跃 in the AoE rotation.", DRG.JobID, 31, "", "跳跃ing, but higher.")]
         DragoonAoEHighJumpFeature = 6607,
 
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("Mirage AoE Feature", "Includes Mirage in the AoE rotation.", DRG.JobID, 33, "", "They thought they saw it coming.")]
+        [CustomComboInfo("Mirage AoE Feature", "Includes Mirage in the AoE rotation.", DRG.JobID, 32, "", "They thought they saw it coming.")]
         DragoonAoEMirageFeature = 6608,
 
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("Buffs AoE Feature", "Includes Lance Charge and Battle Litany to the AoE rotation.", DRG.JobID, 34, "", "This is why your team loves you.")]
+        [CustomComboInfo("Buffs AoE Feature", "Includes 猛枪 and Battle Litany to the AoE rotation.", DRG.JobID, 33, "", "This is why your team loves you.")]
         DragoonAoEBuffsFeature = 6609,
 
         [ParentCombo(DragoonAoEBuffsFeature)]
-        [CustomComboInfo("Dragon Sight AoE Feature", "Includes Dragon Sight to the AoE rotation. OPTIONAL: USE REACTION OR MOACTION FOR OPTIMAL TARGETING.", DRG.JobID, 35, "", "This is why your team loves you, too.")]
+        [CustomComboInfo("巨龙视线 AoE Feature", "Includes 巨龙视线 to the AoE rotation. OPTIONAL: USE REACTION OR MOACTION FOR OPTIMAL TARGETING.", DRG.JobID, 34, "", "This is why your team loves you, too.")]
         DragoonAoEDragonSightFeature = 6610,
 
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("Life Surge AoE Feature", "Includes Life Surge, while under proper buffs, onto proper GCDs, to the AoE rotation.", DRG.JobID, 36, "", "Hit them with more feeling!")]
+        [CustomComboInfo("龙剑 AoE Feature", "Includes 龙剑, while under proper buffs, onto proper GCDs, to the AoE rotation.", DRG.JobID, 35, "", "Hit them with more feeling!")]
         DragoonAoELifeSurgeFeature = 6611,
 
         [ConflictingCombos(DragoonSimple)]
-        [CustomComboInfo("Wheeling Thrust/Fang and Claw Option", "When you have either Enhanced Fang and Claw or Wheeling Thrust, Chaos Thrust Combo becomes Wheeling Thrust and Full Thrust Combo becomes Fang and Claw. Requires Chaos Thrust Combo and Full Thrust Combo.", DRG.JobID, 37, "ALL THE COMBOS", "Turns Wheeling Thrust into Fire IV when Hallowed or PvP options are active.")]
+        [CustomComboInfo("Wheeling Thrust/龙牙龙爪 Option", "When you have either Enhanced 龙牙龙爪 or Wheeling Thrust, Chaos Thrust Combo becomes Wheeling Thrust and 直刺 Combo becomes Fang and Claw. Requires Chaos Thrust Combo and 直刺 Combo.", DRG.JobID, 36, "ALL THE COMBOS", "Turns Wheeling Thrust into 火炎 IV when Hallowed or PvP options are active.")]
         DragoonFangThrustFeature = 6700,
 
         [ConflictingCombos(DragoonSimple)]
-        [CustomComboInfo("Wheeling Thrust/Fang and Claw Feature", "Fang And Claw Becomes Wheeling Thrust when under Enhanced Wheeling Thrust Buff.", DRG.JobID, 38, "Reinventing the Wheel", "Absolutely WHEELING, my guy")]
+        [CustomComboInfo("Wheeling Thrust/龙牙龙爪 Feature", "Fang And Claw Becomes 龙尾大回旋 when under Enhanced 龙尾大回旋 Buff.", DRG.JobID, 37, "Reinventing the Wheel", "Absolutely WHEELING, my guy")]
         DragoonFangAndClawFeature = 6701,
 
         #endregion
         // ====================================================================================
         #region GUNBREAKER
 
-        [CustomComboInfo("Solid Barrel Combo", "Replace Solid Barrel with its combo chain. \nIf all sub options are selected will turn into a full one button rotation (Simple Gunbreaker)", GNB.JobID, 0, "Floppy Barrel Combo", "Not so solid NOW, are ya?")]
+        [CustomComboInfo("迅连斩 Combo", "Replace 迅连斩 with its combo chain. \nIf all sub options are selected will turn into a full one button rotation (Simple Gunbreaker)", GNB.JobID, 0, "Floppy Barrel Combo", "Not so solid NOW, are ya?")]
         GunbreakerSolidBarrelCombo = 7000,
 
         [ParentCombo(GunbreakerSolidBarrelCombo)]
-        [CustomComboInfo("Gnashing Fang and Continuation on Main Combo", "Adds Gnashing Fang to the main combo. Gnashing Fang must be started manually and the combo will finish it off.\n Useful for when Gnashing Fang needs to be help due to downtime.", GNB.JobID, 0, "Fashing Gnang", "Why grandma, what big teeth you have!")]
+        [CustomComboInfo("烈牙 and Continuation on Main Combo", "Adds 烈牙 to the main combo. 烈牙 must be started manually and the combo will finish it off.\n Useful for when 烈牙 needs to be help due to downtime.", GNB.JobID, 0, "Fashing Gnang", "Why grandma, what big teeth you have!")]
         GunbreakerGnashingFangOnMain = 7001,
 
-        [ParentCombo(GunbreakerSolidBarrelCombo)]
-        [CustomComboInfo("CDs on Main Combo", "Adds various CDs to the Main Combo when under No Mercy or when No Mercy is on cooldown", GNB.JobID, 0, "Gee Whiz!", "Mom, I can't manage my oGCDs!")]
-        GunbreakerMainComboCDsGroup = 7002,
+        [ParentCombo(GunbreakerGnashingFangOnMain)]
+        [CustomComboInfo("音速破/Bow Shock/Blasting Zone on Main Combo", "Adds Sonic Break/Bow Shock/Blasting Zone on main combo when under 无情 buff", GNB.JobID, 0, "Gee Whiz!", "Mom, I can't manage my oGCDs!")]
+        GunbreakerCDsOnMainComboFeature = 7002,
 
-        [ParentCombo(GunbreakerMainComboCDsGroup)]
-        [CustomComboInfo("Danger Zone/Blasting Zone on Main Combo", "Adds Danger Zone/Blasting Zone to the Main Combo", GNB.JobID, 0)]
-        GunbreakerDZOnMainComboFeature = 7005,
-
-        [ParentCombo(GunbreakerMainComboCDsGroup)]
-        [CustomComboInfo("Double Down on Main Combo", "Adds Double Down on main combo when under No Mercy buff", GNB.JobID, 0, "ALL the deeps", "For when you're both feeling merciless and are stuffed full of powder. BANG!")]
+        [ParentCombo(GunbreakerGnashingFangOnMain)]
+        [CustomComboInfo("倍攻 on Main Combo", "Adds Double Down on main combo when under 无情 buff", GNB.JobID, 0, "ALL the deeps", "For when you're both feeling merciless and are stuffed full of powder. BANG!")]
         GunbreakerDDonMain = 7003,
 
         [ParentCombo(GunbreakerSolidBarrelCombo)]
-        [CustomComboInfo("Rough Divide Option", "Adds Rough Divide onto main combo whenever it's available.", GNB.JobID, 0, "Divide... Roughly", "Ayo pour one out for the homie Squall")]
-        GunbreakerRoughDivideFeature = 7004,
+        [ConflictingCombos(GunbreakerRoughDivide2StackOption)]
+        [CustomComboInfo("粗分斩 Option (Leaves 1 Stack)", "Adds 粗分斩 onto main combo whenever it's available (Leaves 1 stack).", GNB.JobID, 0, "Divide... Roughly", "Ayo pour one out for the homie Squall")]
+        GunbreakerRoughDivide1StackOption = 7004,
 
         [ParentCombo(GunbreakerDemonSlaughterCombo)]
-        [CustomComboInfo("Bow Shock on AoE Feature", "Adds Bow Shock onto the aoe combo when it's off cooldown. Recommended to use with Gnashing Fang features.", GNB.JobID, 0, "AoE cattleprod enabler")]
+        [CustomComboInfo("弓形冲波 on AoE Feature", "Adds Bow Shock onto the aoe combo when it's off cooldown. Recommended to use with 烈牙 features.", GNB.JobID, 0, "AoE cattleprod enabler")]
         GunbreakerBowShockFeature = 7017,
+        
+        [ConflictingCombos(GunbreakerRoughDivide1StackOption)]
+        [ParentCombo(GunbreakerSolidBarrelCombo)]
+        [CustomComboInfo("粗分斩 Option (Uses all stacks)", "Adds 粗分斩 onto main combo whenever its available (Uses all stacks).", GNB.JobID, 0, "Divide... Rougher!", "Ayo pour two out for the homie Squall")]
+        GunbreakerRoughDivide2StackOption = 7005,
 
-        [CustomComboInfo("Demon Slaughter Combo", "Replace Demon Slaughter with its combo chain.", GNB.JobID, 0, "dEmOn SlAuGhTeR", "Demon Slaughter? Really? What is this, RPR?")]
+        [CustomComboInfo("恶魔杀 Combo", "Replace 恶魔杀 with its combo chain.", GNB.JobID, 0, "dEmOn SlAuGhTeR", "恶魔杀? Really? What is this, RPR?")]
         GunbreakerDemonSlaughterCombo = 7006,
 
-        [CustomComboInfo("Ammo Overcap Feature", "Uses Burst Strike/Fated Circle on the respective ST/AoE combos when ammo is about to overcap.", GNB.JobID, 0, "Pew Pew Forever", "The whole nine yards")]
+        [CustomComboInfo("Ammo Overcap Feature", "Uses 爆发击/Fated Circle on the respective ST/AoE combos when ammo is about to overcap.", GNB.JobID, 0, "Pew Pew Forever", "The whole nine yards")]
         GunbreakerAmmoOvercapFeature = 7007,
 
-        [CustomComboInfo("Gnashing Fang Continuation Combo", "Adds Continuation to Gnashing Fang.", GNB.JobID, 0, "More Mercy", "More, no wait, less, no wait, MORE Mercy! No, wait...")]
+        [CustomComboInfo("烈牙 Continuation Combo", "Adds Continuation to 烈牙.", GNB.JobID, 0, "More Mercy", "More, no wait, less, no wait, MORE Mercy! No, wait...")]
         GunbreakerGnashingFangCombo = 7008,
 
         [ParentCombo(GunbreakerGnashingFangCombo)]
-        [CustomComboInfo("No Mercy on Gnashing Fang", "Adds No Mercy to Gnashing Fang when it's ready.", GNB.JobID, 0, "Blue DPS be like", "This one comes with teeth.")]
+        [CustomComboInfo("无情 on Gnashing Fang", "Adds 无情 to Gnashing Fang when it's ready.", GNB.JobID, 0, "Blue DPS be like", "This one comes with teeth.")]
         GunbreakerNoMercyonGF = 7009,
 
         [ParentCombo(GunbreakerGnashingFangCombo)]
-        [CustomComboInfo("Double Down on Gnashing Fang", "Adds Double Down to Gnashing Fang when No Mercy buff is up.", GNB.JobID, 0, "My hotbars are a (tiny) mess!", "Thanks plogon!")]
+        [CustomComboInfo("Double Down on 烈牙", "Adds Double Down to Gnashing Fang when 无情 buff is up.", GNB.JobID, 0, "My hotbars are a (tiny) mess!", "Thanks plogon!")]
         GunbreakerDDOnGF = 7010,
 
         [ParentCombo(GunbreakerGnashingFangCombo)]
-        [CustomComboInfo("CDs on Gnashing Fang", "Adds Sonic Break/Bow Shock/Blasting Zone on Gnashing Fang, order dependent on No Mercy buff. \nBurst Strike added if there's charges while No Mercy buff is up.", GNB.JobID, 0, "More Teeth", "Gnashing fang, but like, if a shark did it. Or something.")]
+        [CustomComboInfo("CDs on 烈牙", "Adds Sonic Break/Bow Shock/Blasting Zone on 烈牙, order dependent on 无情 buff. \nBurst Strike added if there's charges while 无情 buff is up.", GNB.JobID, 0, "More Teeth", "Gnashing fang, but like, if a shark did it. Or something.")]
         GunbreakerCDsOnGF = 7011,
 
-        [CustomComboInfo("BurstStrikeContinuation", "Adds Hypervelocity on Burst Strike Continuation combo and main combo and Gnashing Fang.", GNB.JobID, 0, "Swish, swoosh", "Now we're cooking with gas! Hyper!")]
+        [CustomComboInfo("BurstStrike续剑", "Adds Hypervelocity on Burst Strike Continuation combo and main combo and 烈牙.", GNB.JobID, 0, "Swish, swoosh", "Now we're cooking with gas! Hyper!")]
         GunbreakerBurstStrikeConFeature = 7012,
 
-        [CustomComboInfo("Burst Strike to Bloodfest Feature", "Replace Burst Strike with Bloodfest if you have no powder gauge.", GNB.JobID, 0, "P4S Vampire man Bloodfest Feature", "Again with the edgelord names?\nTut, tut, Yoshi-P. Do better.")]
+        [CustomComboInfo("爆发击 to Bloodfest Feature", "Replace 爆发击 with Bloodfest if you have no powder gauge.", GNB.JobID, 0, "P4S Vampire man 血壤 Feature", "Again with the edgelord names?\nTut, tut, Yoshi-P. Do better.")]
         GunbreakerBloodfestOvercapFeature = 7013,
 
         [ParentCombo(GunbreakerSolidBarrelCombo)]
-        [CustomComboInfo("Lightning Shot Uptime", "Replace Solid Barrel Combo Feature with Lightning Shot when you are out of range.", GNB.JobID, 0, "Stubby-armed GNB", "Can't reach?")]
+        [CustomComboInfo("闪雷弹 Uptime", "Replace Solid Barrel Combo Feature with 闪雷弹 when you are out of range.", GNB.JobID, 0, "Stubby-armed GNB", "Can't reach?")]
         GunbreakerRangedUptimeFeature = 7015,
 
         [CustomComboInfo("Interrupt Feature", "Replaces LowBlow with Interject when target can be interrupted .", GNB.JobID, 0, "Lower blow", "Blow, but low.")]
         GunbreakerInterruptFeature = 7016,
 
-        [ParentCombo(GunbreakerMainComboCDsGroup)]
-        [CustomComboInfo("Bloodfest on Main Combo", "Adds Bloodfest to main combo when ammo is 0.", GNB.JobID, 0)]
+        [ParentCombo(GunbreakerSolidBarrelCombo)]
+        [CustomComboInfo("血壤 on Main Combo", "Adds 血壤 to main combo when ammo is 0.", GNB.JobID, 0)]
         GunbreakerBloodfestonST = 7014,
 
         [ParentCombo(GunbreakerSolidBarrelCombo)]
-        [CustomComboInfo("No Mercy on Main Combo", "Adds No Mercy to main combo when at full ammo.", GNB.JobID, 0)]
+        [CustomComboInfo("无情 on Main Combo", "Adds 无情 to main combo when at full ammo.", GNB.JobID, 0)]
         GunbreakerNoMercyonST = 7018,
 
         [ParentCombo(GunbreakerGnashingFangOnMain)]
-        [CustomComboInfo("Gnashing Fang Starter", "Begins Gnashing Fang on main combo.", GNB.JobID, 0)]
+        [CustomComboInfo("烈牙 Starter", "Begins 烈牙 on main combo.", GNB.JobID, 0)]
         GunbreakerGFStartonMain = 7019,
-
-        [ParentCombo(GunbreakerMainComboCDsGroup)]
-        [CustomComboInfo("Bow Shock on Main Combo", "Adds Bow Shock to the Main Combo", GNB.JobID, 0)]
-        GunbreakerBSOnMainComboFeature = 7020,
-
-        [ParentCombo(GunbreakerMainComboCDsGroup)]
-        [CustomComboInfo("Sonic Break on Main Combo", "Adds Sonic Break to the Main Combo", GNB.JobID, 0)]
-        GunbreakerSBOnMainComboFeature = 7021,
-
-        [CustomComboInfo("Sonic Break/Bow Shock on NM", "Adds Sonic Break and Bow Shock to No Mercy when NM is on CD", GNB.JobID, 0)]
-        GunbreakerCDsonNMFeature = 7022,
-
-        [ParentCombo(GunbreakerMainComboCDsGroup)]
-        [CustomComboInfo("Burst Strike on Main Combo", "Adds Burst Strike to Main Combo when under No Mercy and Gnashing Fang is over.", GNB.JobID, 0)]
-        GunbreakerBSinNMFeature = 7023,
-        
-        [CustomComboInfo("Double Reprisal Protection", "Prevents the use of Reprisal when target already has the effectby replacing it with Stone", GNB.JobID)]
-        GunbreakerReprisalProtection = 7030,
 
         #endregion
         // ====================================================================================
         #region MACHINIST
 
-        [CustomComboInfo("(Heated) Shot Combo", "Replace either form of Clean Shot with its combo chain.", MCH.JobID, 0, "Alright, Hotshot -", "Is there really such a thing as a clean shot? Let's find out.")]
+        [CustomComboInfo("(Heated) Shot Combo", "Replace either form of 狙击弹 with its combo chain.", MCH.JobID, 0, "Alright, Hotshot -", "Is there really such a thing as a clean shot? Let's find out.")]
         MachinistMainCombo = 8000,
 
-        [CustomComboInfo("Overdrive Feature", "Replace Rook Autoturret and Automaton Queen with Overdrive while active.", MCH.JobID, 0, "Drive (2011) Feature", "Insert synthwave soundtrack here.")]
+        [CustomComboInfo("Overdrive Feature", "Replace 车式浮空炮塔 and Automaton Queen with Overdrive while active.", MCH.JobID, 0, "Drive (2011) Feature", "Insert synthwave soundtrack here.")]
         MachinistOverdriveFeature = 8002,
 
-        [CustomComboInfo("Gauss Round / Ricochet Feature", "Replace Gauss Round and Ricochet with one or the other depending on which has more charges.", MCH.JobID, 0, "Gatling feature", "It's just a lot of bullets, really.")]
+        [CustomComboInfo("虹吸弹 / Ricochet Feature", "Replace 虹吸弹 and Ricochet with one or the other depending on which has more charges.", MCH.JobID, 0, "Gatling feature", "It's just a lot of bullets, really.")]
         MachinistGaussRoundRicochetFeature = 8003,
 
-        [CustomComboInfo("Drill / Air Anchor (Hot Shot) Feature", "Replace Drill and Air Anchor (Hot Shot) with one or the other (or Chainsaw) depending on which is on cooldown.", MCH.JobID, 0, "Multi-tool", "Why does MCH have a drill and a chainsaw? What is this, DoH?")]
+        [CustomComboInfo("Drill / Air Anchor (热弹) Feature", "Replace Drill and Air Anchor (热弹) with one or the other (or Chainsaw) depending on which is on cooldown.", MCH.JobID, 0, "Multi-tool", "Why does MCH have a drill and a chainsaw? What is this, DoH?")]
         MachinistHotShotDrillChainsawFeature = 8004,
 
         [ParentCombo(MachinistMainCombo)]
         [ConflictingCombos(MachinistAlternateMainCombo)]
-        [CustomComboInfo("Drill/Air/Chain Saw Feature On Main Combo", "Air Anchor followed by Drill is added onto main combo if you use Reassemble.\nIf Air Anchor is on cooldown and you use Reassemble, Chainsaw will be added to main combo instead.", MCH.JobID, 0, "A bit of everything feature", "Don't rub your last two brain-cells together! We got you!")]
+        [CustomComboInfo("钻头/Air/Chain Saw Feature On Main Combo", "Air Anchor followed by Drill is added onto main combo if you use 整备.\nIf Air Anchor is on cooldown and you use 整备, Chainsaw will be added to main combo instead.", MCH.JobID, 0, "A bit of everything feature", "Don't rub your last two brain-cells together! We got you!")]
         MachinistDrillAirOnMainCombo = 8005,
 
-        [CustomComboInfo("Single Button Heat Blast", "Switches Heat Blast to Hypercharge.", MCH.JobID, 0, "So-called 'Heat Blast'", "Basically a large hair-dryer.")]
+        [CustomComboInfo("Single Button 热冲击", "Switches 热冲击 to Hypercharge.", MCH.JobID, 0, "So-called '热冲击'", "Basically a large hair-dryer.")]
         MachinistHeatblastGaussRicochetFeature = 8006,
 
-        [CustomComboInfo("Single Button Auto Crossbow", "Switches Auto Crossbow to Hypercharge and weaves gauss/rico.", MCH.JobID, 0, "Laser Crossbow", "It's a crossbow, from the future!")]
+        [CustomComboInfo("Single Button 自动弩", "Switches 自动弩 to Hypercharge and weaves gauss/rico.", MCH.JobID, 0, "Laser Crossbow", "It's a crossbow, from the future!")]
         MachinistAutoCrossBowGaussRicochetFeature = 8018,
 
         [ParentCombo(MachinistMainCombo)]
         [ConflictingCombos(MachinistDrillAirOnMainCombo)]
-        [CustomComboInfo("Alternate Drill/Air Feature on Main Combo", "Drill/Air/Hotshot Feature is added onto main combo (Note: It will add them onto main combo ONLY if you are under Reassemble Buff\nOr Reasemble is on CD (Will do nothing if Reassemble is OFF CD)", MCH.JobID, 0, "Gunbreaker feature", "Look at me - I'm the tank now.")]
+        [CustomComboInfo("Alternate 钻头/Air Feature on Main Combo", "Drill/Air/Hotshot Feature is added onto main combo (Note: It will add them onto main combo ONLY if you are under 整备 Buff\nOr Reasemble is on CD (Will do nothing if 整备 is OFF CD)", MCH.JobID, 0, "Gunbreaker feature", "Look at me - I'm the tank now.")]
         MachinistAlternateMainCombo = 8007,
 
         [ParentCombo(MachinistMainCombo)]
@@ -1046,44 +931,44 @@ namespace XIVSlothComboPlugin
         MachinistOverChargeOption = 8009,
 
         [ParentCombo(MachinistSpreadShotFeature)]
-        [CustomComboInfo("Battery AOE Overcap Option", "Adds overcharge protection to Spread Shot/Scattergun.", MCH.JobID, 0, "Battery", "Isn't battery like, assault? What's wrong with you?")]
+        [CustomComboInfo("Battery AOE Overcap Option", "Adds overcharge protection to 散射/Scattergun.", MCH.JobID, 0, "Battery", "Isn't battery like, assault? What's wrong with you?")]
         MachinistAoEOverChargeOption = 8010,
 
         [ParentCombo(MachinistSpreadShotFeature)]
-        [CustomComboInfo("Gauss Round Ricochet on AOE Feature", "Adds Gauss Round/Ricochet to the AoE combo during Hypercharge.", MCH.JobID, 0, "Ratchet and Clank Feature", "Bouncing off the walls")]
+        [CustomComboInfo("虹吸弹 Ricochet on AOE Feature", "Adds 虹吸弹/Ricochet to the AoE combo during Hypercharge.", MCH.JobID, 0, "Ratchet and Clank Feature", "Bouncing off the walls")]
         MachinistAoEGaussRicochetFeature = 8011,
 
         [ParentCombo(MachinistAoEGaussRicochetFeature)]
-        [CustomComboInfo("Always Gauss Round/Ricochet on AoE Option", "Adds Gauss Round/Ricochet to the AoE combo outside of Hypercharge windows.", MCH.JobID, 0, "Ratchet and Clank Feature", "Bouncing off the walls")]
+        [CustomComboInfo("Always 虹吸弹/Ricochet on AoE Option", "Adds 虹吸弹/Ricochet to the AoE combo outside of Hypercharge windows.", MCH.JobID, 0, "Ratchet and Clank Feature", "Bouncing off the walls")]
         MachinistAoEGaussOption = 8012,
 
         [ConflictingCombos(MachinistRicochetGaussMainCombo)]
         [ParentCombo(MachinistMainCombo)]
-        [CustomComboInfo("Ricochet & Gauss Round Feature", "Adds Ricochet and Gauss Round to main combo. Will use all charges.", MCH.JobID, 0, "Pew +1", "All the shots, ALL of the time.")]
+        [CustomComboInfo("Ricochet & 虹吸弹 Feature", "Adds Ricochet and 虹吸弹 to main combo. Will use all charges.", MCH.JobID, 0, "Pew +1", "All the shots, ALL of the time.")]
         MachinistRicochetGaussChargesMainCombo = 8017,
 
         [ConflictingCombos(MachinistRicochetGaussChargesMainCombo)]
         [ParentCombo(MachinistMainCombo)]
-        [CustomComboInfo("Ricochet & Gauss Round overcap protection option", "Adds Ricochet and Gauss Round to main combo. Will leave 1 charge of each.", MCH.JobID, 0, "", "Never run out of bullets again! Or never have too many! Or something!\nBullets!")]
+        [CustomComboInfo("Ricochet & 虹吸弹 overcap protection option", "Adds Ricochet and 虹吸弹 to main combo. Will leave 1 charge of each.", MCH.JobID, 0, "", "Never run out of bullets again! Or never have too many! Or something!\nBullets!")]
         MachinistRicochetGaussMainCombo = 8013,
 
         [ParentCombo(MachinistMainCombo)]
-        [CustomComboInfo("Barrel Stabilizer drift protection feature", "Adds Barrel Stabilizer onto the main combo if heat is between 5-20.", MCH.JobID, 0, "Third Leg", "Adds Barrel Stabiliser when you're in heat. You heard me.")]
+        [CustomComboInfo("枪管加热 drift protection feature", "Adds 枪管加热 onto the main combo if heat is between 5-20.", MCH.JobID, 0, "Third Leg", "Adds Barrel Stabiliser when you're in heat. You heard me.")]
         BarrelStabilizerDrift = 8014,
 
         [ParentCombo(MachinistHeatblastGaussRicochetFeature)]
-        [CustomComboInfo("Wildfire Feature", "Adds Wildfire to the Single Button Heat Blast Feature if Wildfire is off cooldown and you have enough heat for Hypercharge then Hypercharge will be replaced with Wildfire.\nAlso weaves Ricochet/Gauss Round on Heat Blast when necessary.", MCH.JobID, 0, "PEW", "PEW PEW PEW PEW, AND PEW.\nALSO WEAVES PEW AND PEW.")]
+        [CustomComboInfo("野火 Feature", "Adds Wildfire to the Single Button Heat Blast Feature if Wildfire is off cooldown and you have enough heat for Hypercharge then Hypercharge will be replaced with Wildfire.\nAlso weaves Ricochet/虹吸弹 on Heat Blast when necessary.", MCH.JobID, 0, "PEW", "PEW PEW PEW PEW, AND PEW.\nALSO WEAVES PEW AND PEW.")]
         MachinistWildfireFeature = 8015,
 
         [ParentCombo(MachinistSpreadShotFeature)]
-        [CustomComboInfo("BioBlaster Feature", "Adds Bioblaster to the Spreadshot feature", MCH.JobID, 0, "War crime feature", "This is like uh, some sort of anthrax? Jeez bro. Relax.\nBanned by the Geneva Convention.")]
+        [CustomComboInfo("毒菌Blaster Feature", "Adds 毒菌冲击 to the Spreadshot feature", MCH.JobID, 0, "War crime feature", "This is like uh, some sort of anthrax? Jeez bro. Relax.\nBanned by the Geneva Convention.")]
         MachinistBioblasterFeature = 8016,
 
-        [CustomComboInfo("Barrel Feature", "Adds Barrel Stabalizer to Single Button Heat Blast and Single Button Auto Crossbow Features when below 50 heat and is off cooldown", MCH.JobID, 0, "Hot Cross Bow", "Now multi-purpose!")]
+        [CustomComboInfo("Barrel Feature", "Adds Barrel Stabalizer to Single Button 热冲击 and Single Button Auto Crossbow Features when below 50 heat and is off cooldown", MCH.JobID, 0, "Hot Cross Bow", "Now multi-purpose!")]
         MachinistAutoBarrel = 8019,
 
         [ConflictingCombos(MachinistMainCombo)]
-        [CustomComboInfo("Simple Machinist", "Single button single target machinist, including buffs and overprotections.\nConflicts with other single target toggles!!\nMade to work optimally with a 2.5 GCD.", MCH.JobID, 0, "", "Goodbye, brain!")]
+        [CustomComboInfo("Simple Machinist", "Single button single target machinist, including buffs and overprotections.\nConflicts with other single target toggles!!", MCH.JobID, 0, "", "Goodbye, brain!")]
         MachinistSimpleFeature = 8020,
 
         [ParentCombo(MachinistSimpleFeature)]
@@ -1095,51 +980,27 @@ namespace XIVSlothComboPlugin
         MachinistSimpleGadget = 8022,
 
         [ParentCombo(MachinistSimpleFeature)]
-        [CustomComboInfo("Simple Assembling", "Pairs reassemble uses with the following skills.\nBefore acquiring Drill it will be used with Clean Shot.", MCH.JobID, 0, "Megablox", "It's like Lego bricks! But worse!")]
+        [CustomComboInfo("Simple Assembling", "Adds optimal reassemble uses to the feature.", MCH.JobID, 0, "Megablox", "It's like Lego bricks! But worse!")]
         MachinistSimpleAssembling = 8023,
 
         [ParentCombo(MachinistSimpleFeature)]
-        [CustomComboInfo("Simple Gauss Ricochet", "Adds Gauss Round and Ricochet uses to the feature.", MCH.JobID, 0, "", "More bullets!")]
+        [CustomComboInfo("Simple Gauss 弹射", "Adds 虹吸弹 and Ricochet uses to the feature.", MCH.JobID, 0, "", "More bullets!")]
         MachinistSimpleGaussRicochet = 8024,
 
         [ParentCombo(MachinistSimpleFeature)]
-        [CustomComboInfo("Simple Wildcharge", "Adds Hypercharge and Wildfire uses to the feature.\nIt respects the 8 second rule of Drill, AirAnchor and Chainsaw.", MCH.JobID, 0, "Simply fantastic", "Is it really THAT simple?")]
+        [CustomComboInfo("Simple Wildcharge", "Adds Hypercharge and 野火 uses to the feature.\nIt respects the 8 second rule of Drill, AirAnchor and Chainsaw.", MCH.JobID, 0, "Simply fantastic", "Is it really THAT simple?")]
         MachinistSimpleWildCharge = 8025,
 
         [ParentCombo(MachinistSimpleFeature)]
-        [CustomComboInfo("Simple Stabilizer", "Adds Barrel Stabilizer to the feature.\nWhen heat < 50 and Wildfire is off CD or about to come off CD.", MCH.JobID, 0, "Third Leg", "Reduces recoil when spraying and praying.")]
+        [CustomComboInfo("Simple Stabilizer", "Adds Barrel Stabilizer to the feature.\nWhen heat < 50 and 野火 is off CD or about to come off CD.", MCH.JobID, 0, "Third Leg", "Reduces recoil when spraying and praying.")]
         MachinistSimpleStabilizer = 8026,
 
         [ParentCombo(MachinistSpreadShotFeature)]
-        [CustomComboInfo("Hypercharge", "Adds hypercharge to the AoE.", MCH.JobID, 0, "Sugar Rush", "I'm gonna slap @augporto for putting in so many damn MCH features.\nHow full of witty one-liners do you think I am?!")]
+        [CustomComboInfo("超荷", "Adds hypercharge to the AoE.", MCH.JobID, 0, "Sugar Rush", "I'm gonna slap @augporto for putting in so many damn MCH features.\nHow full of witty one-liners do you think I am?!")]
         MachinistAoEHyperchargeFeature = 8027,
 
-        [CustomComboInfo("Simple Machinist AOE", "Spread Shot turns into Scattergun when lvl 82 or higher, Both turn into Auto Crossbow when overheated\nand Bioblaster is used first whenever it is off cooldown.", MCH.JobID, 0, "Dungeon go zzzz", "AoE, but you're just not here. Go make a coffee.")]
+        [CustomComboInfo("Simple Machinist AOE", "散射 turns into Scattergun when lvl 82 or higher, Both turn into 自动弩 when overheated\nand Bioblaster is used first whenever it is off cooldown.", MCH.JobID, 0, "Dungeon go zzzz", "AoE, but you're just not here. Go make a coffee.")]
         MachinistSpreadShotFeature = 8028,
-
-        [ParentCombo(MachinistSimpleAssembling)]
-        [CustomComboInfo("Drill","Use Reassemble with Drill when available.", MCH.JobID,0,"GigaDrillBreaker","The Drill that will pierce the heavens!")]
-        MachinistSimpleAssemblingDrill = 8029,
-
-        [ParentCombo(MachinistSimpleAssembling)]
-        [CustomComboInfo("Air Anchor", "Use Reassemble with Air Anchor when available.", MCH.JobID, 0, "Air Guitar", "Play the tunes!")]
-        MachinistSimpleAssemblingAirAnchor = 8030,
-
-        [ParentCombo(MachinistSimpleAssembling)]
-        [CustomComboInfo("Chain Saw", "Use Reassemble with Chain Saw when available.", MCH.JobID, 0, "Giga Sauce", "The secret to life.")]
-        MachinistSimpleAssemblingChainSaw = 8031,
-
-        [ParentCombo(MachinistSimpleAssemblingDrill)]
-        [CustomComboInfo("Only use Drill...", "...when you have max charges of reassemble.", MCH.JobID, 0, "GigaDrillBreaker MAX", "Mow pow in the pew!")]
-        MachinistSimpleAssemblingDrillMaxCharges = 8032,
-
-        [ParentCombo(MachinistSimpleAssemblingAirAnchor)]
-        [CustomComboInfo("Only use Air Anchor...", "...when you have max charges of reassemble.", MCH.JobID, 0, "GigaDrillBreaker MAX", "Mow pow in the pew!")]
-        MachinistSimpleAssemblingAirAnchorMaxCharges = 8033,
-
-        [ParentCombo(MachinistSimpleAssemblingChainSaw)]
-        [CustomComboInfo("Only use Chain Saw...", "...when you have max charges of reassemble.", MCH.JobID, 0, "GigaDrillBreaker MAX", "Mow pow in the pew!")]
-        MachinistSimpleAssemblingChainSawMaxCharges = 8034,
 
         #endregion
         // ====================================================================================
@@ -1148,52 +1009,52 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("AoE Combo", "Replaces Arm Of The Destroyer/Shadow Of The Destroyer with the AoE combo chain.", MNK.JobID, 0, "", "Punching, but wide. It's like having extra hands!")]
         MnkAoECombo = 9000,
 
-        [CustomComboInfo("Bootshine Feature", "Replaces Dragon Kick with Bootshine if both a form and Leaden Fist are up.", MNK.JobID, 0, "", "Shine ya shoes, guv'na?")]
+        [CustomComboInfo("连击 Feature", "Replaces Dragon Kick with 连击 if both a form and Leaden Fist are up.", MNK.JobID, 0, "", "Shine ya shoes, guv'na?")]
         MnkBootshineFeature = 9001,
 
-        [CustomComboInfo("Twin Snakes Feature", "Replaces True Strike with Twin Snakes if Disciplined Fist is not applied or is less than 6 seconds from falling off.", MNK.JobID, 0, "", "I've had it with these MF snakes on this MF plane!")]
+        [CustomComboInfo("双掌打 Feature", "Replaces 正拳 with Twin Snakes if Disciplined Fist is not applied or is less than 6 seconds from falling off.", MNK.JobID, 0, "", "I've had it with these MF snakes on this MF plane!")]
         MnkTwinSnakesFeature = 9011,
 
         [ConflictingCombos(MnkBasicComboPlus)]
         [CustomComboInfo("Basic Rotation", "Basic Monk Combo on one button", MNK.JobID, 0, "", "I presses the buttons, I does the deeps")]
         MnkBasicCombo = 9002,
 
-        [CustomComboInfo("Perfect Balance Feature", "Perfect Balance becomes Masterful Blitz while you have 3 Beast Chakra.", MNK.JobID, 0, "", "They say life is like walking a tightrope...")]
+        [CustomComboInfo("震脚 Feature", "震脚 becomes Masterful Blitz while you have 3 Beast Chakra.", MNK.JobID, 0, "", "They say life is like walking a tightrope...")]
         MonkPerfectBalanceFeature = 9003,
 
-        [CustomComboInfo("Bootshine Balance Feature", "Replaces Dragon Kick with Masterful Blitz if you have 3 Beast Chakra.", MNK.JobID, 0, "The tin", "Does what it says on the tin")]
+        [CustomComboInfo("连击 Balance Feature", "Replaces 双龙脚 with Masterful Blitz if you have 3 Beast Chakra.", MNK.JobID, 0, "The tin", "Does what it says on the tin")]
         MnkBootshineBalanceFeature = 9004,
 
-        [CustomComboInfo("Howling Fist/Meditation Feature", "Replaces Howling Fist/Enlightenment with Meditation when the Fifth Chakra is not open.", MNK.JobID, 0, "", "Imagine using your fist to scream at someone. Welcome to MNK!\nEnjoy your stay.")]
+        [CustomComboInfo("Howling Fist/斗气 Feature", "Replaces Howling Fist/Enlightenment with 斗气 when the Fifth Chakra is not open.", MNK.JobID, 0, "", "Imagine using your fist to scream at someone. Welcome to MNK!\nEnjoy your stay.")]
         MonkHowlingFistMeditationFeature = 9005,
 
         [ConflictingCombos(MnkBasicCombo)]
         [CustomComboInfo("Basic Rotation Plus", "Basic Monk Combo on one button Plus (Only for Testing)", MNK.JobID, 0, "", "They call it 'basic' for a reason, you donkey")]
         MnkBasicComboPlus = 9006,
 
-        [CustomComboInfo("Perfect Balance Feature Plus", "All of the (Optimal?) Blitz combos on Masterful Blitz when Perfect Balance Is Active", MNK.JobID, 0, "", "Try not to fall over, eh")]
+        [CustomComboInfo("震脚 Feature Plus", "All of the (Optimal?) Blitz combos on Masterful Blitz when 震脚 Is Active", MNK.JobID, 0, "", "Try not to fall over, eh")]
         MnkPerfectBalancePlus = 9007,
 
         [ParentCombo(MnkBasicComboPlus)]
-        [CustomComboInfo("Masterful Blitz to Main Combo", "Adds all of (Optimal?) Blitz combos and Masterful Blitz on Main Combo", MNK.JobID, 0, "", "It's maths, but for your Single Target combo!")]
+        [CustomComboInfo("必杀技 to Main Combo", "Adds all of (Optimal?) Blitz combos and 必杀技 on Main Combo", MNK.JobID, 0, "", "It's maths, but for your Single Target combo!")]
         MonkMasterfullBlizOnMainCombo = 9008,
 
         [ParentCombo(MnkAoECombo)]
-        [CustomComboInfo("Masterful Blitz to AoE Combo", "Adds all of (Optimal?) Blitz combos and Masterful Blitz on AoE Combo.", MNK.JobID, 0, "", "It's maths, but for your AoE combo!")]
+        [CustomComboInfo("必杀技 to AoE Combo", "Adds all of (Optimal?) Blitz combos and 必杀技 on AoE Combo.", MNK.JobID, 0, "", "It's maths, but for your AoE combo!")]
         MonkMasterfullBlizOnAoECombo = 9009,
 
         [CustomComboInfo("Forbidden Chakra Feature", "Adds Forbidden Chakra/Enlightement to the Main/AoE feature combo. Testing Only for now!", MNK.JobID, 0, "But, wait!", "Mom said no! It's forbidden!")]
         MonkForbiddenChakraFeature = 9010,
 
-        [CustomComboInfo("Riddle of Fire/Brotherhood Feature", "Replaces Riddle of Fire with Brotherhood when Riddle of Fire is on cooldown.", MNK.JobID, 0, "", "Riddle me this, brotha'")]
+        [CustomComboInfo("Riddle of 火炎/Brotherhood Feature", "Replaces Riddle of 火炎 with Brotherhood when Riddle of 火炎 is on cooldown.", MNK.JobID, 0, "", "Riddle me this, brotha'")]
         MnkRiddleOfFireBrotherhoodFeature = 9012,
 
         [ParentCombo(MnkBasicComboPlus)]
-        [CustomComboInfo("Damage Buffs to Main Combo Feature", "Places Riddle of Fire and Brotherhood onto main combo when Perfect Balance is up.", MNK.JobID, 0, "", "Been passed on for dance partner again? Don't worry, you have some buffs of your own.")]
+        [CustomComboInfo("Damage Buffs to Main Combo Feature", "Places Riddle of Fire and Brotherhood onto main combo when 震脚 is up.", MNK.JobID, 0, "", "Been passed on for dance partner again? Don't worry, you have some buffs of your own.")]
         MnkMainComboBuffsFeature = 9013,
 
         [ParentCombo(MnkBasicComboPlus)]
-        [CustomComboInfo("Riddle of Wind Main Combo Feature", "Places Riddle of Wind onto main combo after using Twin Snakes.", MNK.JobID, 0, "", "Easy, breezy.")]
+        [CustomComboInfo("疾风极意 Main Combo Feature", "Places Riddle of Wind onto main combo after using 双掌打.", MNK.JobID, 0, "", "Easy, breezy.")]
         MnkRiddleOfWindFeature = 9014,
 
         #endregion
@@ -1201,63 +1062,63 @@ namespace XIVSlothComboPlugin
         #region NINJA
 
         [ConflictingCombos(NinSimpleSingleTarget)]
-        [CustomComboInfo("Armor Crush Combo", "Replace Armor Crush with its combo chain.", NIN.JobID, 0, "One, Two, Three", "It's a Ninja's life for me")]
+        [CustomComboInfo("强甲破点突 Combo", "Replace 强甲破点突 with its combo chain.", NIN.JobID, 0, "One, Two, Three", "It's a Ninja's life for me")]
         NinjaArmorCrushCombo = 10000,
 
         [ConflictingCombos(NinSimpleSingleTarget)]
-        [CustomComboInfo("Aeolian Edge Combo", "Replace Aeolian Edge with its combo chain.", NIN.JobID, 0, "Edgy Edge Combo", "Knife go stab")]
+        [CustomComboInfo("旋风刃 Combo", "Replace 旋风刃 with its combo chain.", NIN.JobID, 0, "Edgy Edge Combo", "Knife go stab")]
         NinjaAeolianEdgeCombo = 10001,
 
-        //[CustomComboInfo("Simple AoE", "Replaces Death Blossom with the AoE rotation.", NIN.JobID)]
+        //[CustomComboInfo("Simple AoE", "Replaces 血雨飞花 with the AoE rotation.", NIN.JobID)]
         //NinjaHakkeMujinsatsuCombo = 10002,
 
-        //[CustomComboInfo("Dream to Assassinate", "Replace Dream Within a Dream with Assassinate when Assassinate Ready.", NIN.JobID)]
+        //[CustomComboInfo("Dream to 断绝", "Replace Dream Within a Dream with 断绝 when 断绝 Ready.", NIN.JobID)]
         //NinjaAssassinateFeature = 10003,
 
-        [CustomComboInfo("Kassatsu to Trick", "Replaces Kassatsu with Trick Attack while Suiton or Hidden is up.\nCooldown tracking plugin recommended.", NIN.JobID, 0, "Katsu Curry to Trick", "This is how we eat at a restaurant and don't pay the bill.\nRUN!")]
+        [CustomComboInfo("生杀予夺 to Trick", "Replaces Kassatsu with 攻其不备 while Suiton or Hidden is up.\nCooldown tracking plugin recommended.", NIN.JobID, 0, "Katsu Curry to Trick", "This is how we eat at a restaurant and don't pay the bill.\nRUN!")]
         NinjaKassatsuTrickFeature = 10004,
 
-        [CustomComboInfo("Ten Chi Jin to Meisui", "Replaces Ten Chi Jin (the move) with Meisui while Suiton is up.\nCooldown tracking plugin recommended.", NIN.JobID, 0, "Ten Chin Scratches to Chop-Suey", "Does something, probably.\nHow do you deal with all these attack names?")]
+        [CustomComboInfo("天之印 Chi Jin to Meisui", "Replaces 天之印 Chi Jin (the move) with Meisui while Suiton is up.\nCooldown tracking plugin recommended.", NIN.JobID, 0, "天之印 Chin Scratches to Chop-Suey", "Does something, probably.\nHow do you deal with all these attack names?")]
         NinjaTCJMeisuiFeature = 10005,
 
-        [CustomComboInfo("Kassatsu Chi/Jin Feature", "Replaces Chi with Jin while Kassatsu is up if you have Enhanced Kassatsu.", NIN.JobID, 0, "", "Swaps your Katsu curry with a Chi Chin-scratch.")]
+        [CustomComboInfo("Kassatsu 地之印/Jin Feature", "Replaces 地之印 with Jin while Kassatsu is up if you have Enhanced Kassatsu.", NIN.JobID, 0, "", "Swaps your Katsu curry with a 地之印 地之印n-scratch.")]
         NinjaKassatsuChiJinFeature = 10006,
 
-        [CustomComboInfo("Hide to Mug", "Replaces Hide with Mug while in combat.", NIN.JobID, 0, "Stand and Deliver", "John Cena is a thief, now?")]
+        [CustomComboInfo("隐遁 to Mug", "Replaces 隐遁 with Mug while in combat.", NIN.JobID, 0, "Stand and Deliver", "John Cena is a thief, now?")]
         NinjaHideMugFeature = 10007,
 
-        [CustomComboInfo("Aeolian to Ninjutsu Feature", "Replaces Aeolian Edge (combo) with Ninjutsu if any Mudra are used.", NIN.JobID, 0, "Hand signs and all that", "Do the Naruto thing, I think.\nIdk I don't watch anime, sorry")]
+        [CustomComboInfo("Aeolian to 忍术 Feature", "Replaces 旋风刃 (combo) with Ninjutsu if any Mudra are used.", NIN.JobID, 0, "Hand signs and all that", "Do the Naruto thing, I think.\nIdk I don't watch anime, sorry")]
         NinjaNinjutsuFeature = 10008,
 
         [ConflictingCombos(NinSimpleSingleTarget)]
-        [CustomComboInfo("GCDs to Ninjutsu Feature", "Every GCD combo becomes Ninjutsu while Mudras are being used.", NIN.JobID, 0, "Full-on Sign Language", "NOW you're really communicating with the party.")]
+        [CustomComboInfo("GCDs to 忍术 Feature", "Every GCD combo becomes 忍术 while Mudras are being used.", NIN.JobID, 0, "Full-on Sign Language", "NOW you're really communicating with the party.")]
         NinjaGCDNinjutsuFeature = 10009,
 
-        [CustomComboInfo("Huraijin / Raiju Feature", "Replaces Huraijin with Forked and Fleeting Raiju when available.", NIN.JobID, 0, "Pikachu / Raichu Feature", "Does something? Maybe? Evolutions? Combos? Probably.")]
+        [CustomComboInfo("风来刃 / Raiju Feature", "Replaces Huraijin with Forked and 月影雷兽牙 when available.", NIN.JobID, 0, "Pikachu / Raichu Feature", "Does something? Maybe? Evolutions? Combos? Probably.")]
         NinjaHuraijinRaijuFeature = 10010,
 
         [ParentCombo(NinjaHuraijinRaijuFeature)]
-        [CustomComboInfo("Huraijin / Raiju Feature Option 1", "Replaces Huraijin with Fleeting Raiju when available.", NIN.JobID, 0, "Pikachu / Raichu Option 1", "Does the same thing probably, who knows.")]
+        [CustomComboInfo("风来刃 / Raiju Feature Option 1", "Replaces Huraijin with 月影雷兽牙 when available.", NIN.JobID, 0, "Pikachu / Raichu Option 1", "Does the same thing probably, who knows.")]
         NinjaHuraijinRaijuFeature1 = 10011,
 
         [ParentCombo(NinjaHuraijinRaijuFeature)]
-        [CustomComboInfo("Huraijin / Raiju Feature Option 2", "Replaces Huraijin with Forked Raiju when available.", NIN.JobID, 0, "Pikachu / Raichu Option 2", "What we DO know, is that all NIN mains just slam their heads on the keyboard to do combos, anyway.")]
+        [CustomComboInfo("风来刃 / Raiju Feature Option 2", "Replaces Huraijin with 月影雷兽爪 when available.", NIN.JobID, 0, "Pikachu / Raichu Option 2", "What we DO know, is that all NIN mains just slam their heads on the keyboard to do combos, anyway.")]
         NinjaHuraijinRaijuFeature2 = 10012,
 
         [ParentCombo(NinjaAeolianEdgeCombo)]
-        [CustomComboInfo("Armor Crush Feature", "Adds Armor Crush onto main combo.", NIN.JobID, 0, "", "Act like you can crush armor with your kitchen knives or whatever.")]
+        [CustomComboInfo("强甲破点突 Feature", "Adds 强甲破点突 onto main combo.", NIN.JobID, 0, "", "Act like you can crush armor with your kitchen knives or whatever.")]
         NinjaArmorCrushOnMainCombo = 10013,
 
         [ParentCombo(NinjaAeolianEdgeCombo)]
-        [CustomComboInfo("Raiju Feature", "Adds Fleeting Raiju to Aeolian Edge Combo.", NIN.JobID, 0, "Raichu Feature", "Thunderbolt!")]
+        [CustomComboInfo("Raiju Feature", "Adds Fleeting Raiju to 旋风刃 Combo.", NIN.JobID, 0, "Raichu Feature", "闪雷bolt!")]
         NinjaFleetingRaijuFeature = 10014,
 
         [ParentCombo(NinjaAeolianEdgeCombo)]
-        [CustomComboInfo("HuraijinToMainCombo", "Adds Huraijin to main combo if Huton buff is not present", NIN.JobID, 0, "", "Smells like a hurricane. No idea.")]
+        [CustomComboInfo("风来刃ToMainCombo", "Adds 风来刃 to main combo if Huton buff is not present", NIN.JobID, 0, "", "Smells like a hurricane. No idea.")]
         NinjaHuraijinFeature = 10015,
 
         [ParentCombo(NinjaAeolianEdgeCombo)]
-        [CustomComboInfo("BunshinOnMainCombo", "Adds Bunshin whenever its off cd and you have gauge for it on main combo.", NIN.JobID, 0, "What do you call a Viera that's been cut off at the knees?", "Bun-shin KEK")]
+        [CustomComboInfo("分身之术OnMainCombo", "Adds 分身之术 whenever its off cd and you have gauge for it on main combo.", NIN.JobID, 0, "What do you call a Viera that's been cut off at the knees?", "Bun-shin KEK")]
         NinjaBunshinFeature = 10016,
 
         [ParentCombo(NinjaAeolianEdgeCombo)]
@@ -1265,173 +1126,148 @@ namespace XIVSlothComboPlugin
         NinjaBhavacakraFeature = 10017,
 
         [ParentCombo(NinjaAeolianEdgeCombo)]
-        [CustomComboInfo("Throwing Dagger Uptime Feature", "Replace Aeolian Edge with Throwing Daggers when targer is our of range.", NIN.JobID, 0, "", "Would probably make more sense for NIN to be a Ranged DPS, anyway.")]
+        [CustomComboInfo("飞刀 Uptime Feature", "Replace Aeolian Edge with 飞刀s when targer is our of range.", NIN.JobID, 0, "", "Would probably make more sense for NIN to be a Ranged DPS, anyway.")]
         NinjaRangedUptimeFeature = 10018,
 
         [CustomComboInfo("Simple Mudras", "Simplify the mudra casting to avoid failing.", NIN.JobID, 0, "Simple Murder", "Murder, made simple. For the everyday user.")]
         NinjaSimpleMudras = 10020,
 
         [ParentCombo(NinjaTCJMeisuiFeature)]
-        [CustomComboInfo("Ten Chi Jin Feature", "Turns Ten Chi Jin (the move) into Ten, Chi, and Jin.", NIN.JobID, 0, "", "Does literally nothing. Ever")]
+        [CustomComboInfo("天之印 Chi Jin Feature", "Turns 天之印 Chi Jin (the move) into 天之印, 地之印, and 人之印.", NIN.JobID, 0, "", "Does literally nothing. Ever")]
         NinTCJFeature = 10021,
 
         [ConflictingCombos(NinjaArmorCrushCombo, NinjaAeolianEdgeCombo, NinjaGCDNinjutsuFeature)]
-        [CustomComboInfo("Simple Ninja Single Target", "Turns Spinning Edge into a one-button full single target rotation.\nUses Ninjitsus, applies Trick Attack and uses Armor Crush to upkeep Huton buff.\nConflicts with a lot of features. Please only use this and the AoE version and disable all other Ninja features.", NIN.JobID, 0, "", "")]
+        [CustomComboInfo("Simple Ninja Single Target", "Turns 双刃旋 into a one-button full single target rotation.\nUses Ninjitsus, applies 攻其不备 and uses Armor Crush to upkeep Huton buff.\nConflicts with a lot of features. Please only use this and the AoE version and disable all other Ninja features.", NIN.JobID, 0, "", "")]
         NinSimpleSingleTarget = 10022,
 
-        [CustomComboInfo("Simple Ninja AoE", "Turns Death Blossom into a one-button full AoE rotation.\nApplies Doton but will only use Ninjitsus if under the effect of Kassatsu or have 2 charges to ensure more Doton uptime.", NIN.JobID, 0, "Dote-on AoE", "Uses /dote on every target.")]
+        [CustomComboInfo("Simple Ninja AoE", "Turns 血雨飞花 into a one-button full AoE rotation.\nApplies Doton but will only use Ninjitsus if under the effect of Kassatsu or have 2 charges to ensure more Doton uptime.", NIN.JobID, 0, "Dote-on AoE", "Uses /dote on every target.")]
         NinSimpleAoE = 10023,
 
         [ParentCombo(NinSimpleSingleTarget)]
-        [CustomComboInfo("Include Trick Attack", "Add or disable Trick Attack as part of the feature.", NIN.JobID, 0, "Surprise!", "It's like the Uno Reverse card of XIV!")]
+        [CustomComboInfo("Include 攻其不备", "Add or disable 攻其不备 as part of the feature.", NIN.JobID, 0, "Surprise!", "It's like the Uno Reverse card of XIV!")]
         NinSimpleTrickFeature = 10024,
 
         [ParentCombo(NinjaAeolianEdgeCombo)]
-        [CustomComboInfo("Assassinate/Dream Within a Dream Feature", "Adds Assassinate and Dream Within a Dream to the combo.", NIN.JobID, 0, "Fever Dream", "Frothinig at the mouth")]
+        [CustomComboInfo("断绝/Dream Within a Dream Feature", "Adds 断绝 and Dream Within a Dream to the combo.", NIN.JobID, 0, "Fever Dream", "Frothinig at the mouth")]
         NinAeolianAssassinateFeature = 10025,
 
         [ParentCombo(NinjaAeolianEdgeCombo)]
-        [CustomComboInfo("Mug Feature", "Adds Mug to the combo.", NIN.JobID, 0, "Petty Theft", "Embarrassing.")]
+        [CustomComboInfo("夺取 Feature", "Adds 夺取 to the combo.", NIN.JobID, 0, "Petty Theft", "Embarrassing.")]
         NinAeolianMugFeature = 10026,
 
         [ParentCombo(NinSimpleTrickFeature)]
-        [CustomComboInfo("Kassatsu for Suiton Feature", "Allows the use of Kassatsu to set up Suiton. Suiton is prioritised above Hyosho Ranryu under this effect \nand your trick cooldown window has elapsed.", NIN.JobID)]
+        [CustomComboInfo("生杀予夺 for Suiton Feature", "Allows the use of 生杀予夺 to set up Suiton. Suiton is prioritised above Hyosho Ranryu under this effect \nand your trick cooldown window has elapsed.", NIN.JobID)]
         NinSimpleTrickKassatsuFeature = 10027,
 
         [ParentCombo(NinSimpleAoE)]
-        [CustomComboInfo("Hellfrog Medium Feature", "Adds Hellfrog Medium to the combo if you have Ninki to spend.", NIN.JobID)]
+        [CustomComboInfo("通灵之术·大虾蟆 Feature", "Adds 通灵之术·大虾蟆 to the combo if you have Ninki to spend.", NIN.JobID)]
         NinSimpleHellfrogFeature = 10028,
 
         [ParentCombo(NinSimpleAoE)]
-        [CustomComboInfo("Mudra Feature", "Adds Doton and Katon/Goka Mekkyaku to the combo.", NIN.JobID)]
+        [CustomComboInfo("Mudra Feature", "Adds Doton and Katon/劫火灭却之术 to the combo.", NIN.JobID)]
         NinSimpleAoeMudras = 10029,
 
         [ParentCombo(NinSimpleAoE)]
-        [CustomComboInfo("Bunshin Feature", "Adds Bunshin and Phantom Kamaitachi to the combo.", NIN.JobID)]
+        [CustomComboInfo("分身之术 Feature", "Adds 分身之术 and Phantom Kamaitachi to the combo.", NIN.JobID)]
         NinSimpleAoeBunshin = 10030,
 
         #endregion
         // ====================================================================================
         #region PALADIN
 
-        [CustomComboInfo("Goring Blade Combo", "Replace Goring Blade with its combo chain.", PLD.JobID, 0, "These aren't heals... huh?", "Just take the armour off and don a robe, we all know you're green on the inside.")]
+        [CustomComboInfo("沥血剑 Combo", "Replace 沥血剑 with its combo chain.", PLD.JobID, 0, "These aren't heals... huh?", "Just take the armour off and don a robe, we all know you're green on the inside.")]
         PaladinGoringBladeCombo = 11000,
 
-        [CustomComboInfo("Royal Authority Combo", "All-in-one main combo adds Royal Authority/Rage of Halone.\nToggle all sub-options on to make this a 1 button rotation", PLD.JobID, 0, "", "Lmao, 'Authority'... If you say so, buddy.")]
+        [CustomComboInfo("王权剑 Combo", "Replace 王权剑/战女神之怒 with its combo chain.", PLD.JobID, 0, "", "Lmao, 'Authority'... If you say so, buddy.")]
         PaladinRoyalAuthorityCombo = 11001,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
         [ConflictingCombos(PaladinAtonementTestFeature)]
-        [CustomComboInfo("Atonement Feature", "Replace Royal Authority with Atonement when under the effect of Sword Oath. \nDoes not drop last Atonement stack.", PLD.JobID, 1, "", "Atonement for what? Picking the weakest Tank?")]
+        [CustomComboInfo("赎罪剑 Feature", "Replace 王权剑 with Atonement when under the effect of Sword Oath.", PLD.JobID, 0, "", "赎罪剑 for what? Picking the weakest Tank?")]
         PaladinAtonementFeature = 11002,
 
-        [CustomComboInfo("Prominence Combo", "Replace Prominence with its combo chain.", PLD.JobID, 0, "Promenade feature", "Long walks on the promenade...")]
+        [CustomComboInfo("日珥斩 Combo", "Replace 日珥斩 with its combo chain.", PLD.JobID, 0, "Promenade feature", "Long walks on the promenade...")]
         PaladinProminenceCombo = 11003,
 
-        [ParentCombo(PaladinReqMainComboFeature)]
-        [CustomComboInfo("Holy Spirit Feature", "Replace Royal Authority/Goring Blade combo with Holy Spirit and Prominence combo with Holy Circle while Requiescat is active", PLD.JobID, 0, "Auto-PLD", "Plays the whole job for you.\nJust stand there and take damage, right?")]
+        [ParentCombo(PaladinRoyalAuthorityCombo)]
+        [CustomComboInfo("安魂祈祷 Feature", "Replace 王权剑/沥血剑 combo with 圣灵 and Prominence combo with 圣环 while Requiescat is active \n And when Fight Or Flight is not Active.\nRequires said combos to be activated to work.", PLD.JobID, 0, "Auto-PLD", "出卡s the whole job for you.\nJust stand there and take damage, right?")]
         PaladinRequiescatFeature = 11004,
 
-        [ParentCombo(PaladinReqMainComboFeature)]
-        [CustomComboInfo("Confiteor Combo Feature", "Replace Holy Spirit/Circle with Confiteor when Requiescat is up and MP is under 2000 or only one stack remains \nand adds Faith/Truth/Valor Combo after Confiteor.", PLD.JobID, 0, "Confetti Feature", "This is gonna be a nightmare to clean up.")]
+        [ParentCombo(PaladinRequiescatFeature)]
+        [CustomComboInfo("悔罪 Feature", "Replace 圣灵/圣环 with Confiteor when Requiescat is up and MP is under 2000 or only one stack remains \nand adds Faith/Truth/Valor Combo after Confiteor. \n Requiescat Feature Needs to be Enabled for this one to work!!!  ", PLD.JobID, 0, "Confetti Feature", "This is gonna be a nightmare to clean up.")]
         PaladinConfiteorFeature = 11005,
 
-        [CustomComboInfo("Scornful Spirits Feature", "Replace Spirits Within and Circle of Scorn with whichever is available soonest.", PLD.JobID, 0, "", "Two for the price of one!")]
+        [CustomComboInfo("Scornful Spirits Feature", "Replace Spirits Within and 厄运流转 with whichever is available soonest.", PLD.JobID, 0, "", "Two for the price of one!")]
         PaladinScornfulSpiritsFeature = 11006,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [CustomComboInfo("Goring Blade Feature", "Insert Goring Blade into the main combo when appropriate.", PLD.JobID, 0, "", "")]
+        [CustomComboInfo("沥血剑 Option", "Insert 沥血剑 into the main combo when appropriate.\nRequires 王权剑 Combo", PLD.JobID, 0, "", "")]
         PaladinRoyalGoringOption = 11007,
 
-        [CustomComboInfo("Standalone Holy Spirit Feature", "Replaces Holy Spirit with Confiteor and Confiteor combo", PLD.JobID, 0, "", "It's Christmas already?")]
+        [CustomComboInfo("Standalone 圣灵 Feature", "Replaces 圣灵 with Confiteor and Confiteor combo", PLD.JobID, 0, "", "It's Christmas already?")]
         PaladinStandaloneHolySpiritFeature = 11008,
 
-        [CustomComboInfo("Standalone Holy Circle Feature", "Replaces Holy Circle with Confiteor and Confiteor combo", PLD.JobID, 0, "", "This is MY circle.")]
+        [CustomComboInfo("Standalone 圣环 Feature", "Replaces 圣环 with Confiteor and Confiteor combo", PLD.JobID, 0, "", "This is MY circle.")]
         PaladinStandaloneHolyCircleFeature = 11009,
 
-        [ParentCombo(PaladinRoyalAuthorityCombo)]
         [ConflictingCombos(PaladinInterveneFeatureOption)]
-        [CustomComboInfo("Intervene Feature (All Stacks)", "Adds intervene onto main combo whenever its available (Uses all stacks).", PLD.JobID, 4, "", "It looks like a gap-closer. It smells like a gap-closer...")]
+        [CustomComboInfo("调停 Feature", "Adds intervene onto main combo whenever its available (Uses all stacks).", PLD.JobID, 0, "", "It looks like a gap-closer. It smells like a gap-closer...")]
         PaladinInterveneFeature = 11010,
 
-        [ParentCombo(PaladinRoyalAuthorityCombo)]
         [ConflictingCombos(PaladinInterveneFeature)]
-        [CustomComboInfo("Intervene Feature (Leaves 1 stack)", "Adds intervene onto main combo whenever its available (Leaves 1 stack).", PLD.JobID, 4, "", "It must be a gap-closer!")]
+        [CustomComboInfo("调停 Option", "Adds intervene onto main combo whenever its available (Leaves 1 stack).", PLD.JobID, 0, "", "It must be a gap-closer!")]
         PaladinInterveneFeatureOption = 11011,
 
-        [ParentCombo(PaladinRoyalAuthorityCombo)]
         [ConflictingCombos(PaladinRangedUptimeFeature2)]
-        [CustomComboInfo("Uptime Feature", "Replace Main Combo with Shield Lob when out of range.", PLD.JobID, 4, "", "Don't throw your shield, you're not Captain America.\nJust get close!")]
+        [CustomComboInfo("投盾 Uptime Feature", "Replace 王权剑/战女神之怒 Feature with Shield Lob when out of range.", PLD.JobID, 0, "", "Don't throw your shield, you're not Captain America.\nJust get close!")]
         PaladinRangedUptimeFeature = 11012,
 
         [ParentCombo(PaladinFightOrFlightMainComboFeature)]
-        [ConflictingCombos(PaladinFightOrFlightFeature)]
-        [CustomComboInfo("Fight or Flight", "Adds FoF onto the main combo (Testing).", PLD.JobID, 0, "", "What is this, P3S?")]
+        [ConflictingCombos(PaladinFightOrFlightMainComboFeatureTest)]
+        [CustomComboInfo("FoF Feature", "Adds FoF onto the main combo (Testing).", PLD.JobID, 0, "", "What is this, P3S?")]
         PaladinFightOrFlightMainComboFeature = 11013,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [CustomComboInfo("Requiescat Feature", "Adds Requiescat onto the main combo (Testing).", PLD.JobID, 2, "", "Just defend 4hed")]
+        [CustomComboInfo("Req Feature", "Adds Req onto the main combo (Testing).", PLD.JobID, 0, "", "Just defend 4hed")]
         PaladinReqMainComboFeature = 11014,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [ConflictingCombos(PaladinAtonementFeature/*, SkillCooldownRemaining*/)]
-        [CustomComboInfo("Atonement Drop Feature", "Drops Atonement to prevent Potency loss on lvl 90 rotation.", PLD.JobID, 1, "Anti-Atonement Missile", "Imagine worrying about potency loss when you play a job like this. Couldn't be me!")]
+        [ConflictingCombos(PaladinAtonementFeature, SkillCooldownRemaining)]
+        [CustomComboInfo("赎罪剑 Drop Feature", "Drops 赎罪剑 to prevent Potency loss (Testing).", PLD.JobID, 0, "Anti-Atonement 导弹", "Imagine worrying about potency loss when you play a job like this. Couldn't be me!")]
         PaladinAtonementTestFeature = 11015,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
         [ConflictingCombos(PaladinRangedUptimeFeature)]
-        [CustomComboInfo("Holy Spirit Uptime Feature", "Replace Royal Authority/Rage of Halone Feature with Holy Spirit when out of range.", PLD.JobID, 5, "(Un)Holy Halone", "Who is Halone and why are they so angry?")]
+        [CustomComboInfo("圣灵 Uptime Feature", "Replace 王权剑/战女神之怒 Feature with Holy Spirit when out of range.", PLD.JobID, 0, "(Un)神圣 Halone", "Who is Halone and why are they so angry?")]
         PaladinRangedUptimeFeature2 = 11016,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [CustomComboInfo("Fight or Flight Feature (Custom Values) ", "Adds FoF onto the main combo. You can input your own gcd value (Value represtents percentage of your GCD, 1 = Full GCD).\nIf unsure put low on 0.250 and high on 0.750.", PLD.JobID, 2, "", "This feature hurts my brain. Yours too, no doubt")]
-        PaladinFightOrFlightFeature = 11017,
-
-        //[ParentCombo(PaladinRoyalAuthorityCombo)]
-        //[ConflictingCombos(PaladinAtonementFeature, PaladinAtonementTestFeature)]
-        //[CustomComboInfo("Atonement Drop Feature (Custom Value Test)", "Drops Atonement to prevent Potency loss when FoF is about to expire.", PLD.JobID, 0, "", "Clumsy-ass dropped the Atonement again")]
-        //SkillCooldownRemaining = 11018,
-
-        [CustomComboInfo("Interrupt Feature", "Replaces Shield Bash with Interject when target can be interrupted or Low Blow if it's off cooldown. .", PLD.JobID, 0, "Lower blow", "Blow, but low.")]
-        PaladinInterruptFeature = 11019,
-
-        [ParentCombo(PaladinProminenceCombo)]
-        [CustomComboInfo("Holy Circle Feature", "Replaces AoE combo with Holy Circle when Requiescat is active.", PLD.JobID, 1, "", "")]
-        PaladinHolyCircleFeature = 11020,
-
-        [ParentCombo(PaladinProminenceCombo)]
-        [CustomComboInfo("AoE Confiteor Feature", "Replaces AoE combo with Confiteor when Requiescat is active and appropiate.", PLD.JobID, 2, "", "")]
-        PaladinAoEConfiteorFeature = 11021,
-
-        [ParentCombo(PaladinProminenceCombo)]
-        [CustomComboInfo("AoE Requiescat Feature", "Replaces AoE combo with Requiescat when it's off cooldown.\nProbably not optimal at all.", PLD.JobID, 0, "", "")]
-        PaladinReqAoEComboFeature = 11022,
+        [ConflictingCombos(PaladinRangedUptimeFeature, PaladinFightOrFlightMainComboFeature)]
+        [CustomComboInfo("FoF Feature (Custom Values) ", "Adds FoF onto the main combo (Testing). You can Input your own gcd value (Value represtents percentage of your GCD, 1 = Full GCD).", PLD.JobID, 0, "", "This feature hurts my brain. Yours too, no doubt")]
+        PaladinFightOrFlightMainComboFeatureTest = 11017,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [CustomComboInfo("Expiacion and Circle of Scorn Feature", "Adds Expiacion and Circle of Scorn onto the main combo during weave windows", PLD.JobID, 0, "", "")]
-        PaladinExpiacionScornFeature = 11023,
+        [ConflictingCombos(PaladinAtonementFeature, PaladinAtonementTestFeature)]
+        [CustomComboInfo("赎罪剑 Drop Feature (Custom Value Test)", "Drops 赎罪剑 to prevent Potency loss when FoF is about to expire.", PLD.JobID, 0, "", "Clumsy-ass dropped the 赎罪剑 again")]
+        SkillCooldownRemaining = 11018,
 
-        [ParentCombo(PaladinProminenceCombo)]
-        [CustomComboInfo("AOE Expiacion / Circle of Scorn Feature", "Adds Expiacion and Circle of Scorn onto the main AOE combo during weave windows", PLD.JobID, 0, "", "")]
-        PaladinAoEExpiacionScornFeature = 11024,
-
-        [CustomComboInfo("Double Reprisal Protection", "Prevents the use of Reprisal when target already has the effectby replacing it with Stone", PLD.JobID)]
-        PaladinReprisalProtection = 11030,
+        [CustomComboInfo("Interrupt Feature", "Replaces 盾牌猛击 with Interject when target can be interrupted or Low Blow if it's off cooldown. .", PLD.JobID, 0, "Lower blow", "Blow, but low.")]
+        PaladinInterruptFeature = 11019,
 
         #endregion
         // ====================================================================================
         #region REAPER
 
         // Single Target Combo Section
-        [CustomComboInfo("Slice Combo Feature", "Replace Slice with its combo chain. Features and options inside.\nCollapsing this category disables the features inside.", RPR.JobID, 0, "One, Two, Three", "It's a slicer's life for me~")]
+        [CustomComboInfo("切割 Combo Feature", "Replace 切割 with its combo chain. Features and options inside.\nCollapsing this category disables the features inside.", RPR.JobID, 0, "One, Two, Three", "It's a slicer's life for me~")]
         ReaperSliceCombo = 12000,
 
         [ParentCombo(ReaperSliceCombo)]
-        [CustomComboInfo("Soul Slice Option", "Adds Soul Slice to Slice Combo when Soul Gauge is 50 or less, and target is under Death's Design debuff.", RPR.JobID, 0, "", "FETCH ME THEIR SOULS...")]
+        [CustomComboInfo("Soul 切割 Option", "Adds Soul 切割 to 切割 Combo when Soul Gauge is 50 or less, and target is under Death's Design debuff.", RPR.JobID, 0, "", "FETCH ME THEIR SOULS...")]
         ReaperSoulSliceFeature = 12001,
 
         [ParentCombo(ReaperSliceCombo)]
-        [CustomComboInfo("Shadow Of Death Option", "Adds Shadow of Death to Slice Combo if debuff is not present or is about to expire.", RPR.JobID, 0, "DoB - Damage over Brain", "Already using all of your brain on positionals? Look no further!")]
+        [CustomComboInfo("Shadow Of Death Option", "Adds Shadow of Death to 切割 Combo if debuff is not present or is about to expire.", RPR.JobID, 0, "DoB - Damage over Brain", "Already using all of your brain on positionals? Look no further!")]
         ReaperShadowOfDeathFeature = 12002,
 
         [ParentCombo(ReaperSliceCombo)]
@@ -1439,95 +1275,95 @@ namespace XIVSlothComboPlugin
         ReaperStunOption = 12003,
 
         [ParentCombo(ReaperSliceCombo)]
-        [CustomComboInfo("Combo Heals Option", "Adds Bloodbath and Second Wind to the combo at 65 and 40 percent HP, respectively.", RPR.JobID, 0, "Pretend Play Heals", "Look mom, I'm a White Mage!")]
+        [CustomComboInfo("Combo Heals Option", "Adds Bloodbath and Second Wind to the combo at 65 and 40 percent HP, respectively.", RPR.JobID, 0, "Pretend 出卡 Heals", "Look mom, I'm a White Mage!")]
         ReaperComboHealsOption = 12004,
 
         [ParentCombo(ReaperSliceCombo)]
-        [CustomComboInfo("Ranged Filler Option", "Replaces the combo chain with Harpe (or Harvest Moon, if available) when outside of melee range. Will not override Communio.", RPR.JobID, 0, "Stretch Armstrong", "Can't quite reach? Here.")]
+        [CustomComboInfo("Ranged Filler Option", "Replaces the combo chain with 勾刃 (or Harvest Moon, if available) when outside of melee range. Will not override 团契.", RPR.JobID, 0, "Stretch Armstrong", "Can't quite reach? Here.")]
         ReaperRangedFillerOption = 12005,
 
 
         // AoE Combo Section
-        [CustomComboInfo("Scythe Combo Feature", "Replace Spinning Scythe with its combo chain. Features and options inside.\nCollapsing this category disables the features inside.", RPR.JobID, 0, "One, Two, Th-", "Oh. It's barely a combo!")]
+        [CustomComboInfo("Scythe Combo Feature", "Replace 旋转钐割 with its combo chain. Features and options inside.\nCollapsing this category disables the features inside.", RPR.JobID, 0, "One, Two, Th-", "Oh. It's barely a combo!")]
         ReaperScytheCombo = 12010,
 
         [ParentCombo(ReaperScytheCombo)]
-        [CustomComboInfo("Soul Scythe Option", "Adds Soul Scythe to Scythe Combo when Soul Gauge is 50 or less, and target is under Death's Design debuff.", RPR.JobID, 0, "", "I've made the CoD Zombies joke too many times, but I'm too tired to think of anything else.\nSorry!")]
+        [CustomComboInfo("灵魂钐割 Option", "Adds 灵魂钐割 to Scythe Combo when Soul Gauge is 50 or less, and target is under Death's Design debuff.", RPR.JobID, 0, "", "I've made the CoD Zombies joke too many times, but I'm too tired to think of anything else.\nSorry!")]
         ReaperSoulScytheFeature = 12011,
 
         [ParentCombo(ReaperScytheCombo)]
-        [CustomComboInfo("Whorl Of Death Option", "Adds Whorl of Death to Scythe Combo if debuff is not present or is about to expire.", RPR.JobID, 0, "DoB - Damage over Brains", "Already using all of your brain-cells on positionals? Look no further!")]
+        [CustomComboInfo("Whorl Of Death Option", "Adds 死亡之涡 to Scythe Combo if debuff is not present or is about to expire.", RPR.JobID, 0, "DoB - Damage over Brains", "Already using all of your brain-cells on positionals? Look no further!")]
         ReaperWhorlOfDeathFeature = 12012,
 
 
         // Gibbet, Gallows, Guillotine Combo Section
-        [CustomComboInfo("[Unveiled Features]", "Features and options involving Gibbet, Gallows and Guillotine.\nCollapsing this category does NOT disable the features inside.", RPR.JobID, 0, "Gubbins, Gibberish and Globular", "They all do the same thing, really.")]
+        [CustomComboInfo("[Unveiled Features]", "Features and options involving 绞决, 缢杀 and Guillotine.\nCollapsing this category does NOT disable the features inside.", RPR.JobID, 0, "Gubbins, Gibberish and Globular", "They all do the same thing, really.")]
         ReaperMenuUnveiledFeatures = 12020,
 
         [ParentCombo(ReaperMenuUnveiledFeatures)]
         [ConflictingCombos(ReaperGibbetGallowsInverseFeature)]
-        [CustomComboInfo("Gibbet/Gallows Feature", "Slice and Shadow of Death are replaced with Gibbet and Gallows while Soul Reaver or Shroud is active.", RPR.JobID, 0, "Drown in FX!", "Now with even less buttons!")]
+        [CustomComboInfo("绞决/Gallows Feature", "切割 and Shadow of Death are replaced with Gibbet and Gallows while Soul Reaver or Shroud is active.", RPR.JobID, 0, "Drown in FX!", "Now with even less buttons!")]
         ReaperGibbetGallowsFeature = 12021,
 
         [ParentCombo(ReaperGibbetGallowsFeature)]
-        [CustomComboInfo("Gibbet/Gallows One-Button Option", "Slice is instead replaced with whichever move is procced, and Shadow of Death remains untouched.", RPR.JobID, 0, "Gubbins/Gibberish One-Button Option", "Positionals were SO last patch, anyway.")]
+        [CustomComboInfo("绞决/Gallows One-Button Option", "切割 is instead replaced with whichever move is procced, and 死亡之影 remains untouched.", RPR.JobID, 0, "Gubbins/Gibberish One-Button Option", "Positionals were SO last patch, anyway.")]
         ReaperGibbetGallowsOption = 12022,
 
         [ParentCombo(ReaperMenuUnveiledFeatures)]
         [ConflictingCombos(ReaperGibbetGallowsFeature)]
-        [CustomComboInfo("Gallows/Gibbet (Inverse) Feature - BROKEN (Currently same effect as above)", "Slice and Shadow of Death are replaced with Gallows and Gibbet while Soul Reaver or Shroud is active.\n(Positional replacements swapped)", RPR.JobID, 0, "BoRkEd", "Don't use this bruh, you KNOW it's broken.\nShit the bed!")]
+        [CustomComboInfo("Gallows/绞决 (Inverse) Feature - BROKEN (Currently same effect as above)", "切割 and Shadow of Death are replaced with Gallows and Gibbet while Soul Reaver or Shroud is active.\n(Positional replacements swapped)", RPR.JobID, 0, "BoRkEd", "Don't use this bruh, you KNOW it's broken.\nShit the bed!")]
         ReaperGibbetGallowsInverseFeature = 12023,
 
         [ParentCombo(ReaperMenuUnveiledFeatures)]
-        [CustomComboInfo("Guillotine Feature", "Spinning Scythe's combo gets replaced with Guillotine while Soul Reaver or Shroud is active.", RPR.JobID, 0, "", "As if this job wasn't the easiest Melee already. You're welcome, little sloth.")]
+        [CustomComboInfo("断首 Feature", "旋转钐割's combo gets replaced with Guillotine while Soul Reaver or Shroud is active.", RPR.JobID, 0, "", "As if this job wasn't the easiest Melee already. You're welcome, little sloth.")]
         ReaperGuillotineFeature = 12024,
 
 
         // Blood Stalk, Grim Swathe, Gluttony Combo Section
-        [CustomComboInfo("[Soul Reaver Features]", "Features and options involving Blood Stalk, Grim Swathe and Gluttony.\nCollapsing this category does NOT disable the features inside.", RPR.JobID, 0, "Grass Farmer Features", "oGCDs? You betcha")]
+        [CustomComboInfo("[Soul Reaver Features]", "Features and options involving 隐匿挥割, 束缚挥割 and Gluttony.\nCollapsing this category does NOT disable the features inside.", RPR.JobID, 0, "Grass Farmer Features", "oGCDs? You betcha")]
         ReaperMenuSoulReaverFeatures = 12030,
 
         [ParentCombo(ReaperMenuSoulReaverFeatures)]
         [ConflictingCombos(ReaperBloodStalkComboFeature, ReaperBloodStalkAlternateComboOption, ReaperGrimSwatheComboFeature)]
-        [CustomComboInfo("Blood Stalk/Grim Swathe Feature", "When Gluttony is off-cooldown, Blood Stalk and Grim Swathe will turn into Gluttony.", RPR.JobID, 0, "Buttony", "It's like the normal buttons, but better! Double the fun!")]
+        [CustomComboInfo("隐匿挥割/Grim Swathe Feature", "When 暴食 is off-cooldown, 隐匿挥割 and Grim Swathe will turn into Gluttony.", RPR.JobID, 0, "Buttony", "It's like the normal buttons, but better! Double the fun!")]
         ReaperBloodSwatheFeature = 12031,
 
         [ParentCombo(ReaperMenuSoulReaverFeatures)]
         [ConflictingCombos(ReaperBloodSwatheFeature, ReaperBloodStalkAlternateComboOption)]
-        [CustomComboInfo("Blood Stalk Multi-Combo Feature", "Turns Blood Stalk into Gluttony when off-cooldown and puts Gibbet and Gallows on the same button as Blood Stalk. Also adds Enshrouded Combo.", RPR.JobID, 0, "", "Play the job properly u stinker!")]
+        [CustomComboInfo("隐匿挥割 Multi-Combo Feature", "Turns Blood Stalk into Gluttony when off-cooldown and puts 绞决 and Gallows on the same button as Blood Stalk. Also adds Enshrouded Combo.", RPR.JobID, 0, "", "出卡 the job properly u stinker!")]
         ReaperBloodStalkComboFeature = 12032,
 
         [ParentCombo(ReaperMenuSoulReaverFeatures)]
         [ConflictingCombos(ReaperBloodSwatheFeature, ReaperBloodStalkComboFeature)]
-        [CustomComboInfo("Blood Stalk Multi-Combo Feature Alternative - Same but better (?)", "Turns Blood Stalk into Gluttony when off-cooldown and puts Gibbet and Gallows on the same button as Blood Stalk. Also adds Enshrouded Combo.\n[Seems like the code is more effective in edge cases. Both features need further review.", RPR.JobID, 0, "", "You heard me the first time!")]
+        [CustomComboInfo("隐匿挥割 Multi-Combo Feature Alternative - Same but better (?)", "Turns Blood Stalk into Gluttony when off-cooldown and puts 绞决 and Gallows on the same button as Blood Stalk. Also adds Enshrouded Combo.\n[Seems like the code is more effective in edge cases. Both features need further review.", RPR.JobID, 0, "", "You heard me the first time!")]
         ReaperBloodStalkAlternateComboOption = 12033,
 
         [ParentCombo(ReaperMenuSoulReaverFeatures)]
         [ConflictingCombos(ReaperBloodSwatheFeature)]
-        [CustomComboInfo("Grim Swathe Multi-Combo Feature", "Turns Grim Swathe into Gluttony when off-cooldown and puts Guillotine on the same button as Grim Swathe. Also adds Enshrouded Combo.", RPR.JobID, 0, "", "I SAID - Play the job u stinker!!!!")]
+        [CustomComboInfo("束缚挥割 Multi-Combo Feature", "Turns Grim Swathe into Gluttony when off-cooldown and puts 断首 on the same button as Grim Swathe. Also adds Enshrouded Combo.", RPR.JobID, 0, "", "I SAID - 出卡 the job u stinker!!!!")]
         ReaperGrimSwatheComboFeature = 12034,
 
 
         // Enshroud Combo Section
-        [CustomComboInfo("[Enshroud Features]", "Features and options involving the Enshrouded burst phase.\nCollapsing this category does NOT disable the features inside.", RPR.JobID, 0, "Edgelord mode", "Devil May Cry reboot when?")]
+        [CustomComboInfo("[夜游魂衣 Features]", "Features and options involving the 夜游魂衣ed burst phase.\nCollapsing this category does NOT disable the features inside.", RPR.JobID, 0, "Edgelord mode", "Devil May Cry reboot when?")]
         ReaperMenuEnshroudFeatures = 12040,
 
         [ParentCombo(ReaperMenuEnshroudFeatures)]
-        [CustomComboInfo("Lemure Feature", "When you have two or more stacks of Void Shroud, Lemure Slice replaces Gibbet/Gallows and Lemure Scythe replaces Guillotine.", RPR.JobID, 0, "One-button farming burst", "Who is Lemure and what do they want?")]
+        [CustomComboInfo("Lemure Feature", "When you have two or more stacks of Void Shroud, Lemure 切割 replaces Gibbet/Gallows and Lemure Scythe replaces Guillotine.", RPR.JobID, 0, "One-button farming burst", "Who is Lemure and what do they want?")]
         ReaperLemureFeature = 12041,
 
         [ParentCombo(ReaperMenuEnshroudFeatures)]
-        [CustomComboInfo("Combo Communio Feature", "When one stack of Lemure Shroud remains, Communio replaces Gibbet/Gallows/Guillotine.", RPR.JobID, 0, "", "They say strong communio is the key to a healthy relationship")]
+        [CustomComboInfo("Combo 团契 Feature", "When one stack of Lemure Shroud remains, Communio replaces 绞决/Gallows/Guillotine.", RPR.JobID, 0, "", "They say strong communio is the key to a healthy relationship")]
         ReaperComboCommunioFeature = 12042,
 
         [ParentCombo(ReaperMenuEnshroudFeatures)]
         // [ConflictingCombos(ReaperEnshroudComboFeature)]
-        [CustomComboInfo("Enshroud Communio Feature", "Replace Enshroud with Communio when Enshrouded.", RPR.JobID, 0, "", "Go on, press it as soon as you enter Enshroud.\nI dare you. Dingus.")]
+        [CustomComboInfo("夜游魂衣 Communio Feature", "Replace 夜游魂衣 with Communio when 夜游魂衣ed.", RPR.JobID, 0, "", "Go on, press it as soon as you enter 夜游魂衣.\nI dare you. Dingus.")]
         ReaperEnshroudCommunioFeature = 12043,
 
         // [ParentCombo(ReaperMenuEnshroudFeatures)]
         // [ConflictingCombos(ReaperEnshroudCommunioFeature)]
-        // [CustomComboInfo("Enshroud One-Button Single Target Combo - DOESN'T EXIST YET", "Turns Enshroud into Void/Cross Reaping, weaves Lemure Slice and finishes with Communio.", RPR.JobID)]
+        // [CustomComboInfo("夜游魂衣 One-Button Single Target Combo - DOESN'T EXIST YET", "Turns 夜游魂衣 into Void/Cross Reaping, weaves Lemure 切割 and finishes with Communio.", RPR.JobID)]
         // ReaperEnshroudComboFeature = 12044,
 
 
@@ -1536,27 +1372,27 @@ namespace XIVSlothComboPlugin
         ReaperMenuExtraFeatures = 12050,
 
         [ParentCombo(ReaperMenuExtraFeatures)]
-        [CustomComboInfo("Arcane Circle Harvest Feature", "Replace Arcane Circle with Plentiful Harvest when you have stacks of Immortal Sacrifice.", RPR.JobID, 0, "Farming Simulator 2022", "You might as well buy a tractor at this point")]
+        [CustomComboInfo("神秘环 Harvest Feature", "Replace Arcane Circle with 大丰收 when you have stacks of Immortal Sacrifice.", RPR.JobID, 0, "Farming Simulator 2022", "You might as well buy a tractor at this point")]
         ReaperHarvestFeature = 12051,
 
         [ParentCombo(ReaperMenuExtraFeatures)]
-        [CustomComboInfo("Regress Feature", "Both Hell's Ingress and Hell's Egress turn into Regress when Threshold is active, instead of just the opposite of the one you used.", RPR.JobID, 0, "You're a DRG now, son", "GO WHENCE YOU CAME")]
+        [CustomComboInfo("回退 Feature", "Both 地狱入境 and Hell's Egress turn into Regress when Threshold is active, instead of just the opposite of the one you used.", RPR.JobID, 0, "You're a DRG now, son", "GO WHENCE YOU CAME")]
         ReaperRegressFeature = 12052,
 
         [ParentCombo(ReaperMenuExtraFeatures)]
-        [CustomComboInfo("Harpe Soulsow Feature", "Changes Harpe into Soulsow when you are out of combat or have no target, and are not already under the effect of Soulsow.", RPR.JobID, 0, "", "Gotta have something to do before the pull, right?")]
+        [CustomComboInfo("勾刃 Soulsow Feature", "Changes 勾刃 into Soulsow when you are out of combat or have no target, and are not already under the effect of 播魂种.", RPR.JobID, 0, "", "Gotta have something to do before the pull, right?")]
         ReaperHarpeSoulsowFeature = 12053,
 
         [ParentCombo(ReaperMenuExtraFeatures)]
-        [CustomComboInfo("Harpe Harvest Moon Feature", "Changes Harpe into Harvest Moon when you are in combat with Soulsow active.", RPR.JobID, 0, "Dumb reaper be dumb", "Good luck finding the best place to use this kek")]
+        [CustomComboInfo("勾刃 Harvest Moon Feature", "Changes 勾刃 into Harvest Moon when you are in combat with Soulsow active.", RPR.JobID, 0, "Dumb reaper be dumb", "Good luck finding the best place to use this kek")]
         ReaperHarpeHarvestMoonFeature = 12054,
 
         [ParentCombo(ReaperHarpeHarvestMoonFeature)]
-        [CustomComboInfo("Enhanced Harpe Option", "Prevent Harvest Moon replacing Harpe when Enhanced Harpe is active.\nThis option also affects the Ranged Filler Option for the Slice Combo Feature.", RPR.JobID, 0, "", "Look at me, all SMN-like and that")]
+        [CustomComboInfo("Enhanced 勾刃 Option", "Prevent Harvest Moon replacing Harpe when Enhanced Harpe is active.\nThis option also affects the Ranged Filler Option for the 切割 Combo Feature.", RPR.JobID, 0, "", "Look at me, all SMN-like and that")]
         ReaperHarpeHarvestMoonEnhancedOption = 12055,
 
         [ParentCombo(ReaperHarpeHarvestMoonFeature)]
-        [CustomComboInfo("Combat Harpe Option", "Prevent Harvest Moon replacing Harpe when you are not in combat.\nThis option also affects the Ranged Filler Option for the Slice Combo Feature.", RPR.JobID, 0, "", "OoOoH uNaSpEcTeD dAmAgE")]
+        [CustomComboInfo("Combat 勾刃 Option", "Prevent Harvest Moon replacing Harpe when you are not in combat.\nThis option also affects the Ranged Filler Option for the 切割 Combo Feature.", RPR.JobID, 0, "", "OoOoH uNaSpEcTeD dAmAgE")]
         ReaperHarpeHarvestMoonCombatOption = 12056,
 
         #endregion
@@ -1564,286 +1400,203 @@ namespace XIVSlothComboPlugin
         #region RED MAGE
 
         [ConflictingCombos(RedMageSmartcastAoECombo)]
-        [CustomComboInfo("Red Mage AoE Combo", "Replaces Veraero/Verthunder 2 with Impact when Dualcast or Swiftcast are active.", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("Red Mage AoE Combo", "Replaces Veraero/赤闪雷 2 with Impact when Dualcast or Swiftcast are active.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageAoECombo = 13000,
 
-        [CustomComboInfo("Redoublement combo", "Replaces Redoublement with its combo chain, following enchantment rules.", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("连攻 combo", "Replaces 连攻 with its combo chain, following enchantment rules.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageMeleeCombo = 13001,
 
-        [CustomComboInfo("Redoublement Combo Plus", "Replaces Redoublement with Verflare/Verholy after Enchanted Redoublement, whichever is more appropriate.\nRequires Redoublement Combo.", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("连攻 Combo Plus", "Replaces 连攻 with Verflare/Verholy after Enchanted 连攻, whichever is more appropriate.\nRequires 连攻 Combo.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageMeleeComboPlus = 13002,
 
         [ConflictingCombos(RedMageSmartSingleTargetCombo, RedMageJoltVerprocCombo)]
-        [CustomComboInfo("Verproc into Jolt", "Replaces Verstone/Verfire with Jolt/Scorch when no proc is available.", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("Verproc into 摇荡", "Replaces Verstone/Verfire with 摇荡/Scorch when no proc is available.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageVerprocCombo = 13003,
 
         [ConflictingCombos(RedMageSmartSingleTargetCombo)]
-        [CustomComboInfo("Verproc into Jolt Plus", "Additionally replaces Verstone/Verfire with Veraero/Verthunder if dualcast/swiftcast are up.\nRequires Verproc into Jolt.", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("Verproc into 摇荡 Plus", "Additionally replaces Verstone/Verfire with Veraero/Verthunder if dualcast/swiftcast are up.\nRequires Verproc into 摇荡.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageVerprocComboPlus = 13004,
 
         [ConflictingCombos(RedMageSmartSingleTargetCombo)]
-        [CustomComboInfo("Verproc into Jolt Plus Opener Feature", "Turns Verfire into Verthunder when out of combat.\nRequires Verproc into Jolt Plus.", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("Verproc into 摇荡 Plus Opener Feature", "Turns Verfire into Verthunder when out of combat.\nRequires Verproc into 摇荡 Plus.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageVerprocOpenerFeature = 13005,
 
-        [CustomComboInfo("Resolution Feature", "Adds Resolution finisher to Verthunder/Verareo Combo ", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("Resolution Feature", "Adds Resolution finisher to 赤闪雷/Verareo Combo ", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedmageResolutionFinisher = 13006,
 
-        [CustomComboInfo("Resolution Feature Melee", "Adds Resolution finisher to melee combo ", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("Resolution Feature Melee", "Adds Resolution finisher to melee combo ", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedmageResolutionFinisherMelee = 13007,
 
         [ConflictingCombos(RedMageAoECombo)]
-        [CustomComboInfo("Smart AoE Feature", "Replaces Verthunder II With Veraero II and impact depending on mana", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("Smart AoE Feature", "Replaces 赤闪雷 II With Veraero II and impact depending on mana", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageSmartcastAoECombo = 13008,
 
         [ConflictingCombos(RedMageVerprocComboPlus, RedMageVerprocOpenerFeature, RedMageVerprocCombo, RedMageJoltVerprocCombo)]
-        [CustomComboInfo("Smart Single Target Feature", "Smart Single target feature Credit: PrincessRTFM", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("Smart Single Target Feature", "Smart Single target feature Credit: PrincessRTFM", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageSmartSingleTargetCombo = 13009,
 
-        [CustomComboInfo("oGCD Feature", "Replace Contre Strike and Fleche with whichever is available soonest.", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("oGCD Feature", "Replace Contre Strike and 飞刺 with whichever is available soonest.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageOgcdCombo = 13010,
 
-        [CustomComboInfo("SmartCast Opener Feature", "Verthunder Opener Feature. Allows you to prepull with verthunder and still let the combo balance the mana for you", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("Smart抛竿 Opener Feature", "赤闪雷 Opener Feature. Allows you to prepull with verthunder and still let the combo balance the mana for you", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageVerprocOpenerSmartCastFeature = 13011,
 
         [ParentCombo(RedMageSmartcastAoECombo)]
-        [CustomComboInfo("Red Mage AoE Finisher", "Adds Finishers onto Moulinet and SmartCast AoE Feature.", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("Red Mage AoE Finisher", "Adds Finishers onto Moulinet and Smart抛竿 AoE Feature.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageMeleeAoECombo = 13012,
 
-        [CustomComboInfo("Engagement Feature", "Adds Engagement in all melee combos. (Testing Only!)", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("交剑 Feature", "Adds 交剑 in all melee combos. (Testing Only!)", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageEngagementFeature = 13013,
 
-        [CustomComboInfo("Simple Red Mage Feature Single Target", "Combines Smartcast feature with melee combo on Verstone,Verfire or melee skills (This is not optimal until i find a solution for distance delay)", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("Simple Red Mage Feature Single Target", "Combines Smartcast feature with melee combo on 赤飞石,赤火炎 or melee skills (This is not optimal until i find a solution for distance delay)", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         SimpleRedMage = 13014,
 
-        [CustomComboInfo("Simple Red Mage Feature AoE", "Combines Smartcast AoE feature with melee AoE combo on Verthunder2/Veraero2 (This is not optimal until i find a solution for distance delay)", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("Simple Red Mage Feature AoE", "Combines Smartcast AoE feature with melee AoE combo on 赤闪雷2/Veraero2 (This is not optimal until i find a solution for distance delay)", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         SimpleRedMageAoE = 13015,
 
-        [CustomComboInfo("Corps-A-corps/Displacement Feature", "Corps-A-corps becomes displacement when in melee range", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("Corps-A-corps/移转 Feature", "Corps-A-corps becomes displacement when in melee range", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageMovementFeature = 13016,
 
         [ParentCombo(RedMageOgcdCombo)]
-        [CustomComboInfo("oGCD Feature Everywhere", "Adds oGCD Feature to all other combos", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("oGCD Feature Everywhere", "Adds oGCD Feature to all other combos", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageOgcdComboOnCombos = 13017,
 
         [ParentCombo(SimpleRedMage)]
-        [CustomComboInfo("Verstone/Verfire Activation", "Add Acceleration and Swiftcast to Simple Red Mage to force activation of verstone or verfire effects when necessary.", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("Verstone/赤火炎 Activation", "Add 促进 and Swiftcast to Simple Red Mage to force activation of verstone or verfire effects when necessary.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         SimpleRedMageFishing = 13018,
 
         [ParentCombo(SimpleRedMageFishing)]
-        [CustomComboInfo("Acceleration only", "Only use Acceleration to force verfire or verstone activations.", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("促进 only", "Only use 促进 to force verfire or verstone activations.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         SimpleRedMageAccelOnlyFishing = 13019,
 
         [ParentCombo(SimpleRedMage)]
         [ConflictingCombos(RedMageVerprocOpenerSmartCastFeature)]
-        [CustomComboInfo("Simple opener", "Do the optimal opener. [lv90 only]", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("Simple opener", "Do the optimal opener. [lv90 only]", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         SimpleRedMageOpener = 13020,
 
         [ConflictingCombos(RedMageSmartSingleTargetCombo, RedMageVerprocCombo)]
-        [CustomComboInfo("Jolt into Verproc", "Replaces Jolt with Verstone/Verfire, when proc is available and won't cause severe imbalance", RDM.JobID, 0, "Swiftcast -> Verraise", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("摇荡 into Verproc", "Replaces 摇荡 with Verstone/Verfire, when proc is available and won't cause severe imbalance", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageJoltVerprocCombo = 13021,
 
-        [CustomComboInfo("Lucid Dreaming Feature", "Add Lucid Dreaming to Veraero, Verthunder and Impact when below threshold.", RDM.JobID, 0, "Veraero / Verthunder / Impact -> Lucid Dreaming", "OOM? Git gud.")]
+        [CustomComboInfo("Lucid Dreaming Feature", "Add Lucid Dreaming to 2-sec spells when below threshold.", RDM.JobID, 0, "摇荡 / Verfire / Verstone / Verthunder II / Veraero II -> Lucid Dreaming", "OOM? Git gud.")]
         RedMageLucidOnJolt = 13022,
-
-        [CustomComboInfo("Swiftcast into Verraise Feature", "Changes Swiftcast to Verraise when under the effect of Swiftcast.", RDM.JobID, 0, "Swifty Verraise", "You're panicing right now, aren't you?")]
-        RedMageSwiftVerraise = 13023,
 
         #endregion
         // ====================================================================================
         #region SAGE
 
-        [CustomComboInfo("Soteria into Kardia Feature", "Soteria turns into Kardia when not active or Soteria is on-cooldown.", SGE.JobID, 0, "Spoopy into Kpoopy", "Don't forget your danc- uh, heal partner!")]
+        [CustomComboInfo("Soteria into 心关 Feature", "Soteria turns into 心关 when not active or Soteria is on-cooldown.", SGE.JobID, 0, "Spoopy into Kpoopy", "Don't forget your danc- uh, heal partner!")]
         SageKardiaFeature = 14000,
 
-        [CustomComboInfo("Rhizomata Feature###SGENormal", "Replaces Taurochole, Druochole, Ixochole and Kerachole with Rhizomata when Addersgall is empty.", SGE.JobID, 0, "Rhizomatato", "Can't quite manage that gauge? Neither can we.")]
+        [CustomComboInfo("根素 Feature", "Replaces 白牛清汁, 灵橡清汁, Ixochole and 坚角清汁 with Rhizomata when Addersgall is empty.", SGE.JobID, 0, "根素to", "Can't quite manage that gauge? Neither can we.")]
         SageRhizomataFeature = 14001,
 
-        [CustomComboInfo("Taurochole into Druochole Feature", "Replaces Taurochole with Druochole when Taurochole is on cooldown.", SGE.JobID, 0, "This for that", "They do the same thing, really. If you close your eyes.")]
+        [CustomComboInfo("Taurochole into 灵橡清汁 Feature", "Replaces Taurochole with 灵橡清汁 when Taurochole is on cooldown.", SGE.JobID, 0, "This for that", "They do the same thing, really. If you close your eyes.")]
         SageTauroDruoFeature = 14002,
 
-        [CustomComboInfo("Phlegma into X Feature", "Does nothing on it's own, must choose any/all sub-features!", SGE.JobID, 0, "", "Phlegmaballs.")]
-        SagePhlegmaFeature = 14031,
+        [CustomComboInfo("发炎 into Toxikon Feature", "发炎 turns into Toxikon when you are out of charges and have Addersting.\nTakes priority over the 发炎 into Dyskrasia Feature.", SGE.JobID, 0, "", "Changes 发炎 to Toxikon, purely because the name is awful.")]
+        SagePhlegmaToxikonFeature = 14003,
 
-            [ParentCombo(SagePhlegmaFeature)]
-            [CustomComboInfo("Phlegma into Toxikon Feature", "Phlegma turns into Toxikon when you are out of Phlegma charges and have Addersting.\nTakes priority over the Phlegma into Dyskrasia Feature.", SGE.JobID, 0, "", "Changes Phlegma to Toxikon, purely because the name is awful.")]
-            SagePhlegmaToxikonFeature = 14003,
+        [CustomComboInfo("发炎 into Dyskrasia Feature", "发炎 turns into Dyskrasia when you are out of charges.", SGE.JobID, 0, "", "Again, 发炎 is the worst skill name in the game. GET RID!")]
+        SagePhlegmaDyskrasiaFeature = 14004,
 
-            [ParentCombo(SagePhlegmaFeature)]
-            [CustomComboInfo("Phlegma into Dyskrasia Feature", "Phlegma turns into Dyskrasia when you are out of charges.", SGE.JobID, 0, "", "Again, Phlegma is the worst skill name in the game. GET RID!")]
-            SagePhlegmaDyskrasiaFeature = 14004,
-
-        [CustomComboInfo("Dosis DPS Feature", "Adds Eukrasia and Eukrasian Dosis on one combo button.", SGE.JobID, 0, "", "Oh look, you're basically WHM now!")]
+        [ConflictingCombos(SageDPSFeatureTest)]
+        [CustomComboInfo("注药 DPS Feature", "Adds Eukrasia and Eukrasian 注药 on one combo button.", SGE.JobID, 0, "", "Oh look, you're basically WHM now!")]
         SageDPSFeature = 14005,
 
-            [ParentCombo(SageDPSFeature)]
-            [CustomComboInfo("Fine Tune Dosis", "Input some values to your liking.", SGE.JobID, 0, "", "NERD")]
-            SageDPSFeatureAdvTest = 14009,
-
-            [ParentCombo(SageDPSFeature)]
-            [CustomComboInfo("Lucid Dreaming Option", "Adds Lucid Dreaming into the Dosis DPS feature at slider value or less.", SGE.JobID, 0, "Muh piety", "Never run out of steam!")]
-            SageLucidFeature = 14006,
+        [ParentCombo(SageDPSFeature)]
+        [CustomComboInfo("Lucid Dreaming Option", "Adds Lucid Dreaming into the 注药 DPS feature when you have 8,000 mana or less.", SGE.JobID, 0, "Muh piety", "Never run out of steam!")]
+        SageLucidFeature = 14006,
 
         [ConflictingCombos(SageAlternateEgeiroFeature)]
-        [CustomComboInfo("Swiftcast into Egeiro Feature", "Changes Swiftcast to Egeiro when under the effect of Swiftcast.", SGE.JobID, 0, "Swiftcast to Swiftcast", "GET BACK TO DOING DAMAGE")]
+        [CustomComboInfo("Swiftcast into 复苏 Feature", "Changes Swiftcast to 复苏 when under the effect of Swiftcast.", SGE.JobID, 0, "Swiftcast to Swiftcast", "GET BACK TO DOING DAMAGE")]
         SageEgeiroFeature = 14007,
 
         [ConflictingCombos(SageEgeiroFeature)]
-        [CustomComboInfo("Egeiro into Swiftcast Feature", "Changes Egiero to Swiftcast when Swiftcast is available.", SGE.JobID, 0, "Raise to Raise", "Swaps your raise with WHM's raise.\nDoesn't work any more. You're welcome")]
+        [CustomComboInfo("复苏 into Swiftcast Feature", "Changes Egiero to Swiftcast when Swiftcast is available.", SGE.JobID, 0, "复活 to 复活", "Swaps your raise with WHM's raise.\nDoesn't work any more. You're welcome")]
         SageAlternateEgeiroFeature = 14008,
 
-        [ConflictingCombos(SageRhizomataFeature, SageTauroDruoFeature)]
-        [CustomComboInfo("Sage Single Target Heal Feature", "Changes Diagnosis. You must target a party member (including yourself) for some features to work.", SGE.JobID, 0)]
-        SageSingleTargetHealFeature = 14011,
+        [ConflictingCombos(SageDPSFeature)]
+        [CustomComboInfo("注药 DPS Feature (Testing)", "Identical to the 注药 DPS feature, but you can input some values to your liking.", SGE.JobID, 0, "", "WHM again, but with numbers!")]
+        SageDPSFeatureTest = 14009,
 
-        [ConflictingCombos(SageRhizomataFeature, SageTauroDruoFeature)]
-        [CustomComboInfo("Sage AoE Heal Feature", "Changes Prognosis. Customize your AoE healing to your liking", SGE.JobID, 0)]
-        SageAoEHealFeature = 14012,
+        [ParentCombo(SageDPSFeatureTest)]
+        [CustomComboInfo("Lucid Dreaming Option", "Adds Lucid Dreaming into the 注药 DPS feature (Testing) when you have 8,000 mana or less.", SGE.JobID, 0, "", "Don't worry, we won't let you shit the bed. Back to DPS!")]
+        SageLucidFeatureTest = 14010,
 
-        [ParentCombo(SageSingleTargetHealFeature)]
-        [CustomComboInfo("Apply Kardia", "Applies Kardia to your target if it's not applied to anyone else.", SGE.JobID, 0)]
-        AutoApplyKardia = 14013,
-
-        [ParentCombo(SageSingleTargetHealFeature)]
-        [CustomComboInfo("Eukrasian Diagnosis Feature", "Diagnosis becomes Eukrasian Diagnosis if the shield is not applied to the target.", SGE.JobID, 0)]
-        CustomEukrasianDiagnosisFeature = 14014,
-
-        [ParentCombo(SageSingleTargetHealFeature)]
-        [CustomComboInfo("Custom Soteria Feature", "Applies Soteria when the selected target is at or above the set HP percentage.", SGE.JobID, 0)]
-        CustomSoteriaFeature = 14015,
-        
-        [ParentCombo(SageSingleTargetHealFeature)]
-        [CustomComboInfo("Custom Zoe Feature", "Applies Zoe when the selected target is at or above the set HP percentage.", SGE.JobID, 0)]
-        CustomZoeFeature = 14016,
-
-        [ParentCombo(SageSingleTargetHealFeature)]
-        [CustomComboInfo("Custom Pepsis Feature", "Triggers Pepsis if a shield is present and the selected target is at or above the set HP percentage.", SGE.JobID, 0)]
-        CustomPepsisFeature = 14017,
-
-        [ParentCombo(SageSingleTargetHealFeature)]
-        [CustomComboInfo("Custom Taurochole Feature", "Adds Taurochole when the selected target is at or above the set HP percentage.", SGE.JobID, 0)]
-        CustomTaurocholeFeature = 14018,
-
-        [ParentCombo(SageSingleTargetHealFeature)]
-        [CustomComboInfo("Custom Haima Feature", "Adds Haima when the selected target is at or above the set HP percentage.", SGE.JobID, 0)]
-        CustomHaimaFeature = 14019,
-
-        [ParentCombo(SageSingleTargetHealFeature)]
-        [CustomComboInfo("Custom Rhizomata Feature###SGEST", "Adds Rhizomata when Addersgall is 0###SGEST", SGE.JobID, 0)]
-        RhizomataFeature = 14020,
-        
-        [ParentCombo(SageSingleTargetHealFeature)]
-        [CustomComboInfo("Custom Krasis Feature", "Applies Krasis when the selected target is at or above the set HP percentage.", SGE.JobID, 0)]
-        CustomKrasisFeature = 14021,
-
-        [ParentCombo(SageAoEHealFeature)]
-        [CustomComboInfo("Physis Feature", "Adds Physis.", SGE.JobID, 0)]
-        PhysisFeature = 14022,
-
-        [ParentCombo(SageAoEHealFeature)]
-        [CustomComboInfo("Eukrasian Prognosis Feature", "Prognosis becomes Eukrasian Prognosis if the shield is not applied.", SGE.JobID, 0)]
-        EukrasianPrognosisFeature = 14023,
-
-        [ParentCombo(SageAoEHealFeature)]
-        [CustomComboInfo("Holos Feature", "Adds Holos.", SGE.JobID, 0)]
-        HolosFeature = 14024,
-
-        [ParentCombo(SageAoEHealFeature)]
-        [CustomComboInfo("Panhaima Feature", "Adds Panhaima.", SGE.JobID, 0)]
-        PanhaimaFeature = 14025,
-
-        [ParentCombo(SageAoEHealFeature)]
-        [CustomComboInfo("Pepsis Feature", "Triggers Pepsis if a shield is present.", SGE.JobID, 0)]
-        PepsisFeature = 14026,
-
-        [ParentCombo(SageAoEHealFeature)]
-        [CustomComboInfo("Ixochole Feature", "Adds Ixochole", SGE.JobID, 0)]
-        IxocholeFeature = 14027,
-
-        [ParentCombo(SageAoEHealFeature)]
-        [CustomComboInfo("Kerachole Feature", "Adds Kerachole", SGE.JobID, 0)]
-        KeracholeFeature = 14028,
-
-        [ParentCombo(SageAoEHealFeature)]
-        [CustomComboInfo("Rhizomata Feature###SGEAOE", "Adds Rhizomata when Addersgall is 0###SGEAOE", SGE.JobID, 0)]
-        RhizomataFeatureAoE = 14029,
-
-        [ParentCombo(SageSingleTargetHealFeature)]
-        [CustomComboInfo("Druochole Feature", "Adds Druochole when the selected target is at or above the set HP percentage.", SGE.JobID, 0)]
-        CustomDruocholeFeature = 14030,
-                
         #endregion
         // ====================================================================================
         #region SAMURAI
 
         [ConflictingCombos(SamuraiSimpleSamuraiFeature)]
-        [CustomComboInfo("Yukikaze Combo", "Replace Yukikaze with its combo chain.", SAM.JobID, 0, "Yakuza Combo", "Gang affiliation? Surely not.")]
+        [CustomComboInfo("雪风 Combo", "Replace 雪风 with its combo chain.", SAM.JobID, 0, "Yakuza Combo", "Gang affiliation? Surely not.")]
         SamuraiYukikazeCombo = 15000,
 
         [ConflictingCombos(SamuraiSimpleSamuraiFeature)]
-        [CustomComboInfo("Gekko Combo", "Replace Gekko with its combo chain.", SAM.JobID, 0, "Geico Combo", "Fifteen minutes could save you 15% or more on car insurance!")]
+        [CustomComboInfo("月光 Combo", "Replace 月光 with its combo chain.", SAM.JobID, 0, "Geico Combo", "Fifteen minutes could save you 15% or more on car insurance!")]
         SamuraiGekkoCombo = 15001,
 
         [ConflictingCombos(SamuraiSimpleSamuraiFeature)]
-        [CustomComboInfo("Kasha Combo", "Replace Kasha with its combo chain.", SAM.JobID, 0, "Cashman Combo", "Dolla dolla bill, y'all")]
+        [CustomComboInfo("花车 Combo", "Replace 花车 with its combo chain.", SAM.JobID, 0, "Cashman Combo", "Dolla dolla bill, y'all")]
         SamuraiKashaCombo = 15002,
 
-        [CustomComboInfo("Mangetsu Combo", "Replace Mangetsu with its combo chain.", SAM.JobID, 0, "Mangetout Combo", "EAT IT ALL!")]
+        [CustomComboInfo("满月 Combo", "Replace 满月 with its combo chain.", SAM.JobID, 0, "Mangetout Combo", "EAT IT ALL!")]
         SamuraiMangetsuCombo = 15003,
 
-        [CustomComboInfo("Oka Combo", "Replace Oka with its combo chain.", SAM.JobID, 0, "Okeh Combo", "Okeh")]
+        [CustomComboInfo("樱花 Combo", "Replace 樱花 with its combo chain.", SAM.JobID, 0, "Okeh Combo", "Okeh")]
         SamuraiOkaCombo = 15004,
 
-        [CustomComboInfo("Jinpu/Shifu Feature", "Replace Meikyo Shisui with Jinpu or Shifu depending on what is needed.", SAM.JobID, 0, "Jumpup/Sitdown", "Work those glutes.")]
+        [CustomComboInfo("人之印pu/Shifu Feature", "Replace Meikyo Shisui with 人之印pu or Shifu depending on what is needed.", SAM.JobID, 0, "跳跃up/Sitdown", "Work those glutes.")]
         SamuraiJinpuShifuFeature = 15005,
 
         [ConflictingCombos(SamuraiIaijutsuTsubameGaeshiFeature)]
-        [CustomComboInfo("Tsubame-gaeshi to Iaijutsu", "Replace Tsubame-gaeshi with Iaijutsu when Sen is empty.", SAM.JobID, 0, "", "You don't know the difference between this one and that one?")]
+        [CustomComboInfo("Tsubame-gaeshi to 居合术", "Replace Tsubame-gaeshi with 居合术 when Sen is empty.", SAM.JobID, 0, "", "You don't know the difference between this one and that one?")]
         SamuraiTsubameGaeshiIaijutsuFeature = 15006,
 
         [ConflictingCombos(SamuraiIaijutsuShohaFeature)]
-        [CustomComboInfo("Tsubame-gaeshi to Shoha", "Replace Tsubame-gaeshi with Shoha when meditation is 3.", SAM.JobID, 0, "", "Don't worry, neither do we.")]
+        [CustomComboInfo("燕回返 to Shoha", "Replace 燕回返 with Shoha when meditation is 3.", SAM.JobID, 0, "", "Don't worry, neither do we.")]
         SamuraiTsubameGaeshiShohaFeature = 15007,
 
         [ConflictingCombos(SamuraiTsubameGaeshiIaijutsuFeature)]
-        [CustomComboInfo("Iaijutsu to Tsubame-gaeshi", "Replace Iaijutsu with Tsubame-gaeshi when Sen is not empty.", SAM.JobID, 0, "", "Wait, there's more?")]
+        [CustomComboInfo("居合术 to Tsubame-gaeshi", "Replace 居合术 with Tsubame-gaeshi when Sen is not empty.", SAM.JobID, 0, "", "Wait, there's more?")]
         SamuraiIaijutsuTsubameGaeshiFeature = 15008,
 
         [ConflictingCombos(SamuraiTsubameGaeshiShohaFeature)]
-        [CustomComboInfo("Iaijutsu to Shoha", "Replace Iaijutsu with Shoha when meditation is 3.", SAM.JobID, 0, "", "You WHAT?!")]
+        [CustomComboInfo("居合术 to Shoha", "Replace 居合术 with Shoha when meditation is 3.", SAM.JobID, 0, "", "You WHAT?!")]
         SamuraiIaijutsuShohaFeature = 15009,
 
-        [CustomComboInfo("Shinten to Senei", "Replace Hissatsu: Shinten with Senei when its cooldown is up.", SAM.JobID, 0, "", "Kicks you in the shins if Senei is on cooldown")]
+        [CustomComboInfo("Shinten to Senei", "Replace 必杀剑·震天 with Senei when its cooldown is up.", SAM.JobID, 0, "", "Kicks you in the shins if Senei is on cooldown")]
         SamuraiSeneiFeature = 15010,
 
-        [CustomComboInfo("Shinten to Shoha", "Replace Hissatsu: Shinten with Shoha when Meditation is full.", SAM.JobID, 0, "", "Kicks you in the shins if Shoha is on cooldown")]
+        [CustomComboInfo("Shinten to 照破", "Replace Hissatsu: Shinten with Shoha when 斗气 is full.", SAM.JobID, 0, "", "Kicks you in the shins if 照破 is on cooldown")]
         SamuraiShohaFeature = 15011,
 
-        [CustomComboInfo("Kyuten to Guren", "Replace Hissatsu: Kyuten with Guren when its cooldown is up.", SAM.JobID, 0, "", "Hey Kyutie!")]
+        [CustomComboInfo("Kyuten to Guren", "Replace 必杀剑·九天 with Guren when its cooldown is up.", SAM.JobID, 0, "", "Hey Kyutie!")]
         SamuraiGurenFeature = 15012,
 
-        [CustomComboInfo("Kyuten to Shoha II", "Replace Hissatsu: Kyuten with Shoha II when Meditation is full.", SAM.JobID, 0, "", "Hey Kyutie 2, Electric Boogaloo!")]
+        [CustomComboInfo("Kyuten to 照破 II", "Replace Hissatsu: Kyuten with Shoha II when 斗气 is full.", SAM.JobID, 0, "", "Hey Kyutie 2, Electric Boogaloo!")]
         SamuraiShoha2Feature = 15013,
 
-        [CustomComboInfo("Ikishoten Namikiri Feature", "Replace Ikishoten with Ogi Namikiri and then Kaeshi Namikiri when available.\nIf you have full Meditation stacks, Ikishoten becomes Shoha while you have Ogi Namikiri ready.", SAM.JobID, 0, "Sticky-icky-shoten", "Wait, you guys use meditation?")]
+        [CustomComboInfo("意气冲天 Namikiri Feature", "Replace Ikishoten with Ogi Namikiri and then Kaeshi Namikiri when available.\nIf you have full 斗气 stacks, 意气冲天 becomes Shoha while you have Ogi Namikiri ready.", SAM.JobID, 0, "Sticky-icky-shoten", "Wait, you guys use meditation?")]
         SamuraiIkishotenNamikiriFeature = 15014,
 
         [ConflictingCombos(SamuraiYukikazeCombo, SamuraiGekkoCombo, SamuraiKashaCombo)]
-        [CustomComboInfo("Simple Samurai Single Target", "Every sticker combo on one button (Hakaze).", SAM.JobID, 0, "Sleepy Samurai", "zzzz....wha?")]
+        [CustomComboInfo("Simple Samurai Single Target", "Every sticker combo on one button (刃风).", SAM.JobID, 0, "Sleepy Samurai", "zzzz....wha?")]
         SamuraiSimpleSamuraiFeature = 15015,
 
-        [CustomComboInfo("Simple Samurai AoE", "Both AoE Combos on same button (On Oka). Big thanks to Stein121", SAM.JobID, 0, "", "Hardly any buttons in the first place, but we got you. Lazy-ass.")]
+        [CustomComboInfo("Simple Samurai AoE", "Both AoE Combos on same button (On 樱花). Big thanks to Stein121", SAM.JobID, 0, "", "Hardly any buttons in the first place, but we got you. Lazy-ass.")]
         SamuraiSimpleSamuraiAoECombo = 15016,
 
         [CustomComboInfo("Kaiten Feature Option 1", "Adds Kaiten to Higanbana when it has < 5 seconds remaining.", SAM.JobID, 0, "", "MORE!")]
         SamuraiKaitenFeature1 = 15018,
 
-        [CustomComboInfo("Kaiten Feature Option 2", "Adds Kaiten to Tenka Goken.", SAM.JobID, 0, "", "MORE!!")]
+        [CustomComboInfo("Kaiten Feature Option 2", "Adds Kaiten to 天之印ka Goken.", SAM.JobID, 0, "", "MORE!!")]
         SamuraiKaitenFeature2 = 15019,
 
-        [CustomComboInfo("Kaiten Feature Option 3", "Adds Kaiten to Midare Setsugekka.", SAM.JobID, 0, "", "MORE!!!")]
+        [CustomComboInfo("Kaiten Feature Option 3", "Adds Kaiten to 纷乱雪月花.", SAM.JobID, 0, "", "MORE!!!")]
         SamuraiKaitenFeature3 = 15020,
 
-        [CustomComboInfo("Gyoten Feature", "Hissatsu: Gyoten becomes Yaten/Gyoten depending on the distance from your target.", SAM.JobID, 0, "Gyoza Feature", "Mm, tasty.")]
+        [CustomComboInfo("Gyoten Feature", "必杀剑·晓天 becomes Yaten/Gyoten depending on the distance from your target.", SAM.JobID, 0, "Gyoza Feature", "Mm, tasty.")]
         SamuraiYatenFeature = 15021,
 
         [CustomComboInfo("Kaiten Feature Option 4", "Adds Kaiten when above 20 gauge to OgiNamikiri and OgiNamikiri is ready.", SAM.JobID, 0, "", "MORE!!!!")]
@@ -1865,11 +1618,11 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("Samurai AoE Overcap Feature 2", "Adds Guren>Kyuten onto main AoE combos at 85 or more Kenki", SAM.JobID, 0, "Wink emoji Overcap Feature 4", "Kinkiest")]
         SamuraiOvercapFeatureAoe85 = 15026,
 
-        [CustomComboInfo("Ikishoten on combos", "Adds Ikishoten to most Single Target/AoE combos when at or below 50 Kenki", SAM.JobID, 0, "Gauge pls", "You heard me. Gauge pls")]
+        [CustomComboInfo("意气冲天 on combos", "Adds 意气冲天 to most Single Target/AoE combos when at or below 50 Kenki", SAM.JobID, 0, "Gauge pls", "You heard me. Gauge pls")]
         SamuraiIkishotenonmaincombo = 15027,
 
         [ParentCombo(SamuraiIkishotenNamikiriFeature)]
-        [CustomComboInfo("Kaiten On Ikishoten", "Adds Kaiten to Ikishoten Namikiri Feature", SAM.JobID, 0, "", "MORE!!!!!")]
+        [CustomComboInfo("Kaiten On 意气冲天", "Adds Kaiten to 意气冲天 Namikiri Feature", SAM.JobID, 0, "", "MORE!!!!!")]
         SamuraiIkishotenKaitenNamikiriFeature = 15028,
 
 
@@ -1878,35 +1631,35 @@ namespace XIVSlothComboPlugin
         // ====================================================================================
         #region SCHOLAR
 
-        [CustomComboInfo("Seraph Fey Blessing/Consolation", "Change Fey Blessing into Consolation when Seraph is out.", SCH.JobID, 0, "", "Stupid little fairy thing")]
+        [CustomComboInfo("Seraph 异想的祥光/Consolation", "Change 异想的祥光 into Consolation when Seraph is out.", SCH.JobID, 0, "", "Stupid little fairy thing")]
         ScholarSeraphConsolationFeature = 16000,
 
-        [CustomComboInfo("ED Aetherflow", "Change Energy Drain into Aetherflow when you have no more Aetherflow stacks.", SCH.JobID, 0, "", "Stop trying to pretend you're a SMN. You're not fooling anyone")]
+        [CustomComboInfo("ED 以太超流", "Change Energy Drain into 以太超流 when you have no more 以太超流 stacks.", SCH.JobID, 0, "", "Stop trying to pretend you're a SMN. You're not fooling anyone")]
         ScholarEnergyDrainFeature = 16001,
 
         [ConflictingCombos(SCHAlternateRaiseFeature)]
-        [CustomComboInfo("SCH Raise Feature", "Changes Swiftcast to Resurrection.", SCH.JobID, 0, "", "Well, at least PF wants you for something")]
+        [CustomComboInfo("SCH 复活 Feature", "Changes Swiftcast to 复生.", SCH.JobID, 0, "", "Well, at least PF wants you for something")]
         SchRaiseFeature = 16002,
 
         [ConflictingCombos(SchRaiseFeature)]
-        [CustomComboInfo("SCH Raise Alternate Feature", "Changes Resurrection To Swiftcast when Swiftcast is available.", SCH.JobID, 0, "", "Well, this raise stuff and Peloton Extreme, I guess.")]
+        [CustomComboInfo("SCH 复活 Alternate Feature", "Changes 复生 To Swiftcast when Swiftcast is available.", SCH.JobID, 0, "", "Well, this raise stuff and Peloton Extreme, I guess.")]
         SCHAlternateRaiseFeature = 16008,
 
-        [CustomComboInfo("Fairy Feature", "Change every action that requires a fairy into Summon Eos if you do not have a fairy summoned.", SCH.JobID, 0, "", "You're really gonna forget? Really?")]
+        [CustomComboInfo("Fairy Feature", "Change every action that requires a fairy into 朝日召唤 if you do not have a fairy summoned.", SCH.JobID, 0, "", "You're really gonna forget? Really?")]
         ScholarFairyFeature = 16004,
 
-        [CustomComboInfo("DPS Feature", "Adds Bio1/Bio2/Biosys to Broil/Ruin whenever the debuff is not present or about to expire.", SCH.JobID, 0, "", "Pretend something interesting is going on. DPS Routine!")]
+        [CustomComboInfo("DPS Feature", "Adds Bio1/Bio2/Biosys to Broil/毁灭 whenever the debuff is not present or about to expire.", SCH.JobID, 0, "", "Pretend something interesting is going on. DPS Routine!")]
         ScholarDPSFeature = 16005,
 
         [ParentCombo(ScholarDPSFeature)]
-        [CustomComboInfo("DPS Feature Buff Option", "Adds Chain Stratagem to the DPS Feature.", SCH.JobID, 0, "", "Raid buffs for everyone!")]
+        [CustomComboInfo("DPS Feature Buff Option", "Adds 连环计 to the DPS Feature.", SCH.JobID, 0, "", "Raid buffs for everyone!")]
         ScholarDPSFeatureBuffOption = 16006,
 
         [ParentCombo(ScholarDPSFeature)]
         [CustomComboInfo("DPS Feature Lucid Dreaming Option", "Adds Lucid dreaming to the DPS feature when below set MP value.", SCH.JobID, 0, "", "Nobody's perfect. Maybe this'll help")]
         ScholarLucidDPSFeature = 16007,
 
-        [CustomComboInfo("SCH Extra DPS Feature", "Adds Bio DoT on Ruin II. Won't work below level 38", SCH.JobID, 0, "", "People still use Ruin 2? Shouldn't you be healing or something?")]
+        [CustomComboInfo("SCH Extra DPS Feature", "Adds Biolysis on 毁灭 II. Won't work below level 38", SCH.JobID, 0, "", "People still use 毁灭 2? Shouldn't you be healing or something?")]
         SCHDPSAlternateFeature = 16003,
 
         #endregion
@@ -1914,83 +1667,83 @@ namespace XIVSlothComboPlugin
         #region SUMMONER
 
         [ConflictingCombos(SummonerMainComboFeature, SummonerRuinIVMobilityFeature)]
-        [CustomComboInfo("Enable Single Target (Ruin1)", "Enables changing Single-Target Combo (Ruin I).", SMN.JobID, 0, "Ruin 420 Feature", "Ruination is come")]
+        [CustomComboInfo("Enable Single Target (毁灭1)", "Enables changing Single-Target Combo (毁灭 I).", SMN.JobID, 0, "毁灭 420 Feature", "毁灭ation is come")]
         SummonerMainComboFeatureRuin1 = 16999,
 
         [ConflictingCombos(SummonerMainComboFeatureRuin1)]
-        [CustomComboInfo("Enable Single Target (RuinIII)", "Enables changing Single-Target Combo (Ruin III).", SMN.JobID, 0, "Ruin 7 Feature", "Ruination is come... again?")]
+        [CustomComboInfo("Enable Single Target (毁灭III)", "Enables changing Single-Target Combo (毁灭 III).", SMN.JobID, 0, "毁灭 7 Feature", "毁灭ation is come... again?")]
         SummonerMainComboFeature = 17000,
 
         [CustomComboInfo("Enable AOE", "Enables changing AOE Combo (Tri-Disaster)", SMN.JobID, 0, "", "Can't deal with dungeons on your own? Fear not.")]
         SummonerAOEComboFeature = 17001,
 
-        [CustomComboInfo("Single Target Demi Feature", "Replaces Astral Impulse/Fountain of Fire with Enkindle/Deathflare/Rekindle when appropriate.", SMN.JobID, 0, "Demi Dingus Feature", "Can't tell the difference between a Bahamut and a Phoenix?\nWe know.")]
+        [CustomComboInfo("Single Target Demi Feature", "Replaces Astral Impulse/Fountain of 火炎 with Enkindle/Deathflare/Rekindle when appropriate.", SMN.JobID, 0, "Demi Dingus Feature", "Can't tell the difference between a Bahamut and a Phoenix?\nWe know.")]
         SummonerSingleTargetDemiFeature = 17002,
 
         [ParentCombo(SummonerAOEComboFeature)]
-        [CustomComboInfo("AOE Demi Feature", "Replaces Astral Flare/Brand of Purgatory with Enkindle/Deathflare/Rekindle when appropriate.", SMN.JobID, 0, "BRRRR", "Upgrade!")]
+        [CustomComboInfo("AOE Demi Feature", "Replaces Astral 核爆/Brand of Purgatory with Enkindle/Deathflare/Rekindle when appropriate.", SMN.JobID, 0, "BRRRR", "Upgrade!")]
         SummonerAOEDemiFeature = 17003,
 
-        [CustomComboInfo("Egi Attacks Feature", "Replaces RuinI/Ruin III (Depending On Enabled Combo) and Tri-Disaster with Egi attacks. Will not work without enabling Single Target and/or AOE.", SMN.JobID, 0, "Eggy-bread", "No idea when you're in burst phase?\nHint: It's all the time, really")]
+        [CustomComboInfo("Egi Attacks Feature", "Replaces 毁灭I/毁灭 III (Depending On Enabled Combo) and Tri-Disaster with Egi attacks. Will not work without enabling Single Target and/or AOE.", SMN.JobID, 0, "Eggy-bread", "No idea when you're in burst phase?\nHint: It's all the time, really")]
         SummonerEgiAttacksFeature = 17004,
 
-        [CustomComboInfo("Garuda Slipstream Feature", "Adds Slipstream on RuinI/Ruin III/Tri-disaster.", SMN.JobID, 0, "Slipstream", "2 Fast 2 Furious")]
+        [CustomComboInfo("Garuda Slipstream Feature", "Adds Slipstream on 毁灭I/毁灭 III/Tri-disaster.", SMN.JobID, 0, "Slipstream", "2 Fast 2 Furious")]
         SummonerGarudaUniqueFeature = 17005,
 
-        [CustomComboInfo("Ifrit Cyclone Feature", "Adds Crimson Cyclone/Crimson Strike on RuinI/Ruin III/Tri-disaster.", SMN.JobID, 0, "Fists of Fury", "Show MNK how it's done, will ya?")]
+        [CustomComboInfo("Ifrit Cyclone Feature", "Adds Crimson Cyclone/Crimson Strike on 毁灭I/毁灭 III/Tri-disaster.", SMN.JobID, 0, "Fists of Fury", "Show MNK how it's done, will ya?")]
         SummonerIfritUniqueFeature = 17006,
 
-        [CustomComboInfo("Titan Mountain Buster Feature", "Adds Mountain Buster on RuinI/Ruin III/Tri-disaster.", SMN.JobID, 0, "Mountain, BUSTA", "Bring the mountain to Mohammed, as they say")]
+        [CustomComboInfo("Titan 山崩 Feature", "Adds Mountain Buster on 毁灭I/毁灭 III/Tri-disaster.", SMN.JobID, 0, "Mountain, BUSTA", "Bring the mountain to Mohammed, as they say")]
         SummonerTitanUniqueFeature = 17007,
 
-        [CustomComboInfo("ED Fester", "Change Fester into Energy Drain when our of Aetherflow stacks.", SMN.JobID, 0, "Festering", "Festering? Go take a shower, bro")]
+        [CustomComboInfo("ED 溃烂爆发", "Change Fester into Energy Drain when our of 以太超流 stacks.", SMN.JobID, 0, "溃烂爆发ing", "溃烂爆发ing? Go take a shower, bro")]
         SummonerEDFesterCombo = 17008,
 
-        [CustomComboInfo("ES Painflare", "Change Painflare into Energy Siphon when out of Aetherflow stacks.", SMN.JobID, 0, "Old age", "I sometimes get a painflare in my middle-back, too.")]
+        [CustomComboInfo("ES 痛苦核爆", "Change Painflare into Energy Siphon when out of 以太超流 stacks.", SMN.JobID, 0, "Old age", "I sometimes get a painflare in my middle-back, too.")]
         SummonerESPainflareCombo = 17009,
 
 
         // BONUS TWEAKS
-        [CustomComboInfo("Carbuncle Reminder Feature", "Reminds you always to summon Carbuncle by replacing Ruin (Carbuncle Summon Reminder Feature).", SMN.JobID, 0, "Rabbit Reminder", "C'mon. You had ONE job.")]
+        [CustomComboInfo("Carbuncle Reminder Feature", "Reminds you always to summon Carbuncle by replacing 毁灭 (Carbuncle Summon Reminder Feature).", SMN.JobID, 0, "Rabbit Reminder", "C'mon. You had ONE job.")]
         SummonerCarbuncleSummonFeature = 17010,
 
-        [CustomComboInfo("Ruin 4 On Ruin3 Combo Feature", "Adds Ruin4 on main RuinI/RuinIII combo feature when there are currently no summons being active.", SMN.JobID, 0, "Ruin -> Ruin -> Ruin", "Ruin this, ruin that. Can't you see I'm busy ruining the plugin?!")]
+        [CustomComboInfo("毁灭 4 On 毁灭3 Combo Feature", "Adds 毁灭4 on main 毁灭I/毁灭III combo feature when there are currently no summons being active.", SMN.JobID, 0, "毁灭 -> 毁灭 -> 毁灭", "毁灭 this, ruin that. Can't you see I'm busy ruining the plugin?!")]
         SummonerRuin4ToRuin3Feature = 17011,
 
-        [CustomComboInfo("Ruin 4 On Tri-disaster Feature", "Adds Ruin4 on main Tridisaster combo feature when there are currently no summons being active.", SMN.JobID, 0, "", "More Ruin this, more ruin that! Now in sharing size!")]
+        [CustomComboInfo("毁灭 4 On Tri-disaster Feature", "Adds 毁灭4 on main Tridisaster combo feature when there are currently no summons being active.", SMN.JobID, 0, "", "More 毁灭 this, more ruin that! Now in sharing size!")]
         SummonerRuin4ToTridisasterFeature = 17012,
 
         [ParentCombo(SummonerEDFesterCombo)]
-        [CustomComboInfo("Ruin IV Fester/PainFlare Feature", "Change Fester/PainFlare into Ruin IV when out of Aetherflow stacks, ED/ES is on cooldown, and Ruin IV is up.", SMN.JobID, 0, "Festering Painflare", "Just take some Advil for that, or see the doc?")]
+        [CustomComboInfo("Ruin IV Fester/Pain核爆 Feature", "Change Fester/Pain核爆 into Ruin IV when out of Aetherflow stacks, ED/ES is on cooldown, and 毁灭 IV is up.", SMN.JobID, 0, "溃烂爆发ing Painflare", "Just take some Advil for that, or see the doc?")]
         SummonerFesterPainflareRuinFeature = 17013,
 
         [ParentCombo(SummonerEDFesterCombo)]
-        [CustomComboInfo("Lazy Fester Feature", "Adds ED/Fester during (AstralImpulse).\n. Will only ED during Phoenix phase in order to save it Fester for burst in bahamut", SMN.JobID, 0, "I don't read descriptions -", "Why is Fester Not working properly?")]
+        [CustomComboInfo("Lazy 溃烂爆发 Feature", "Adds ED/溃烂爆发 during (AstralImpulse).\n. Will only ED during Phoenix phase in order to save it 溃烂爆发 for burst in bahamut", SMN.JobID, 0, "I don't read descriptions -", "Why is 溃烂爆发 Not working properly?")]
         SummonerLazyFesterFeature = 17014,
 
         [ConflictingCombos(SimpleSummonerOption2)]
-        [CustomComboInfo("One Button Rotation Feature", "Summoner Single Target One Button Rotation (Single Target) on Ruin1/Ruin3.(Titan>Garuda>Ifrit) ", SMN.JobID, 0, "", "We'll play the game for you. Shush, now")]
+        [CustomComboInfo("One Button Rotation Feature", "Summoner Single Target One Button Rotation (Single Target) on 毁灭1/毁灭3.(Titan>Garuda>Ifrit) ", SMN.JobID, 0, "", "We'll play the game for you. Shush, now")]
         SimpleSummoner = 17015,
 
         [CustomComboInfo("One Button AoE Rotation Feature", "Summoner AoE One Button Rotation (AoE) on Tridisaster", SMN.JobID, 0, "", "We'll play the game for you. Shush, now")]
         SimpleAoESummoner = 17016,
 
         [ParentCombo(SimpleSummoner)]
-        [CustomComboInfo("Searing Light Rotation Option", "Adds Searing Light to Simple Summoner Rotation, Single Target", SMN.JobID, 0, "My eyes!", "I can't see!")]
+        [CustomComboInfo("灼热之光 Rotation Option", "Adds 灼热之光 to Simple Summoner Rotation, Single Target", SMN.JobID, 0, "My eyes!", "I can't see!")]
         BuffOnSimpleSummoner = 17017,
 
         [ParentCombo(SimpleAoESummoner)]
-        [CustomComboInfo("Searing Light AoE Option", "Adds Searing Light to Simple Summoner Rotation, AoE", SMN.JobID, 0, "Our Eyes!", "Yay, we're all legally blind!")]
+        [CustomComboInfo("灼热之光 AoE Option", "Adds 灼热之光 to Simple Summoner Rotation, AoE", SMN.JobID, 0, "Our Eyes!", "Yay, we're all legally blind!")]
         BuffOnSimpleAoESummoner = 17018,
 
-        [CustomComboInfo("DemiReminderFeature", "Adds Only Demi Summons on RuinIII (So you can still choose your Egis but never forget to summon Demis) ", SMN.JobID, 0, "Chad Kroeger Demi Feature", "This is how, you remind me, of what I really am")]
+        [CustomComboInfo("DemiReminderFeature", "Adds Only Demi Summons on 毁灭III (So you can still choose your Egis but never forget to summon Demis) ", SMN.JobID, 0, "Chad Kroeger Demi Feature", "This is how, you remind me, of what I really am")]
         SummonerDemiSummonsFeature = 17019,
 
         [CustomComboInfo("DemiReminderAoEFeature", "Adds Only Demi Summons on TriDisaster (So you can still choose your Egis but never forget to summon Demis) ", SMN.JobID, 0, "Nickelback Demi Feature", "Oh fuck, the whole band is here! Run!")]
         SummonerDemiAoESummonsFeature = 17020,
 
         [ConflictingCombos(SummonerMainComboFeatureRuin1)]
-        [CustomComboInfo("Ruin III mobility", "Allows you to cast Ruin III while Ruin IV is unavailable for mobility reasons. Shows up as Ruin I.\nWill break combos with Ruin I. Might break combos with Ruin IV.", SMN.JobID, 0, "", "Don't you have enough mobility as it is?\nThis isn't Ranged DPS, y'know.")]
+        [CustomComboInfo("毁灭 III mobility", "Allows you to cast 毁灭 III while 毁灭 IV is unavailable for mobility reasons. Shows up as 毁灭 I.\nWill break combos with 毁灭 I. Might break combos with 毁灭 IV.", SMN.JobID, 0, "", "Don't you have enough mobility as it is?\nThis isn't Ranged DPS, y'know.")]
         SummonerRuinIVMobilityFeature = 17021,
 
         [ConflictingCombos(SummonerSwiftcastFeatureIfrit)]
@@ -2005,147 +1758,141 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("One Button Rotation Feature Option2 ", "Same feature as One Button Rotation Feature but Garuda>Titan>Ifrit .", SMN.JobID, 0, "The Egi Shuffle", "You just had to be different, didn't you?")]
         SimpleSummonerOption2 = 17024,
 
-        [CustomComboInfo("Prevent Ruin4 Waste Feature", "Puts Ruin4 Above anything if FurtherRuin about to expire and there is no Demi present.", SMN.JobID, 0, "", "Waste not, want not")]
+        [CustomComboInfo("Prevent 毁灭4 Waste Feature", "Puts 毁灭4 Above anything if Further毁灭 about to expire and there is no Demi present.", SMN.JobID, 0, "", "Waste not, want not")]
         SummonerRuin4WastePrevention = 17025,
 
-        [CustomComboInfo("Rekindle Feature", "Adds Rekindle onto the main Ruin1 or Ruin3 combo. Requires other features to work.", SMN.JobID, 0, "Tinderbox", "Remember making those fires in runescape? Yeah. That.")]
+        [CustomComboInfo("Rekindle Feature", "Adds Rekindle onto the main 毁灭1 or 毁灭3 combo. Requires other features to work.", SMN.JobID, 0, "Tinderbox", "Remember making those fires in runescape? Yeah. That.")]
         SummonerRekindlePhoenix = 17026,
 
         #endregion
         // ====================================================================================
         #region WARRIOR
 
-        [CustomComboInfo("Storms Path Combo", "All in one main combo feature adds Storm's Eye/Path. \nIf all sub options and Fell Cleave/Decimate Options are toggled will turn into a full one button rotation (Simple Warrior)", WAR.JobID, 0, "", "Follow the yellow-brick road.")]
+        [CustomComboInfo("Storms Path Combo", "All in one main combo feature adds 暴风碎/Path", WAR.JobID, 0, "", "Follow the yellow-brick road.")]
         WarriorStormsPathCombo = 18000,
 
         [CustomComboInfo("Storms Eye Combo", "Replace Storms Eye with its combo chain", WAR.JobID, 0, "", "Ow! My fucking eye!")]
         WarriorStormsEyeCombo = 18001,
 
-        [CustomComboInfo("Overpower Combo", "Add combos to Overpower", WAR.JobID, 0, "Underpower", "Bet you wish you had damage like DRK right now, huh")]
+        [CustomComboInfo("超压斧 Combo", "Add combos to 超压斧", WAR.JobID, 0, "Underpower", "Bet you wish you had damage like DRK right now, huh")]
         WarriorMythrilTempestCombo = 18002,
 
-        [ParentCombo(WarriorStormsPathCombo)]
         [CustomComboInfo("Warrior Gauge Overcap Feature", "Replace Single target or AoE combo with gauge spender if you are about to overcap and are before a step of a combo that would generate beast gauge", WAR.JobID, 0, "", "Taming the beast... for now.")]
         WarriorGaugeOvercapFeature = 18003,
 
-        [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("Inner Release Feature", "Replace Single target and AoE combo with Fell Cleave/Decimate during Inner Release", WAR.JobID, 0, "", "Unleash your deepest thoughts and feelings upon the party. They'll love it!")]
+        [CustomComboInfo("Inner 放生 Feature", "Replace Single target and AoE combo with Fell Cleave/Decimate during Inner 放生", WAR.JobID, 0, "", "释放 your deepest thoughts and feelings upon the party. They'll love it!")]
         WarriorInnerReleaseFeature = 18004,
 
-        [CustomComboInfo("Nascent Flash Feature", "Replace Nascent Flash with Raw intuition when level synced below 76", WAR.JobID, 0, "Nasty-ass Flash", "Jeez. Keep it to yourself.")]
+        [CustomComboInfo("原初的勇猛 Feature", "Replace 原初的勇猛 with Raw intuition when level synced below 76", WAR.JobID, 0, "Nasty-ass Flash", "Jeez. Keep it to yourself.")]
         WarriorNascentFlashFeature = 18005,
 
         [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("Upheaval Feature", "Adds Upheaval into maincombo if you have Surging Tempest", WAR.JobID, 0, "", "I use this feature when I'm moving house.")]
+        [CustomComboInfo("动乱 Feature", "Adds 动乱 into maincombo if you have Surging Tempest", WAR.JobID, 0, "", "I use this feature when I'm moving house.")]
         WarriorUpheavalMainComboFeature = 18007,
 
-        [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("Primal Rend Feature", "Replace Inner Beast and Steel Cyclone with Primal Rend when available (Also added onto Main AoE combo)", WAR.JobID, 0, "", "Going back to our roots. Let's get Primal!")]
+        [CustomComboInfo("蛮荒崩裂 Feature", "Replace 原初之魂 and Steel Cyclone with Primal Rend when available (Also added onto Main AoE combo)", WAR.JobID, 0, "", "Going back to our roots. Let's get Primal!")]
         WarriorPrimalRendFeature = 18008,
 
         [ParentCombo(WarriorMythrilTempestCombo)]
-        [CustomComboInfo("Orogeny Feature", "Adds Orogeny onto main AoE combo when you are buffed with Surging Tempest", WAR.JobID, 0, "Orange-y feature", "Orange flavour. Mm.")]
+        [CustomComboInfo("群山隆起 Feature", "Adds 群山隆起 onto main AoE combo when you are buffed with Surging Tempest", WAR.JobID, 0, "Orange-y feature", "Orange flavour. Mm.")]
         WarriorOrogenyFeature = 18009,
 
-        [ParentCombo(WarriorStormsPathCombo)]
         [ConflictingCombos(WarriorSpenderOption)]
-        [CustomComboInfo("Inner Chaos option", "Adds Inner Chaos to Storms Path Combo and Chaotic Cyclone to Overpower Combo if you are buffed with Nascent Chaos.\nRequires Storms Path Combo and Overpower Combo", WAR.JobID, 0, "", "THE EYE OF THE TIGERRRRR")]
+        [CustomComboInfo("狂魂 option", "Adds Inner Chaos to Storms Path Combo and Chaotic Cyclone to 超压斧 Combo if you are buffed with Nascent Chaos.\nRequires Storms Path Combo and 超压斧 Combo", WAR.JobID, 0, "", "THE EYE OF THE TIGERRRRR")]
         WarriorInnerChaosOption = 18010,
 
-        [ParentCombo(WarriorStormsPathCombo)]
         [ConflictingCombos(WarriorInnerChaosOption)]
-        [CustomComboInfo("Fell Cleave/Decimate Option", "Adds Fell Cleave to main combo when gauge is at 50 or more and adds Decimate to the AoE combo .\nWill use Inner Chaos/Chaotic Cyclone if Infuriate is used.\nWill begin pooling resources when Inner Release is under 30s", WAR.JobID, 0, "", "MORE CLEAVE!")]
+        [CustomComboInfo("裂石飞环/Decimate Option", "Adds Fell Cleave to main combo when gauge is at 50 or more and adds Decimate to the AoE combo .\nWill use Inner Chaos/Chaotic Cyclone if 战嚎 is used.", WAR.JobID, 0, "", "MORE CLEAVE!")]
         WarriorSpenderOption = 18011,
 
+//        [ConflictingCombos(WarriorOnslaughtFeatureOption, WarriorOnslaughtFeatureOptionTwo)]
         [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("Onslaught Feature", "Adds Onslaught to Storm's Path feature combo if you are under Surging Tempest Buff", WAR.JobID, 0, "", "Onslaught! Full Power!")]
+        [CustomComboInfo("猛攻 Feature", "Adds Onslaught to 暴风斩 feature combo if you are under Surging Tempest Buff", WAR.JobID, 0, "", "猛攻! Full Power!")]
         WarriorOnslaughtFeature = 18012,
 
-        [CustomComboInfo("Infuriate Feature", "Replaces Infuriate with Fell Cleave when under Inner Release buff.\nReplaces Infuriate with Inner Chaos When under Nascent Chaos buff", WAR.JobID, 0, "Cleave of annoyance", "Infuriating stuff, if you ask me. Truly chaotic.")]
+/*
+        [ConflictingCombos(WarriorOnslaughtFeature, WarriorOnslaughtFeatureOptionTwo)]
+        [ParentCombo(WarriorStormsPathCombo)]
+        [CustomComboInfo("猛攻 Option", "Adds Onslaught to 暴风斩 feature combo if you are under Surging Tempest Buff (Leaves 1 stack)", WAR.JobID, 0, "", "猛攻! But a bit less!")]
+        WarriorOnslaughtFeatureOption = 18013,
+
+        [ConflictingCombos(WarriorOnslaughtFeature, WarriorOnslaughtFeatureOption)]
+        [ParentCombo(WarriorStormsPathCombo)]
+        [CustomComboInfo("猛攻 Option Two", "Adds Onslaught to 暴风斩 feature combo if you are under Surging Tempest Buff (Leaves 2 stacks, only usable at 88 and above)", WAR.JobID, 0, "", "Did you really need three versions of this? Just hit the boss 4hed")]
+        WarriorOnslaughtFeatureOptionTwo = 18014,
+*/
+
+        [CustomComboInfo("战嚎 Feature", "Replaces 战嚎 with Fell Cleave when under Inner Release buff.\nReplaces 战嚎 with Inner Chaos When under Nascent Chaos buff", WAR.JobID, 0, "Cleave of annoyance", "Infuriating stuff, if you ask me. Truly chaotic.")]
         WarriorInfuriateFeature = 18015,
 
         [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("Tomahawk Uptime Feature", "Replace Storm's Path Combo Feature with Tomahawk when you are out of range.", WAR.JobID, 0, "Tomahawk!", "You heard me! Tomahawk! Ka-chow!")]
+        [CustomComboInfo("飞斧 Uptime Feature", "Replace 暴风斩 Combo Feature with Tomahawk when you are out of range.", WAR.JobID, 0, "飞斧!", "You heard me! 飞斧! Ka-chow!")]
         WARRangedUptimeFeature = 18016,
 
         [CustomComboInfo("Interrupt Feature", "Replaces Low Blow with Interject when target can be interrupted .", WAR.JobID, 0, "", "That's a low blow to my bro-bro, bro.")]
         WarriorInterruptFeature = 18017,
 
-        [CustomComboInfo("Infuriate on Fell Cleave / Decimate", "Turns Fell Cleave and Decimate into Infuriate if at or under set rage value", WAR.JobID)]
+        [CustomComboInfo("战嚎 on Fell Cleave / Decimate", "Turns Fell Cleave and Decimate into 战嚎 if at or under set rage value", WAR.JobID)]
         WarriorInfuriateFellCleave = 18018,
-
-        [CustomComboInfo("Primal Rend Option", "Turns Inner Release into Primal Rend on use.", WAR.JobID)]
-        WarriorPrimalRendOnInnerRelease = 18019,
-        
-        [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("Inner Release on Storm's Path", "Adds Inner Release to Storm's Path Combo when Nascent Chaos is not up.", WAR.JobID)]
-        WarriorIRonST = 18020,
-
-        [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("Infuriate on Storm's Path", "Adds Infuriate to Storm's Path Combo when gauge is below 50 and not under Inner Release.", WAR.JobID)]
-        WarriorInfuriateonST = 18021,
-
-        [CustomComboInfo("Double Reprisal Protection", "Prevents the use of Reprisal when target already has the effectby replacing it with Stone", WAR.JobID)]
-        WarriorReprisalProtection = 18030,
 
         #endregion
         // ====================================================================================
         #region WHITE MAGE
 
-        [CustomComboInfo("Solace into Misery", "Replaces Afflatus Solace with Afflatus Misery when Misery is ready to be used", WHM.JobID, 0, "Misery", "I'd be miserable too if this were one of my DPS options.")]
+        [CustomComboInfo("Solace into Misery", "Replaces 安慰之心 with Afflatus Misery when Misery is ready to be used", WHM.JobID, 0, "Misery", "I'd be miserable too if this were one of my DPS options.")]
         WhiteMageSolaceMiseryFeature = 19000,
 
-        [CustomComboInfo("Rapture into Misery", "Replaces Afflatus Rapture with Afflatus Misery when Misery is ready to be used", WHM.JobID, 0, "Misery, but with freinds", "Let's cry together!")]
+        [CustomComboInfo("Rapture into Misery", "Replaces 狂喜之心 with Afflatus Misery when Misery is ready to be used", WHM.JobID, 0, "Misery, but with freinds", "Let's cry together!")]
         WhiteMageRaptureMiseryFeature = 19001,
 
-        [CustomComboInfo("Cure 2 to Cure Level Sync", "Changes Cure 2 to Cure when below level 30 in synced content.", WHM.JobID, 0, "Weenie Cure", "Bet you forgot Cure 1 existed for a sec, huh")]
+        [CustomComboInfo("治疗 2 to 治疗 Level Sync", "Changes 治疗 2 to 治疗 when below level 30 in synced content.", WHM.JobID, 0, "Weenie 治疗", "Bet you forgot 治疗 1 existed for a sec, huh")]
         WhiteMageCureFeature = 19002,
 
-        [CustomComboInfo("Afflatus Feature", "Changes Cure 2 into Afflatus Solace, and Medica into Afflatus Rapture, when lilies are up.", WHM.JobID, 0, "Inflatus Feature", "Pumps you full of air. Boing!")]
+        [CustomComboInfo("Afflatus Feature", "Changes 治疗 2 into Afflatus Solace, and 医治 into Afflatus Rapture, when lilies are up.", WHM.JobID, 0, "Inflatus Feature", "Pumps you full of air. Boing!")]
         WhiteMageAfflatusFeature = 19003,
 
         [ConflictingCombos(WHMAlternativeRaise)]
-        [CustomComboInfo("WHM Raise Feature", "Changes Swiftcast to Raise", WHM.JobID, 0, "What you're really here for", "You're the best at this. You got this.")]
+        [CustomComboInfo("WHM 复活 Feature", "Changes Swiftcast to 复活", WHM.JobID, 0, "What you're really here for", "You're the best at this. You got this.")]
         WHMRaiseFeature = 19004,
 
         [ConflictingCombos(WHMRaiseFeature)]
-        [CustomComboInfo("WHM Raise Feature alternative", "Raise Becomes Swiftcast when Swiftcast is available. Thin air feature also applies to this if enabled.", WHM.JobID, 0, "Look up!", "It's this, but that.")]
+        [CustomComboInfo("WHM 复活 Feature alternative", "复活 Becomes Swiftcast when Swiftcast is available. Thin air feature also applies to this if enabled.", WHM.JobID, 0, "Look up!", "It's this, but that.")]
         WHMAlternativeRaise = 19015,
 
-        [CustomComboInfo("DoT on Glare3 Feature", "Adds DoT on Glare3 when DoT is not preset on about to expire and when you are inCombat (You can still prepull Glare)", WHM.JobID, 0, "Weak", "WHM DPS rotation too much?")]
+        [CustomComboInfo("DoT on 闪耀3 Feature", "Adds DoT on 闪耀3 when DoT is not preset on about to expire and when you are inCombat (You can still prepull 闪耀)", WHM.JobID, 0, "Weak", "WHM DPS rotation too much?")]
         WHMDotMainComboFeature = 19005,
 
         [ParentCombo(WHMDotMainComboFeature)]
         [CustomComboInfo("Lucid Dreaming Feature", "Adds Lucid dreaming to the DPS feature when below set MP value.", WHM.JobID, 0, "Dream within a Dream", "Awake, yet wholly asleep")]
         WHMLucidDreamingFeature = 19006,
 
-        [CustomComboInfo("Medica Feature", "Replaces Medica2 whenever you are under Medica2 regen with Medica1", WHM.JobID, 0, "Big Brain AoE Heals", "God bless us all, eh")]
+        [CustomComboInfo("医治 Feature", "Replaces 医治2 whenever you are under 医治2 regen with 医治1", WHM.JobID, 0, "Big Brain AoE Heals", "God bless us all, eh")]
         WHMMedicaFeature = 19007,
 
         [ParentCombo(WHMDotMainComboFeature)]
-        [CustomComboInfo("Presence Of Mind Feature", "Adds Presence of mind as oGCD onto main DPS Feature(Glare3)", WHM.JobID, 0, "", "This would imply you're actually paying attention.")]
+        [CustomComboInfo("Presence Of Mind Feature", "Adds Presence of mind as oGCD onto main DPS Feature(闪耀3)", WHM.JobID, 0, "", "This would imply you're actually paying attention.")]
         WHMPresenceOfMindFeature = 19008,
 
         [ParentCombo(WHMDotMainComboFeature)]
-        [CustomComboInfo("Assize Feature", "Adds Assize as oGCD onto main DPS Feature(Glare3)", WHM.JobID, 0, "", "Size 'em up, knock 'em down")]
+        [CustomComboInfo("法令 Feature", "Adds 法令 as oGCD onto main DPS Feature(Glare3)", WHM.JobID, 0, "", "Size 'em up, knock 'em down")]
         WHMAssizeFeature = 19009,
 
         [ParentCombo(WHMMedicaFeature)]
-        [CustomComboInfo("Afflatus Misery On Medica Feature", "Adds Afflatus Misery onto the Medica Feature", WHM.JobID, 0, "", "Ah, back to beinig miserable.")]
+        [CustomComboInfo("Afflatus Misery On 医治 Feature", "Adds Afflatus Misery onto the 医治 Feature", WHM.JobID, 0, "", "Ah, back to beinig miserable.")]
         WhiteMageAfflatusMiseryMedicaFeature = 19010,
 
         [ParentCombo(WHMMedicaFeature)]
-        [CustomComboInfo("Afflatus Rapture On Medica Feature", "Adds Afflatus Rapture onto the Medica Feature", WHM.JobID, 0, "CRapture", "The final days are upon us!")]
+        [CustomComboInfo("Afflatus Rapture On 医治 Feature", "Adds Afflatus Rapture onto the 医治 Feature", WHM.JobID, 0, "CRapture", "The final days are upon us!")]
         WhiteMageAfflatusRaptureMedicaFeature = 19011,
 
-        [CustomComboInfo("Afflatus Misery Feature", "Changes Cure 2 into Afflatus Misery.", WHM.JobID, 0, "", "Cures? Who needs 'em?")]
+        [CustomComboInfo("苦难之心 Feature", "Changes 治疗 2 into Afflatus Misery.", WHM.JobID, 0, "", "治疗s? Who needs 'em?")]
         WhiteMageAfflatusMiseryCure2Feature = 19012,
 
         [ParentCombo(WHMDotMainComboFeature)]
-        [CustomComboInfo("Remove DoT From Glare3 Feature", "Removes DoT from DPS feature", WHM.JobID, 0, "I'm an idiot", "Yes, one serving of less DPS, please.")]
+        [CustomComboInfo("Remove DoT From 闪耀3 Feature", "Removes DoT from DPS feature", WHM.JobID, 0, "I'm an idiot", "Yes, one serving of less DPS, please.")]
         WHMRemoveDotFromDPSFeature = 19013,
 
-        [CustomComboInfo("Thin Air Raise Feature", "Adds Thin Air to the WHM Raise Feature/Alternative Feature", WHM.JobID, 0, "", "I can hardly breathe as it is!")]
+        [CustomComboInfo("Thin Air 复活 Feature", "Adds Thin Air to the WHM 复活 Feature/Alternative Feature", WHM.JobID, 0, "", "I can hardly breathe as it is!")]
         WHMThinAirFeature = 19014,
 
         #endregion
@@ -2159,25 +1906,25 @@ namespace XIVSlothComboPlugin
         // ====================================================================================
         #region DOL
 
-        [CustomComboInfo("Eureka Feature", "Replace Ageless Words and Solid Reason with Wise to the World when available.", DOL.JobID)]
+        [CustomComboInfo("Eureka Feature", "Replace 农夫之智 and Solid Reason with Wise to the World when available.", DOL.JobID)]
         DolEurekaFeature = 51001,
 
-        [CustomComboInfo("Cast / Hook Feature", "Replace Cast with Hook when fishing.", DOL.JobID)]
+        [CustomComboInfo("抛竿 / Hook Feature", "Replace 抛竿 with Hook when fishing.", DOL.JobID)]
         DolCastHookFeature = 51002,
 
-        [CustomComboInfo("Cast / Gig Feature", "Replace Cast with Gig when underwater.", DOL.JobID)]
+        [CustomComboInfo("抛竿 / Gig Feature", "Replace 抛竿 with Gig when underwater.", DOL.JobID)]
         DolCastGigFeature = 51003,
 
-        [CustomComboInfo("Surface Slap / Veteran Trade Feature", "Replace Surface Slap with Veteran Trade when underwater.", DOL.JobID)]
+        [CustomComboInfo("拍击水面 / Veteran Trade Feature", "Replace 拍击水面 with Veteran Trade when underwater.", DOL.JobID)]
         DolSurfaceTradeFeature = 51004,
 
-        [CustomComboInfo("Prize Catch / Nature's Bounty Feature", "Replace Prize Catch with Nature's Bounty when underwater.", DOL.JobID)]
+        [CustomComboInfo("Prize Catch / 嘉惠 Feature", "Replace Prize Catch with 嘉惠 when underwater.", DOL.JobID)]
         DolPrizeBountyFeature = 51005,
 
-        [CustomComboInfo("Snagging / Salvage Feature", "Replace Snagging with Salvage when underwater.", DOL.JobID)]
+        [CustomComboInfo("钓组 / Salvage Feature", "Replace 钓组 with Salvage when underwater.", DOL.JobID)]
         DolSnaggingSalvageFeature = 51006,
 
-        [CustomComboInfo("Cast Light / Electric Current Feature", "Replace Cast Light with Electric Current when underwater.", DOL.JobID)]
+        [CustomComboInfo("抛竿 Light / Electric Current Feature", "Replace 抛竿 Light with Electric Current when underwater.", DOL.JobID)]
         DolCastLightElectricCurrentFeature = 51007,
 
         #endregion
@@ -2185,7 +1932,7 @@ namespace XIVSlothComboPlugin
         #region PvP Combos
 
         [SecretCustomCombo]
-        [CustomComboInfo("BurstShotFeature", "Adds Shadowbite/EmpyArrow/PitchPerfect(3stacks)/SideWinder(When Target is low hp)/ApexArrow when gauge is 100 all on one button combo.", BRDPvP.JobID)]
+        [CustomComboInfo("BurstShotFeature", "Adds 影噬箭/EmpyArrow/PitchPerfect(3stacks)/SideWinder(When Target is low hp)/ApexArrow when gauge is 100 all on one button combo.", BRDPvP.JobID)]
         BurstShotFeaturePVP = 80000,
 
         [SecretCustomCombo]
@@ -2193,27 +1940,27 @@ namespace XIVSlothComboPlugin
         SongsFeaturePVP = 80001,
 
         [SecretCustomCombo]
-        [CustomComboInfo("SouleaterComboFeature", "Adds EoS as oGCD onto main combo and Bloodspiller when at 50 gauge or under delirium buff.", DRKPVP.JobID)]
+        [CustomComboInfo("噬魂斩ComboFeature", "Adds EoS as oGCD onto main combo and 血溅 when at 50 gauge or under delirium buff.", DRKPVP.JobID)]
         SouleaterComboFeature = 80002,
 
         [SecretCustomCombo]
-        [CustomComboInfo("StalwartSoulComboFeature", "Adds FoS as oGCD onto main combo and Quietus when at 50 gauge or under delirium buff.", DRKPVP.JobID)]
+        [CustomComboInfo("StalwartSoulComboFeature", "Adds FoS as oGCD onto main combo and 寂灭 when at 50 gauge or under delirium buff.", DRKPVP.JobID)]
         StalwartSoulComboFeature = 80003,
 
         [SecretCustomCombo]
-        [CustomComboInfo("StormsPathComboFeature", "Replaces Storm's Path Combo with FellCleave/IC when at 50 gauge or under IR", WARPVP.JobID)]
+        [CustomComboInfo("StormsPathComboFeature", "Replaces 暴风斩 Combo with FellCleave/IC when at 50 gauge or under IR", WARPVP.JobID)]
         StormsPathComboFeature = 80004,
 
         [SecretCustomCombo]
-        [CustomComboInfo("SteelCycloneFeature", "Replaces Steel Cyclone Combo with Decimate/CC when at 50 gauge or under IR", WARPVP.JobID)]
+        [CustomComboInfo("SteelCycloneFeature", "Replaces 钢铁旋风 Combo with Decimate/CC when at 50 gauge or under IR", WARPVP.JobID)]
         SteelCycloneFeature = 80005,
 
         [SecretCustomCombo]
-        [CustomComboInfo("RoyalAuthorityComboFeature", "Adds HolySpirit To the main combo", PLDPVP.JobID)]
+        [CustomComboInfo("RoyalAuthorityComboFeature", "Adds 神圣Spirit To the main combo", PLDPVP.JobID)]
         RoyalAuthorityComboFeature = 80006,
 
         [SecretCustomCombo]
-        [CustomComboInfo("ProminenceComboFeature", "Adds HolyCircle to the main AoE Combo", PLDPVP.JobID)]
+        [CustomComboInfo("日珥斩ComboFeature", "Adds 神圣Circle to the main AoE Combo", PLDPVP.JobID)]
         ProminenceComboFeature = 80007,
 
         [SecretCustomCombo]
@@ -2221,7 +1968,7 @@ namespace XIVSlothComboPlugin
         SolidBarrelComboFeature = 80008,
 
         [SecretCustomCombo]
-        [CustomComboInfo("DemonSlaughterComboFeature", "Adds BowShock(When target is meleeRange) and Fated Circle at 2 ammo gauge to the main AoE combo", GNBPVP.JobID)]
+        [CustomComboInfo("DemonSlaughterComboFeature", "Adds BowShock(When target is meleeRange) and 命运之环 at 2 ammo gauge to the main AoE combo", GNBPVP.JobID)]
         DemonSlaughterComboFeature = 80009,
 
         [SecretCustomCombo]
@@ -2229,27 +1976,27 @@ namespace XIVSlothComboPlugin
         HeatedCleanShotFeature = 80010,
 
         [SecretCustomCombo]
-        [CustomComboInfo("WildfireBlankFeature", "Adds Blank To Wildfire if you are in melee Range", MCHPVP.JobID)]
+        [CustomComboInfo("野火BlankFeature", "Adds Blank To 野火 if you are in melee Range", MCHPVP.JobID)]
         WildfireBlankFeature = 80011,
 
         [SecretCustomCombo]
-        [CustomComboInfo("InfernalSliceComboFeature", "Adds Gluttony/BloodStalk/Smite/EnshroudComboRotation on InfernalSliceCombo", RPRPVP.JobID)]
+        [CustomComboInfo("Infernal切割ComboFeature", "Adds Gluttony/BloodStalk/Smite/EnshroudComboRotation on Infernal切割Combo", RPRPVP.JobID)]
         InfernalSliceComboFeature = 80012,
 
         [SecretCustomCombo]
-        [CustomComboInfo("NightmareScytheComboFeature", "Adds Gluttony/GrimSwathe/Smite/EnshroudComboRotation on InfernalScytheCombo", RPRPVP.JobID)]
+        [CustomComboInfo("NightmareScytheComboFeature", "Adds 暴食/GrimSwathe/Smite/EnshroudComboRotation on InfernalScytheCombo", RPRPVP.JobID)]
         NightmareScytheComboFeature = 80013,
 
         [SecretCustomCombo]
-        [CustomComboInfo("NinjaAeolianEdgePvpCombo", "Adds Cha/Assassinate/Smite on AeolianEdge combo", NINPVP.JobID)]
+        [CustomComboInfo("NinjaAeolianEdgePvpCombo", "Adds Cha/断绝/Smite on AeolianEdge combo", NINPVP.JobID)]
         NinjaAeolianEdgePvpCombo = 80014,
 
         [SecretCustomCombo]
-        [CustomComboInfo("MnkBootshinePvPFeature", "Adds Axekick/Smite/TornadoKick on main combo", MNKPVP.JobID)]
+        [CustomComboInfo("Mnk连击PvPFeature", "Adds Axekick/Smite/TornadoKick on main combo", MNKPVP.JobID)]
         MnkBootshinePvPFeature = 80015,
 
         [SecretCustomCombo]
-        [CustomComboInfo("BlackEnochianPVPFeature", "Enochian Stance Switcher", BLMPVP.JobID)]
+        [CustomComboInfo("Black天语PVPFeature", "天语 Stance Switcher", BLMPVP.JobID)]
         BlackEnochianPVPFeature = 80016,
 
 
