@@ -3,3 +3,4 @@
 ### 来点好兄弟一起汉化
 ### 使用：
 ##  https://raw.githubusercontent.com/44451516/XIVSlothCombo/CN/release/pluginmaster.json
+占星汉化：https://github.com/Nik-Potokar/XIVSlothCombo/blob/2eefaaf3bef73416f6778b7c4ea36d365dc32562/XIVSlothCombo/CustomComboPreset-cn.cs
