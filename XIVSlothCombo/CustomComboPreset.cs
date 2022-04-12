@@ -197,36 +197,36 @@ namespace XIVSlothComboPlugin
         #region BLACK MAGE
 
         [ConflictingCombos(BlackSimpleFeature)]
-        [CustomComboInfo("天语 Stance Switcher ++", "Change Scathe to 火炎 4 or Blizzard 4 depending on stance.\nScathe becomes all in one rotation.\nIf Thunder Feature is turned on it also adds Thunder3 proces onto all in one combo when DoT is about to expire or dosen't exist\nThis REQUIRES other features to be turned on!!!", BLM.JobID, 0, "BrainLess Mage", "One button, BAYBEE!")]
+        [CustomComboInfo("天语转换", "基于零极冰或星极火时，自动将崩溃更改为火4或冰4。\n崩溃一键循环。\n如果雷dot被启用，同样会在DOT不存在或即将消失时，自动转换为雷3。\n这需要其他功能勾选启用！！！", BLM.JobID, 0, "嗨魔", "一键！")]
         BlackEnochianFeature = 2000,
 
-        [CustomComboInfo("Umbral Soul/星灵移位 Switcher", "Change 星灵移位 into Umbral Soul when Umbral Soul is usable.", BLM.JobID, 0, "Eh? Huh?", "Just does BLM things. Probably.")]
+        [CustomComboInfo("灵极魂/星灵移位切换", "当灵极魂可用时，自动将星灵移位替换为灵极魂。", BLM.JobID, 0, "这啥啊？", "大约就是干好黑魔自己")]
         BlackManaFeature = 2001,
 
-        [CustomComboInfo("(Between the) 黑魔纹", "Change 黑魔纹 into BTL when 黑魔纹 is active.", BLM.JobID, 0, "BLT Sandwich feature", "Look between, and you shall find")]
+        [CustomComboInfo("魔纹步", "在黑魔纹激活时，自动将黑魔纹替换为魔纹步。", BLM.JobID, 0, "黑魔坟", "黑魔呢？黑魔纹里躺着呢！")]
         BlackLeyLinesFeature = 2002,
 
         [ParentCombo(BlackEnochianFeature)]
-        [CustomComboInfo("冰结 1/2/3 Feature", "冰结 1 becomes 冰结 3 when out of Umbral Ice. Freeze becomes 冰结 2 when synced.", BLM.JobID, 0, "地之印lly boi", "地之印ll out, for real. It's sleepy sloth time")]
+        [CustomComboInfo("冰1/2/3", "灵极冰状态消失时，自动替换冰1为冰3。 在等级同步时，自动替换冰2为冰1", BLM.JobID, 0, "冷酷boy", "冷静下来，乖宝，现在该睡觉了")]
         BlackBlizzardFeature = 2003,
 
         [ConflictingCombos(BlackEnochianFeature, BlackSimpleFeature)]
-        [CustomComboInfo("崩溃/Xenoglossy Feature", "崩溃 becomes Xenoglossy when available.", BLM.JobID, 0, "Glossy paint", "So shiny, so glossy...")]
+        [CustomComboInfo("崩溃/异言", "当异言可用时自动替换崩溃为异言", BLM.JobID, 0, "Glossy paint", "So shiny, so glossy...")]
         BlackScatheFeature = 2004,
 
         [ParentCombo(BlackEnochianFeature)]
-        [CustomComboInfo("火炎 1/3", "火炎 1 becomes 火炎 3 outside of Astral 火炎, OR when 火炎starter proc is up.", BLM.JobID, 0, "Burna boi", "It's getting hot in here...")]
+        [CustomComboInfo("火1/3", "当星极火状态消失或火苗状态消失时，自动替换火1为火3。", BLM.JobID, 0, "炽热boy", "这里要烧起来啦！")]
         BlackFire13Feature = 2005,
 
         [ParentCombo(BlackEnochianFeature)]
-        [CustomComboInfo("闪雷", "Thunder 1/3 replaces Enochian/火炎 4/Blizzard 4 on Enochian switcher.\n Occurs when Thundercloud is up and either\n- Thundercloud buff on you is about to run out, or\n- 闪雷 debuff on your CURRENT target is about to run out\nAssuming it won't interrupt timer upkeep.\nEnochian Stance Switcher must be active.", BLM.JobID, 0, "Plug Socket Mode", "Forks at the ready!")]
+        [CustomComboInfo("雷DOT", "在天语转换中启用自动替换火4/冰4为雷1/3。\n 出现了以下两种情况时，才会激活\n- 你身上的雷云BUFF马上要超时，或\n- 你目标身上的雷属性DEFUFF马上要消失\n假设它不会中断BUFF计时器。\n天语转换必须处于激活状态", BLM.JobID, 0, "满电状态", "雷雨招来！")]
         BlackThunderFeature = 2006,
 
         [ParentCombo(BlackEnochianFeature)]
-        [CustomComboInfo("绝望 Feature", "Despair replaces 火炎 4 when below 2400 MP.\nEnochian Stance Switcher must be active.", BLM.JobID, 0, "My MP!", "The horror! The despair!")]
+        [CustomComboInfo("绝望", "当你MP低于2400时，自动替换火4为绝望。\n天语转换必须被激活。", BLM.JobID, 0, "我蓝呢！？", "一切艺术都是派大星！！！")]
         BlackDespairFeature = 2007,
 
-        [CustomComboInfo("AoE Combo Feature", "One Button AoE Feature that adds whole AoE rotation onto FLARE (TESTING ONLY!!!)", BLM.JobID, 0, "Dungeon Tesla Mode", "Asleep at the wheel? We've got you!")]
+        [CustomComboInfo("AOE连击", "将AOE连击置于核爆键上（仅供测试！）", BLM.JobID, 0, "惠惠模式", "黑より黑く 闇より暗き漆黑に\n我が深紅の混淆を望みたもう\n覺醒のとき來たれり\n無謬の境界に落ちし理\n無行の歪みとなりて\n現出せよ！\nExplosion！")]
         BlackAoEComboFeature = 2008,
 
         [ParentCombo(BlackEnochianFeature)]
