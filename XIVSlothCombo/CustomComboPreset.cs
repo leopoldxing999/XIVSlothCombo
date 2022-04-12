@@ -98,97 +98,97 @@ namespace XIVSlothComboPlugin
         // ====================================================================================
         #region ASTROLOGIAN
 
-        [CustomComboInfo("抽卡 on Play", "Play turns into 抽卡 when no card is drawn, as well as the usual 出卡 behavior.", AST.JobID, 0, "Pot of Greed", "抽卡 some cards, or something. Idk, you're the one that chose to play AST.")]
+        [CustomComboInfo("用出卡替换抽卡", "当没有抽取到奥秘卡时，自动将出卡替换为抽卡。", AST.JobID, 0, "强欲之壶", "抽取几张奥秘卡或者什么东西。我不知道，反正是你选择成为占星术士的。")]
         AstrologianCardsOnDrawFeaturelikewhat = 1000,
 
-        [CustomComboInfo("Crown Play to 小奥秘卡", "Changes Crown Play to 小奥秘卡 when a card is not drawn or has Lord Or Lady Buff.", AST.JobID, 0, "Bestow Royalty", "This one's for the Lords and Ladies, lemme get a HYEEEAAAAAH!")]
+        [CustomComboInfo("用出王冠卡替换小奥秘卡", "当没有抽取到小奥秘卡时，自动将出王冠卡替换为小奥秘卡。", AST.JobID, 0, "赐予王权", "这是为嫡子和皇女准备的，让我们一起高呼“万岁！”")]
         AstrologianCrownPlayFeature = 1001,
 
-        [CustomComboInfo("吉星 2 to 吉星 Level Sync", "Changes 吉星 2 to 吉星 when below level 26 in synced content.", AST.JobID, 0, "Sprout's Benedict Cumberbatch", "Changes Big Benedict into Little Benedict when you visit the sprout universe.")]
+        [CustomComboInfo("根据等级自动将复兴替换为吉星", "当等级同步至26级以下时，自动将福星替换为吉星。", AST.JobID, 0, "新生的奇异博士", "在你游历新生宇宙的时候，将“大”奇异博士变成“小”奇异博士。")]
         AstrologianBeneficFeature = 1002,
 
         [ConflictingCombos(AstrologianAlternateAscendFeature)]
-        [CustomComboInfo("AST 复活 Feature", "Changes Swiftcast to 生辰", AST.JobID, 0, "Rez-bot-3000", "Does your job for you, but faster. You're welcome, little sloth.")]
+        [CustomComboInfo("占星的即刻-生辰", "自动把即刻咏唱改为生辰", AST.JobID, 0, "亚拉戈复活机3000", "替代你干活，而且更为迅速，不用谢我，你这个小懒蛋~")]
         AstrologianAscendFeature = 1003,
 
         [ConflictingCombos(AstrologianAscendFeature)]
-        [CustomComboInfo("AST 复活 Alternate Feature", "Changes 复生 To Swiftcast when Swiftcast is available", AST.JobID, 0, "Rez-bot-0003", "Same same, but different!")]
+        [CustomComboInfo("占星的生辰-即刻", "当即刻咏唱可用时，将生辰改为即刻咏唱", AST.JobID, 0, "亚拉戈复活机3000", "相同的核心，不同的外表！")]
         AstrologianAlternateAscendFeature = 1019,
 
         [ConflictingCombos(AstrologianAlternateDpsFeature, CustomValuesTest)]
-        [CustomComboInfo("DPS Feature(On 凶星)", "Adds 烧灼 to the main malefic combo whenever the debuff is not present or about to expire", AST.JobID, 0, "Green DPS? Look no further", "Adds fatter deeps to your combo. Just pick another job already...")]
+        [CustomComboInfo("单体DPS连击-集中于凶星", "在烧灼buff不存在或即将消失时，自动替换凶星为烧灼", AST.JobID, 0, "红占星? 看起来也不难嘛", "优化你的输出手法，logs金粉不再是梦...")]
         AstrologianDpsFeature = 1004,
 
         [ParentCombo(AstrologianDpsFeature)]
-        [CustomComboInfo("Lucid Dreaming Feature", "Adds Lucid dreaming to the DPS feature when below set MP value.", AST.JobID, 0, "Lucid SCREAMING Feature", "I heard once you could control your dreams... But then I woke up.")]
+        [CustomComboInfo("醒梦", "当MP值低于设定值时，在DPS连击中自动增添醒梦。", AST.JobID, 0, "醒梦", "我听说你曾经可以控制你的梦境...然后我就被闹钟吵醒了")]
         AstrologianLucidFeature = 1008,
 
-        [CustomComboInfo("星力 Feature", "Adds 星力 to the DPS feature when ready", AST.JobID, 0, "Astro-whine Feature", "Astro-whining again? Sorry, everyone's busy looking at the SGE's cool floating sticks.")]
+        [CustomComboInfo("星力", "当星力可用时，在DPS连击中自动添加星力", AST.JobID, 0, "天体之力", "有流星雨？别闹了，贤者的浮游炮它不帅吗？")]
         AstrologianAstrodyneFeature = 1009,
 
-        [CustomComboInfo("Aspected 阳星 Feature", "Replaces Aspected 阳星 whenever you are under Aspected 阳星 regen with 阳星", AST.JobID, 0, "HELIOSCOPTER", "HELIOSCOPTER HELIOSCOPTER")]
+        [CustomComboInfo("阳星相位", "当你处于阳星相位hot时，用阳星来替换阳星相位", AST.JobID, 0, "阳星相位", "阳星？阳性？养星？")]
         AstrologianHeliosFeature = 1010,
 
-        [CustomComboInfo("Auto Card 抽卡", "Adds Auto Card 抽卡 Onto Main DPS Feature", AST.JobID, 0, "Kaiba Feature", "You just activated my trap card!")]
+        [CustomComboInfo("自动抽奥秘卡", "将自动抽奥秘卡添加进入DPS连击中", AST.JobID, 0, "濑户海马", "你刚刚触发了我的陷阱卡！")]
         AstrologianAutoDrawFeature = 1011,
 
-        [CustomComboInfo("Auto Crown Card 抽卡", "Adds Auto Crown Card 抽卡 Onto Main DPS Feature ", AST.JobID, 0, "Kaiba 2, Electric Boogaloo", "It's a trap!")]
+        [CustomComboInfo("自动抽小奥秘卡", "将自动抽小奥秘卡添加进入DPS连击中 ", AST.JobID, 0, "濑户海马2, 闪电风暴", "这是个陷阱！")]
         AstrologianAutoCrownDrawFeature = 1012,
 
-        [CustomComboInfo("AoE DPS Feature", "Adds Auto抽卡s/Astrodyne to the AoE Gravity combo", AST.JobID, 0, "A bowlful of cards", "Oops! All AoE!")]
+        [CustomComboInfo("AoE DPS连击", "将自动抽卡和星力添加进入重力AOE连击中", AST.JobID, 0, "强力之卡", "天呐！满屏的AOE!")]
         AstrologianDpsAoEFeature = 1013,
 
-        [CustomComboInfo("Lazy Lord Feature", "Adds Lord Of Crowns Onto Main DPS/AoE Feature", AST.JobID, 0, "Brainless Lord Feature", "You're like that tiny guy from Shrek. - E -")]
+        [CustomComboInfo("王冠之领主", "自动将王冠之领主添加进入DPS/AOE连击中", AST.JobID, 0, "无脑的王冠之领主", "你看起来像是来自于怪物史莱克 - E -")]
         AstrologianLazyLordFeature = 1014,
 
-        [CustomComboInfo("Astrodyne on 出卡", "出卡 becomes Astrodyne when you have 3 seals.", AST.JobID, 0, "Astro-whine on 出卡", "Seal me up and let me die, baby")]
+        [CustomComboInfo("用星力替换出卡", "当你拥有三颗星星时自动替换出卡为星力", AST.JobID, 0, "用星力替换出卡", "你被强化了！快送！")]
         AstrologianAstrodyneOnPlayFeature = 1015,
 
         [ConflictingCombos(AstrologianDpsFeature, CustomValuesTest)]
-        [CustomComboInfo("Alternate DPS Feature (On 烧灼)", "Adds 烧灼 to the main malefic combo whenever the debuff is not present or about to expire", AST.JobID, 0, "Alternate Deeps, buddy", "Now we're really doing your job for you. Damn.")]
+        [CustomComboInfo("单体DPS连击-集中于烧灼", "在烧灼buff不存在或即将消失时，自动替换凶星为烧灼", AST.JobID, 0, "增强", "淦！我们现在真的成你的打工仔了")]
         AstrologianAlternateDpsFeature = 1016,
 
         [ConflictingCombos(AstrologianDpsFeature, AstrologianAlternateDpsFeature, DisableCombustOnDpsFeature)]
-        [CustomComboInfo("DPS Feature Custom Values Testing", "Same as DPSFeature (On 凶星).Allows you to customize target MaxHp & CurrentPercentageHp & CurrentHp checks. Testing Only! ", AST.JobID, 0, "Green DPS? But you looked further...", "Same as that other guy, but with NUMBERS.")]
+        [CustomComboInfo("单体DPS的自定义值测试", "和单体DPS连击-集中于凶星相同，但是允许你自动与目标的最大HP值，当前HP百分比，当前HP值。仅供测试！", AST.JobID, 0, "红占星？但你的志向更为远大", "和另一个一样，只是多了数值设定")]
         CustomValuesTest = 1017,
 
         [ParentCombo(AstrologianDpsFeature)]
         [ConflictingCombos(AstrologianAlternateDpsFeature)]
-        [CustomComboInfo("Removes DoT From DPS Feature", "Removed DoT From the DPS Feature, You can still use all other features that are on malefic! ", AST.JobID, 0, "DPS Less", "Oh, look, guys! Look! This one's actually healing!")]
+        [CustomComboInfo("将DOT移除DPS连击", "将DOT移除DPS连击，其他的DPS不受影响 ", AST.JobID, 0, "减少输出", "好家伙！那个人开始奶人了！")]
         DisableCombustOnDpsFeature = 1018,
 
-        [CustomComboInfo("光速 Feature", "Adds 光速 to the DPS Feature", AST.JobID, 0, "Warp-speed", "GO FASTER! FASTER!")]
+        [CustomComboInfo("光速", "将光速添加入DPS连击", AST.JobID, 0, "动力小子", "冲冲冲！")]
         AstrologianLightSpeedFeature = 1020,
 
         [ParentCombo(AstrologianHeliosFeature)]
-        [CustomComboInfo("天星冲日 Feature", "Adds 天星冲日", AST.JobID, 0)]
+        [CustomComboInfo("天行冲日", "添加天行冲日进入AOE治疗连击", AST.JobID, 0)]
         AstrologianCelestialOppositionFeature = 1021,
 
         [ParentCombo(AstrologianHeliosFeature)]
-        [CustomComboInfo("Lazy Lady Feature", "Adds 王冠之贵妇, if the card is drawn", AST.JobID, 0)]
+        [CustomComboInfo("王冠之贵妇", "当抽取到王冠之贵妇时，自动加入治疗连击", AST.JobID, 0)]
         AstrologianLazyLadyFeature = 1022,
 
-        [CustomComboInfo("Simple Heal", "Single target healing", AST.JobID, 0)]
+        [CustomComboInfo("简单治疗", "单体治疗连击", AST.JobID, 0)]
         AstrologianSimpleSingleTargetHeal = 1023,
 
         [ParentCombo(AstrologianSimpleSingleTargetHeal)]
-        [CustomComboInfo("先天禀赋 Feature", "先天禀赋 will be added when the target is at or below the value set", AST.JobID, 0)]
+        [CustomComboInfo("先天禀赋", "当目标体力低于你设定的值时，自动添加先天禀赋进入单体治疗连击", AST.JobID, 0)]
         AstroEssentialDignity = 1024,
 
         [ParentCombo(AstrologianSimpleSingleTargetHeal)]
-        [CustomComboInfo("天星交错 Feature", "Adds 天星交错.", AST.JobID, 0)]
+        [CustomComboInfo("天星交错", "添加天行交错进入单体治疗连击", AST.JobID, 0)]
         CelestialIntersectionFeature = 1025,
 
         [ParentCombo(AstrologianHeliosFeature)]
-        [CustomComboInfo("天宫图 Feature", "Adds 天宫图.", AST.JobID, 0)]
+        [CustomComboInfo("天宫图", "添加天宫图进入治疗连击", AST.JobID, 0)]
         AstrologianHoroscopeFeature = 1026,
         
         [ParentCombo(AstrologianSimpleSingleTargetHeal)]
-        [CustomComboInfo("Aspected 吉星 Feature", "Adds Aspected 吉星 & refreshes it if needed.", AST.JobID, 0)]
+        [CustomComboInfo("吉星相位", "在目标身上没有吉星相位或快要结束时，自动更换福星为吉星相位", AST.JobID, 0)]
         AspectedBeneficFeature = 1027,
 
         [ParentCombo(AstrologianSimpleSingleTargetHeal)]
-        [CustomComboInfo("擢升 Feature", "Adds 擢升.", AST.JobID, 0)]
+        [CustomComboInfo("Exaltation Feature", "Adds Exaltation.", AST.JobID, 0)]
         ExaltationFeature = 1028,
 
 
@@ -1154,7 +1154,7 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("双掌打 Feature", "Replaces 正拳 with Twin Snakes if Disciplined Fist is not applied or is less than 6 seconds from falling off.", MNK.JobID, 0, "", "I've had it with these MF snakes on this MF plane!")]
         MnkTwinSnakesFeature = 9011,
 
-        [ConflictingCombos(MnkBasicComboPlus)]
+        [ConflictingCombos(MnkBootshineCombo)]
         [CustomComboInfo("Basic Rotation", "Basic Monk Combo on one button", MNK.JobID, 0, "", "I presses the buttons, I does the deeps")]
         MnkBasicCombo = 9002,
 
@@ -1168,15 +1168,15 @@ namespace XIVSlothComboPlugin
         MonkHowlingFistMeditationFeature = 9005,
 
         [ConflictingCombos(MnkBasicCombo)]
-        [CustomComboInfo("Basic Rotation Plus", "Basic Monk Combo on one button Plus (Only for Testing)", MNK.JobID, 0, "", "They call it 'basic' for a reason, you donkey")]
-        MnkBasicComboPlus = 9006,
+        [CustomComboInfo("连击 Combo", "Replace 连击 with its combo chain. \nIf all sub options are selected will turn into a full one button rotation (Simple Monk)", MNK.JobID, 0, "", "They call it 'basic' for a reason, you donkey")]
+        MnkBootshineCombo = 9006,
 
         [CustomComboInfo("震脚 Feature Plus", "All of the (Optimal?) Blitz combos on Masterful Blitz when 震脚 Is Active", MNK.JobID, 0, "", "Try not to fall over, eh")]
         MnkPerfectBalancePlus = 9007,
 
-        [ParentCombo(MnkBasicComboPlus)]
-        [CustomComboInfo("必杀技 to Main Combo", "Adds all of (Optimal?) Blitz combos and 必杀技 on Main Combo", MNK.JobID, 0, "", "It's maths, but for your Single Target combo!")]
-        MonkMasterfullBlizOnMainCombo = 9008,
+        [ParentCombo(MnkBootshineCombo)]
+        [CustomComboInfo("必杀技 on Main Combo", "Adds 必杀技 to the Main Combo", MNK.JobID, 0, "", "It's maths, but for your Single Target combo!")]
+        MonkMasterfulBlitzOnMainCombo = 9008,
 
         [ParentCombo(MnkAoECombo)]
         [CustomComboInfo("必杀技 to AoE Combo", "Adds all of (Optimal?) Blitz combos and 必杀技 on AoE Combo.", MNK.JobID, 0, "", "It's maths, but for your AoE combo!")]
@@ -1188,13 +1188,29 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("Riddle of 火炎/Brotherhood Feature", "Replaces Riddle of 火炎 with Brotherhood when Riddle of 火炎 is on cooldown.", MNK.JobID, 0, "", "Riddle me this, brotha'")]
         MnkRiddleOfFireBrotherhoodFeature = 9012,
 
-        [ParentCombo(MnkBasicComboPlus)]
-        [CustomComboInfo("Damage Buffs to Main Combo Feature", "Places Riddle of Fire and Brotherhood onto main combo when 震脚 is up.", MNK.JobID, 0, "", "Been passed on for dance partner again? Don't worry, you have some buffs of your own.")]
-        MnkMainComboBuffsFeature = 9013,
+        [ParentCombo(MnkBootshineCombo)]
+        [CustomComboInfo("CDs on Main Combo", "Adds various CDs to the Main Combo when under Riddle of 火炎 or when Riddle of 火炎 is on cooldown.", MNK.JobID, 0, "", "Been passed on for dance partner again? Don't worry, you have some buffs of your own.")]
+        MnkCDsOnMainComboFeature = 9013,
 
-        [ParentCombo(MnkBasicComboPlus)]
-        [CustomComboInfo("疾风极意 Main Combo Feature", "Places Riddle of Wind onto main combo after using 双掌打.", MNK.JobID, 0, "", "Easy, breezy.")]
-        MnkRiddleOfWindFeature = 9014,
+        [ParentCombo(MnkCDsOnMainComboFeature)]
+        [CustomComboInfo("疾风极意 on Main Combo", "Adds 疾风极意 to the Main Combo.", MNK.JobID, 0, "", "Easy, breezy.")]
+        MnkRiddleOfWindOnMainComboFeature = 9014,
+
+        [ParentCombo(MnkCDsOnMainComboFeature)]
+        [CustomComboInfo("震脚 on Main Combo", "Adds 震脚 to the Main Combo.", MNK.JobID, 0, "", "")]
+        MnkPerfectBalanceOnMainComboFeature = 9015,
+
+        [ParentCombo(MnkCDsOnMainComboFeature)]
+        [CustomComboInfo("义结金兰 on Main Combo", "Adds 义结金兰 to the Main Combo.", MNK.JobID, 0, "", "")]
+        MnkBrotherhoodOnMainComboFeature = 9016,
+
+        [ParentCombo(MnkCDsOnMainComboFeature)]
+        [CustomComboInfo("斗气 on Main Combo", "Adds 斗气 to the Main Combo.", MNK.JobID, 0, "", "")]
+        MnkMeditationOnMainComboFeature = 9017,
+
+        [ParentCombo(MnkBootshineCombo)]
+        [CustomComboInfo("Lunar Solar Opener", "Start with the Lunar Solar Opener on the Main Combo. Requires level 68 for Riddle of 火炎.", MNK.JobID, 0, "", "")]
+        MnkLunarSolarOpenerOnMainComboFeature = 9018,
 
         #endregion
         // ====================================================================================
@@ -1321,8 +1337,7 @@ namespace XIVSlothComboPlugin
         PaladinRoyalAuthorityCombo = 11001,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [ConflictingCombos(PaladinAtonementTestFeature)]
-        [CustomComboInfo("赎罪剑 Feature", "Replace 王权剑 with Atonement when under the effect of Sword Oath. \nDoes not drop last Atonement stack.", PLD.JobID, 1, "", "赎罪剑 for what? Picking the weakest Tank?")]
+        [CustomComboInfo("赎罪剑 Feature", "Replace 王权剑 with Atonement when under the effect of Sword Oath.", PLD.JobID, 1, "", "赎罪剑 for what? Picking the weakest Tank?")]
         PaladinAtonementFeature = 11002,
 
         [CustomComboInfo("日珥斩 Combo", "Replace 日珥斩 with its combo chain.", PLD.JobID, 0, "Promenade feature", "Long walks on the promenade...")]
@@ -1350,18 +1365,12 @@ namespace XIVSlothComboPlugin
         PaladinStandaloneHolyCircleFeature = 11009,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [ConflictingCombos(PaladinInterveneFeatureOption)]
-        [CustomComboInfo("调停 Feature (All Stacks)", "Adds intervene onto main combo whenever its available (Uses all stacks).", PLD.JobID, 4, "", "It looks like a gap-closer. It smells like a gap-closer...")]
+        [CustomComboInfo("调停 Feature", "Adds 调停 onto Main Combo whenever it's available.", PLD.JobID, 4, "", "It looks like a gap-closer. It smells like a gap-closer...")]
         PaladinInterveneFeature = 11010,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [ConflictingCombos(PaladinInterveneFeature)]
-        [CustomComboInfo("调停 Feature (Leaves 1 stack)", "Adds intervene onto main combo whenever its available (Leaves 1 stack).", PLD.JobID, 4, "", "It must be a gap-closer!")]
-        PaladinInterveneFeatureOption = 11011,
-
-        [ParentCombo(PaladinRoyalAuthorityCombo)]
         [ConflictingCombos(PaladinRangedUptimeFeature2)]
-        [CustomComboInfo("Uptime Feature", "Replace Main Combo with 投盾 when out of range.", PLD.JobID, 4, "", "Don't throw your shield, you're not Captain America.\nJust get close!")]
+        [CustomComboInfo("投盾 Uptime Feature", "Replace Main Combo with 投盾 when out of range.", PLD.JobID, 4, "", "Don't throw your shield, you're not Captain America.\nJust get close!")]
         PaladinRangedUptimeFeature = 11012,
 
         [ParentCombo(PaladinFightOrFlightMainComboFeature)]
@@ -1374,23 +1383,13 @@ namespace XIVSlothComboPlugin
         PaladinReqMainComboFeature = 11014,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [ConflictingCombos(PaladinAtonementFeature/*, SkillCooldownRemaining*/)]
-        [CustomComboInfo("赎罪剑 Drop Feature", "Drops 赎罪剑 to prevent Potency loss on lvl 90 rotation.", PLD.JobID, 1, "Anti-Atonement 导弹", "Imagine worrying about potency loss when you play a job like this. Couldn't be me!")]
-        PaladinAtonementTestFeature = 11015,
-
-        [ParentCombo(PaladinRoyalAuthorityCombo)]
         [ConflictingCombos(PaladinRangedUptimeFeature)]
         [CustomComboInfo("圣灵 Uptime Feature", "Replace 王权剑/战女神之怒 Feature with Holy Spirit when out of range.", PLD.JobID, 5, "(Un)神圣 Halone", "Who is Halone and why are they so angry?")]
         PaladinRangedUptimeFeature2 = 11016,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [CustomComboInfo("战逃反应 Feature (Custom Values) ", "Adds FoF onto the main combo. You can input your own gcd value (Value represtents percentage of your GCD, 1 = Full GCD).\nIf unsure put low on 0.250 and high on 0.750.", PLD.JobID, 2, "", "This feature hurts my brain. Yours too, no doubt")]
+        [CustomComboInfo("战逃反应 Feature", "Adds FoF onto the main combo.", PLD.JobID, 2, "", "This feature hurts my brain. Yours too, no doubt")]
         PaladinFightOrFlightFeature = 11017,
-
-        //[ParentCombo(PaladinRoyalAuthorityCombo)]
-        //[ConflictingCombos(PaladinAtonementFeature, PaladinAtonementTestFeature)]
-        //[CustomComboInfo("赎罪剑 Drop Feature (Custom Value Test)", "Drops 赎罪剑 to prevent Potency loss when FoF is about to expire.", PLD.JobID, 0, "", "Clumsy-ass dropped the 赎罪剑 again")]
-        //SkillCooldownRemaining = 11018,
 
         [CustomComboInfo("Interrupt Feature", "Replaces 盾牌猛击 with Interject when target can be interrupted or Low Blow if it's off cooldown. .", PLD.JobID, 0, "Lower blow", "Blow, but low.")]
         PaladinInterruptFeature = 11019,
@@ -1399,11 +1398,11 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("圣环 Feature", "Replaces AoE combo with 圣环 when Requiescat is active.", PLD.JobID, 1, "", "")]
         PaladinHolyCircleFeature = 11020,
 
-        [ParentCombo(PaladinProminenceCombo)]
+        [ParentCombo(PaladinHolyCircleFeature)]
         [CustomComboInfo("AoE 悔罪 Feature", "Replaces AoE combo with Confiteor when 安魂祈祷 is active and appropiate.", PLD.JobID, 2, "", "")]
         PaladinAoEConfiteorFeature = 11021,
 
-        [ParentCombo(PaladinProminenceCombo)]
+        [ParentCombo(PaladinHolyCircleFeature)]
         [CustomComboInfo("AoE 安魂祈祷 Feature", "Replaces AoE combo with 安魂祈祷 when it's off cooldown.\nProbably not optimal at all.", PLD.JobID, 0, "", "")]
         PaladinReqAoEComboFeature = 11022,
 
@@ -2256,4 +2255,3 @@ namespace XIVSlothComboPlugin
         #endregion
     }
 }
-
