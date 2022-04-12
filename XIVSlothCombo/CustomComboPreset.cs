@@ -1330,47 +1330,47 @@ namespace XIVSlothComboPlugin
         // ====================================================================================
         #region PALADIN
 
-        [CustomComboInfo("沥血剑 Combo", "Replace 沥血剑 with its combo chain.", PLD.JobID, 0, "These aren't heals... huh?", "Just take the armour off and don a robe, we all know you're green on the inside.")]
+        [CustomComboInfo("沥血剑 Combo", "将 沥血剑 设为沥血连.", PLD.JobID, 0, "These aren't heals... huh?", "Just take the armour off and don a robe, we all know you're green on the inside.")]
         PaladinGoringBladeCombo = 11000,
 
-        [CustomComboInfo("王权剑 Combo", "All-in-one main combo adds 王权剑/战女神之怒.\nToggle all sub-options on to make this a 1 button rotation", PLD.JobID, 0, "", "Lmao, 'Authority'... If you say so, buddy.")]
+        [CustomComboInfo("王权剑 Combo", "将 王权剑/战女神之怒. 设为一整套连招的起始.\n选中下列所有子选项激活一键连招.", PLD.JobID, 0, "", "Lmao, 'Authority'... If you say so, buddy.")]
         PaladinRoyalAuthorityCombo = 11001,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [CustomComboInfo("赎罪剑 Feature", "Replace 王权剑 with Atonement when under the effect of Sword Oath.", PLD.JobID, 1, "", "赎罪剑 for what? Picking the weakest Tank?")]
+        [CustomComboInfo("赎罪剑 Feature", "在激活忠义之剑的状态下，将 王权剑 变为 赎罪剑.", PLD.JobID, 1, "", "赎罪剑 for what? Picking the weakest Tank?")]
         PaladinAtonementFeature = 11002,
 
-        [CustomComboInfo("日珥斩 Combo", "Replace 日珥斩 with its combo chain.", PLD.JobID, 0, "Promenade feature", "Long walks on the promenade...")]
+        [CustomComboInfo("日珥斩 Combo", "将 日珥斩 设为AOE连击的起始.", PLD.JobID, 0, "Promenade feature", "Long walks on the promenade...")]
         PaladinProminenceCombo = 11003,
 
         [ParentCombo(PaladinReqMainComboFeature)]
-        [CustomComboInfo("圣灵 Feature", "Replace 王权剑/沥血剑 combo with 圣灵 and Prominence combo with 圣环 while Requiescat is active", PLD.JobID, 0, "Auto-PLD", "出卡s the whole job for you.\nJust stand there and take damage, right?")]
+        [CustomComboInfo("圣灵 Feature", "自身附加安魂祈祷状态时，将 圣灵 插入到连击中. ", PLD.JobID, 0, "Auto-PLD", "出卡s the whole job for you.\nJust stand there and take damage, right?")]
         PaladinRequiescatFeature = 11004,
 
         [ParentCombo(PaladinReqMainComboFeature)]
-        [CustomComboInfo("悔罪 Combo Feature", "Replace 圣灵/圣环 with Confiteor when Requiescat is up and MP is under 2000 or only one stack remains \nand adds Faith/Truth/Valor Combo after Confiteor.", PLD.JobID, 0, "Confetti Feature", "This is gonna be a nightmare to clean up.")]
+        [CustomComboInfo("悔罪 Combo Feature", "当MP高于2000，且仅剩一层安魂祈祷档数时，将 圣灵/圣环 替换为 悔罪. \n释放 悔罪后，依次变为 信念之剑/真理之剑/英勇之剑.", PLD.JobID, 0, "Confetti Feature", "This is gonna be a nightmare to clean up.")]
         PaladinConfiteorFeature = 11005,
 
-        [CustomComboInfo("Scornful Spirits Feature", "Replace Spirits Within and 厄运流转 with whichever is available soonest.", PLD.JobID, 0, "", "Two for the price of one!")]
+        [CustomComboInfo("Scornful Spirits Feature", "将 深奥之灵 替换为 厄运流转 并优先显示最快冷却的那个.", PLD.JobID, 0, "", "Two for the price of one!")]
         PaladinScornfulSpiritsFeature = 11006,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [CustomComboInfo("沥血剑 Feature", "Insert 沥血剑 into the main combo when appropriate.", PLD.JobID, 0, "", "")]
+        [CustomComboInfo("沥血剑 Feature", "在合适的时机插入沥血连.", PLD.JobID, 0, "", "")]
         PaladinRoyalGoringOption = 11007,
 
-        [CustomComboInfo("Standalone 圣灵 Feature", "Replaces 圣灵 with Confiteor and Confiteor combo", PLD.JobID, 0, "", "It's Christmas already?")]
+        [CustomComboInfo("Standalone 圣灵 Feature", "自身附加安魂祈祷状态时，将 圣灵 设为圣灵-悔罪-信念-真理-英勇连.", PLD.JobID, 0, "", "It's Christmas already?")]
         PaladinStandaloneHolySpiritFeature = 11008,
 
-        [CustomComboInfo("Standalone 圣环 Feature", "Replaces 圣环 with Confiteor and Confiteor combo", PLD.JobID, 0, "", "This is MY circle.")]
+        [CustomComboInfo("Standalone 圣环 Feature", "自身附加安魂祈祷状态时，将 圣灵 设为圣环-悔罪-信念-真理-英勇连.", PLD.JobID, 0, "", "This is MY circle.")]
         PaladinStandaloneHolyCircleFeature = 11009,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [CustomComboInfo("调停 Feature", "Adds 调停 onto Main Combo whenever it's available.", PLD.JobID, 4, "", "It looks like a gap-closer. It smells like a gap-closer...")]
+        [CustomComboInfo("调停 Feature", "当 调停 可用时，将其插入到连击中.", PLD.JobID, 4, "", "It looks like a gap-closer. It smells like a gap-closer...")]
         PaladinInterveneFeature = 11010,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
         [ConflictingCombos(PaladinRangedUptimeFeature2)]
-        [CustomComboInfo("投盾 Uptime Feature", "Replace Main Combo with 投盾 when out of range.", PLD.JobID, 4, "", "Don't throw your shield, you're not Captain America.\nJust get close!")]
+        [CustomComboInfo("投盾 Uptime Feature", "超出攻击距离时，将 投盾 插入到连击中.", PLD.JobID, 4, "", "Don't throw your shield, you're not Captain America.\nJust get close!")]
         PaladinRangedUptimeFeature = 11012,
 
         [ParentCombo(PaladinFightOrFlightMainComboFeature)]
@@ -1379,23 +1379,23 @@ namespace XIVSlothComboPlugin
         PaladinFightOrFlightMainComboFeature = 11013,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [CustomComboInfo("安魂祈祷 Feature", "Adds 安魂祈祷 onto the main combo (Testing).", PLD.JobID, 2, "", "Just defend 4hed")]
+        [CustomComboInfo("安魂祈祷 Feature", "将 安魂祈祷 插入连击中 (测试中).", PLD.JobID, 2, "", "Just defend 4hed")]
         PaladinReqMainComboFeature = 11014,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
         [ConflictingCombos(PaladinRangedUptimeFeature)]
-        [CustomComboInfo("圣灵 Uptime Feature", "Replace 王权剑/战女神之怒 Feature with Holy Spirit when out of range.", PLD.JobID, 5, "(Un)神圣 Halone", "Who is Halone and why are they so angry?")]
+        [CustomComboInfo("圣灵 Uptime Feature", "超出攻击距离时，将 王权剑/战女神之怒 连击替换为 圣灵.", PLD.JobID, 5, "(Un)神圣 Halone", "Who is Halone and why are they so angry?")]
         PaladinRangedUptimeFeature2 = 11016,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [CustomComboInfo("战逃反应 Feature", "Adds FoF onto the main combo.", PLD.JobID, 2, "", "This feature hurts my brain. Yours too, no doubt")]
+        [CustomComboInfo("战逃反应 Feature", "将 战逃反应 插入到连击中.", PLD.JobID, 2, "", "This feature hurts my brain. Yours too, no doubt")]
         PaladinFightOrFlightFeature = 11017,
 
-        [CustomComboInfo("Interrupt Feature", "Replaces 盾牌猛击 with Interject when target can be interrupted or Low Blow if it's off cooldown. .", PLD.JobID, 0, "Lower blow", "Blow, but low.")]
+        [CustomComboInfo("Interrupt Feature", "当目标可以被打断施法或眩晕且技能处于冷却时，将 盾牌猛击 替换为插言或下踢.", PLD.JobID, 0, "Lower blow", "Blow, but low.")]
         PaladinInterruptFeature = 11019,
 
         [ParentCombo(PaladinProminenceCombo)]
-        [CustomComboInfo("圣环 Feature", "Replaces AoE combo with 圣环 when Requiescat is active.", PLD.JobID, 1, "", "")]
+        [CustomComboInfo("圣环 Feature", "自身附加安魂祈祷状态时，将 圣环 插入到AOE连击中.", PLD.JobID, 1, "", "")]
         PaladinHolyCircleFeature = 11020,
 
         [ParentCombo(PaladinHolyCircleFeature)]
@@ -1403,18 +1403,18 @@ namespace XIVSlothComboPlugin
         PaladinAoEConfiteorFeature = 11021,
 
         [ParentCombo(PaladinHolyCircleFeature)]
-        [CustomComboInfo("AoE 安魂祈祷 Feature", "Replaces AoE combo with 安魂祈祷 when it's off cooldown.\nProbably not optimal at all.", PLD.JobID, 0, "", "")]
+        [CustomComboInfo("AoE 安魂祈祷 Feature", "当 安魂祈祷 处于冷却时，将其插入到AOE连击中.\n可能并不是最优解.", PLD.JobID, 0, "", "")]
         PaladinReqAoEComboFeature = 11022,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [CustomComboInfo("Expiacion and 厄运流转 Feature", "Adds Expiacion and 厄运流转 onto the main combo during weave windows", PLD.JobID, 0, "", "")]
+        [CustomComboInfo("Expiacion and 厄运流转 Feature", "在连击窗口期插入 偿赎剑 和 厄运流转.", PLD.JobID, 0, "", "")]
         PaladinExpiacionScornFeature = 11023,
 
         [ParentCombo(PaladinProminenceCombo)]
-        [CustomComboInfo("AOE Expiacion / 厄运流转 Feature", "Adds Expiacion and 厄运流转 onto the main AOE combo during weave windows", PLD.JobID, 0, "", "")]
+        [CustomComboInfo("AOE Expiacion / 厄运流转 Feature", "在连击窗口期插入 偿赎剑 和 厄运流转.", PLD.JobID, 0, "", "")]
         PaladinAoEExpiacionScornFeature = 11024,
 
-        [CustomComboInfo("Double Reprisal Protection", "Prevents the use of Reprisal when target already has the effectby replacing it with 飞石", PLD.JobID)]
+        [CustomComboInfo("Double Reprisal Protection", "当目标已被赋予血仇效果时，将 血仇 替换为 飞石", PLD.JobID)]
         PaladinReprisalProtection = 11030,
 
         #endregion
@@ -1877,35 +1877,35 @@ namespace XIVSlothComboPlugin
         // ====================================================================================
         #region SCHOLAR
 
-        [CustomComboInfo("Seraph 异想的祥光/Consolation", "Change 异想的祥光 into Consolation when Seraph is out.", SCH.JobID, 0, "", "Stupid little fairy thing")]
+        [CustomComboInfo("Seraph 异想的祥光/慰藉", "炽天使同行状态下，将 异想的祥光 变为 慰藉.", SCH.JobID, 0, "", "Stupid little fairy thing")]
         ScholarSeraphConsolationFeature = 16000,
 
-        [CustomComboInfo("ED 以太超流", "Change Energy Drain into 以太超流 when you have no more 以太超流 stacks.", SCH.JobID, 0, "", "Stop trying to pretend you're a SMN. You're not fooling anyone")]
+        [CustomComboInfo("ED 以太超流", "没有豆子的时候，将 能量吸收 变为 以太超流.", SCH.JobID, 0, "", "Stop trying to pretend you're a SMN. You're not fooling anyone")]
         ScholarEnergyDrainFeature = 16001,
 
         [ConflictingCombos(SCHAlternateRaiseFeature)]
-        [CustomComboInfo("SCH 复活 Feature", "Changes Swiftcast to 复生.", SCH.JobID, 0, "", "Well, at least PF wants you for something")]
+        [CustomComboInfo("SCH 复活 Feature", "按下 即刻咏唱 后，使其变为 复生.", SCH.JobID, 0, "", "Well, at least PF wants you for something")]
         SchRaiseFeature = 16002,
 
         [ConflictingCombos(SchRaiseFeature)]
-        [CustomComboInfo("SCH 复活 Alternate Feature", "Changes 复生 To Swiftcast when Swiftcast is available.", SCH.JobID, 0, "", "Well, this raise stuff and Peloton Extreme, I guess.")]
+        [CustomComboInfo("SCH 复活 Alternate Feature", "当 即刻咏唱 处于可用状态时，将 复生 变为 即刻咏唱.", SCH.JobID, 0, "", "Well, this raise stuff and Peloton Extreme, I guess.")]
         SCHAlternateRaiseFeature = 16008,
 
-        [CustomComboInfo("Fairy Feature", "Change every action that requires a fairy into 朝日召唤 if you do not have a fairy summoned.", SCH.JobID, 0, "", "You're really gonna forget? Really?")]
+        [CustomComboInfo("Fairy Feature", "未召唤出小仙女的状态下，技能栏上所有小仙女技能将变为 朝日召唤.", SCH.JobID, 0, "", "You're really gonna forget? Really?")]
         ScholarFairyFeature = 16004,
 
-        [CustomComboInfo("DPS Feature", "Adds Bio1/Bio2/Biosys to Broil/毁灭 whenever the debuff is not present or about to expire.", SCH.JobID, 0, "", "Pretend something interesting is going on. DPS Routine!")]
+        [CustomComboInfo("DPS Feature", "战斗状态下，当目标身上没有debuff或即将到期时，将 极炎法/毁灭 变为 蛊毒法/毒菌.", SCH.JobID, 0, "", "Pretend something interesting is going on. DPS Routine!")]
         ScholarDPSFeature = 16005,
 
         [ParentCombo(ScholarDPSFeature)]
-        [CustomComboInfo("DPS Feature Buff Option", "Adds 连环计 to the DPS Feature.", SCH.JobID, 0, "", "Raid buffs for everyone!")]
+        [CustomComboInfo("DPS Feature Buff Option", "将 连环计 添加进 DPS Feature.", SCH.JobID, 0, "", "Raid buffs for everyone!")]
         ScholarDPSFeatureBuffOption = 16006,
 
         [ParentCombo(ScholarDPSFeature)]
-        [CustomComboInfo("DPS Feature Lucid Dreaming Option", "Adds Lucid dreaming to the DPS feature when below set MP value.", SCH.JobID, 0, "", "Nobody's perfect. Maybe this'll help")]
+        [CustomComboInfo("DPS Feature Lucid Dreaming Option", "当MP低于设定值时，将醒梦添加进 DPS feature.", SCH.JobID, 0, "", "Nobody's perfect. Maybe this'll help")]
         ScholarLucidDPSFeature = 16007,
 
-        [CustomComboInfo("SCH Extra DPS Feature", "Adds Bio DoT on 毁灭 II. Won't work below level 38", SCH.JobID, 0, "", "People still use 毁灭 2? Shouldn't you be healing or something?")]
+        [CustomComboInfo("SCH Extra DPS Feature", "战斗状态下，将 毁坏 变为Dot法术，级别低于38级时将不会生效.", SCH.JobID, 0, "", "People still use 毁灭 2? Shouldn't you be healing or something?")]
         SCHDPSAlternateFeature = 16003,
 
         #endregion
