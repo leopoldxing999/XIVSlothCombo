@@ -1217,11 +1217,11 @@ namespace XIVSlothComboPlugin
         #region NINJA
 
         [ConflictingCombos(NinSimpleSingleTarget)]
-        [CustomComboInfo("强甲破点突 Combo", "Replace 强甲破点突 with its combo chain.", NIN.JobID, 0, "One, Two, Three", "It's a Ninja's life for me")]
+        [CustomComboInfo("强甲破点突 Combo", "使用 强甲破点突 做为连击的起始技.", NIN.JobID, 0, "One, Two, Three", "It's a Ninja's life for me")]
         NinjaArmorCrushCombo = 10000,
 
         [ConflictingCombos(NinSimpleSingleTarget)]
-        [CustomComboInfo("旋风刃 Combo", "Replace 旋风刃 with its combo chain.", NIN.JobID, 0, "Edgy Edge Combo", "Knife go stab")]
+        [CustomComboInfo("旋风刃 Combo", "使用 旋风刃 做为连击的起始技.", NIN.JobID, 0, "Edgy Edge Combo", "Knife go stab")]
         NinjaAeolianEdgeCombo = 10001,
 
         //[CustomComboInfo("Simple AoE", "Replaces 血雨飞花 with the AoE rotation.", NIN.JobID)]
@@ -1230,100 +1230,100 @@ namespace XIVSlothComboPlugin
         //[CustomComboInfo("Dream to 断绝", "Replace Dream Within a Dream with 断绝 when 断绝 Ready.", NIN.JobID)]
         //NinjaAssassinateFeature = 10003,
 
-        [CustomComboInfo("生杀予夺 to Trick", "Replaces Kassatsu with 攻其不备 while Suiton or Hidden is up.\nCooldown tracking plugin recommended.", NIN.JobID, 0, "Katsu Curry to Trick", "This is how we eat at a restaurant and don't pay the bill.\nRUN!")]
+        [CustomComboInfo("生杀予夺 to 攻其不备", "影遁状态下或发动水遁之术后，使用 攻其不备 替换 生杀予夺.\n推荐同时使用冷却CD监视插件.", NIN.JobID, 0, "Katsu Curry to Trick", "This is how we eat at a restaurant and don't pay the bill.\nRUN!")]
         NinjaKassatsuTrickFeature = 10004,
 
-        [CustomComboInfo("天之印 Chi Jin to Meisui", "Replaces 天之印 Chi Jin (the move) with Meisui while Suiton is up.\nCooldown tracking plugin recommended.", NIN.JobID, 0, "天之印 Chin Scratches to Chop-Suey", "Does something, probably.\nHow do you deal with all these attack names?")]
+        [CustomComboInfo("天地人 to 命水", "发动水遁之术 后，使用 命水 替换 天地人.\n推荐同时使用冷却CD监视插件.", NIN.JobID, 0, "天之印 Chin Scratches to Chop-Suey", "Does something, probably.\nHow do you deal with all these attack names?")]
         NinjaTCJMeisuiFeature = 10005,
 
-        [CustomComboInfo("Kassatsu 地之印/Jin Feature", "Replaces 地之印 with Jin while Kassatsu is up if you have Enhanced Kassatsu.", NIN.JobID, 0, "", "Swaps your Katsu curry with a 地之印 地之印n-scratch.")]
+        [CustomComboInfo("生杀予夺 地之印/人之印 Feature", "发动 生杀予夺 后，使用 人之印 替换 地之印.", NIN.JobID, 0, "", "Swaps your Katsu curry with a 地之印 地之印n-scratch.")]
         NinjaKassatsuChiJinFeature = 10006,
 
-        [CustomComboInfo("隐遁 to Mug", "Replaces 隐遁 with Mug while in combat.", NIN.JobID, 0, "Stand and Deliver", "John Cena is a thief, now?")]
+        [CustomComboInfo("隐遁 to 夺取", "战斗状态下，使用 夺取 替换 隐遁.", NIN.JobID, 0, "Stand and Deliver", "John Cena is a thief, now?")]
         NinjaHideMugFeature = 10007,
 
-        [CustomComboInfo("Aeolian to 忍术 Feature", "Replaces 旋风刃 (combo) with Ninjutsu if any Mudra are used.", NIN.JobID, 0, "Hand signs and all that", "Do the Naruto thing, I think.\nIdk I don't watch anime, sorry")]
-        NinjaNinjutsuFeature = 10008,
+        //[CustomComboInfo("旋风刃 to 忍术 Feature", "此条效果无效：Replaces 旋风刃 (combo) with Ninjutsu if any Mudra are used.", NIN.JobID, 0, "Hand signs and all that", "Do the Naruto thing, I think.\nIdk I don't watch anime, sorry")]
+        //NinjaNinjutsuFeature = 10008,
 
         [ConflictingCombos(NinSimpleSingleTarget)]
-        [CustomComboInfo("GCDs to 忍术 Feature", "Every GCD combo becomes 忍术 while Mudras are being used.", NIN.JobID, 0, "Full-on Sign Language", "NOW you're really communicating with the party.")]
+        [CustomComboInfo("GCDs to 忍术 Feature", "当忍术结印后，所有GCD连击技能都将被替换为 忍术.", NIN.JobID, 0, "Full-on Sign Language", "NOW you're really communicating with the party.")]
         NinjaGCDNinjutsuFeature = 10009,
 
-        [CustomComboInfo("风来刃 / Raiju Feature", "Replaces Huraijin with Forked and 月影雷兽牙 when available.", NIN.JobID, 0, "Pikachu / Raichu Feature", "Does something? Maybe? Evolutions? Combos? Probably.")]
+        [CustomComboInfo("风来刃 / Raiju Feature", "当 月影雷兽爪 和 月影雷兽牙 可以使用时，替换 风来刃.", NIN.JobID, 0, "Pikachu / Raichu Feature", "Does something? Maybe? Evolutions? Combos? Probably.")]
         NinjaHuraijinRaijuFeature = 10010,
 
         [ParentCombo(NinjaHuraijinRaijuFeature)]
-        [CustomComboInfo("风来刃 / Raiju Feature Option 1", "Replaces Huraijin with 月影雷兽牙 when available.", NIN.JobID, 0, "Pikachu / Raichu Option 1", "Does the same thing probably, who knows.")]
+        [CustomComboInfo("风来刃 / Raiju Feature Option 1", "当 月影雷兽牙 可以使用时，替换 风来刃.", NIN.JobID, 0, "Pikachu / Raichu Option 1", "Does the same thing probably, who knows.")]
         NinjaHuraijinRaijuFeature1 = 10011,
 
         [ParentCombo(NinjaHuraijinRaijuFeature)]
-        [CustomComboInfo("风来刃 / Raiju Feature Option 2", "Replaces Huraijin with 月影雷兽爪 when available.", NIN.JobID, 0, "Pikachu / Raichu Option 2", "What we DO know, is that all NIN mains just slam their heads on the keyboard to do combos, anyway.")]
+        [CustomComboInfo("风来刃 / Raiju Feature Option 2", "当 月影雷兽爪 可以使用时，替换 风来刃.", NIN.JobID, 0, "Pikachu / Raichu Option 2", "What we DO know, is that all NIN mains just slam their heads on the keyboard to do combos, anyway.")]
         NinjaHuraijinRaijuFeature2 = 10012,
 
         [ParentCombo(NinjaAeolianEdgeCombo)]
-        [CustomComboInfo("强甲破点突 Feature", "Adds 强甲破点突 onto main combo.", NIN.JobID, 0, "", "Act like you can crush armor with your kitchen knives or whatever.")]
+        [CustomComboInfo("强甲破点突 Feature", "将 强甲破点突 加入到连击序列中.", NIN.JobID, 0, "", "Act like you can crush armor with your kitchen knives or whatever.")]
         NinjaArmorCrushOnMainCombo = 10013,
 
         [ParentCombo(NinjaAeolianEdgeCombo)]
-        [CustomComboInfo("Raiju Feature", "Adds Fleeting Raiju to 旋风刃 Combo.", NIN.JobID, 0, "Raichu Feature", "闪雷bolt!")]
+        [CustomComboInfo("雷兽 Feature", "将 月影雷兽牙 加入到 旋风刃 连击序列中.", NIN.JobID, 0, "Raichu Feature", "闪雷bolt!")]
         NinjaFleetingRaijuFeature = 10014,
 
         [ParentCombo(NinjaAeolianEdgeCombo)]
-        [CustomComboInfo("风来刃ToMainCombo", "Adds 风来刃 to main combo if Huton buff is not present", NIN.JobID, 0, "", "Smells like a hurricane. No idea.")]
+        [CustomComboInfo("风来刃ToMainCombo", "当风遁buff持续时间不足时，将 风来刃 加入到连击序列中.", NIN.JobID, 0, "", "Smells like a hurricane. No idea.")]
         NinjaHuraijinFeature = 10015,
 
         [ParentCombo(NinjaAeolianEdgeCombo)]
-        [CustomComboInfo("分身之术OnMainCombo", "Adds 分身之术 whenever its off cd and you have gauge for it on main combo.", NIN.JobID, 0, "What do you call a Viera that's been cut off at the knees?", "Bun-shin KEK")]
+        [CustomComboInfo("分身之术OnMainCombo", "当 分身之术 处于冷却状态且拥有足够的忍气时，将其加入到连击序列中.", NIN.JobID, 0, "What do you call a Viera that's been cut off at the knees?", "Bun-shin KEK")]
         NinjaBunshinFeature = 10016,
 
         [ParentCombo(NinjaAeolianEdgeCombo)]
-        [CustomComboInfo("BavacakraOnMainCombo", "Adds Bavacakra you have gauge for it on main combo.", NIN.JobID, 0, "BAKLAVA!", "BAKLAVA!")]
+        [CustomComboInfo("六道轮回OnMainCombo", "当拥有足够的忍气时，将 六道轮回 加入到连击序列中.", NIN.JobID, 0, "BAKLAVA!", "BAKLAVA!")]
         NinjaBhavacakraFeature = 10017,
 
         [ParentCombo(NinjaAeolianEdgeCombo)]
-        [CustomComboInfo("飞刀 Uptime Feature", "Replace Aeolian Edge with 飞刀s when targer is our of range.", NIN.JobID, 0, "", "Would probably make more sense for NIN to be a Ranged DPS, anyway.")]
+        [CustomComboInfo("飞刀 Uptime Feature", "当目标超出攻击范围时，将 旋风刃 替换为 飞刀.", NIN.JobID, 0, "", "Would probably make more sense for NIN to be a Ranged DPS, anyway.")]
         NinjaRangedUptimeFeature = 10018,
 
-        [CustomComboInfo("Simple Mudras", "Simplify the mudra casting to avoid failing.", NIN.JobID, 0, "Simple Murder", "Murder, made simple. For the everyday user.")]
+        [CustomComboInfo("Simple Mudras", "简化忍术结印的操作.", NIN.JobID, 0, "Simple Murder", "Murder, made simple. For the everyday user.")]
         NinjaSimpleMudras = 10020,
 
         [ParentCombo(NinjaTCJMeisuiFeature)]
-        [CustomComboInfo("天之印 Chi Jin Feature", "Turns 天之印 Chi Jin (the move) into 天之印, 地之印, and 人之印.", NIN.JobID, 0, "", "Does literally nothing. Ever")]
+        [CustomComboInfo("天地人 Feature", "发动 天地人 之后，将其依序变为 天之印, 地之印, 人之印.", NIN.JobID, 0, "", "Does literally nothing. Ever")]
         NinTCJFeature = 10021,
 
         [ConflictingCombos(NinjaArmorCrushCombo, NinjaAeolianEdgeCombo, NinjaGCDNinjutsuFeature)]
-        [CustomComboInfo("Simple Ninja Single Target", "Turns 双刃旋 into a one-button full single target rotation.\nUses Ninjitsus, applies 攻其不备 and uses Armor Crush to upkeep Huton buff.\nConflicts with a lot of features. Please only use this and the AoE version and disable all other Ninja features.", NIN.JobID, 0, "", "")]
+        [CustomComboInfo("Simple Ninja Single Target", "将 双刃旋 做为单目标一键连击的起始技i.\n在连击中使用忍术、攻其不备，并使用强甲破点突维持风遁buff.\n与很多其他功能相冲突，请只使用Simple Ninja Single Target与Simple Ninja AoE，并禁用其他所有选项.", NIN.JobID, 0, "", "")]
         NinSimpleSingleTarget = 10022,
 
-        [CustomComboInfo("Simple Ninja AoE", "Turns 血雨飞花 into a one-button full AoE rotation.\nApplies Doton but will only use Ninjitsus if under the effect of Kassatsu or have 2 charges to ensure more Doton uptime.", NIN.JobID, 0, "Dote-on AoE", "Uses /dote on every target.")]
+        [CustomComboInfo("Simple Ninja AoE", "将 血雨飞花 做为多目标一键连击的起始技.\n只有在生杀予夺作用下、或是拥有两层结印时才会使用忍术，以确保更多的土遁覆盖时间.", NIN.JobID, 0, "Dote-on AoE", "Uses /dote on every target.")]
         NinSimpleAoE = 10023,
 
         [ParentCombo(NinSimpleSingleTarget)]
-        [CustomComboInfo("Include 攻其不备", "Add or disable 攻其不备 as part of the feature.", NIN.JobID, 0, "Surprise!", "It's like the Uno Reverse card of XIV!")]
+        [CustomComboInfo("Include 攻其不备", "在一键连击中允许或禁用 攻其不备.", NIN.JobID, 0, "Surprise!", "It's like the Uno Reverse card of XIV!")]
         NinSimpleTrickFeature = 10024,
 
         [ParentCombo(NinjaAeolianEdgeCombo)]
-        [CustomComboInfo("断绝/Dream Within a Dream Feature", "Adds 断绝 and Dream Within a Dream to the combo.", NIN.JobID, 0, "Fever Dream", "Frothinig at the mouth")]
+        [CustomComboInfo("断绝/梦幻三段 Feature", "将 断绝 和 梦幻三段 加入到连击序列中.", NIN.JobID, 0, "Fever Dream", "Frothinig at the mouth")]
         NinAeolianAssassinateFeature = 10025,
 
         [ParentCombo(NinjaAeolianEdgeCombo)]
-        [CustomComboInfo("夺取 Feature", "Adds 夺取 to the combo.", NIN.JobID, 0, "Petty Theft", "Embarrassing.")]
+        [CustomComboInfo("夺取 Feature", "将 夺取 加入到攻击序列中.", NIN.JobID, 0, "Petty Theft", "Embarrassing.")]
         NinAeolianMugFeature = 10026,
 
         [ParentCombo(NinSimpleTrickFeature)]
-        [CustomComboInfo("生杀予夺 for Suiton Feature", "Allows the use of 生杀予夺 to set up Suiton. Suiton is prioritised above Hyosho Ranryu under this effect \nand your trick cooldown window has elapsed.", NIN.JobID)]
+        [CustomComboInfo("生杀予夺 for 水遁 Feature", "当攻其不备冷却时，允许将生杀予夺用来优先使用水遁，水遁的优先级将高于冰晶乱流之术.", NIN.JobID)]
         NinSimpleTrickKassatsuFeature = 10027,
 
         [ParentCombo(NinSimpleAoE)]
-        [CustomComboInfo("通灵之术·大虾蟆 Feature", "Adds 通灵之术·大虾蟆 to the combo if you have Ninki to spend.", NIN.JobID)]
+        [CustomComboInfo("通灵之术·大虾蟆 Feature", "当拥有足够的忍气时，将 通灵之术·大虾蟆 加入到连击序列中.", NIN.JobID)]
         NinSimpleHellfrogFeature = 10028,
 
         [ParentCombo(NinSimpleAoE)]
-        [CustomComboInfo("Mudra Feature", "Adds Doton and Katon/劫火灭却之术 to the combo.", NIN.JobID)]
+        [CustomComboInfo("Mudra Feature", "将 土遁、火遁/劫火灭却之术 加入连击序列.", NIN.JobID)]
         NinSimpleAoeMudras = 10029,
 
         [ParentCombo(NinSimpleAoE)]
-        [CustomComboInfo("分身之术 Feature", "Adds 分身之术 and Phantom Kamaitachi to the combo.", NIN.JobID)]
+        [CustomComboInfo("分身之术 Feature", "将 分身之术 和 残影镰鼬 加入攻击序列.", NIN.JobID)]
         NinSimpleAoeBunshin = 10030,
 
         #endregion
