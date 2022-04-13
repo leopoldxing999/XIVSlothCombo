@@ -739,7 +739,7 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("嗜血 on CD", "Adds 嗜血 to Main Combo on CD and when Darkside is up.", DRK.JobID, 0)]
         DarkBloodWeaponOption = 5026,
         
-        [CustomComboInfo("Double Reprisal Protection", "Prevents the use of Reprisal when target already has the effectby replacing it with 飞石", DRK.JobID)]
+        [CustomComboInfo("血仇保护机制", "当目标已被赋予血仇效果时，将 血仇 替换为 飞石", DRK.JobID)]
         DarkKnightReprisalProtection = 5030,
 
         #endregion
@@ -1002,7 +1002,7 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("爆发击 on Main Combo", "Adds Burst Strike to Main Combo when under 无情 and Gnashing Fang is over.", GNB.JobID, 0)]
         GunbreakerBSinNMFeature = 7023,
         
-        [CustomComboInfo("Double Reprisal Protection", "Prevents the use of Reprisal when target already has the effectby replacing it with 飞石", GNB.JobID)]
+        [CustomComboInfo("血仇保护机制", "当目标已被赋予血仇效果时，将 血仇 替换为 飞石", GNB.JobID)]
         GunbreakerReprisalProtection = 7030,
 
         #endregion
@@ -1414,7 +1414,7 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("AOE Expiacion / 厄运流转 Feature", "在连击窗口期插入 偿赎剑 和 厄运流转.", PLD.JobID, 0, "", "")]
         PaladinAoEExpiacionScornFeature = 11024,
 
-        [CustomComboInfo("Double Reprisal Protection", "当目标已被赋予血仇效果时，将 血仇 替换为 飞石", PLD.JobID)]
+        [CustomComboInfo("血仇保护机制", "当目标已被赋予血仇效果时，将 血仇 替换为 飞石", PLD.JobID)]
         PaladinReprisalProtection = 11030,
 
         #endregion
@@ -2014,77 +2014,77 @@ namespace XIVSlothComboPlugin
         // ====================================================================================
         #region WARRIOR
 
-        [CustomComboInfo("Storms Path Combo", "All in one main combo feature adds 暴风碎/Path. \nIf all sub options and Fell Cleave/Decimate Options are toggled will turn into a full one button rotation (Simple Warrior)", WAR.JobID, 0, "", "Follow the yellow-brick road.")]
+        [CustomComboInfo("绿斩连击", "将暴风斩替换为主要连击技能/Path. \n如果下列选项以及裂石飞环/地毁人亡相关选项被勾选，暴风斩将变为一键循环", WAR.JobID, 0, "", "Follow the yellow-brick road.")]
         WarriorStormsPathCombo = 18000,
 
-        [CustomComboInfo("Storms Eye Combo", "Replace Storms Eye with its combo chain", WAR.JobID, 0, "", "Ow! My fucking eye!")]
+        [CustomComboInfo("红斩连击", "将暴风碎替换为红斩连击", WAR.JobID, 0, "", "Ow! My fucking eye!")]
         WarriorStormsEyeCombo = 18001,
 
-        [CustomComboInfo("超压斧 Combo", "Add combos to 超压斧", WAR.JobID, 0, "Underpower", "Bet you wish you had damage like DRK right now, huh")]
+        [CustomComboInfo("超压斧连击", "将超压斧替换为AOE连击", WAR.JobID, 0, "Underpower", "Bet you wish you had damage like DRK right now, huh")]
         WarriorMythrilTempestCombo = 18002,
 
         [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("Warrior Gauge Overcap Feature", "Replace Single target or AoE combo with gauge spender if you are about to overcap and are before a step of a combo that would generate beast gauge", WAR.JobID, 0, "", "Taming the beast... for now.")]
+        [CustomComboInfo("兽魂监控", "如果兽魂快溢出了，将消耗兽魂的技能加入到绿斩连击和AOE连击", WAR.JobID, 0, "", "Taming the beast... for now.")]
         WarriorGaugeOvercapFeature = 18003,
 
         [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("Inner 放生 Feature", "Replace Single target and AoE combo with Fell Cleave/Decimate during Inner 放生", WAR.JobID, 0, "", "释放 your deepest thoughts and feelings upon the party. They'll love it!")]
+        [CustomComboInfo("原初的解放", "在原初的解放状态下，将绿斩连击替换为裂石飞环/地毁人亡", WAR.JobID, 0, "", "释放 your deepest thoughts and feelings upon the party. They'll love it!")]
         WarriorInnerReleaseFeature = 18004,
 
-        [CustomComboInfo("原初的勇猛 Feature", "Replace 原初的勇猛 with Raw intuition when level synced below 76", WAR.JobID, 0, "Nasty-ass Flash", "Jeez. Keep it to yourself.")]
+        [CustomComboInfo("原初的勇猛", "在同步到76级以下时，将原初的勇猛替换为原初的直觉", WAR.JobID, 0, "Nasty-ass Flash", "Jeez. Keep it to yourself.")]
         WarriorNascentFlashFeature = 18005,
 
         [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("动乱 Feature", "Adds 动乱 into maincombo if you have Surging Tempest", WAR.JobID, 0, "", "I use this feature when I'm moving house.")]
+        [CustomComboInfo("动乱", "在有红斩BUFF时，将动乱加入到绿斩连击", WAR.JobID, 0, "", "I use this feature when I'm moving house.")]
         WarriorUpheavalMainComboFeature = 18007,
 
         [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("蛮荒崩裂 Feature", "Replace 原初之魂 and Steel Cyclone with Primal Rend when available (Also added onto Main AoE combo)", WAR.JobID, 0, "", "Going back to our roots. Let's get Primal!")]
+        [CustomComboInfo("蛮荒崩裂", "在蛮荒崩裂预备状态下，将裂石飞环/地毁人亡替换为蛮荒崩裂", WAR.JobID, 0, "", "Going back to our roots. Let's get Primal!")]
         WarriorPrimalRendFeature = 18008,
 
         [ParentCombo(WarriorMythrilTempestCombo)]
-        [CustomComboInfo("群山隆起 Feature", "Adds 群山隆起 onto main AoE combo when you are buffed with Surging Tempest", WAR.JobID, 0, "Orange-y feature", "Orange flavour. Mm.")]
+        [CustomComboInfo("群山隆起", "在有红斩BUFF时，将群山隆起加入到AOE连击", WAR.JobID, 0, "Orange-y feature", "Orange flavour. Mm.")]
         WarriorOrogenyFeature = 18009,
 
         [ParentCombo(WarriorStormsPathCombo)]
         [ConflictingCombos(WarriorSpenderOption)]
-        [CustomComboInfo("狂魂 option", "Adds Inner Chaos to Storms Path Combo and Chaotic Cyclone to 超压斧 Combo if you are buffed with Nascent Chaos.\nRequires Storms Path Combo and 超压斧 Combo", WAR.JobID, 0, "", "THE EYE OF THE TIGERRRRR")]
+        [CustomComboInfo("狂魂与混沌旋风", "在有原初的混沌BUFF时，将狂魂与混沌旋风分别加入到绿斩连击和AOE连击", WAR.JobID, 0, "", "THE EYE OF THE TIGERRRRR")]
         WarriorInnerChaosOption = 18010,
 
         [ParentCombo(WarriorStormsPathCombo)]
         [ConflictingCombos(WarriorInnerChaosOption)]
-        [CustomComboInfo("裂石飞环/Decimate Option", "Adds Fell Cleave to main combo when gauge is at 50 or more and adds Decimate to the AoE combo .\nWill use Inner Chaos/Chaotic Cyclone if 战嚎 is used.\nWill begin pooling resources when Inner Release is under 30s", WAR.JobID, 0, "", "MORE CLEAVE!")]
+        [CustomComboInfo("裂石飞环/地毁人亡", "在兽魂超过50时，将裂石飞环/地毁人亡（或狂魂与混沌旋风）加入到绿斩连击和AOE连击\n为了让你可以随时按战壕不会溢出兽魂\n当原初的解放CD小于30s时将会倾泻资源", WAR.JobID, 0, "", "MORE CLEAVE!")]
         WarriorSpenderOption = 18011,
 
         [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("猛攻 Feature", "Adds Onslaught to 暴风斩 feature combo if you are under Surging Tempest Buff", WAR.JobID, 0, "", "猛攻! Full Power!")]
+        [CustomComboInfo("猛攻", "在有红斩BUFF时，将猛攻加入到绿斩连击", WAR.JobID, 0, "", "猛攻! Full Power!")]
         WarriorOnslaughtFeature = 18012,
 
-        [CustomComboInfo("战嚎 Feature", "Replaces 战嚎 with Fell Cleave when under Inner Release buff.\nReplaces 战嚎 with Inner Chaos When under Nascent Chaos buff", WAR.JobID, 0, "Cleave of annoyance", "Infuriating stuff, if you ask me. Truly chaotic.")]
+        [CustomComboInfo("战嚎保护机制", "在原初的解放状态下，将战壕替换为裂石飞环\n在有原初的混沌BUFF时，将战壕替换为狂魂", WAR.JobID, 0, "Cleave of annoyance", "Infuriating stuff, if you ask me. Truly chaotic.")]
         WarriorInfuriateFeature = 18015,
 
         [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("飞斧 Uptime Feature", "Replace 暴风斩 Combo Feature with Tomahawk when you are out of range.", WAR.JobID, 0, "飞斧!", "You heard me! 飞斧! Ka-chow!")]
+        [CustomComboInfo("飞斧", "在如果离boss太远，将飞斧加入到绿斩连击", WAR.JobID, 0, "飞斧!", "You heard me! 飞斧! Ka-chow!")]
         WARRangedUptimeFeature = 18016,
 
-        [CustomComboInfo("Interrupt Feature", "Replaces Low Blow with Interject when target can be interrupted .", WAR.JobID, 0, "", "That's a low blow to my bro-bro, bro.")]
+        [CustomComboInfo("打断", "当目标可以被打断施法时，替换下踢为插言", WAR.JobID, 0, "", "That's a low blow to my bro-bro, bro.")]
         WarriorInterruptFeature = 18017,
 
         [CustomComboInfo("战嚎 on Fell Cleave / Decimate", "Turns Fell Cleave and Decimate into 战嚎 if at or under set rage value", WAR.JobID)]
         WarriorInfuriateFellCleave = 18018,
 
-        [CustomComboInfo("蛮荒崩裂 Option", "Turns Inner 放生 into Primal Rend on use.", WAR.JobID)]
+        [CustomComboInfo("蛮荒崩裂", "在蛮荒崩裂预备状态下，将原初的解放替换为蛮荒崩裂.", WAR.JobID)]
         WarriorPrimalRendOnInnerRelease = 18019,
         
         [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("Inner Release on 暴风斩", "Adds Inner Release to 暴风斩 Combo when Nascent Chaos is not up.", WAR.JobID)]
+        [CustomComboInfo("原初的解放加入绿斩循环", "在没有原初的混沌BUFF时，将原初的解放加入到绿斩连击", WAR.JobID)]
         WarriorIRonST = 18020,
 
         [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("Infuriate on 暴风斩", "Adds Infuriate to 暴风斩 Combo when gauge is below 50 and not under Inner Release.", WAR.JobID)]
+        [CustomComboInfo("战壕加入绿斩循环", "在没有原初的解放BUFF且不会溢出兽魂时，将战壕加入到绿斩连击", WAR.JobID)]
         WarriorInfuriateonST = 18021,
 
-        [CustomComboInfo("Double Reprisal Protection", "Prevents the use of Reprisal when target already has the effectby replacing it with 飞石", WAR.JobID)]
+        [CustomComboInfo("雪仇保护机制", "如果目标已有雪仇，将锁定你的雪仇", WAR.JobID)]
         WarriorReprisalProtection = 18030,
 
         #endregion
