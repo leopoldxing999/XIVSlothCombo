@@ -2158,25 +2158,25 @@ namespace XIVSlothComboPlugin
         // ====================================================================================
         #region DOL
 
-        [CustomComboInfo("Eureka Feature", "Replace 农夫之智 and Solid Reason with Wise to the World when available.", DOL.JobID)]
+        [CustomComboInfo("理智同兴", "当理智同兴可用时，将农夫之智或石工之理替换为理智同兴", DOL.JobID)]
         DolEurekaFeature = 51001,
 
-        [CustomComboInfo("抛竿 / Hook Feature", "Replace 抛竿 with Hook when fishing.", DOL.JobID)]
+        [CustomComboInfo("抛竿", "正在钓鱼时，将抛竿替换为提钩", DOL.JobID)]
         DolCastHookFeature = 51002,
 
-        [CustomComboInfo("抛竿 / Gig Feature", "Replace 抛竿 with Gig when underwater.", DOL.JobID)]
+        [CustomComboInfo("刺鱼", "在水下时，将抛竿替换为刺鱼", DOL.JobID)]
         DolCastGigFeature = 51003,
 
-        [CustomComboInfo("拍击水面 / Veteran Trade Feature", "Replace 拍击水面 with Veteran Trade when underwater.", DOL.JobID)]
+        [CustomComboInfo("拍击水面", "在水下时，将拍击水面替换为熟练技巧", DOL.JobID)]
         DolSurfaceTradeFeature = 51004,
 
-        [CustomComboInfo("Prize Catch / 嘉惠 Feature", "Replace Prize Catch with 嘉惠 when underwater.", DOL.JobID)]
+        [CustomComboInfo("大鱼猎手", "在水下时，将大鱼猎手替换为嘉惠", DOL.JobID)]
         DolPrizeBountyFeature = 51005,
 
-        [CustomComboInfo("钓组 / Salvage Feature", "Replace 钓组 with Salvage when underwater.", DOL.JobID)]
+        [CustomComboInfo("钓组", "在水下时，将钓组替换为打捞", DOL.JobID)]
         DolSnaggingSalvageFeature = 51006,
 
-        [CustomComboInfo("抛竿 Light / Electric Current Feature", "Replace 抛竿 Light with Electric Current when underwater.", DOL.JobID)]
+        [CustomComboInfo("垂钓之光", "在水下时，将垂钓之光替换为电水流", DOL.JobID)]
         DolCastLightElectricCurrentFeature = 51007,
 
         #endregion
