@@ -154,7 +154,7 @@ namespace XIVSlothComboPlugin
             float offset = (float)Service.Configuration.MeleeOffset;
 
             var inputChangedeth = false;
-            inputChangedeth |= ImGui.InputFloat("Melee Distance Offset", ref offset);
+            inputChangedeth |= ImGui.InputFloat("近战距离偏移", ref offset);
 
             if (inputChangedeth)
             {

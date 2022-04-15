@@ -926,7 +926,7 @@ namespace XIVSlothComboPlugin
         GunbreakerMainComboCDsGroup = 7002,
 
         [ParentCombo(GunbreakerMainComboCDsGroup)]
-        [CustomComboInfo("危险领域/Blasting Zone on Main Combo", "Adds 危险领域/Blasting Zone to the Main Combo", GNB.JobID, 0)]
+        [CustomComboInfo("危险领域/爆破领域 on Main Combo", "Adds 危险领域/Blasting Zone to the Main Combo", GNB.JobID, 0)]
         GunbreakerDZOnMainComboFeature = 7005,
 
         [ParentCombo(GunbreakerMainComboCDsGroup)]
@@ -941,10 +941,10 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("弓形冲波 on AoE Feature", "Adds Bow Shock onto the aoe combo when it's off cooldown. Recommended to use with 烈牙 features.", GNB.JobID, 0, "AoE cattleprod enabler")]
         GunbreakerBowShockFeature = 7017,
 
-        [CustomComboInfo("恶魔杀 Combo", "Replace 恶魔杀 with its combo chain.", GNB.JobID, 0, "dEmOn SlAuGhTeR", "恶魔杀? Really? What is this, RPR?")]
+        [CustomComboInfo("恶魔杀", "替换恶魔杀连击.", GNB.JobID, 0, "dEmOn SlAuGhTeR", "恶魔杀? Really? What is this, RPR?")]
         GunbreakerDemonSlaughterCombo = 7006,
 
-        [CustomComboInfo("Ammo Overcap Feature", "Uses 爆发击/Fated Circle on the respective ST/AoE combos when ammo is about to overcap.", GNB.JobID, 0, "Pew Pew Forever", "The whole nine yards")]
+        [CustomComboInfo("晶壤溢出保护", "晶壤将要溢出替换单体连击/AOE连击最后一下", GNB.JobID, 0, "Pew Pew Forever", "The whole nine yards")]
         GunbreakerAmmoOvercapFeature = 7007,
 
         [CustomComboInfo("烈牙 Continuation Combo", "Adds Continuation to 烈牙.", GNB.JobID, 0, "More Mercy", "More, no wait, less, no wait, MORE Mercy! No, wait...")]
@@ -962,17 +962,17 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("CDs on 烈牙", "Adds Sonic Break/Bow Shock/Blasting Zone on 烈牙, order dependent on 无情 buff. \nBurst Strike added if there's charges while 无情 buff is up.", GNB.JobID, 0, "More Teeth", "Gnashing fang, but like, if a shark did it. Or something.")]
         GunbreakerCDsOnGF = 7011,
 
-        [CustomComboInfo("BurstStrike续剑", "Adds Hypervelocity on Burst Strike Continuation combo and main combo and 烈牙.", GNB.JobID, 0, "Swish, swoosh", "Now we're cooking with gas! Hyper!")]
+        [CustomComboInfo("超高速", "可以使用超高速的时候，替换单体连击、烈牙、Main combo", GNB.JobID, 0, "Swish, swoosh", "Now we're cooking with gas! Hyper!")]
         GunbreakerBurstStrikeConFeature = 7012,
 
-        [CustomComboInfo("爆发击 to Bloodfest Feature", "Replace 爆发击 with Bloodfest if you have no powder gauge.", GNB.JobID, 0, "P4S Vampire man 血壤 Feature", "Again with the edgelord names?\nTut, tut, Yoshi-P. Do better.")]
+        [CustomComboInfo("爆发击", "没有足够的晶壤使用的时候用血壤代替爆发击", GNB.JobID, 0, "P4S Vampire man 血壤 Feature", "Again with the edgelord names?\nTut, tut, Yoshi-P. Do better.")]
         GunbreakerBloodfestOvercapFeature = 7013,
 
         [ParentCombo(GunbreakerSolidBarrelCombo)]
         [CustomComboInfo("闪雷弹 Uptime", "Replace Solid Barrel Combo Feature with 闪雷弹 when you are out of range.", GNB.JobID, 0, "Stubby-armed GNB", "Can't reach?")]
         GunbreakerRangedUptimeFeature = 7015,
 
-        [CustomComboInfo("Interrupt Feature", "Replaces LowBlow with Interject when target can be interrupted .", GNB.JobID, 0, "Lower blow", "Blow, but low.")]
+        [CustomComboInfo("Interrupt Feature", "当目标可以被打断施法的时候，将下踢替换为插言", GNB.JobID, 0, "Lower blow", "Blow, but low.")]
         GunbreakerInterruptFeature = 7016,
 
         [ParentCombo(GunbreakerMainComboCDsGroup)]
@@ -995,7 +995,7 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("音速破 on Main Combo", "Adds 音速破 to the Main Combo", GNB.JobID, 0)]
         GunbreakerSBOnMainComboFeature = 7021,
 
-        [CustomComboInfo("音速破/Bow Shock on NM", "Adds Sonic Break and Bow Shock to 无情 when NM is on CD", GNB.JobID, 0)]
+        [CustomComboInfo("音速破/弓形冲波", "无情在CD时用音速破/弓形冲波代替", GNB.JobID, 0)]
         GunbreakerCDsonNMFeature = 7022,
 
         [ParentCombo(GunbreakerMainComboCDsGroup)]
