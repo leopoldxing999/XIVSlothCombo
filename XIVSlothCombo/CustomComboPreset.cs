@@ -914,95 +914,95 @@ namespace XIVSlothComboPlugin
         // ====================================================================================
         #region GUNBREAKER
 
-        [CustomComboInfo("迅连斩 Combo", "Replace 迅连斩 with its combo chain. \nIf all sub options are selected will turn into a full one button rotation (Simple Gunbreaker)", GNB.JobID, 0, "Floppy Barrel Combo", "Not so solid NOW, are ya?")]
+        [CustomComboInfo("迅连斩连击", "将迅连斩替换为迅连斩连击。 \n如果所有的次级选项都被勾选，那么将可以做到一键循环。（简单枪刃）", GNB.JobID, 0, "Floppy Barrel Combo", "Not so solid NOW, are ya?")]
         GunbreakerSolidBarrelCombo = 7000,
 
         [ParentCombo(GunbreakerSolidBarrelCombo)]
-        [CustomComboInfo("烈牙 and Continuation on Main Combo", "Adds 烈牙 to the main combo. 烈牙 must be started manually and the combo will finish it off.\n Useful for when 烈牙 needs to be help due to downtime.", GNB.JobID, 0, "Fashing Gnang", "Why grandma, what big teeth you have!")]
+        [CustomComboInfo("烈牙与续剑整合到主连击", "将烈牙与续剑整合到主连击。烈牙必须被手动激活，之后会被替换到主连击。 \n 当烈牙需要空转的时候，可以只激活此选项。", GNB.JobID, 0, "Fashing Gnang", "Why grandma, what big teeth you have!")]
         GunbreakerGnashingFangOnMain = 7001,
 
         [ParentCombo(GunbreakerSolidBarrelCombo)]
-        [CustomComboInfo("CDs on Main Combo", "Adds various CDs to the Main Combo when under 无情 or when 无情 is on cooldown", GNB.JobID, 0, "Gee Whiz!", "Mom, I can't manage my oGCDs!")]
+        [CustomComboInfo("冷却技能整合到主连击", "当无情进入冷却时将各种拥有冷却时间的技能整合到主连击。", GNB.JobID, 0, "Gee Whiz!", "Mom, I can't manage my oGCDs!")]
         GunbreakerMainComboCDsGroup = 7002,
 
         [ParentCombo(GunbreakerMainComboCDsGroup)]
-        [CustomComboInfo("危险领域/爆破领域 on Main Combo", "Adds 危险领域/Blasting Zone to the Main Combo", GNB.JobID, 0)]
+        [CustomComboInfo("危险领域/爆破领域整合到主连击", "将危险领域/爆破领域整合到整合到主连击。", GNB.JobID, 0)]
         GunbreakerDZOnMainComboFeature = 7005,
 
         [ParentCombo(GunbreakerMainComboCDsGroup)]
-        [CustomComboInfo("倍攻 on Main Combo", "Adds Double Down on main combo when under 无情 buff", GNB.JobID, 0, "ALL the deeps", "For when you're both feeling merciless and are stuffed full of powder. BANG!")]
+        [CustomComboInfo("倍攻整合到主连击", "当你拥有无情buff时，将倍攻整合到主连击。", GNB.JobID, 0, "ALL the deeps", "For when you're both feeling merciless and are stuffed full of powder. BANG!")]
         GunbreakerDDonMain = 7003,
 
         [ParentCombo(GunbreakerSolidBarrelCombo)]
-        [CustomComboInfo("粗分斩 Option", "Adds 粗分斩 onto main combo whenever it's available.", GNB.JobID, 0, "Divide... Roughly", "Ayo pour one out for the homie Squall")]
+        [CustomComboInfo("粗分斩设置", "当可用时将粗分斩整合到主连击。", GNB.JobID, 0, "Divide... Roughly", "Ayo pour one out for the homie Squall")]
         GunbreakerRoughDivideFeature = 7004,
 
         [ParentCombo(GunbreakerDemonSlaughterCombo)]
-        [CustomComboInfo("弓形冲波 on AoE Feature", "Adds Bow Shock onto the aoe combo when it's off cooldown. Recommended to use with 烈牙 features.", GNB.JobID, 0, "AoE cattleprod enabler")]
+        [CustomComboInfo("弓形冲波整合到AOE连击", "当弓形冲波冷却完成时将其整合到AOE连击。推荐使用烈牙特性", GNB.JobID, 0, "AoE cattleprod enabler")]
         GunbreakerBowShockFeature = 7017,
 
-        [CustomComboInfo("恶魔杀", "替换恶魔杀连击.", GNB.JobID, 0, "dEmOn SlAuGhTeR", "恶魔杀? Really? What is this, RPR?")]
+        [CustomComboInfo("恶魔杀连击", "将恶魔杀替换为恶魔杀连击。", GNB.JobID, 0, "dEmOn SlAuGhTeR", "恶魔杀? Really? What is this, RPR?")]
         GunbreakerDemonSlaughterCombo = 7006,
 
-        [CustomComboInfo("晶壤溢出保护", "晶壤将要溢出替换单体连击/AOE连击最后一下", GNB.JobID, 0, "Pew Pew Forever", "The whole nine yards")]
+        [CustomComboInfo("晶壤溢出特性", "当晶壤将要溢出时使用爆发击/命运之环替换掉单体/AOE连击。", GNB.JobID, 0, "Pew Pew Forever", "The whole nine yards")]
         GunbreakerAmmoOvercapFeature = 7007,
 
-        [CustomComboInfo("烈牙 Continuation Combo", "Adds Continuation to 烈牙.", GNB.JobID, 0, "More Mercy", "More, no wait, less, no wait, MORE Mercy! No, wait...")]
+        [CustomComboInfo("烈牙续剑连击", "将续剑添加到烈牙.", GNB.JobID, 0, "More Mercy", "More, no wait, less, no wait, MORE Mercy! No, wait...")]
         GunbreakerGnashingFangCombo = 7008,
 
         [ParentCombo(GunbreakerGnashingFangCombo)]
-        [CustomComboInfo("无情 on Gnashing Fang", "Adds 无情 to Gnashing Fang when it's ready.", GNB.JobID, 0, "Blue DPS be like", "This one comes with teeth.")]
+        [CustomComboInfo("无情整合到烈牙", "当无情冷却结束时将其整合到烈牙.", GNB.JobID, 0, "Blue DPS be like", "This one comes with teeth.")]
         GunbreakerNoMercyonGF = 7009,
 
         [ParentCombo(GunbreakerGnashingFangCombo)]
-        [CustomComboInfo("Double Down on 烈牙", "Adds Double Down to Gnashing Fang when 无情 buff is up.", GNB.JobID, 0, "My hotbars are a (tiny) mess!", "Thanks plogon!")]
+        [CustomComboInfo("倍攻整合到烈牙", "当拥有无情BUFF时将倍攻整合到烈牙", GNB.JobID, 0, "My hotbars are a (tiny) mess!", "Thanks plogon!")]
         GunbreakerDDOnGF = 7010,
 
         [ParentCombo(GunbreakerGnashingFangCombo)]
-        [CustomComboInfo("CDs on 烈牙", "Adds Sonic Break/Bow Shock/Blasting Zone on 烈牙, order dependent on 无情 buff. \nBurst Strike added if there's charges while 无情 buff is up.", GNB.JobID, 0, "More Teeth", "Gnashing fang, but like, if a shark did it. Or something.")]
+        [CustomComboInfo("冷却技能整合到烈牙", "当拥有无情BUFF时将音速破/弓形冲波/爆破领域整合到烈牙。 \n当拥有无情BUFF时爆发击也将会被整合到烈牙。", GNB.JobID, 0, "More Teeth", "Gnashing fang, but like, if a shark did it. Or something.")]
         GunbreakerCDsOnGF = 7011,
 
-        [CustomComboInfo("超高速", "可以使用超高速的时候，替换单体连击、烈牙、Main combo", GNB.JobID, 0, "Swish, swoosh", "Now we're cooking with gas! Hyper!")]
+        [CustomComboInfo("爆发击续剑", "将超音速添加到爆发击/主连击以及烈牙。", GNB.JobID, 0, "Swish, swoosh", "Now we're cooking with gas! Hyper!")]
         GunbreakerBurstStrikeConFeature = 7012,
 
-        [CustomComboInfo("爆发击", "没有足够的晶壤使用的时候用血壤代替爆发击", GNB.JobID, 0, "P4S Vampire man 血壤 Feature", "Again with the edgelord names?\nTut, tut, Yoshi-P. Do better.")]
+        [CustomComboInfo("血壤替换爆发击特性", "当你没有晶壤可用时使用血壤替换爆发击。", GNB.JobID, 0, "P4S Vampire man 血壤 Feature", "Again with the edgelord names?\nTut, tut, Yoshi-P. Do better.")]
         GunbreakerBloodfestOvercapFeature = 7013,
 
         [ParentCombo(GunbreakerSolidBarrelCombo)]
-        [CustomComboInfo("闪雷弹 Uptime", "Replace Solid Barrel Combo Feature with 闪雷弹 when you are out of range.", GNB.JobID, 0, "Stubby-armed GNB", "Can't reach?")]
+        [CustomComboInfo("闪雷弹激活", "当你离开近战攻击范围时使用闪雷弹替换主连击。", GNB.JobID, 0, "Stubby-armed GNB", "Can't reach?")]
         GunbreakerRangedUptimeFeature = 7015,
 
-        [CustomComboInfo("Interrupt Feature", "当目标可以被打断施法的时候，将下踢替换为插言", GNB.JobID, 0, "Lower blow", "Blow, but low.")]
+        [CustomComboInfo("插言特性", "当目标可被打断时，使用插言替换掉下踢。", GNB.JobID, 0, "Lower blow", "Blow, but low.")]
         GunbreakerInterruptFeature = 7016,
 
         [ParentCombo(GunbreakerMainComboCDsGroup)]
-        [CustomComboInfo("血壤 on Main Combo", "Adds 血壤 to main combo when ammo is 0.", GNB.JobID, 0)]
+        [CustomComboInfo("血壤整合到主连击", "Adds 血壤 to main combo when ammo is 0.", GNB.JobID, 0)]
         GunbreakerBloodfestonST = 7014,
 
         [ParentCombo(GunbreakerSolidBarrelCombo)]
-        [CustomComboInfo("无情 on Main Combo", "Adds 无情 to main combo when at full ammo.", GNB.JobID, 0)]
+        [CustomComboInfo("无情整合到主连击", "Adds 无情 to main combo when at full ammo.", GNB.JobID, 0)]
         GunbreakerNoMercyonST = 7018,
 
         [ParentCombo(GunbreakerGnashingFangOnMain)]
-        [CustomComboInfo("烈牙 Starter", "Begins 烈牙 on main combo.", GNB.JobID, 0)]
+        [CustomComboInfo("烈牙启动", "将烈牙也整合到主连击。", GNB.JobID, 0)]
         GunbreakerGFStartonMain = 7019,
 
         [ParentCombo(GunbreakerMainComboCDsGroup)]
-        [CustomComboInfo("弓形冲波 on Main Combo", "Adds 弓形冲波 to the Main Combo", GNB.JobID, 0)]
+        [CustomComboInfo("弓形冲波整合到主连击", "将弓形冲波整合到主连击", GNB.JobID, 0)]
         GunbreakerBSOnMainComboFeature = 7020,
 
         [ParentCombo(GunbreakerMainComboCDsGroup)]
-        [CustomComboInfo("音速破 on Main Combo", "Adds 音速破 to the Main Combo", GNB.JobID, 0)]
+        [CustomComboInfo("音速破整合到主连击", "将音速破整合到主连击", GNB.JobID, 0)]
         GunbreakerSBOnMainComboFeature = 7021,
 
-        [CustomComboInfo("音速破/弓形冲波", "无情在CD时用音速破/弓形冲波代替", GNB.JobID, 0)]
+        [CustomComboInfo("音速破/弓形冲波整合到无情", "当无情进入CD时，将音速破/弓形冲波整合到无情。", GNB.JobID, 0)]
         GunbreakerCDsonNMFeature = 7022,
 
         [ParentCombo(GunbreakerMainComboCDsGroup)]
-        [CustomComboInfo("爆发击 on Main Combo", "Adds Burst Strike to Main Combo when under 无情 and Gnashing Fang is over.", GNB.JobID, 0)]
+        [CustomComboInfo("爆发击整合到主连击", "当拥有无情BUFF并且结束烈牙连击之后，将爆发击整合到主连击", GNB.JobID, 0)]
         GunbreakerBSinNMFeature = 7023,
         
-        [CustomComboInfo("血仇保护机制", "当目标已被赋予血仇效果时，将 血仇 替换为 飞石", GNB.JobID)]
+        [CustomComboInfo("血仇保护机制", "当目标已被赋予血仇时，将血仇替换为飞石。", GNB.JobID)]
         GunbreakerReprisalProtection = 7030,
 
         #endregion
@@ -1145,71 +1145,71 @@ namespace XIVSlothComboPlugin
         // ====================================================================================
         #region MONK
 
-        [CustomComboInfo("AoE Combo", "Replaces Arm Of The Destroyer/Shadow Of The Destroyer with the AoE combo chain.", MNK.JobID, 0, "", "Punching, but wide. It's like having extra hands!")]
+        [CustomComboInfo("AOE连击", "整合AOE连击到破坏神脚/破坏神冲。", MNK.JobID, 0, "", "更大范围的拳头，就像你拥有了其它的手一样！")]
         MnkAoECombo = 9000,
 
-        [CustomComboInfo("连击 Feature", "Replaces Dragon Kick with 连击 if both a form and Leaden Fist are up.", MNK.JobID, 0, "", "Shine ya shoes, guv'na?")]
+        [CustomComboInfo("连击特性", "在拥有连击效果提高时使用连击替换双龙脚。", MNK.JobID, 0, "", "闪亮的鞋子，对吧？")]
         MnkBootshineFeature = 9001,
 
-        [CustomComboInfo("双掌打 Feature", "Replaces 正拳 with Twin Snakes if Disciplined Fist is not applied or is less than 6 seconds from falling off.", MNK.JobID, 0, "", "I've had it with these MF snakes on this MF plane!")]
+        [CustomComboInfo("双掌打特性", "如果你功力buff不足六秒，使用双掌打替换正拳。", MNK.JobID, 0, "", "我他X的受够了这架他X的飞机上的蛇！")]
         MnkTwinSnakesFeature = 9011,
 
         [ConflictingCombos(MnkBootshineCombo)]
-        [CustomComboInfo("Basic Rotation", "Basic Monk Combo on one button", MNK.JobID, 0, "", "I presses the buttons, I does the deeps")]
+        [CustomComboInfo("基础循环", "整合一键基础循环", MNK.JobID, 0, "", "我按，我暗。")]
         MnkBasicCombo = 9002,
 
-        [CustomComboInfo("震脚 Feature", "震脚 becomes Masterful Blitz while you have 3 Beast Chakra.", MNK.JobID, 0, "", "They say life is like walking a tightrope...")]
+        [CustomComboInfo("震脚特性", "如果你拥有三档脉轮，那么使用必杀技替换震脚。", MNK.JobID, 0, "", "他们说生活就像是在走钢丝……")]
         MonkPerfectBalanceFeature = 9003,
 
-        [CustomComboInfo("连击 Balance Feature", "Replaces 双龙脚 with Masterful Blitz if you have 3 Beast Chakra.", MNK.JobID, 0, "The tin", "Does what it says on the tin")]
+        [CustomComboInfo("连击平衡特性", "如果你拥有三档脉轮，那么使用必杀技替换双龙脚。", MNK.JobID, 0, "The tin", "Does what it says on the tin")]
         MnkBootshineBalanceFeature = 9004,
 
-        [CustomComboInfo("Howling Fist/斗气 Feature", "Replaces Howling Fist/Enlightenment with 斗气 when the Fifth Chakra is not open.", MNK.JobID, 0, "", "Imagine using your fist to scream at someone. Welcome to MNK!\nEnjoy your stay.")]
+        [CustomComboInfo("空鸣拳/万象斗气圈特性", "当你的斗气满时使用空鸣拳/万象斗气圈替换掉破坏神冲", MNK.JobID, 0, "", "Imagine using your fist to scream at someone. Welcome to MNK!\nEnjoy your stay.")]
         MonkHowlingFistMeditationFeature = 9005,
 
         [ConflictingCombos(MnkBasicCombo)]
-        [CustomComboInfo("连击 Combo", "Replace 连击 with its combo chain. \nIf all sub options are selected will turn into a full one button rotation (Simple Monk)", MNK.JobID, 0, "", "They call it 'basic' for a reason, you donkey")]
+        [CustomComboInfo("连击连击", "用基础循环替换掉连击 \n如果所有次级选项都被勾选，那么就会变成一键循环。（简单武僧）", MNK.JobID, 0, "", "They call it 'basic' for a reason, you donkey")]
         MnkBootshineCombo = 9006,
 
-        [CustomComboInfo("震脚 Feature Plus", "All of the (Optimal?) Blitz combos on Masterful Blitz when 震脚 Is Active", MNK.JobID, 0, "", "Try not to fall over, eh")]
+        [CustomComboInfo("震脚特性+", "当震脚激活时，使用可用的技能替换必杀技。", MNK.JobID, 0, "", "Try not to fall over, eh")]
         MnkPerfectBalancePlus = 9007,
 
         [ParentCombo(MnkBootshineCombo)]
-        [CustomComboInfo("必杀技 on Main Combo", "Adds 必杀技 to the Main Combo", MNK.JobID, 0, "", "It's maths, but for your Single Target combo!")]
+        [CustomComboInfo("必杀技加入循环", "将必杀技加入循环", MNK.JobID, 0, "", "It's maths, but for your Single Target combo!")]
         MonkMasterfulBlitzOnMainCombo = 9008,
 
         [ParentCombo(MnkAoECombo)]
-        [CustomComboInfo("必杀技 to AoE Combo", "Adds all of (Optimal?) Blitz combos and 必杀技 on AoE Combo.", MNK.JobID, 0, "", "It's maths, but for your AoE combo!")]
+        [CustomComboInfo("必杀技加入AOE循环", "将必杀技加入AOE循环。", MNK.JobID, 0, "", "It's maths, but for your AoE combo!")]
         MonkMasterfullBlizOnAoECombo = 9009,
 
-        [CustomComboInfo("Forbidden Chakra Feature", "Adds Forbidden Chakra/Enlightement to the Main/AoE feature combo. Testing Only for now!", MNK.JobID, 0, "But, wait!", "Mom said no! It's forbidden!")]
+        [CustomComboInfo("斗气特性", "将万象斗气圈/阴阳斗气斩加入单体/AOE连击。现在测试中！", MNK.JobID, 0, "But, wait!", "Mom said no! It's forbidden!")]
         MonkForbiddenChakraFeature = 9010,
 
-        [CustomComboInfo("Riddle of 火炎/Brotherhood Feature", "Replaces Riddle of 火炎 with Brotherhood when Riddle of 火炎 is on cooldown.", MNK.JobID, 0, "", "Riddle me this, brotha'")]
+        [CustomComboInfo("红莲极意/义结金兰特性", "如果红莲极意进入冷却，那么使用义结金兰替换红莲极意。", MNK.JobID, 0, "", "Riddle me this, brotha'")]
         MnkRiddleOfFireBrotherhoodFeature = 9012,
 
         [ParentCombo(MnkBootshineCombo)]
-        [CustomComboInfo("CDs on Main Combo", "Adds various CDs to the Main Combo when under Riddle of 火炎 or when Riddle of 火炎 is on cooldown.", MNK.JobID, 0, "", "Been passed on for dance partner again? Don't worry, you have some buffs of your own.")]
+        [CustomComboInfo("CD整合", "当红莲极意进入冷却时，将各种能力技整合进连击。", MNK.JobID, 0, "", "Been passed on for dance partner again? Don't worry, you have some buffs of your own.")]
         MnkCDsOnMainComboFeature = 9013,
 
         [ParentCombo(MnkCDsOnMainComboFeature)]
-        [CustomComboInfo("疾风极意 on Main Combo", "Adds 疾风极意 to the Main Combo.", MNK.JobID, 0, "", "Easy, breezy.")]
+        [CustomComboInfo("疾风极意整合", "将疾风极意整合进连击。", MNK.JobID, 0, "", "Easy, breezy.")]
         MnkRiddleOfWindOnMainComboFeature = 9014,
 
         [ParentCombo(MnkCDsOnMainComboFeature)]
-        [CustomComboInfo("震脚 on Main Combo", "Adds 震脚 to the Main Combo.", MNK.JobID, 0, "", "")]
+        [CustomComboInfo("震脚整合", "将震脚整合进连击。", MNK.JobID, 0, "", "")]
         MnkPerfectBalanceOnMainComboFeature = 9015,
 
         [ParentCombo(MnkCDsOnMainComboFeature)]
-        [CustomComboInfo("义结金兰 on Main Combo", "Adds 义结金兰 to the Main Combo.", MNK.JobID, 0, "", "")]
+        [CustomComboInfo("义结金兰整合", "将义结金兰整合进连击。", MNK.JobID, 0, "", "")]
         MnkBrotherhoodOnMainComboFeature = 9016,
 
         [ParentCombo(MnkCDsOnMainComboFeature)]
-        [CustomComboInfo("斗气 on Main Combo", "Adds 斗气 to the Main Combo.", MNK.JobID, 0, "", "")]
+        [CustomComboInfo("斗气整合", "将斗气整合进连击。", MNK.JobID, 0, "", "")]
         MnkMeditationOnMainComboFeature = 9017,
 
         [ParentCombo(MnkBootshineCombo)]
-        [CustomComboInfo("Lunar Solar Opener", "Start with the Lunar Solar Opener on the Main Combo. Requires level 68 for Riddle of 火炎.", MNK.JobID, 0, "", "")]
+        [CustomComboInfo("阴阳开场", "将阴阳脉轮开场整合进连击。需要68级（习得红莲极意）。", MNK.JobID, 0, "", "")]
         MnkLunarSolarOpenerOnMainComboFeature = 9018,
 
         #endregion
