@@ -1563,88 +1563,88 @@ namespace XIVSlothComboPlugin
         #region RED MAGE
 
         [ConflictingCombos(RedMageSmartcastAoECombo)]
-        [CustomComboInfo("Red Mage AoE Combo", "Replaces Veraero/赤闪雷 2 with Impact when Dualcast or Swiftcast are active.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("AOE连击", "若连续咏唱或即刻咏唱状态存在,替换赤疾风/赤闪雷为冲击。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageAoECombo = 13000,
 
-        [CustomComboInfo("连攻 combo", "Replaces 连攻 with its combo chain, following enchantment rules.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("魔连攻连击", "替换魔连攻为相应的连击。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageMeleeCombo = 13001,
 
-        [CustomComboInfo("连攻 Combo Plus", "Replaces 连攻 with Verflare/Verholy after Enchanted 连攻, whichever is more appropriate.\nRequires 连攻 Combo.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("魔连攻连击 plus", "根据黑白魔元数自动将赤神圣/赤核爆/焦热接在魔连攻连击之后。 \n需先启用魔连攻连击。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageMeleeComboPlus = 13002,
 
         [ConflictingCombos(RedMageSmartSingleTargetCombo, RedMageJoltVerprocCombo)]
-        [CustomComboInfo("Verproc into 摇荡", "Replaces Verstone/Verfire with 摇荡/Scorch when no proc is available.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("赤飞石/赤火炎 - 震荡", "没有触发时，替换赤飞石/赤火炎为震荡/焦热。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageVerprocCombo = 13003,
 
         [ConflictingCombos(RedMageSmartSingleTargetCombo)]
-        [CustomComboInfo("Verproc into 摇荡 Plus", "Additionally replaces Verstone/Verfire with Veraero/Verthunder if dualcast/swiftcast are up.\nRequires Verproc into 摇荡.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("赤飞石/赤火炎 - 震荡 plus", "若连续咏唱/即刻咏唱状态存在 已触发的赤飞石/赤火炎会替换成赤疾风/赤闪雷。\n需先启用赤飞石/赤火炎 - 震荡。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageVerprocComboPlus = 13004,
 
         [ConflictingCombos(RedMageSmartSingleTargetCombo)]
-        [CustomComboInfo("Verproc into 摇荡 Plus Opener Feature", "Turns Verfire into Verthunder when out of combat.\nRequires Verproc into 摇荡 Plus.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("赤飞石/赤火炎 - 震荡 plus+", "退出战斗后赤闪雷自动替换为赤火焰。\nR需先启用 赤飞石/赤火炎 - 震荡 Plus。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageVerprocOpenerFeature = 13005,
 
-        [CustomComboInfo("Resolution Feature", "Adds Resolution finisher to 赤闪雷/Verareo Combo ", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("决断", "若决断可释放，替换赤闪雷/赤疾风为决断。 ", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedmageResolutionFinisher = 13006,
 
-        [CustomComboInfo("Resolution Feature Melee", "Adds Resolution finisher to melee combo ", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("决断 近战连击", "一键 魔连攻 - 赤神圣/赤核爆/焦热 - 决断 。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedmageResolutionFinisherMelee = 13007,
 
         [ConflictingCombos(RedMageAoECombo)]
-        [CustomComboInfo("Smart AoE Feature", "Replaces 赤闪雷 II With Veraero II and impact depending on mana", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("赤烈风/震雷 - 冲击", "根据黑白魔元平衡自动将赤烈风/赤震雷替换为冲击。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageSmartcastAoECombo = 13008,
 
         [ConflictingCombos(RedMageVerprocComboPlus, RedMageVerprocOpenerFeature, RedMageVerprocCombo, RedMageJoltVerprocCombo)]
-        [CustomComboInfo("Smart Single Target Feature", "Smart Single target feature Credit: PrincessRTFM", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("智能单目标输出特性", "由PrincessRTFM制作", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageSmartSingleTargetCombo = 13009,
 
-        [CustomComboInfo("oGCD Feature", "Replace Contre Strike and 飞刺 with whichever is available soonest.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("能力技自动替换", "根据冷却时间互换六分反击与飞刺.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageOgcdCombo = 13010,
 
-        [CustomComboInfo("Smart抛竿 Opener Feature", "赤闪雷 Opener Feature. Allows you to prepull with verthunder and still let the combo balance the mana for you", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("智能起手", "以赤闪雷起手并尽量保持魔元平衡。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageVerprocOpenerSmartCastFeature = 13011,
 
         [ParentCombo(RedMageSmartcastAoECombo)]
-        [CustomComboInfo("Red Mage AoE Finisher", "Adds Finishers onto Moulinet and Smart抛竿 AoE Feature.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("魔划圆斩连击", "根据黑白魔元数自动将赤神圣/赤核爆/焦热接在魔划圆斩连击之后。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageMeleeAoECombo = 13012,
 
-        [CustomComboInfo("交剑 Feature", "Adds 交剑 in all melee combos. (Testing Only!)", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("交剑", "在魔连攻连击中自动插入交剑。(测试用!)", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageEngagementFeature = 13013,
 
-        [CustomComboInfo("Simple Red Mage Feature Single Target", "Combines Smartcast feature with melee combo on 赤飞石,赤火炎 or melee skills (This is not optimal until i find a solution for distance delay)", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("单体目标一键输出", "以赤飞石/赤火炎或魔连攻为起手技能。 (高延迟下待优化)", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         SimpleRedMage = 13014,
 
-        [CustomComboInfo("Simple Red Mage Feature AoE", "Combines Smartcast AoE feature with melee AoE combo on 赤闪雷2/Veraero2 (This is not optimal until i find a solution for distance delay)", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("AOE一键输出", "以赤烈风/赤震雷或魔划圆斩为起手技能。 (高延迟下待优化)", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         SimpleRedMageAoE = 13015,
 
-        [CustomComboInfo("Corps-A-corps/移转 Feature", "Corps-A-corps becomes displacement when in melee range", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("短兵相接/移转 特性", "处于近战距离时替换短兵相接为移转。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageMovementFeature = 13016,
 
         [ParentCombo(RedMageOgcdCombo)]
-        [CustomComboInfo("oGCD Feature Everywhere", "Adds oGCD Feature to all other combos", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("能力技", "在所有连击中可随时插入能力技。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageOgcdComboOnCombos = 13017,
 
         [ParentCombo(SimpleRedMage)]
-        [CustomComboInfo("Verstone/赤火炎 Activation", "Add 促进 and Swiftcast to Simple Red Mage to force activation of verstone or verfire effects when necessary.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("赤飞石/赤火炎 触发", "没有触发时，在单体目标一键懒人输出中自动插入促进和即刻咏唱。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         SimpleRedMageFishing = 13018,
 
         [ParentCombo(SimpleRedMageFishing)]
-        [CustomComboInfo("促进 only", "Only use 促进 to force verfire or verstone activations.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("促进", "只使用促进触发赤飞石/赤火炎。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         SimpleRedMageAccelOnlyFishing = 13019,
 
         [ParentCombo(SimpleRedMage)]
         [ConflictingCombos(RedMageVerprocOpenerSmartCastFeature)]
-        [CustomComboInfo("Simple opener", "Do the optimal opener. [lv90 only]", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("简单起手", "一键最优起手。 [仅在90级时有效]", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         SimpleRedMageOpener = 13020,
 
         [ConflictingCombos(RedMageSmartSingleTargetCombo, RedMageVerprocCombo)]
-        [CustomComboInfo("摇荡 into Verproc", "Replaces 摇荡 with Verstone/Verfire, when proc is available and won't cause severe imbalance", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("摇荡 触发", "当有触发时替换摇荡为赤飞石或赤火炎，并保持魔元平衡。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
         RedMageJoltVerprocCombo = 13021,
 
-        [CustomComboInfo("Lucid Dreaming Feature", "Add Lucid Dreaming to 赤疾风, 赤闪雷 and Impact when below threshold.", RDM.JobID, 0, "Veraero / 赤闪雷 / Impact -> Lucid Dreaming", "OOM? Git gud.")]
+        [CustomComboInfo("醒梦", "当MP低于设定数值时替换赤疾风/赤闪雷/冲击为醒梦。", RDM.JobID, 0, "Veraero / 赤闪雷 / Impact -> Lucid Dreaming", "OOM? Git gud.")]
         RedMageLucidOnJolt = 13022,
 
-        [CustomComboInfo("Swiftcast into 赤复活 Feature", "Changes Swiftcast to 赤复活 when under the effect of Swiftcast.", RDM.JobID, 0, "Swifty 赤复活", "You're panicing right now, aren't you?")]
+        [CustomComboInfo("赤复活", "当使用即刻咏唱后替换即刻咏唱为赤复活。", RDM.JobID, 0, "Swifty 赤复活", "You're panicing right now, aren't you?")]
         RedMageSwiftVerraise = 13023,
 
         #endregion
