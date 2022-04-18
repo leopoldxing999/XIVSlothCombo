@@ -1422,106 +1422,106 @@ namespace XIVSlothComboPlugin
         #region REAPER
 
         // Single Target Combo Section
-        [CustomComboInfo("切割 Combo Feature", "Replace 切割 with its combo chain. Features and options inside.\nCollapsing this category disables the features inside.", RPR.JobID, 0, "One, Two, Three", "It's a slicer's life for me~")]
+        [CustomComboInfo("切割连击", "将切割替换为切割连击。\n禁用此项将停用次级选项功能。", RPR.JobID, 0, "One, Two, Three", "It's a slicer's life for me~")]
         ReaperSliceCombo = 12000,
 
         [ParentCombo(ReaperSliceCombo)]
-        [CustomComboInfo("Soul 切割 Option", "Adds Soul 切割 to 切割 Combo when Soul Gauge is 50 or less, and target is under Death's Design debuff.", RPR.JobID, 0, "", "FETCH ME THEIR SOULS...")]
+        [CustomComboInfo("灵魂切割设置", "当魂衣值低于50点，并且目标拥有死亡烙印Debuff时，使用灵魂切割替换切割。", RPR.JobID, 0, "", "FETCH ME THEIR SOULS...")]
         ReaperSoulSliceFeature = 12001,
 
         [ParentCombo(ReaperSliceCombo)]
-        [CustomComboInfo("Shadow Of Death Option", "Adds Shadow of Death to 切割 Combo if debuff is not present or is about to expire.", RPR.JobID, 0, "DoB - Damage over Brain", "Already using all of your brain on positionals? Look no further!")]
+        [CustomComboInfo("死亡之影设置", "当目标没有或者死亡烙印Debuff即将到期时，使用死亡之影替换切割。", RPR.JobID, 0, "DoB - Damage over Brain", "Already using all of your brain on positionals? Look no further!")]
         ReaperShadowOfDeathFeature = 12002,
 
         [ParentCombo(ReaperSliceCombo)]
-        [CustomComboInfo("Stun Option", "Adds Leg Sweep to main combo when target is performing an interruptible cast i.e. uses stun as an interrupt.", RPR.JobID, 0, "ZAP", "The male was too stunned to speak")]
+        [CustomComboInfo("下踢设置", "当目标的施法可以被打断时，使用下踢替换切割。（以眩晕代替打断）", RPR.JobID, 0, "ZAP", "The male was too stunned to speak")]
         ReaperStunOption = 12003,
 
         [ParentCombo(ReaperSliceCombo)]
-        [CustomComboInfo("Combo Heals Option", "Adds Bloodbath and Second Wind to the combo at 65 and 40 percent HP, respectively.", RPR.JobID, 0, "Pretend 出卡 Heals", "Look mom, I'm a White Mage!")]
+        [CustomComboInfo("回复设置", "在血量低于65%和40%时，使用浴血和内丹替换切割。", RPR.JobID, 0, "Pretend 出卡 Heals", "Look mom, I'm a White Mage!")]
         ReaperComboHealsOption = 12004,
 
         [ParentCombo(ReaperSliceCombo)]
-        [CustomComboInfo("Ranged Filler Option", "Replaces the combo chain with 勾刃 (or Harvest Moon, if available) when outside of melee range. Will not override 团契.", RPR.JobID, 0, "Stretch Armstrong", "Can't quite reach? Here.")]
+        [CustomComboInfo("距离设置", "当超出近战范围时，使用勾刃（当可用时，使用收获月）替换切割。不会替换掉团契。", RPR.JobID, 0, "Stretch Armstrong", "Can't quite reach? Here.")]
         ReaperRangedFillerOption = 12005,
 
 
         // AoE Combo Section
-        [CustomComboInfo("Scythe Combo Feature", "Replace 旋转钐割 with its combo chain. Features and options inside.\nCollapsing this category disables the features inside.", RPR.JobID, 0, "One, Two, Th-", "Oh. It's barely a combo!")]
+        [CustomComboInfo("旋转钐割连击", "将旋转钐割替换为旋转钐割连击。\n禁用此项将停用次级选项功能。", RPR.JobID, 0, "One, Two, Th-", "Oh. It's barely a combo!")]
         ReaperScytheCombo = 12010,
 
         [ParentCombo(ReaperScytheCombo)]
-        [CustomComboInfo("灵魂钐割 Option", "Adds 灵魂钐割 to Scythe Combo when Soul Gauge is 50 or less, and target is under Death's Design debuff.", RPR.JobID, 0, "", "I've made the CoD Zombies joke too many times, but I'm too tired to think of anything else.\nSorry!")]
+        [CustomComboInfo("灵魂钐割设置", "当魂衣值低于50点，并且目标拥有死亡烙印Debuff时，使用灵魂钐割替换旋转钐割。", RPR.JobID, 0, "", "I've made the CoD Zombies joke too many times, but I'm too tired to think of anything else.\nSorry!")]
         ReaperSoulScytheFeature = 12011,
 
         [ParentCombo(ReaperScytheCombo)]
-        [CustomComboInfo("Whorl Of Death Option", "Adds 死亡之涡 to Scythe Combo if debuff is not present or is about to expire.", RPR.JobID, 0, "DoB - Damage over Brains", "Already using all of your brain-cells on positionals? Look no further!")]
+        [CustomComboInfo("死亡之涡设置", "当目标没有或者死亡烙印Debuff即将到期时，使用死亡之涡替换旋转钐割。", RPR.JobID, 0, "DoB - Damage over Brains", "Already using all of your brain-cells on positionals? Look no further!")]
         ReaperWhorlOfDeathFeature = 12012,
 
 
         // Gibbet, Gallows, Guillotine Combo Section
-        [CustomComboInfo("[Unveiled Features]", "Features and options involving 绞决, 缢杀 and Guillotine.\nCollapsing this category does NOT disable the features inside.", RPR.JobID, 0, "Gubbins, Gibberish and Globular", "They all do the same thing, really.")]
+        [CustomComboInfo("[妖异技能特性]", "包括绞决, 缢杀和断首的设置。\n禁用此项 不会 停用次级选项功能。", RPR.JobID, 0, "Gubbins, Gibberish and Globular", "They all do the same thing, really.")]
         ReaperMenuUnveiledFeatures = 12020,
 
         [ParentCombo(ReaperMenuUnveiledFeatures)]
         [ConflictingCombos(ReaperGibbetGallowsInverseFeature)]
-        [CustomComboInfo("绞决/Gallows Feature", "切割 and Shadow of Death are replaced with Gibbet and Gallows while Soul Reaver or Shroud is active.", RPR.JobID, 0, "Drown in FX!", "Now with even less buttons!")]
+        [CustomComboInfo("绞决/缢杀特性", "在妖异之镰状态下使用绞决和缢杀分别替换切割与死亡之影。", RPR.JobID, 0, "Drown in FX!", "Now with even less buttons!")]
         ReaperGibbetGallowsFeature = 12021,
 
         [ParentCombo(ReaperGibbetGallowsFeature)]
-        [CustomComboInfo("绞决/Gallows One-Button Option", "切割 is instead replaced with whichever move is procced, and 死亡之影 remains untouched.", RPR.JobID, 0, "Gubbins/Gibberish One-Button Option", "Positionals were SO last patch, anyway.")]
+        [CustomComboInfo("绞决/缢杀一键整合", "使用正确的绞决/缢杀替换切割，死亡之影不会被替换。", RPR.JobID, 0, "Gubbins/Gibberish One-Button Option", "Positionals were SO last patch, anyway.")]
         ReaperGibbetGallowsOption = 12022,
 
         [ParentCombo(ReaperMenuUnveiledFeatures)]
         [ConflictingCombos(ReaperGibbetGallowsFeature)]
-        [CustomComboInfo("Gallows/绞决 (Inverse) Feature - BROKEN (Currently same effect as above)", "切割 and Shadow of Death are replaced with Gallows and Gibbet while Soul Reaver or Shroud is active.\n(Positional replacements swapped)", RPR.JobID, 0, "BoRkEd", "Don't use this bruh, you KNOW it's broken.\nShit the bed!")]
+        [CustomComboInfo("缢杀/绞决 (反转) 特性 - 损坏中 (目前与上一选项效果相同)", "在妖异之镰状态下使用绞决和缢杀分别替换死亡之影与切割。\n(与绞决/缢杀一键整合相比，会交换绞决和缢杀的位置)", RPR.JobID, 0, "BoRkEd", "Don't use this bruh, you KNOW it's broken.\nShit the bed!")]
         ReaperGibbetGallowsInverseFeature = 12023,
 
         [ParentCombo(ReaperMenuUnveiledFeatures)]
-        [CustomComboInfo("断首 Feature", "旋转钐割's combo gets replaced with Guillotine while Soul Reaver or Shroud is active.", RPR.JobID, 0, "", "As if this job wasn't the easiest Melee already. You're welcome, little sloth.")]
+        [CustomComboInfo("断首特性", "在妖异之镰状态下使用断首替换旋转钐割。", RPR.JobID, 0, "", "As if this job wasn't the easiest Melee already. You're welcome, little sloth.")]
         ReaperGuillotineFeature = 12024,
 
 
         // Blood Stalk, Grim Swathe, Gluttony Combo Section
-        [CustomComboInfo("[Soul Reaver Features]", "Features and options involving 隐匿挥割, 束缚挥割 and Gluttony.\nCollapsing this category does NOT disable the features inside.", RPR.JobID, 0, "Grass Farmer Features", "oGCDs? You betcha")]
+        [CustomComboInfo("[妖异之镰特性]", "包括束缚挥割，隐匿挥割与暴食的设置。\n禁用此项 不会 停用次级选项功能。", RPR.JobID, 0, "Grass Farmer Features", "oGCDs? You betcha")]
         ReaperMenuSoulReaverFeatures = 12030,
 
         [ParentCombo(ReaperMenuSoulReaverFeatures)]
         [ConflictingCombos(ReaperBloodStalkComboFeature, ReaperBloodStalkAlternateComboOption, ReaperGrimSwatheComboFeature)]
-        [CustomComboInfo("隐匿挥割/Grim Swathe Feature", "When 暴食 is off-cooldown, 隐匿挥割 and Grim Swathe will turn into Gluttony.", RPR.JobID, 0, "Buttony", "It's like the normal buttons, but better! Double the fun!")]
+        [CustomComboInfo("隐匿挥割/束缚挥割特性", "当暴食不在冷却时，使用暴食替换隐匿挥割/束缚挥割。", RPR.JobID, 0, "Buttony", "It's like the normal buttons, but better! Double the fun!")]
         ReaperBloodSwatheFeature = 12031,
 
         [ParentCombo(ReaperMenuSoulReaverFeatures)]
         [ConflictingCombos(ReaperBloodSwatheFeature, ReaperBloodStalkAlternateComboOption)]
-        [CustomComboInfo("隐匿挥割 Multi-Combo Feature", "Turns Blood Stalk into Gluttony when off-cooldown and puts 绞决 and Gallows on the same button as Blood Stalk. Also adds Enshrouded Combo.", RPR.JobID, 0, "", "出卡 the job properly u stinker!")]
+        [CustomComboInfo("隐匿挥割多重连击", "当暴食不在冷却时，使用暴食替换隐匿挥割，并且在夜游魂状态下使用附体连击替换隐匿挥割。", RPR.JobID, 0, "", "Play the job properly u stinker!")]
         ReaperBloodStalkComboFeature = 12032,
 
         [ParentCombo(ReaperMenuSoulReaverFeatures)]
         [ConflictingCombos(ReaperBloodSwatheFeature, ReaperBloodStalkComboFeature)]
-        [CustomComboInfo("隐匿挥割 Multi-Combo Feature Alternative - Same but better (?)", "Turns Blood Stalk into Gluttony when off-cooldown and puts 绞决 and Gallows on the same button as Blood Stalk. Also adds Enshrouded Combo.\n[Seems like the code is more effective in edge cases. Both features need further review.", RPR.JobID, 0, "", "You heard me the first time!")]
+        [CustomComboInfo("隐匿挥割多重连击优化 - 相似但是更好 (?)", "当暴食不在冷却时，使用暴食替换隐匿挥割，并且将绞决与缢杀整合到隐匿挥割。当然，也会在夜游魂状态下使用附体连击替换隐匿挥割。\n[需要更进一步的检查]", RPR.JobID, 0, "", "You heard me the first time!")]
         ReaperBloodStalkAlternateComboOption = 12033,
 
         [ParentCombo(ReaperMenuSoulReaverFeatures)]
         [ConflictingCombos(ReaperBloodSwatheFeature)]
-        [CustomComboInfo("束缚挥割 Multi-Combo Feature", "Turns Grim Swathe into Gluttony when off-cooldown and puts 断首 on the same button as Grim Swathe. Also adds Enshrouded Combo.", RPR.JobID, 0, "", "I SAID - 出卡 the job u stinker!!!!")]
+        [CustomComboInfo("束缚挥割多重连击优化", "当暴食不在冷却时，使用暴食替换束缚挥割，并且在夜游魂状态下使用附体连击替换隐匿挥割。", RPR.JobID, 0, "", "I SAID - Play the job u stinker!!!!")]
         ReaperGrimSwatheComboFeature = 12034,
 
 
         // Enshroud Combo Section
-        [CustomComboInfo("[夜游魂衣 Features]", "Features and options involving the 夜游魂衣ed burst phase.\nCollapsing this category does NOT disable the features inside.", RPR.JobID, 0, "Edgelord mode", "Devil May Cry reboot when?")]
+        [CustomComboInfo("[夜游魂衣特性]", "夜游魂衣爆发设置\n禁用此项 不会 停用次级选项功能。", RPR.JobID, 0, "Edgelord mode", "Devil May Cry reboot when?")]
         ReaperMenuEnshroudFeatures = 12040,
 
         [ParentCombo(ReaperMenuEnshroudFeatures)]
-        [CustomComboInfo("Lemure Feature", "When you have two or more stacks of Void Shroud, Lemure 切割 replaces Gibbet/Gallows and Lemure Scythe replaces Guillotine.", RPR.JobID, 0, "One-button farming burst", "Who is Lemure and what do they want?")]
+        [CustomComboInfo("收割特性", "当你拥有两层虚无魂状态时，使用夜游魂切割替换缢杀/绞决，同时使用夜游魂钐割替换断首。", RPR.JobID, 0, "One-button farming burst", "Who is Lemure and what do they want?")]
         ReaperLemureFeature = 12041,
 
         [ParentCombo(ReaperMenuEnshroudFeatures)]
-        [CustomComboInfo("Combo 团契 Feature", "When one stack of Lemure Shroud remains, Communio replaces 绞决/Gallows/Guillotine.", RPR.JobID, 0, "", "They say strong communio is the key to a healthy relationship")]
+        [CustomComboInfo("团契特性", "当只剩下一层夜游魂时，使用团契替换缢杀/绞决与断首。", RPR.JobID, 0, "", "They say strong communio is the key to a healthy relationship")]
         ReaperComboCommunioFeature = 12042,
 
         [ParentCombo(ReaperMenuEnshroudFeatures)]
         // [ConflictingCombos(ReaperEnshroudComboFeature)]
-        [CustomComboInfo("夜游魂衣 Communio Feature", "Replace 夜游魂衣 with Communio when 夜游魂衣ed.", RPR.JobID, 0, "", "Go on, press it as soon as you enter 夜游魂衣.\nI dare you. Dingus.")]
+        [CustomComboInfo("夜游魂衣团契特性", "当拥有夜游魂状态时，使用团契替换夜游魂衣。", RPR.JobID, 0, "", "Go on, press it as soon as you enter 夜游魂衣.\nI dare you. Dingus.")]
         ReaperEnshroudCommunioFeature = 12043,
 
         // [ParentCombo(ReaperMenuEnshroudFeatures)]
@@ -1531,31 +1531,31 @@ namespace XIVSlothComboPlugin
 
 
         // Miscellaneous Combo Section
-        [CustomComboInfo("[Extra Features]", "Miscellaneous features and options.\nCollapsing this category does NOT disable the features inside.", RPR.JobID, 0, "M O R E", "More? Haven't we made this job easy enough already?")]
+        [CustomComboInfo("[额外特性]", "各种其它设置。\n禁用此项 不会 停用次级选项功能。", RPR.JobID, 0, "M O R E", "More? Haven't we made this job easy enough already?")]
         ReaperMenuExtraFeatures = 12050,
 
         [ParentCombo(ReaperMenuExtraFeatures)]
-        [CustomComboInfo("神秘环 Harvest Feature", "Replace Arcane Circle with 大丰收 when you have stacks of Immortal Sacrifice.", RPR.JobID, 0, "Farming Simulator 2022", "You might as well buy a tractor at this point")]
+        [CustomComboInfo("神秘环大丰收特性。", "当你拥有死亡祭品层数时，使用大丰收替换神秘环。", RPR.JobID, 0, "Farming Simulator 2022", "You might as well buy a tractor at this point")]
         ReaperHarvestFeature = 12051,
 
         [ParentCombo(ReaperMenuExtraFeatures)]
-        [CustomComboInfo("回退 Feature", "Both 地狱入境 and Hell's Egress turn into Regress when Threshold is active, instead of just the opposite of the one you used.", RPR.JobID, 0, "You're a DRG now, son", "GO WHENCE YOU CAME")]
+        [CustomComboInfo("回退特性", "当你拥有回退预备状态时，使用回退同时替换地狱入境与地狱出境，而不是和你使用的位移技能相反的那个。", RPR.JobID, 0, "You're a DRG now, son", "GO WHENCE YOU CAME")]
         ReaperRegressFeature = 12052,
 
         [ParentCombo(ReaperMenuExtraFeatures)]
-        [CustomComboInfo("勾刃 Soulsow Feature", "Changes 勾刃 into Soulsow when you are out of combat or have no target, and are not already under the effect of 播魂种.", RPR.JobID, 0, "", "Gotta have something to do before the pull, right?")]
+        [CustomComboInfo("勾刃播魂种特性", "在战斗外使用播魂种替换勾刃。当你拥有播魂种BUFF时，不进行替换。", RPR.JobID, 0, "", "Gotta have something to do before the pull, right?")]
         ReaperHarpeSoulsowFeature = 12053,
 
         [ParentCombo(ReaperMenuExtraFeatures)]
-        [CustomComboInfo("勾刃 Harvest Moon Feature", "Changes 勾刃 into Harvest Moon when you are in combat with Soulsow active.", RPR.JobID, 0, "Dumb reaper be dumb", "Good luck finding the best place to use this kek")]
+        [CustomComboInfo("勾刃收获月特性", "当你拥有播魂种BUFF时，使用收获月替换勾刃。", RPR.JobID, 0, "Dumb reaper be dumb", "Good luck finding the best place to use this kek")]
         ReaperHarpeHarvestMoonFeature = 12054,
 
         [ParentCombo(ReaperHarpeHarvestMoonFeature)]
-        [CustomComboInfo("Enhanced 勾刃 Option", "Prevent Harvest Moon replacing Harpe when Enhanced Harpe is active.\nThis option also affects the Ranged Filler Option for the 切割 Combo Feature.", RPR.JobID, 0, "", "Look at me, all SMN-like and that")]
+        [CustomComboInfo("勾刃效果提高设置", "防止收获月在拥有勾刃效果提高时替换勾刃。\n这个选项也会影响切割连击设置中的距离设置。", RPR.JobID, 0, "", "Look at me, all SMN-like and that")]
         ReaperHarpeHarvestMoonEnhancedOption = 12055,
 
         [ParentCombo(ReaperHarpeHarvestMoonFeature)]
-        [CustomComboInfo("Combat 勾刃 Option", "Prevent Harvest Moon replacing Harpe when you are not in combat.\nThis option also affects the Ranged Filler Option for the 切割 Combo Feature.", RPR.JobID, 0, "", "OoOoH uNaSpEcTeD dAmAgE")]
+        [CustomComboInfo("战斗外勾刃设置", "防止收获月在战斗外替换勾刃。\n这个选项也会影响切割连击设置中的距离设置。", RPR.JobID, 0, "", "OoOoH uNaSpEcTeD dAmAgE")]
         ReaperHarpeHarvestMoonCombatOption = 12056,
 
         #endregion
