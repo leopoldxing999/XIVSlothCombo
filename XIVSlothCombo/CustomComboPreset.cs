@@ -747,167 +747,167 @@ namespace XIVSlothComboPlugin
         #region DRAGOON
 
         [ConflictingCombos(DragoonSimple)]
-        [CustomComboInfo("跳跃 + Mirage Dive", "Replace (High) 跳跃 with Mirage Dive when Dive Ready.", DRG.JobID, 0, "跳跃 off map", "Oh no, muh double-weaves!")]
+        [CustomComboInfo("幻象冲整合设置", "处于幻象冲预备状态时，替换（高）跳跃为幻象冲。", DRG.JobID, 0, "跳跃 off map", "Oh no, muh double-weaves!")]
         DragoonJumpFeature = 6000,
 
         [ConflictingCombos(DragoonSimpleAoE)]
-        [CustomComboInfo("山境酷刑 Combo", "Replace 山境酷刑 with its combo chain.", DRG.JobID, 1, "", "One combo!")]
+        [CustomComboInfo("一键山境酷刑连", "替换山境酷刑为相应连击。", DRG.JobID, 1, "", "枪出如龙!")]
         DragoonCoerthanTormentCombo = 6100,
 
         [ConflictingCombos(DragoonSimple)]
-        [CustomComboInfo("樱花怒放 Combo", "Replace 樱花怒放 with its combo chain.", DRG.JobID, 2, "", "Two combo!")]
+        [CustomComboInfo("一键樱花连", "替换樱花怒放为相应连击。", DRG.JobID, 2, "", "回马枪!")]
         DragoonChaosThrustCombo = 6200,
 
         [ParentCombo(DragoonChaosThrustCombo)]
-        [CustomComboInfo("Chaos 贯穿尖 Uptime", "Replaces 樱花怒放 Combo with Piercing Talon when you are out of range.", DRG.JobID, 3, "", "Never stop hitting them.")]
+        [CustomComboInfo("一键樱花连设置", "处于近战攻击范围外时，替换樱花怒放连击为贯穿尖。", DRG.JobID, 3, "", "Never stop hitting them.")]
         DragoonPiercingTalonChaosFeature = 6201,
 
         [ConflictingCombos(DragoonFullThrustComboPlus, DragoonSimple)]
-        [CustomComboInfo("直刺 Combo", "Replace 直刺 with its combo chain.", DRG.JobID, 4, "", "Wait... Three combo?")]
+        [CustomComboInfo("一键直刺连", "替换直刺为相应连击。", DRG.JobID, 4, "", "Wait... Three combo?")]
         DragoonFullThrustCombo = 6300,
 
         [ParentCombo(DragoonFullThrustCombo)]
-        [CustomComboInfo("Full 贯穿尖 Uptime", "Replaces 直刺 Combo with Piercing Talon when you are out of range.", DRG.JobID, 5, "", "Never stop hitting them.")]
+        [CustomComboInfo("一键直刺连设置", "处于近战攻击范围外时，替换直刺连击为贯穿尖。", DRG.JobID, 5, "", "Never stop hitting them.")]
         DragoonPiercingTalonFullFeature = 6301,
 
         [ConflictingCombos(DragoonFullThrustCombo, DragoonSimple)]
-        [CustomComboInfo("直刺 Combo Plus", "Replace 直刺 Plus Combo with its combo chain (Disembowel/Chaosthrust/life surge added).", DRG.JobID, 6, "", "F- Three combo MORE!")]
+        [CustomComboInfo("一键直刺连Plus", "替换直刺为相应连击。 (智能替换 开膛枪/樱花怒放/龙剑)。", DRG.JobID, 6, "", "F- Three combo MORE!")]
         DragoonFullThrustComboPlus = 6400,
 
         [ParentCombo(DragoonFullThrustComboPlus)]
-        [CustomComboInfo("High 跳跃 Plus Feature", "Includes High 跳跃 in the rotation.", DRG.JobID, 7, "", "跳跃ing, but higher.")]
+        [CustomComboInfo("（高）跳跃 Plus 设置", "在樱花/直刺/山境酷刑连击中插入（高）跳跃", DRG.JobID, 7, "", "跳跃ing, but higher.")]
         DragoonHighJumpPlusFeature = 6401,
 
         [ParentCombo(DragoonHighJumpPlusFeature)]
-        [CustomComboInfo("Mirage Plus Feature", "Includes Mirage in the rotation.", DRG.JobID, 8, "", "They thought they saw it coming.")]
+        [CustomComboInfo("幻象冲 Plus 设置", "输出循环中加入幻象冲。", DRG.JobID, 8, "", "一点寒芒先到。")]
         DragoonMiragePlusFeature = 6402,
 
         [ParentCombo(DragoonFullThrustComboPlus)]
-        [CustomComboInfo("龙剑 Plus Feature", "Includes 龙剑, while under proper buffs, onto proper GCDs, to the rotation.", DRG.JobID, 9, "", "Hit them harder still.")]
+        [CustomComboInfo("龙剑 Plus 设置", "在樱花/直刺/山境酷刑连击中的合适时机和buff下加入龙剑。", DRG.JobID, 9, "", "Hit them harder still.")]
         DragoonLifeSurgePlusFeature = 6404,
 
         [ParentCombo(DragoonFullThrustComboPlus)]
-        [CustomComboInfo("Plus 贯穿尖 Uptime", "Replaces 直刺 with Piercing Talon when you are out of range.", DRG.JobID, 10, "", "Never stop hitting them.")]
+        [CustomComboInfo("直刺连Plus 设置", "处于近战攻击距离外时，替换直刺为贯穿尖。", DRG.JobID, 10, "", "Never stop hitting them.")]
         DragoonPiercingTalonPlusFeature = 6403,
 
         [ConflictingCombos(DragoonFullThrustCombo, DragoonFullThrustComboPlus, DragoonJumpFeature, DragoonChaosThrustCombo, DragoonFangThrustFeature, DragoonFangAndClawFeature)]
-        [CustomComboInfo("Simple Dragoon", "One Button, One Dragoon. Conflicts with every non-AoE feature.", DRG.JobID, 11, "", "Nidhogg never stood a chance.")]
+        [CustomComboInfo("单体一键连击", "同一个按键，同一种龙骑。 与任何单体输出选项都有冲突。", DRG.JobID, 11, "", "谁能挡我！")]
         DragoonSimple = 6500,
 
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Simple Opener", "Level 88+. Includes an opener to the Simple Dragoon rotation. OPTIONAL: USE REACTION OR MOACTION FOR OPTIMAL TARGETING.", DRG.JobID, 12, "", "Open with a backjump into the wall!")]
+        [CustomComboInfo("简易起手", "88级以上时，在连击中插入起手技能。需要自行选择最优目标。", DRG.JobID, 12, "", "Open with a backjump into the wall!")]
         DragoonOpenerFeature = 6501,
 
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("天龙点睛 Feature", "Includes 天龙点睛 to the Simple Dragoon rotation.", DRG.JobID, 13, "", "Blue and red Dragons! Oh my.")]
+        [CustomComboInfo("天龙点睛特性", "在连击中加入天龙点睛。", DRG.JobID, 13, "", "Blue and red Dragons! Oh my.")]
         DragoonWyrmwindFeature = 6502,
 
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("武神枪 and Nastrond Feature", "Includes 武神枪 and Nastrond in the rotation.", DRG.JobID, 18, "", "Let me chuck another dragon soul at them!")]
+        [CustomComboInfo("武神枪与死者之岸特性", "在连击中插入武神枪与死者之岸。", DRG.JobID, 18, "", "Let me chuck another dragon soul at them!")]
         DragoonGeirskogulNastrondFeature = 6503,
 
         [ConflictingCombos(DragoonLitanyDiveFeature, DragoonLanceDiveFeature, DragoonLifeLitanyDiveFeature)]
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Dives Feature", "Single Weave Friendly, but not optimal: Includes 破碎冲, 龙炎冲 and Stardiver in the rotation.", DRG.JobID, 14, "", "Don't jump to your death!")]
+        [CustomComboInfo("跳跃类能力技设置", "单插技能貌似还行: 在连击中插入破碎冲/龙炎冲/坠星冲。", DRG.JobID, 14, "", "Don't jump to your death!")]
         DragoonDiveFeature = 6504,
 
         [ConflictingCombos(DragoonDiveFeature, DragoonLitanyDiveFeature, DragoonLifeLitanyDiveFeature)]
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Dives under 猛枪 Feature", "Single Weave Friendly: Includes 破碎冲 and Dragonfire Dive in the rotation, while under 猛枪, and 坠星冲 while under Life of the Dragon.", DRG.JobID, 17, "", "Don't jump to your death!")]
+        [CustomComboInfo("舍身状态下跳跃类能力技设置", "单插还不错: 在舍身状态下的连击中插入破碎冲/龙炎冲，在红莲龙血状态下插入坠星冲。", DRG.JobID, 17, "", "Don't jump to your death!")]
         DragoonLanceDiveFeature = 6505,
 
         [ConflictingCombos(DragoonDiveFeature, DragoonLanceDiveFeature, DragoonLifeLitanyDiveFeature)]
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Dives under Litany Feature", "Double Weaves Required: Includes 破碎冲 and Dragonfire Dive in the rotation, while under 战斗连祷, and 坠星冲 while under Life of the Dragon.", DRG.JobID, 15, "", "Don't jump to your death!")]
+        [CustomComboInfo("战斗连祷状态下跳跃类能力技设置", "需要双插: 在战斗连祷状态下的连击中插入破碎冲/龙炎冲,在红莲龙血状态下插入坠星冲。", DRG.JobID, 15, "", "Don't jump to your death!")]
         DragoonLitanyDiveFeature = 6506,
 
         [ConflictingCombos(DragoonDiveFeature, DragoonLanceDiveFeature, DragoonLitanyDiveFeature)]
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Dives under Litany and Life of the Dragon Feature", "Double Weaves Required: Includes 破碎冲 and Dragonfire Dive in the rotation, while under 战斗连祷 and Life of the Dragon, and 坠星冲 while under Life of the Dragon.", DRG.JobID, 16, "", "Don't jump to your death!")]
+        [CustomComboInfo("战斗连祷与红莲龙血状态下跳跃类能力技设置", "需要双插:在同时处于战斗连祷和红莲龙血状态下的连击中插入破碎冲/龙炎冲/坠星冲。", DRG.JobID, 16, "", "Don't jump to your death!")]
         DragoonLifeLitanyDiveFeature = 6507,
 
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("High 跳跃 Feature", "Includes High 跳跃 in the rotation.", DRG.JobID, 19, "", "跳跃ing, but higher.")]
+        [CustomComboInfo("（高）跳跃设置", "在连击中插入（高）跳跃。", DRG.JobID, 19, "", "Jumping, but higher.")]
         DragoonHighJumpFeature = 6508,
 
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Mirage Feature", "Includes Mirage in the rotation.", DRG.JobID, 20, "", "They thought they saw it coming.")]
+        [CustomComboInfo("幻象冲设置", "在连击中插入幻象冲。", DRG.JobID, 20, "", "They thought they saw it coming.")]
         DragoonMirageFeature = 6509,
 
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Buffs Feature", "Includes 猛枪 and Battle Litany to the rotation.", DRG.JobID, 21, "", "This is why your team loves you.")]
+        [CustomComboInfo("Buff设置", "在连击中插入猛枪和战斗连祷。", DRG.JobID, 21, "", "This is why your team loves you.")]
         DragoonBuffsFeature = 6510,
 
         [ParentCombo(DragoonBuffsFeature)]
-        [CustomComboInfo("巨龙视线 Feature", "Includes 巨龙视线 to the rotation. OPTIONAL: USE REACTION OR MOACTION FOR OPTIMAL TARGETING.", DRG.JobID, 22, "", "This is why your team loves you, too.")]
+        [CustomComboInfo("巨龙视线设置", "在连击中插入巨龙视线。需要自行选择最优目标。", DRG.JobID, 22, "", "This is why your team loves you, too.")]
         DragoonDragonSightFeature = 6511,
 
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("龙剑 Feature", "Includes 龙剑, while under proper buffs, onto proper GCDs, to the rotation.", DRG.JobID, 23, "", "Hit them with more feeling!")]
+        [CustomComboInfo("龙剑设置", "在连击中合适的状态和窗口内插入龙剑。", DRG.JobID, 23, "", "Hit them with more feeling!")]
         DragoonLifeSurgeFeature = 6512,
 
         [ParentCombo(DragoonSimple)]
-        [CustomComboInfo("Simple 贯穿尖 Feature", "Replaces 直刺 Combo with Piercing Talon when you are out of range. NOT OPTIMAL", DRG.JobID, 24, "", "Never stop hitting them.")]
+        [CustomComboInfo("贯穿尖设置", "处于近战攻击范围外时，替换直刺连击为贯穿尖。 非最优操作！", DRG.JobID, 24, "", "Never stop hitting them.")]
         DragoonSimplePiercingTalonFeature = 6513,
 
         [ConflictingCombos(DragoonCoerthanTormentCombo)]
-        [CustomComboInfo("Simple Dragoon AoE", "One Button, many enemies hit.", DRG.JobID, 25, "", "Never stop hitting them ALL.")]
+        [CustomComboInfo("AOE一键连击", "横扫千军！", DRG.JobID, 25, "", "Never stop hitting them ALL.")]
         DragoonSimpleAoE = 6600,
 
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("天龙点睛 AoE Feature", "Includes 天龙点睛 to the Simple Dragoon AoE rotation.", DRG.JobID, 26, "", "Blue and red Dragons! Oh my.")]
+        [CustomComboInfo("天龙点睛设置", "在连击中插入天龙点睛。", DRG.JobID, 26, "", "Blue and red Dragons! Oh my.")]
         DragoonAoEWyrmwindFeature = 6601,
 
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("武神枪 and Nastrond AoE Feature", "Includes 武神枪 and Nastrond in the AoE rotation.", DRG.JobID, 27, "", "Let me chuck another dragon soul at them!")]
+        [CustomComboInfo("武神枪与死者之岸设置", "在连击中插入武神枪/死者之岸。", DRG.JobID, 27, "", "Let me chuck another dragon soul at them!")]
         DragoonAoEGeirskogulNastrondFeature = 6602,
 
         [ConflictingCombos(DragoonAoELitanyDiveFeature, DragoonAoELifeLitanyDiveFeature)]
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("Dives AoE Feature", "Includes 破碎冲, 龙炎冲 and Stardiver in the AoE rotation.", DRG.JobID, 28, "", "Don't jump to your death!")]
+        [CustomComboInfo("跳跃类能力技设置", "在连击中插入破碎冲/龙炎冲/坠星冲。", DRG.JobID, 28, "", "Don't jump to your death!")]
         DragoonAoEDiveFeature = 6603,
 
         [ConflictingCombos(DragoonAoEDiveFeature, DragoonAoELitanyDiveFeature, DragoonAoELifeLitanyDiveFeature)]
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("Dives under 猛枪 AoE Feature", "Single Weave Friendly: Includes 破碎冲 and Dragonfire Dive in the AoE rotation, while under 猛枪, and 坠星冲 while under Life of the Dragon.", DRG.JobID, 29, "", "Don't jump to your death!")]
+        [CustomComboInfo("舍身状态下 跳跃类能力技设置", "单插还不错:在舍身状态下连击中插入破碎冲/龙炎冲，同时在红莲龙血状态下插入坠星冲。", DRG.JobID, 29, "", "Don't jump to your death!")]
         DragoonAoELanceDiveFeature = 6604,
 
         [ConflictingCombos(DragoonAoEDiveFeature, DragoonAoELanceDiveFeature, DragoonAoELifeLitanyDiveFeature)]
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("Dives under Litany AoE Features", "Includes 破碎冲 and Dragonfire Dive in the AoE rotation, while under 战斗连祷, and 坠星冲 while under Life of the Dragon.", DRG.JobID, 30, "", "Don't jump to your death!")]
+        [CustomComboInfo("战斗连祷中 跳跃类能力技设置", "在战斗连祷状态下的连击中插入破碎冲/龙炎冲,同时在红莲龙血状态下插入坠星冲。", DRG.JobID, 30, "", "Don't jump to your death!")]
         DragoonAoELitanyDiveFeature = 6605,
 
         [ConflictingCombos(DragoonAoEDiveFeature, DragoonAoELanceDiveFeature, DragoonAoELitanyDiveFeature)]
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("Dives under Litany and Life of the Dragon AoE Features", "Includes 破碎冲 and Dragonfire Dive in the AoE rotation, while under 战斗连祷 and Life of the Dragon, and 坠星冲 while under Life of the Dragon.", DRG.JobID, 31, "", "Don't jump to your death!")]
+        [CustomComboInfo("战斗连祷告与红莲龙血状态下 跳跃类能力技设置", "在战斗连祷告与红莲龙血状态下连击中插入破碎冲/龙炎冲，同时在红莲龙血状态下插入坠星冲。", DRG.JobID, 31, "", "Don't jump to your death!")]
         DragoonAoELifeLitanyDiveFeature = 6606,
 
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("High 跳跃 AoE Feature", "Includes High 跳跃 in the AoE rotation.", DRG.JobID, 32, "", "跳跃ing, but higher.")]
+        [CustomComboInfo("（高）跳跃设置", "在连击中插入（高）跳跃。", DRG.JobID, 32, "", "跳跃ing, but higher.")]
         DragoonAoEHighJumpFeature = 6607,
 
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("Mirage AoE Feature", "Includes Mirage in the AoE rotation.", DRG.JobID, 33, "", "They thought they saw it coming.")]
+        [CustomComboInfo("幻象冲设置", "在连击中插入幻象冲。", DRG.JobID, 33, "", "They thought they saw it coming.")]
         DragoonAoEMirageFeature = 6608,
 
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("Buffs AoE Feature", "Includes 猛枪 and Battle Litany to the AoE rotation.", DRG.JobID, 34, "", "This is why your team loves you.")]
+        [CustomComboInfo("buff设置", "在连击中插入猛枪和战斗连祷。", DRG.JobID, 34, "", "This is why your team loves you.")]
         DragoonAoEBuffsFeature = 6609,
 
         [ParentCombo(DragoonAoEBuffsFeature)]
-        [CustomComboInfo("巨龙视线 AoE Feature", "Includes 巨龙视线 to the AoE rotation. OPTIONAL: USE REACTION OR MOACTION FOR OPTIMAL TARGETING.", DRG.JobID, 35, "", "This is why your team loves you, too.")]
+        [CustomComboInfo("巨龙视线设置", "在连击中插入巨龙视线。需要自行选择最优目标。", DRG.JobID, 35, "", "This is why your team loves you, too.")]
         DragoonAoEDragonSightFeature = 6610,
 
         [ParentCombo(DragoonSimpleAoE)]
-        [CustomComboInfo("龙剑 AoE Feature", "Includes 龙剑, while under proper buffs, onto proper GCDs, to the AoE rotation.", DRG.JobID, 36, "", "Hit them with more feeling!")]
+        [CustomComboInfo("龙剑设置", "在连击中合适的状态和窗口内插入龙剑。", DRG.JobID, 36, "", "Hit them with more feeling!")]
         DragoonAoELifeSurgeFeature = 6611,
 
         [ConflictingCombos(DragoonSimple)]
-        [CustomComboInfo("Wheeling Thrust/龙牙龙爪 Option", "When you have either Enhanced 龙牙龙爪 or Wheeling Thrust, Chaos Thrust Combo becomes Wheeling Thrust and 直刺 Combo becomes Fang and Claw. Requires Chaos Thrust Combo and 直刺 Combo.", DRG.JobID, 37, "ALL THE COMBOS", "Turns Wheeling Thrust into 火炎 IV when Hallowed or PvP options are active.")]
+        [CustomComboInfo("龙尾大回旋/龙牙龙爪 选项", "在龙牙龙爪或龙尾大回旋预备状态下，替换樱花连为龙尾大回旋，替换直刺连为龙牙龙爪. 需要开启一键樱花连和直刺连。", DRG.JobID, 37, "ALL THE COMBOS", "Turns Wheeling Thrust into 火炎 IV when Hallowed or PvP options are active.")]
         DragoonFangThrustFeature = 6700,
 
         [ConflictingCombos(DragoonSimple)]
-        [CustomComboInfo("Wheeling Thrust/龙牙龙爪 Feature", "Fang And Claw Becomes 龙尾大回旋 when under Enhanced 龙尾大回旋 Buff.", DRG.JobID, 38, "Reinventing the Wheel", "Absolutely WHEELING, my guy")]
+        [CustomComboInfo("龙尾大回旋/龙牙龙爪 特性", "在龙尾大回旋预备状态下，替换龙牙龙爪为龙尾大回旋。", DRG.JobID, 38, "Reinventing the Wheel", "Absolutely WHEELING, my guy")]
         DragoonFangAndClawFeature = 6701,
 
         #endregion
@@ -1775,100 +1775,100 @@ namespace XIVSlothComboPlugin
         #region SAMURAI
 
         [ConflictingCombos(SamuraiSimpleSamuraiFeature)]
-        [CustomComboInfo("雪风 Combo", "Replace 雪风 with its combo chain.", SAM.JobID, 0, "Yakuza Combo", "Gang affiliation? Surely not.")]
+        [CustomComboInfo("雪风连", "替换雪风为相应连击。", SAM.JobID, 0, "Yakuza Combo", "Gang affiliation? Surely not.")]
         SamuraiYukikazeCombo = 15000,
 
         [ConflictingCombos(SamuraiSimpleSamuraiFeature)]
-        [CustomComboInfo("月光 Combo", "Replace 月光 with its combo chain.", SAM.JobID, 0, "Geico Combo", "Fifteen minutes could save you 15% or more on car insurance!")]
+        [CustomComboInfo("月光连", "替换月光为相应连击。", SAM.JobID, 0, "Geico Combo", "Fifteen minutes could save you 15% or more on car insurance!")]
         SamuraiGekkoCombo = 15001,
 
         [ConflictingCombos(SamuraiSimpleSamuraiFeature)]
-        [CustomComboInfo("花车 Combo", "Replace 花车 with its combo chain.", SAM.JobID, 0, "Cashman Combo", "Dolla dolla bill, y'all")]
+        [CustomComboInfo("花车连", "替换花车为相应连击。", SAM.JobID, 0, "Cashman Combo", "Dolla dolla bill, y'all")]
         SamuraiKashaCombo = 15002,
 
-        [CustomComboInfo("满月 Combo", "Replace 满月 with its combo chain.", SAM.JobID, 0, "Mangetout Combo", "EAT IT ALL!")]
+        [CustomComboInfo("满月连", "替换满月为相应连击。", SAM.JobID, 0, "Mangetout Combo", "EAT IT ALL!")]
         SamuraiMangetsuCombo = 15003,
 
-        [CustomComboInfo("樱花 Combo", "Replace 樱花 with its combo chain.", SAM.JobID, 0, "Okeh Combo", "Okeh")]
+        [CustomComboInfo("樱花连", "替换樱花为相应连击。", SAM.JobID, 0, "Okeh Combo", "Okeh")]
         SamuraiOkaCombo = 15004,
 
-        [CustomComboInfo("人之印pu/Shifu Feature", "Replace Meikyo Shisui with 人之印pu or Shifu depending on what is needed.", SAM.JobID, 0, "跳跃up/Sitdown", "Work those glutes.")]
+        [CustomComboInfo("明镜止水", "根据自身buff需要将明镜止水替换为刃风/士风。", SAM.JobID, 0, "Jumpup/Sitdown", "Work those glutes.")]
         SamuraiJinpuShifuFeature = 15005,
 
         [ConflictingCombos(SamuraiIaijutsuTsubameGaeshiFeature)]
-        [CustomComboInfo("Tsubame-gaeshi to 居合术", "Replace Tsubame-gaeshi with 居合术 when Sen is empty.", SAM.JobID, 0, "", "You don't know the difference between this one and that one?")]
+        [CustomComboInfo("居合术 替换 燕回返", "当没有任何闪时，替换燕回返为居合术。", SAM.JobID, 0, "", "You don't know the difference between this one and that one?")]
         SamuraiTsubameGaeshiIaijutsuFeature = 15006,
 
         [ConflictingCombos(SamuraiIaijutsuShohaFeature)]
-        [CustomComboInfo("燕回返 to Shoha", "Replace 燕回返 with Shoha when meditation is 3.", SAM.JobID, 0, "", "Don't worry, neither do we.")]
+        [CustomComboInfo("照破 替换 燕回返 ", "当剑压积累到3档时，替换燕回返为照破。", SAM.JobID, 0, "", "Don't worry, neither do we.")]
         SamuraiTsubameGaeshiShohaFeature = 15007,
 
         [ConflictingCombos(SamuraiTsubameGaeshiIaijutsuFeature)]
-        [CustomComboInfo("居合术 to Tsubame-gaeshi", "Replace 居合术 with Tsubame-gaeshi when Sen is not empty.", SAM.JobID, 0, "", "Wait, there's more?")]
+        [CustomComboInfo("燕回返 替换 居合术", "当没有任何闪时，替换居合术为燕回返。", SAM.JobID, 0, "", "Wait, there's more?")]
         SamuraiIaijutsuTsubameGaeshiFeature = 15008,
 
         [ConflictingCombos(SamuraiTsubameGaeshiShohaFeature)]
-        [CustomComboInfo("居合术 to Shoha", "Replace 居合术 with Shoha when meditation is 3.", SAM.JobID, 0, "", "You WHAT?!")]
+        [CustomComboInfo("照破 替换 居合术", "当剑压积累到3档时，替换居合术为照破。", SAM.JobID, 0, "", "You WHAT?!")]
         SamuraiIaijutsuShohaFeature = 15009,
 
-        [CustomComboInfo("Shinten to Senei", "Replace 必杀剑·震天 with Senei when its cooldown is up.", SAM.JobID, 0, "", "Kicks you in the shins if Senei is on cooldown")]
+        [CustomComboInfo("必杀剑·闪影 替换 必杀剑·震天", "当必杀剑·闪影冷却结束后，替换必杀剑·震天为必杀剑·闪影。", SAM.JobID, 0, "", "Kicks you in the shins if Senei is on cooldown")]
         SamuraiSeneiFeature = 15010,
 
-        [CustomComboInfo("Shinten to 照破", "Replace Hissatsu: Shinten with Shoha when 斗气 is full.", SAM.JobID, 0, "", "Kicks you in the shins if 照破 is on cooldown")]
+        [CustomComboInfo("照破 替换 必杀剑·震天", "当剑压积累到3档时，替换必杀剑·震天为照破。", SAM.JobID, 0, "", "Kicks you in the shins if 照破 is on cooldown")]
         SamuraiShohaFeature = 15011,
 
-        [CustomComboInfo("Kyuten to Guren", "Replace 必杀剑·九天 with Guren when its cooldown is up.", SAM.JobID, 0, "", "Hey Kyutie!")]
+        [CustomComboInfo("必杀剑·红莲 替换 必杀剑·九天", "当必杀剑·红莲冷却结束后，替换必杀剑·九天为必杀剑·红莲。", SAM.JobID, 0, "", "Hey Kyutie!")]
         SamuraiGurenFeature = 15012,
 
-        [CustomComboInfo("Kyuten to 照破 II", "Replace Hissatsu: Kyuten with Shoha II when 斗气 is full.", SAM.JobID, 0, "", "Hey Kyutie 2, Electric Boogaloo!")]
+        [CustomComboInfo("无名照破 替换 必杀剑·九天", "当剑压积累到3档时，替换必杀剑·九天为无名照破。", SAM.JobID, 0, "", "Hey Kyutie 2, Electric Boogaloo!")]
         SamuraiShoha2Feature = 15013,
 
-        [CustomComboInfo("意气冲天 Namikiri Feature", "Replace Ikishoten with Ogi Namikiri and then Kaeshi Namikiri when available.\nIf you have full 斗气 stacks, 意气冲天 becomes Shoha while you have Ogi Namikiri ready.", SAM.JobID, 0, "Sticky-icky-shoten", "Wait, you guys use meditation?")]
+        [CustomComboInfo("意气冲天 奥义斩浪 连击特性", "当奥义斩浪可用时，替换意气冲天为奥义斩浪，随后变为回返斩浪。\n若同时剑压已积累3档，则意气冲天将变为照破。", SAM.JobID, 0, "Sticky-icky-shoten", "Wait, you guys use meditation?")]
         SamuraiIkishotenNamikiriFeature = 15014,
 
         [ConflictingCombos(SamuraiYukikazeCombo, SamuraiGekkoCombo, SamuraiKashaCombo)]
-        [CustomComboInfo("Simple Samurai Single Target", "Every sticker combo on one button (刃风).", SAM.JobID, 0, "Sleepy Samurai", "zzzz....wha?")]
+        [CustomComboInfo("武士一键单体连击", "以刃风整合一键单体输出循环。", SAM.JobID, 0, "Sleepy Samurai", "zzzz....wha?")]
         SamuraiSimpleSamuraiFeature = 15015,
 
-        [CustomComboInfo("Simple Samurai AoE", "Both AoE Combos on same button (On 樱花). Big thanks to Stein121", SAM.JobID, 0, "", "Hardly any buttons in the first place, but we got you. Lazy-ass.")]
+        [CustomComboInfo("武士一键AOE连击", "以樱花整合AOE输出循环。非常感谢Stein121的帮助。", SAM.JobID, 0, "", "Hardly any buttons in the first place, but we got you. Lazy-ass.")]
         SamuraiSimpleSamuraiAoECombo = 15016,
 
-        [CustomComboInfo("Kaiten Feature Option 1", "Adds Kaiten to Higanbana when it has < 5 seconds remaining.", SAM.JobID, 0, "", "MORE!")]
+        [CustomComboInfo("必杀剑·回天 特殊选项1", "当目标的彼岸花buff不足5s时，在打出彼岸花前插入必杀剑·回天。", SAM.JobID, 0, "", "MORE!")]
         SamuraiKaitenFeature1 = 15018,
 
-        [CustomComboInfo("Kaiten Feature Option 2", "Adds Kaiten to 天之印ka Goken.", SAM.JobID, 0, "", "MORE!!")]
+        [CustomComboInfo("必杀剑·回天 特殊选项2", "在打出天下五剑前插入必杀剑·回天。", SAM.JobID, 0, "", "MORE!!")]
         SamuraiKaitenFeature2 = 15019,
 
-        [CustomComboInfo("Kaiten Feature Option 3", "Adds Kaiten to 纷乱雪月花.", SAM.JobID, 0, "", "MORE!!!")]
+        [CustomComboInfo("必杀剑·回天 特殊选项3", "在打出纷乱雪月花前插入必杀剑·回天。", SAM.JobID, 0, "", "MORE!!!")]
         SamuraiKaitenFeature3 = 15020,
 
-        [CustomComboInfo("Gyoten Feature", "必杀剑·晓天 becomes Yaten/Gyoten depending on the distance from your target.", SAM.JobID, 0, "Gyoza Feature", "Mm, tasty.")]
+        [CustomComboInfo("必杀剑·晓天 特性", "根据与目标的距离自动将必杀剑·晓天变为必杀剑·夜天/晓天。", SAM.JobID, 0, "Gyoza Feature", "Mm, tasty.")]
         SamuraiYatenFeature = 15021,
 
-        [CustomComboInfo("Kaiten Feature Option 4", "Adds Kaiten when above 20 gauge to OgiNamikiri and OgiNamikiri is ready.", SAM.JobID, 0, "", "MORE!!!!")]
+        [CustomComboInfo("必杀剑·回天 特殊选项4", "当奥义斩浪可用且剑气值在20以上时，在打出奥义斩浪前插入必杀剑·回天。", SAM.JobID, 0, "", "MORE!!!!")]
         SamuraiOgiNamikiriFeature = 15022,
 
         [ConflictingCombos(SamuraiOvercapFeature85)]
-        [CustomComboInfo("Samurai Overcap Feature 1", "Adds Senei>Shinten onto main combo at 75 or more Kenki", SAM.JobID, 0, "Wink emoji Overcap Feature 1", "Kinky.")]
+        [CustomComboInfo("单体剑气技能设置选项1", "当剑气值在75以上时，在单体一键输出循环中插入必杀剑·闪影与必杀剑·震天。", SAM.JobID, 0, "Wink emoji Overcap Feature 1", "Kinky.")]
         SamuraiOvercapFeature75 = 15023,
 
         [ConflictingCombos(SamuraiOvercapFeature75)]
-        [CustomComboInfo("Samurai Overcap Feature 2", "Adds Senei>Shinten onto main combo at 85 or more Kenki", SAM.JobID, 0, "Wink emoji Overcap Feature 2", "Even more kinky.")]
+        [CustomComboInfo("单体剑气技能设置选项2", "当剑气值在85以上时，在单体一键输出循环中插入必杀剑·闪影与必杀剑·震天。", SAM.JobID, 0, "Wink emoji Overcap Feature 2", "Even more kinky.")]
         SamuraiOvercapFeature85 = 15024,
 
         [ConflictingCombos(SamuraiOvercapFeatureAoe85)]
-        [CustomComboInfo("Samurai AoE Overcap Feature 1", "Adds Guren>Kyuten onto main AoE combos at 75 or more Kenki", SAM.JobID, 0, "Wink emoji Overcap Feature 3", "Kinkier")]
+        [CustomComboInfo("AOE剑气技能设置选项1", "当剑气值在75以上时，在AOE一键输出循环中插入必杀剑·红莲与必杀剑·九天。", SAM.JobID, 0, "Wink emoji Overcap Feature 3", "Kinkier")]
         SamuraiOvercapFeatureAoe75 = 15025,
 
         [ConflictingCombos(SamuraiOvercapFeatureAoe75)]
-        [CustomComboInfo("Samurai AoE Overcap Feature 2", "Adds Guren>Kyuten onto main AoE combos at 85 or more Kenki", SAM.JobID, 0, "Wink emoji Overcap Feature 4", "Kinkiest")]
+        [CustomComboInfo("AOE剑气技能设置选项2", "当剑气值在85以上时，在AOE一键输出循环中插入必杀剑·红莲与必杀剑·九天。", SAM.JobID, 0, "Wink emoji Overcap Feature 4", "Kinkiest")]
         SamuraiOvercapFeatureAoe85 = 15026,
 
-        [CustomComboInfo("意气冲天 on combos", "Adds 意气冲天 to most Single Target/AoE combos when at or below 50 Kenki", SAM.JobID, 0, "Gauge pls", "You heard me. Gauge pls")]
+        [CustomComboInfo("意气冲天设置", "当剑气值在50以下时，在一键输出循环中插入意气冲天。", SAM.JobID, 0, "Gauge pls", "You heard me. Gauge pls")]
         SamuraiIkishotenonmaincombo = 15027,
 
         [ParentCombo(SamuraiIkishotenNamikiriFeature)]
-        [CustomComboInfo("Kaiten On 意气冲天", "Adds Kaiten to 意气冲天 Namikiri Feature", SAM.JobID, 0, "", "MORE!!!!!")]
+        [CustomComboInfo("必杀剑·回天 强化 意气冲天", "在意气冲天变为奥义斩浪前插入必杀剑·回天。", SAM.JobID, 0, "", "MORE!!!!!")]
         SamuraiIkishotenKaitenNamikiriFeature = 15028,
 
 
