@@ -1957,7 +1957,7 @@ namespace XIVSlothComboPlugin
         SummonerRuin4ToRuin3Feature = 17011,
 
         [CustomComboInfo("毁绝特性（群体）", "当所有召唤兽都在冷却时，将毁绝加入三重灾祸的连击", SMN.JobID, 0, "", "More 毁灭 this, more ruin that! Now in sharing size!")]
-        SummonerRuin4To三重灾祸Feature = 17012,
+        SummonerRuin4ToTridisasterFeature = 17012,
 
         [ParentCombo(SummonerEDFesterCombo)]
         [CustomComboInfo("毁绝特性（溃烂爆发/痛苦核爆）", "当以太超流的档数为零，且能量吸收/能量抽取在CD，且毁绝触发时，将溃烂爆发/痛苦核爆自动替换为毁绝", SMN.JobID, 0, "溃烂爆发ing Painflare", "Just take some Advil for that, or see the doc?")]
