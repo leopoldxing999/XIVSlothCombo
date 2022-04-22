@@ -333,11 +333,11 @@ namespace XIVSlothComboPlugin
         BardDoTMaintain = 3002,
 
         [ConflictingCombos(BardIronJawsAlternateFeature)]
-        [CustomComboInfo("伶牙俐齿设置", "当毒/风dot即将结束时，替换毒/风箭为伶牙俐齿。\n当还未习得伶牙俐齿时会在毒/风箭之间自动切换。", BRD.JobID, 0, "突然觉得伶牙俐齿其实挺符合诗人设定的。", "怎么说？", "一直在那叭叭叭唱个不停。")]
+        [CustomComboInfo("伶牙俐齿设置", "当毒/风dot即将结束时，替换毒/风箭为伶牙俐齿。\n当还未习得伶牙俐齿时会在毒/风箭之间自动切换。", BRD.JobID, 0, "突然觉得伶牙俐齿其实挺符合诗人设定的。", "怎么说？,一直在那叭叭叭唱个不停。")]
         BardIronJawsFeature = 3003,
 
         [ConflictingCombos(BardIronJawsFeature)]
-        [CustomComboInfo("伶牙俐齿选项1", "当毒/风dot未结束时，替换伶牙俐齿为毒/风箭。 \n伶牙俐齿会在风/毒dot即将结束时复现。", BRD.JobID, 0, "哎，我进来了""我又出去了""我又进来了，打我啊，笨蛋！")]
+        [CustomComboInfo("伶牙俐齿选项1", "当毒/风dot未结束时，替换伶牙俐齿为毒/风箭。 \n伶牙俐齿会在风/毒dot即将结束时复现。", BRD.JobID, 0, "哎，我进来了，我又出去了","我又进来了，打我啊，笨蛋！")]
         BardIronJawsAlternateFeature = 3004,
 
         [ConflictingCombos(SimpleBardFeature)]
