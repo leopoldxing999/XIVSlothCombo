@@ -318,7 +318,7 @@ namespace XIVSlothComboPlugin
 
         #endregion
         // ====================================================================================
-         #region BARD
+        #region BARD
 
         [CustomComboInfo("放浪神的小步舞曲设置", "吟唱放浪神期间，将放浪神的小步舞曲替换为完美音调。", BRD.JobID, 0, "放浪？", "听起来比往脑子里灌水还离谱！")]
         BardWanderersPitchPerfectFeature = 3000,
@@ -333,11 +333,11 @@ namespace XIVSlothComboPlugin
         BardDoTMaintain = 3002,
 
         [ConflictingCombos(BardIronJawsAlternateFeature)]
-        [CustomComboInfo("伶牙俐齿续dot模式1", "当目标身上没有毒/风dot时，替换伶牙俐齿为毒/风箭。\n当还未习得伶牙俐齿时会在毒/风箭之间自动切换。", BRD.JobID, 0, "突然觉得伶牙俐齿其实挺符合诗人设定的。", "怎么说？", "一直在那叭叭叭唱个不停。")]
+        [CustomComboInfo("伶牙俐齿续dot模式A", "当目标身上没有毒/风dot时，替换伶牙俐齿为毒/风箭。\n当还未习得伶牙俐齿时会在毒/风箭之间自动切换。", BRD.JobID, 0, "突然觉得伶牙俐齿其实挺符合诗人设定的。", "怎么说？", "一直在那叭叭叭唱个不停。")]
         BardIronJawsFeature = 3003,
 
         [ConflictingCombos(BardIronJawsFeature)]
-        [CustomComboInfo("伶牙俐齿续dot模式1", "当目标身上没有毒/风dot时，替换伶牙俐齿为毒/风箭。 \n伶牙俐齿仅会在风/毒dot即将结束时复现。", BRD.JobID, 0, "哎，我进来了""我又出去了""我又进来了，打我啊，笨蛋！")]
+        [CustomComboInfo("伶牙俐齿续dot模式B", "当目标身上没有毒/风dot时，替换伶牙俐齿为毒/风箭。 \n伶牙俐齿仅会在风/毒dot即将结束时复现。", BRD.JobID, 0, "哎，我进来了""我又出去了""我又进来了，打我啊，笨蛋！")]
         BardIronJawsAlternateFeature = 3004,
 
         [ConflictingCombos(SimpleBardFeature)]
@@ -361,15 +361,15 @@ namespace XIVSlothComboPlugin
         SimpleBardFeature = 3009,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("一键连击Dot选项", "如果目标身上不存在风/毒dot，开启此选项会在连击中加入风/毒箭。", BRD.JobID, 0, "", "Dot是啥？能吃吗？")]
+        [CustomComboInfo("单体连击Dot设置", "如果目标身上不存在风/毒dot，开启此选项会在连击中加入风/毒箭。", BRD.JobID, 0, "", "Dot是啥？能吃吗？")]
         SimpleDoTOption = 3010,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("一键连击唱歌选项", "在连击中加入三首歌循环。", BRD.JobID, 0, "Sing-song", "Look, a raid contribution feature!\nShame nobody will thank you for it")]
+        [CustomComboInfo("单体连击唱歌设置", "在连击中自动加入三首歌循环。", BRD.JobID, 0, "Sing-song", "Look, a raid contribution feature!\nShame nobody will thank you for it")]
         SimpleSongOption = 3011,
 
         [ParentCombo(BardoGCDAoEFeature)]
-        [CustomComboInfo("唱歌选项", "在AOE连击中加入三首歌循环。", BRD.JobID, 0, "", "Get your MIDI files ready, it's song time.")]
+        [CustomComboInfo("AOE连击唱歌设置", "在AOE连击中加入三首歌循环。", BRD.JobID, 0, "", "Get your MIDI files ready, it's song time.")]
         BardSongsFeature = 3012,
 
         [CustomComboInfo("Buff技能设置", "将猛者强击/战斗之声整合至纷乱箭。", BRD.JobID, 0, "", "你被强化了，快送！")]
@@ -382,15 +382,15 @@ namespace XIVSlothComboPlugin
         BardSimpleAoEFeature = 3015,
 
         [ParentCombo(BardSimpleAoEFeature)]
-        [CustomComboInfo("AOE一键唱歌选项", "插入三首歌循环。", BRD.JobID, 0, "", "Wow. You're performing to a crowd now, huh")]
+        [CustomComboInfo("AOE连击一键唱歌", "自动插入三首歌循环。", BRD.JobID, 0, "", "Wow. You're performing to a crowd now, huh")]
         SimpleAoESongOption = 3016,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("一键连击Buff选项", "自动插入Buff技能。", BRD.JobID, 0, "", "Buff for me, buff for you.")]
+        [CustomComboInfo("单体连击Buff设置", "自动插入Buff技能。", BRD.JobID, 0, "", "Buff for me, buff for you.")]
         BardSimpleBuffsFeature = 3017,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("光明神的最终乐章替换选项", "当可用时自动插入光明神的最终乐章。", BRD.JobID, 0, "", "Nothing radiant about it, if you ask me.")]
+        [CustomComboInfo("光明神的最终乐章替换设置", "当可用时自动插入光明神的最终乐章。", BRD.JobID, 0, "", "Nothing radiant about it, if you ask me.")]
         BardSimpleBuffsRadiantFeature = 3018,
 
         [ParentCombo(SimpleBardFeature)]
@@ -398,7 +398,7 @@ namespace XIVSlothComboPlugin
         BardSimpleRaidMode = 3019,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("一键连击打断技能选项", "在合适时机插入打断技能。", BRD.JobID, 0, "Simple Interr-", "Excuse me, I wa-")]
+        [CustomComboInfo("单体连击打断技能设置", "在合适时机插入打断技能。", BRD.JobID, 0, "Simple Interr-", "Excuse me, I wa-")]
         BardSimpleInterrupt = 3020,
 
         [CustomComboInfo("禁止绝峰箭自动替换", "不在一键连击中自动替换插入绝峰箭。", BRD.JobID, 0, "Disable Apex Legends", "Removing features? You? Surely not")]
@@ -406,11 +406,11 @@ namespace XIVSlothComboPlugin
 
         [ConflictingCombos(BardoGCDSingleTargetFeature)]
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("简易起手", "在单体一键连击中加入最佳起手技能。\n此选项与其它绝大部分类似选项均有冲突。", BRD.JobID, 0, "Totally hands-off feature", "It's like watching a YouTube video!")]
+        [CustomComboInfo("单体简易起手", "在单体一键连击中加入最佳起手技能。\n此选项与其它绝大部分类似选项均有冲突。", BRD.JobID, 0, "Totally hands-off feature", "It's like watching a YouTube video!")]
         BardSimpleOpener = 3022,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("一键连击失血箭设置", "一键连击中将失血箭集中于最佳爆发期自动替换插入。", BRD.JobID, 0, "Dancer pooling feature", "NOW you're Dancing.")]
+        [CustomComboInfo("单体连击失血箭设置", "一键连击中将失血箭集中于最佳爆发期自动替换插入。", BRD.JobID, 0, "Dancer pooling feature", "NOW you're Dancing.")]
         BardSimplePooling = 3023,
 
         [ParentCombo(BardIronJawsFeature)]
@@ -418,7 +418,7 @@ namespace XIVSlothComboPlugin
         BardIronJawsApexFeature = 3024,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("一键连击dot快照设置", "在猛者强击持续时间低于设定值时，自动替换插入dot技能。", BRD.JobID, 0, "诗人啥时候能跟召唤一样不用上毒了就好了。", "你在想屁吃!")]
+        [CustomComboInfo("单体连击dot快照设置", "在猛者强击持续时间低于设定值时，自动替换插入dot技能。", BRD.JobID, 0, "诗人啥时候能跟召唤一样不用上毒了就好了。", "你在想屁吃!")]
         BardSimpleRagingJaws = 3025,
 
         #endregion
@@ -1579,88 +1579,88 @@ namespace XIVSlothComboPlugin
         #region RED MAGE
 
         [ConflictingCombos(RedMageSmartcastAoECombo)]
-        [CustomComboInfo("AOE连击", "若连续咏唱或即刻咏唱状态存在,替换赤疾风/赤闪雷为冲击。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("赤魔AOE连击", "若有连续咏唱或即刻咏唱状态,则替换赤烈风或赤震雷为冲击。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageAoECombo = 13000,
 
-        [CustomComboInfo("魔连攻连击", "替换魔连攻为相应的连击。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("魔连攻连击", "当黑白魔元满足条件时，替换连攻为魔连攻并可一键释放近战三连击。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageMeleeCombo = 13001,
 
-        [CustomComboInfo("魔连攻连击 plus", "根据黑白魔元数自动将赤神圣/赤核爆/焦热接在魔连攻连击之后。 \n需先启用魔连攻连击。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("魔连攻连击特性", "根据黑白魔元平衡自动将赤神圣（核爆）与焦热接在近战三连击之后。 \n需先启用魔连攻连击。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageMeleeComboPlus = 13002,
 
         [ConflictingCombos(RedMageSmartSingleTargetCombo, RedMageJoltVerprocCombo)]
-        [CustomComboInfo("赤飞石/赤火炎 - 震荡", "没有触发时，替换赤飞石/赤火炎为震荡/焦热。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("赤飞石（火炎）替换摇荡", "没有任何触发时，替换赤飞石（火炎）为摇荡。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageVerprocCombo = 13003,
 
         [ConflictingCombos(RedMageSmartSingleTargetCombo)]
-        [CustomComboInfo("赤飞石/赤火炎 - 震荡 plus", "若连续咏唱/即刻咏唱状态存在 已触发的赤飞石/赤火炎会替换成赤疾风/赤闪雷。\n需先启用赤飞石/赤火炎 - 震荡。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("赤飞石（火炎）替换摇荡特性1", "若有连续咏唱或即刻咏唱状态， 则将赤飞石（火炎）自动替换为赤疾风（闪雷）。\n需先启用赤飞石（火炎）替换震荡。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageVerprocComboPlus = 13004,
 
         [ConflictingCombos(RedMageSmartSingleTargetCombo)]
-        [CustomComboInfo("赤飞石/赤火炎 - 震荡 plus+", "退出战斗后赤闪雷自动替换为赤火焰。\nR需先启用 赤飞石/赤火炎 - 震荡 Plus。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("赤飞石（火炎）替换震荡特性2", "脱战后自动替换赤飞石（火炎）为赤疾风（闪雷）。\nR需先启用 赤飞石（火炎）替换震荡特性1。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageVerprocOpenerFeature = 13005,
 
-        [CustomComboInfo("决断", "若决断可释放，替换赤闪雷/赤疾风为决断。 ", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("决断设置", "若决断可释放，则替换赤飞石（火炎）为决断。 ", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedmageResolutionFinisher = 13006,
 
-        [CustomComboInfo("决断 近战连击", "一键 魔连攻 - 赤神圣/赤核爆/焦热 - 决断 。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("决断连击特性", "魔连攻连击后自动替换赤飞石（火炎）为赤神圣（核爆）、焦热、决断。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedmageResolutionFinisherMelee = 13007,
 
         [ConflictingCombos(RedMageAoECombo)]
-        [CustomComboInfo("赤烈风/震雷 - 冲击", "根据黑白魔元平衡自动将赤烈风/赤震雷替换为冲击。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("赤魔智能AOE连击", "释放赤震雷后根据黑白魔元平衡自动将赤震雷替换为赤烈风/冲击。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageSmartcastAoECombo = 13008,
 
         [ConflictingCombos(RedMageVerprocComboPlus, RedMageVerprocOpenerFeature, RedMageVerprocCombo, RedMageJoltVerprocCombo)]
-        [CustomComboInfo("智能单目标输出特性", "由PrincessRTFM制作", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("赤魔智能单体魔法循环", "以赤飞石（火炎）技能为基础的单体魔法循环（只包含震荡、赤飞石/火炎）、赤疾风/闪雷）。由PrincessRTFM制作", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageSmartSingleTargetCombo = 13009,
 
-        [CustomComboInfo("能力技自动替换", "根据冷却时间互换六分反击与飞刺.", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("飞刺、六分反击自动替换", "释放飞刺（六分反击）后会自动将其替换为六分反击（飞刺），且CD先结束的技能会自动替换仍处于CD的技能。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageOgcdCombo = 13010,
 
-        [CustomComboInfo("智能起手", "以赤闪雷起手并尽量保持魔元平衡。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("赤魔智能单体起手", "以预读赤闪雷作为起手并尽量保持魔元平衡。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageVerprocOpenerSmartCastFeature = 13011,
 
         [ParentCombo(RedMageSmartcastAoECombo)]
-        [CustomComboInfo("魔划圆斩连击", "根据黑白魔元数自动将赤神圣/赤核爆/焦热接在魔划圆斩连击之后。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("魔划圆斩连击整合", "使用三次魔划圆斩后会根据黑白魔元自动替换其为赤神圣或赤核爆，然后接焦热/决断。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageMeleeAoECombo = 13012,
 
-        [CustomComboInfo("交剑", "在魔连攻连击中自动插入交剑。(测试用!)", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("交剑设置", "当可用时，在所有近战三连中自动插入交剑。(仅测试用!)", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageEngagementFeature = 13013,
 
-        [CustomComboInfo("单体目标一键输出", "以赤飞石/赤火炎或魔连攻为起手技能。 (高延迟下待优化)", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("赤魔单体一键输出", "一键智能整合所有单体输出技能到摇荡（回刺、交击斩、连攻、赤火炎/疾风、震荡均可），并在黑白魔元满足条件且在近战范围时自动变为魔六连爆发。(高延迟下待优化)", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         SimpleRedMage = 13014,
 
-        [CustomComboInfo("AOE一键输出", "以赤烈风/赤震雷或魔划圆斩为起手技能。 (高延迟下待优化)", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("赤魔AOE一键输出", "一键智能整合所有AOE输出技能到赤震雷（烈风）。(高延迟下待优化)", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         SimpleRedMageAoE = 13015,
 
-        [CustomComboInfo("短兵相接/移转 特性", "处于近战距离时替换短兵相接为移转。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("短兵相接、移转设置", "处于近战距离时自动替换短兵相接为移转。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageMovementFeature = 13016,
 
         [ParentCombo(RedMageOgcdCombo)]
-        [CustomComboInfo("能力技", "在所有连击中可随时插入能力技。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("飞刺、六分反击自动插入", "当可用时，在所有智能连击中自动插入飞刺与六分反击。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageOgcdComboOnCombos = 13017,
 
         [ParentCombo(SimpleRedMage)]
-        [CustomComboInfo("赤飞石/赤火炎 触发", "没有触发时，在单体目标一键懒人输出中自动插入促进和即刻咏唱。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("赤飞石（火炎）触发设置", "赤飞石（火炎）未被触发时，自动插入促进和即刻咏唱（优先插入促进）进行触发。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         SimpleRedMageFishing = 13018,
 
         [ParentCombo(SimpleRedMageFishing)]
-        [CustomComboInfo("促进", "只使用促进触发赤飞石/赤火炎。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("赤飞石（火炎）触发追加设置", "赤飞石（火炎）未被触发时，仅自动插入促进强制触发。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         SimpleRedMageAccelOnlyFishing = 13019,
 
         [ParentCombo(SimpleRedMage)]
         [ConflictingCombos(RedMageVerprocOpenerSmartCastFeature)]
-        [CustomComboInfo("简单起手", "一键最优起手。 [仅在90级时有效]", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("简单起手技能设置", "可以预读赤暴雷开展双触发起手。 [仅在90级时有效]", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         SimpleRedMageOpener = 13020,
 
         [ConflictingCombos(RedMageSmartSingleTargetCombo, RedMageVerprocCombo)]
-        [CustomComboInfo("摇荡 触发", "当有触发时替换摇荡为赤飞石或赤火炎，并保持魔元平衡。", RDM.JobID, 0, "Swiftcast -> 赤复活", "Ah look, it's what you were always meant to do")]
+        [CustomComboInfo("智能摇荡z替换触发", "当有触发时自动替换摇荡为赤飞石（火炎），若会引起魔元失衡则不会替换。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageJoltVerprocCombo = 13021,
 
-        [CustomComboInfo("醒梦", "当MP低于设定数值时替换赤疾风/赤闪雷/冲击为醒梦。", RDM.JobID, 0, "Veraero / 赤闪雷 / Impact -> Lucid Dreaming", "OOM? Git gud.")]
+        [CustomComboInfo("自定义醒梦使用", "当MP低于设定数值时自动替换赤疾风、赤闪雷和冲击为醒梦。", RDM.JobID, 0, "醒梦我也要自动插。", "emmm......你他娘的还真是个天才。")]
         RedMageLucidOnJolt = 13022,
 
-        [CustomComboInfo("赤复活", "当使用即刻咏唱后替换即刻咏唱为赤复活。", RDM.JobID, 0, "Swifty 赤复活", "You're panicing right now, aren't you?")]
+        [CustomComboInfo("即刻赤复活", "使用即刻咏唱后替换即刻咏唱为赤复活。", RDM.JobID, 0, "Swifty 赤复活", "You're panicing right now, aren't you?")]
         RedMageSwiftVerraise = 13023,
 
         #endregion
