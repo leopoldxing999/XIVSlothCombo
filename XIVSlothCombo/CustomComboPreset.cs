@@ -318,14 +318,13 @@ namespace XIVSlothComboPlugin
 
         #endregion
         // ====================================================================================
-        #region BARD
+         #region BARD
 
         [CustomComboInfo("放浪神的小步舞曲设置", "吟唱放浪神期间，将放浪神的小步舞曲替换为完美音调。", BRD.JobID, 0, "放浪？", "听起来比往脑子里灌水还离谱！")]
         BardWanderersPitchPerfectFeature = 3000,
 
         [ConflictingCombos(SimpleBardFeature)]
-        [CustomComboInfo("强力射击设置", "触发直线射击预备状态时，替换强力射击/爆发射击为直线射击/辉煌箭。", BRD.JobID, 0, "……强力射击会触发直线射击……",
-            "还搁这研究诗人呐？机工它不香吗？用枪突突突不爽吗？")]
+        [CustomComboInfo("强力射击设置", "触发直线射击预备状态时，替换强力射击/爆发射击为直线射击/辉煌箭。", BRD.JobID, 0, "……强力射击会触发直线射击……", "还搁这研究诗人呐？机工它不香吗？用枪突突突不爽吗？")]
         BardStraightShotUpgradeFeature = 3001,
 
         [ConflictingCombos(SimpleBardFeature)]
@@ -334,18 +333,15 @@ namespace XIVSlothComboPlugin
         BardDoTMaintain = 3002,
 
         [ConflictingCombos(BardIronJawsAlternateFeature)]
-        [CustomComboInfo("伶牙俐齿设置", "当毒/风dot即将结束时，替换毒/风箭为伶牙俐齿。\n当还未习得伶牙俐齿时会在毒/风箭之间自动切换。", BRD.JobID, 0,
-            "突然觉得伶牙俐齿其实挺符合诗人设定的。", "怎么说？,一直在那叭叭叭唱个不停。")]
+        [CustomComboInfo("伶牙俐齿续dot模式1", "当目标身上没有毒/风dot时，替换伶牙俐齿为毒/风箭。\n当还未习得伶牙俐齿时会在毒/风箭之间自动切换。", BRD.JobID, 0, "突然觉得伶牙俐齿其实挺符合诗人设定的。", "怎么说？", "一直在那叭叭叭唱个不停。")]
         BardIronJawsFeature = 3003,
 
         [ConflictingCombos(BardIronJawsFeature)]
-        [CustomComboInfo("伶牙俐齿选项1", "当毒/风dot未结束时，替换伶牙俐齿为毒/风箭。 \n伶牙俐齿会在风/毒dot即将结束时复现。", BRD.JobID, 0, "哎，我进来了，我又出去了",
-            "我又进来了，打我啊，笨蛋！")]
+        [CustomComboInfo("伶牙俐齿续dot模式1", "当目标身上没有毒/风dot时，替换伶牙俐齿为毒/风箭。 \n伶牙俐齿仅会在风/毒dot即将结束时复现。", BRD.JobID, 0, "哎，我进来了""我又出去了""我又进来了，打我啊，笨蛋！")]
         BardIronJawsAlternateFeature = 3004,
 
         [ConflictingCombos(SimpleBardFeature)]
-        [CustomComboInfo("绝峰箭设置", "当灵魂之声蓄满时，替换爆发射击/连珠箭为绝峰箭，触发爆破箭预备状态时替换为爆破箭。", BRD.JobID, 0, "Robin Hood Feature",
-            "Steal from Lolorito and give to Garlemald, I guess?\nGood on ya.")]
+        [CustomComboInfo("绝峰箭设置", "当灵魂之声蓄满时，替换爆发射击/连珠箭为绝峰箭，触发爆破箭预备状态时替换为爆破箭。", BRD.JobID, 0, "Robin Hood Feature", "Steal from Lolorito and give to Garlemald, I guess?\nGood on ya.")]
         BardApexFeature = 3005,
 
         [ConflictingCombos(SimpleBardFeature, BardSimpleOpener)]
@@ -360,78 +356,69 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("AOE连击设置", "在影噬箭预备状态下替换连珠箭/百首龙牙箭为影噬箭。", BRD.JobID, 0, "", "C-C-C-Combo!")]
         BardAoEComboFeature = 3008,
 
-        [ConflictingCombos(BardStraightShotUpgradeFeature, BardDoTMaintain, BardApexFeature,
-            BardoGCDSingleTargetFeature)]
-        [CustomComboInfo("简易一键连击", "一键整合所有单体攻击技能。\n如果目标身上有dots，会同时尝试保持dots不断。", BRD.JobID, 0, "这诗人这么难，我脑子不够用了",
-            "那就别带脑子了，开挂!")]
+        [ConflictingCombos(BardStraightShotUpgradeFeature, BardDoTMaintain, BardApexFeature, BardoGCDSingleTargetFeature)]
+        [CustomComboInfo("单体简易一键连击", "一键整合所有单体攻击技能。\n如果目标身上有dots，会同时尝试保持dots不断。", BRD.JobID, 0, "这诗人这么难，我脑子不够用了", "那就别带脑子了，开挂!")]
         SimpleBardFeature = 3009,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("简易Dot选项", "如果目标身上不存在风/毒dot，开启此选项会在连击中加入风/毒箭。", BRD.JobID, 0, "", "Dot是啥？能吃吗？")]
+        [CustomComboInfo("一键连击Dot选项", "如果目标身上不存在风/毒dot，开启此选项会在连击中加入风/毒箭。", BRD.JobID, 0, "", "Dot是啥？能吃吗？")]
         SimpleDoTOption = 3010,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("简易唱歌选项", "在连击中加入三首歌循环。", BRD.JobID, 0, "Sing-song",
-            "Look, a raid contribution feature!\nShame nobody will thank you for it")]
+        [CustomComboInfo("一键连击唱歌选项", "在连击中加入三首歌循环。", BRD.JobID, 0, "Sing-song", "Look, a raid contribution feature!\nShame nobody will thank you for it")]
         SimpleSongOption = 3011,
 
         [ParentCombo(BardoGCDAoEFeature)]
-        [CustomComboInfo("唱歌选项 AoE", "在AOE连击中加入三首歌循环。", BRD.JobID, 0, "", "Get your MIDI files ready, it's song time.")]
+        [CustomComboInfo("唱歌选项", "在AOE连击中加入三首歌循环。", BRD.JobID, 0, "", "Get your MIDI files ready, it's song time.")]
         BardSongsFeature = 3012,
 
         [CustomComboInfo("Buff技能设置", "将猛者强击/战斗之声整合至纷乱箭。", BRD.JobID, 0, "", "你被强化了，快送！")]
         BardBuffsFeature = 3013,
 
-        [CustomComboInfo("一键唱歌", "将贤者的叙事谣/军神的赞美歌整合至放浪神的小步舞曲，并根据cd时间自动切换。", BRD.JobID, 0, "EDM songs",
-            "They all sound the same, anyway.")]
+        [CustomComboInfo("一键唱歌", "将贤者的叙事谣/军神的赞美歌整合至放浪神的小步舞曲，并根据cd时间自动切换。", BRD.JobID, 0, "EDM songs", "They all sound the same, anyway.")]
         BardOneButtonSongs = 3014,
 
-        [CustomComboInfo("AOE简易一键连击", "在连珠箭/百首龙牙箭连打时插入能力技。", BRD.JobID, 0, "",
-            "Group attacks to make you feel like you're not the worst Ranged DPS in the room")]
+        [CustomComboInfo("AOE简易一键连击", "在连珠箭/百首龙牙箭连打时插入能力技。", BRD.JobID, 0, "", "Group attacks to make you feel like you're not the worst Ranged DPS in the room")]
         BardSimpleAoEFeature = 3015,
 
         [ParentCombo(BardSimpleAoEFeature)]
-        [CustomComboInfo("唱歌选项AoE特性", "插入三首歌循环。", BRD.JobID, 0, "", "Wow. You're performing to a crowd now, huh")]
+        [CustomComboInfo("AOE一键唱歌选项", "插入三首歌循环。", BRD.JobID, 0, "", "Wow. You're performing to a crowd now, huh")]
         SimpleAoESongOption = 3016,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("Buff选项", "自动插入Buff技能。", BRD.JobID, 0, "", "Buff for me, buff for you.")]
+        [CustomComboInfo("一键连击Buff选项", "自动插入Buff技能。", BRD.JobID, 0, "", "Buff for me, buff for you.")]
         BardSimpleBuffsFeature = 3017,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("光明神的最终乐章", "自动插入光明神的最终乐章。", BRD.JobID, 0, "", "Nothing radiant about it, if you ask me.")]
+        [CustomComboInfo("光明神的最终乐章替换选项", "当可用时自动插入光明神的最终乐章。", BRD.JobID, 0, "", "Nothing radiant about it, if you ask me.")]
         BardSimpleBuffsRadiantFeature = 3018,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("零式（高难）模式", "去除目标HP检测，在战斗即将结束时不自动替换dot/buff/歌技能。", BRD.JobID, 0, "But Muh Parse",
-            "Just slings all the shit, all the time!")]
+        [CustomComboInfo("零式（高难）模式", "去除目标HP检测，在战斗即将结束时不自动替换dot/buff/歌技能。", BRD.JobID, 0, "But Muh Parse", "Just slings all the shit, all the time!")]
         BardSimpleRaidMode = 3019,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("打断技能选项", "在合适时机插入打断技能。", BRD.JobID, 0, "Simple Interr-", "Excuse me, I wa-")]
+        [CustomComboInfo("一键连击打断技能选项", "在合适时机插入打断技能。", BRD.JobID, 0, "Simple Interr-", "Excuse me, I wa-")]
         BardSimpleInterrupt = 3020,
 
-        [CustomComboInfo("绝峰箭选项", "不在在简易连击中加入绝峰箭。", BRD.JobID, 0, "Disable Apex Legends",
-            "Removing features? You? Surely not")]
+        [CustomComboInfo("禁止绝峰箭自动替换", "不在一键连击中自动替换插入绝峰箭。", BRD.JobID, 0, "Disable Apex Legends", "Removing features? You? Surely not")]
         BardRemoveApexArrowFeature = 3021,
 
         [ConflictingCombos(BardoGCDSingleTargetFeature)]
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("简易起手选项", "一键最佳起手。\n此选项与其它绝大部分类似选项均有冲突。", BRD.JobID, 0, "Totally hands-off feature",
-            "It's like watching a YouTube video!")]
+        [CustomComboInfo("简易起手", "在单体一键连击中加入最佳起手技能。\n此选项与其它绝大部分类似选项均有冲突。", BRD.JobID, 0, "Totally hands-off feature", "It's like watching a YouTube video!")]
         BardSimpleOpener = 3022,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("失血箭选项", "将失血箭集中于最优爆发期。", BRD.JobID, 0, "Dancer pooling feature", "NOW you're Dancing.")]
+        [CustomComboInfo("一键连击失血箭设置", "一键连击中将失血箭集中于最佳爆发期自动替换插入。", BRD.JobID, 0, "Dancer pooling feature", "NOW you're Dancing.")]
         BardSimplePooling = 3023,
 
         [ParentCombo(BardIronJawsFeature)]
-        [CustomComboInfo("伶牙俐齿选项2", "当绝峰箭/爆破箭可用时，替换伶牙俐齿为绝峰箭/爆破箭。", BRD.JobID, 0, "",
-            "Arrows this, jaws that.\nTruly the apex of BRD technology")]
+        [CustomComboInfo("伶牙俐齿替换绝峰箭", "当绝峰箭/爆破箭可用时，替换伶牙俐齿为绝峰箭/爆破箭。", BRD.JobID, 0, "", "Arrows this, jaws that.\nTruly the apex of BRD technology")]
         BardIronJawsApexFeature = 3024,
 
         [ParentCombo(SimpleBardFeature)]
-        [CustomComboInfo("简易快照", "在猛者强击持续时间内，利用快照机制上dot。", BRD.JobID, 0, "诗人啥时候能跟召唤一样不用上毒了就好了。", "你在想屁吃!")]
+        [CustomComboInfo("一键连击dot快照设置", "在猛者强击持续时间低于设定值时，自动替换插入dot技能。", BRD.JobID, 0, "诗人啥时候能跟召唤一样不用上毒了就好了。", "你在想屁吃!")]
         BardSimpleRagingJaws = 3025,
 
         #endregion
