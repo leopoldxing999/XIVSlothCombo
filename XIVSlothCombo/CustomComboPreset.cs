@@ -650,7 +650,7 @@ namespace XIVSlothComboPlugin
         DeliriumFeature = 5002,
 
         [ParentCombo(DarkStalwartSoulCombo)]
-        [CustomComboInfo("暗血量表溢出特性", "当你的暗血即将溢出时，使用寂灭替换掉刚魂。", DRK.JobID, 0, "", "Hey big spenderrrrr")]
+        [CustomComboInfo("暗血量表溢出特性 SoulCombo", "当你的暗血即将溢出时，使用寂灭替换掉刚魂。", DRK.JobID, 0, "", "Hey big spenderrrrr")]
         DRKOvercapFeature = 5003,
 
         [ParentCombo(DarkMainComboCDsGroup)]
@@ -1943,7 +1943,7 @@ namespace XIVSlothComboPlugin
         SummonerSingleTargetDemiFeature = 17002,
 
         [ParentCombo(SummonerAOEComboFeature)]
-        [CustomComboInfo("单体亚灵神（龙神/不死鸟）特性", "亚灵神显现期间，星极核爆/炼狱之炎会在恰当的时刻替换为龙神迸发/不死鸟迸发/死星核爆/苏生之炎", SMN.JobID, 0, "BRRRR", "Upgrade!")]
+        [CustomComboInfo("单体亚灵神（龙神/不死鸟）特性 AOE", "亚灵神显现期间，星极核爆/炼狱之炎会在恰当的时刻替换为龙神迸发/不死鸟迸发/死星核爆/苏生之炎", SMN.JobID, 0, "BRRRR", "Upgrade!")]
         SummonerAOEDemiFeature = 17003,
 
         [CustomComboInfo("宝石耀特性", "在三神召唤期间，毁灭/毁荡/三重灾祸自动替换成宝石耀。只有启用了单体或群体连击后才有效（下同）。", SMN.JobID, 0, "Eggy-bread", "No idea when you're in burst phase?\nHint: It's all the time, really")]
