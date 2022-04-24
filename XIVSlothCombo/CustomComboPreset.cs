@@ -318,7 +318,7 @@ namespace XIVSlothComboPlugin
 
         #endregion
         // ====================================================================================
-        #region BARD
+       #region BARD
 
         [CustomComboInfo("放浪神的小步舞曲设置", "吟唱放浪神期间，将放浪神的小步舞曲替换为完美音调。", BRD.JobID, 0, "放浪？", "听起来比往脑子里灌水还离谱！")]
         BardWanderersPitchPerfectFeature = 3000,
@@ -333,11 +333,11 @@ namespace XIVSlothComboPlugin
         BardDoTMaintain = 3002,
 
         [ConflictingCombos(BardIronJawsAlternateFeature)]
-        [CustomComboInfo("伶牙俐齿续dot模式A", "当目标身上没有毒/风dot时，替换伶牙俐齿为毒/风箭。\n当还未习得伶牙俐齿时会在毒/风箭之间自动切换。", BRD.JobID, 0, "突然觉得伶牙俐齿其实挺符合诗人设定的。", "怎么说？一直在那叭叭叭唱个不停。")]
+        [CustomComboInfo("伶牙俐齿续dot模式A", "当目标身上没有毒/风dot时，替换伶牙俐齿为毒/风箭。\n当还未习得伶牙俐齿时会在毒/风箭之间自动切换。", BRD.JobID, 0, "突然觉得伶牙俐齿其实挺符合诗人设定的。", "怎么说？", "一直在那叭叭叭唱个不停。")]
         BardIronJawsFeature = 3003,
 
         [ConflictingCombos(BardIronJawsFeature)]
-        [CustomComboInfo("伶牙俐齿续dot模式B", "当目标身上没有毒/风dot时，替换伶牙俐齿为毒/风箭。 \n伶牙俐齿仅会在风/毒dot即将结束时复现。", BRD.JobID, 0, "哎，我进来了,我又出去了","我又进来了，打我啊，笨蛋！")]
+        [CustomComboInfo("伶牙俐齿续dot模式B", "当目标身上没有毒/风dot时，替换伶牙俐齿为毒/风箭。 \n伶牙俐齿仅会在风/毒dot即将结束时复现。", BRD.JobID, 0, "哎，我进来了""我又出去了""我又进来了，打我啊，笨蛋！")]
         BardIronJawsAlternateFeature = 3004,
 
         [ConflictingCombos(SimpleBardFeature)]
@@ -629,117 +629,117 @@ namespace XIVSlothComboPlugin
 
         #endregion
         // ====================================================================================
-        #region DARK KNIGHT
+         #region DARK KNIGHT
 
         [ParentCombo(DarkSouleaterCombo)]
-        [CustomComboInfo("Buffs on Main Combo", "收藏品采集ion of Buffs to add to Main Combo", DRK.JobID)]
+        [CustomComboInfo("主连击Buff整合", "将Buff类技能整合到主连击。", DRK.JobID)]
         DarkMainComboBuffsGroup = 5098,
 
         [ParentCombo(DarkSouleaterCombo)]
-        [CustomComboInfo("CDs on Main Combo", "收藏品采集ion of CDs to add to Main Combo", DRK.JobID)]
+        [CustomComboInfo("主连击CD整合", "将CD类技能整合到主连击。", DRK.JobID)]
         DarkMainComboCDsGroup = 5099,
 
-        [CustomComboInfo("噬魂斩 Combo", "Replace 噬魂斩 with its combo chain. \nIf all sub options are selected will turn into a full one button rotation (Simple Dark Knight)", DRK.JobID, 0, "Fetch me their souls!", "Heheheheheh")]
+        [CustomComboInfo("噬魂斩连击", "用基础循环替换掉噬魂斩。 \n如果所有的次级选项都被开启，那么就可以进行一键循环(简单黑骑)", DRK.JobID, 0, "Fetch me their souls!", "Heheheheheh")]
         DarkSouleaterCombo = 5000,
 
-        [CustomComboInfo("刚魂 Combo", "Replace 刚魂 with its combo chain.", DRK.JobID, 0, "", "Ugly name for an ugly job")]
+        [CustomComboInfo("刚魂连击", "用基础循环替换掉刚魂。", DRK.JobID, 0, "", "Ugly name for an ugly job")]
         DarkStalwartSoulCombo = 5001,
 
         [ParentCombo(DarkMainComboBuffsGroup)]
-        [CustomComboInfo("血乱 Feature", "Replace 噬魂斩 and Stalwart Soul with Bloodspiller and Quietus when Delirium is active.", DRK.JobID, 0, "", "血乱 is what you have if you choose to play DRK.\nDoc's words, not mine")]
+        [CustomComboInfo("血乱特性", "当血乱激活时，使用血溅和寂灭替换掉噬魂战和刚魂。", DRK.JobID, 0, "", "Delirium is what you have if you choose to play DRK.\nDoc's words, not mine")]
         DeliriumFeature = 5002,
 
         [ParentCombo(DarkStalwartSoulCombo)]
-        [CustomComboInfo("Dark Knight Gauge Overcap Feature", "Replace AoE combo with gauge spender if you are about to overcap.", DRK.JobID, 0, "", "Hey big spenderrrrr")]
+        [CustomComboInfo("暗血量表溢出特性", "当你的暗血即将溢出时，使用寂灭替换掉刚魂。", DRK.JobID, 0, "", "Hey big spenderrrrr")]
         DRKOvercapFeature = 5003,
 
         [ParentCombo(DarkMainComboCDsGroup)]
-        [CustomComboInfo("掠影示现 Feature", "掠影示现 will now be on main combo if its not on CD and you have gauge for it.", DRK.JobID, 0, "", "Trick everyone into thinking a party member is standing where they shouldn't be!")]
+        [CustomComboInfo("掠影示现特性", "如果掠影示现不在冷却，并且你拥有足够的暗血时，将掠影示现整合到连击中。", DRK.JobID, 0, "", "Trick everyone into thinking a party member is standing where they shouldn't be!")]
         DRKLivingShadowFeature = 5004,
 
         [ParentCombo(DarkSouleaterCombo)]
-        [CustomComboInfo("EoS Overcap Feature", "Uses EoS if you are above 8.5k mana or Darkside is about to expire (10sec or less)", DRK.JobID, 0, "Something about mana", "You're basically a black mage! Well done!")]
+        [CustomComboInfo("暗影锋溢出特性", "当你的MP超过8500或暗黑即将结束（少于十秒）时，将暗影锋整合到主连击。", DRK.JobID, 0, "Something about mana", "You're basically a black mage! Well done!")]
         DarkManaOvercapFeature = 5005,
 
-        [CustomComboInfo("oGCD Feature", "Adds Living Shadow > 腐秽大地 > Carve And Spit > Salt And Darkness to Carve And Spit and Abysal Drain", DRK.JobID, 0, "", "Just does your whole job for you, really")]
+        [CustomComboInfo("能力技特性", "按照掠影示现 > 腐秽大地 > 精雕怒斩 > 腐秽黑暗的顺序将能力技整合到精雕怒斩与吸血深渊。", DRK.JobID, 0, "", "Just does your whole job for you, really")]
         DarkoGCDFeature = 5006,
 
         [ParentCombo(DarkoGCDFeature)]
-        [CustomComboInfo("暗影使者 Feature", "Adds 暗影使者 to oGCD Feature ", DRK.JobID, 0, "", "Wasn't this last expansion?")]
+        [CustomComboInfo("暗影使者能力技特性", "将暗影使者整合到能力技特性。", DRK.JobID, 0, "", "Wasn't this last expansion?")]
         DarkShadowbringeroGCDFeature = 5007,
 
         [ParentCombo(DarkMainComboCDsGroup)]
-        [CustomComboInfo("跳斩 Feature", "Adds 跳斩 onto main combo whenever its available and Darkside is up.", DRK.JobID, 0, "", "Take the plunge. All the way!")]
+        [CustomComboInfo("跳斩特性", "当暗黑激活时将跳斩添加到主连击。", DRK.JobID, 0, "", "Take the plunge. All the way!")]
         DarkPlungeFeature = 5008,
 
         [ParentCombo(DeliriumFeature)]
-        [CustomComboInfo("Delayed 血乱 Feature", "Delays Bloodspiller by 2 GCDs when 血乱 is used during even windows, uses it regularly during odd windows. Useful for feeding into raid buffs at level 90.", DRK.JobID, 0)]
+        [CustomComboInfo("血乱延后特性", "在偶数分钟窗口使用血乱时将延迟两个GCD，而在奇数分钟窗口不进行延后。这将可以使技能更容易打进团辅。", DRK.JobID, 0)]
         DelayedDeliriumFeatureOption = 5010,
 
         [ParentCombo(DarkSouleaterCombo)]
-        [CustomComboInfo("伤残 Uptime Feature", "Replace Souleater Combo Feature with 伤残 when you are out of range.", DRK.JobID, 0, "Ranged DPS job now, duh", "Stubby little arms, huh")]
+        [CustomComboInfo("伤残特性", "当你离开近战范围时使用伤残替换主连击。", DRK.JobID, 0, "Ranged DPS job now, duh", "Stubby little arms, huh")]
         DarkRangedUptimeFeature = 5011,
 
-        [CustomComboInfo("Interrupt Feature", "Replaces Low Blow with Interject when target can be interrupted .", DRK.JobID, 0, "Lower blow", "Blow, but low.")]
+        [CustomComboInfo("插言特性", "当目标可被打断时，使用插言替换掉下踢。", DRK.JobID, 0, "Lower blow", "Blow, but low.")]
         DarkKnightInterruptFeature = 5012,
 
         [ParentCombo(DarkStalwartSoulCombo)]
-        [CustomComboInfo("吸血深渊 Feature", "Adds abyssal drain to the AoE Combo when you fall below 60 percent hp.", DRK.JobID, 0, "", "Even the un-cool kids got heals these days")]
+        [CustomComboInfo("吸血深渊特性", "当你的血量低于60%时，使用吸血深渊替换AOE连击。", DRK.JobID, 0, "", "Even the un-cool kids got heals these days")]
         DRKStalwartabyssalDrainFeature = 5013,
 
         [ParentCombo(DarkStalwartSoulCombo)]
-        [CustomComboInfo("AoE 暗影使者 Feature", "Adds 暗影使者 to the AoE Combo.", DRK.JobID, 0, "", "Wasn't this last expansion?")]
+        [CustomComboInfo("AOE暗影使者特性", "将暗影使者整合到AOE连击。", DRK.JobID, 0, "", "Wasn't this last expansion?")]
         DRKStalwartShadowbringerFeature = 5014,
 
         [ParentCombo(DarkStalwartSoulCombo)]
-        [CustomComboInfo("FoS Overcap Feature", "Uses FoS if you are above 8.5k mana or Darkside is about to expire (10sec or less)", DRK.JobID, 0, "Something about mana", "You're basically a black mage! Well done!")]
+        [CustomComboInfo("暗影波动溢出特性", "当你的MP超过8500或暗黑即将结束（少于十秒）时，将暗影波动整合到AOE连击。", DRK.JobID, 0, "Something about mana", "You're basically a black mage! Well done!")]
         DarkManaOvercapAoEFeature = 5015,
 
         [ParentCombo(DarkSouleaterCombo)]
-        [CustomComboInfo("Blood Gauge Overcap Feature", "Adds 血溅 onto main combo when at 80 blood gauge or higher", DRK.JobID, 0, "", "Take the plunge. Or, just dip your toes in. Whatever.")]
+        [CustomComboInfo("暗血量表溢出特性", "当你的暗血不低于80时，将血溅整合到主连击。", DRK.JobID, 0, "", "Take the plunge. Or, just dip your toes in. Whatever.")]
         DarkBloodGaugeOvercapFeature = 5016,
 
         [ParentCombo(DarkSouleaterCombo)]
-        [CustomComboInfo("Level 90 Dark Knight Opener", "Adds the Level 90 Dark Knight Opener to the Main Combo. \nOpener triggered by using The Blackest Night or 嗜血 before combat.", DRK.JobID, 0)]
+        [CustomComboInfo("90级暗黑骑士起手", "将90级的暗黑骑士起手整合到主连击。 \n起手将在进入战斗前并且使用了至黑之夜或者嗜血之后触发。", DRK.JobID, 0)]
         DarkOpenerFeature = 5017,
 
         [ParentCombo(DarkOpenerFeature)]
-        [CustomComboInfo("嗜血 out of Combat Feature", "If TBN is used outside of combat, turns the main combo into 嗜血 in preparation for the opener.", DRK.JobID, 0)]
+        [CustomComboInfo("嗜血战斗外特性", "如果在战斗外使用了至黑之夜，那么将嗜血整合到主连击作为起手。", DRK.JobID, 0)]
         DarkBloodWeaponOpener = 5018,
 
         [ParentCombo(DarkMainComboCDsGroup)]
-        [CustomComboInfo("暗影使者 Feature", "Adds 暗影使者 on Main Combo while Darkside is up. Will use all stacks on CD.", DRK.JobID, 0)]
+        [CustomComboInfo("暗影使者特性", "当暗黑激活并且暗影使者所有层数都不在冷却时，将暗影使者整合到主连击。", DRK.JobID, 0)]
         DarkShBFeature = 5019,
 
         [ParentCombo(DarkManaOvercapFeature)]
-        [CustomComboInfo("EoS Burst Option", "Uses EoS until chosen MP limit is reached during even minute window bursts.", DRK.JobID, 0)]
+        [CustomComboInfo("暗影锋爆发设置", "在偶数分的爆发窗口中持续使用暗影锋，直到MP到达设定值。", DRK.JobID, 0)]
         DarkEoSPoolOption = 5020,
 
         [ParentCombo(DarkShBFeature)]
-        [CustomComboInfo("暗影使者 Burst Option", "Pools 暗影使者 to use during even minute window bursts.", DRK.JobID, 0)]
+        [CustomComboInfo("暗影使者爆发设置", "将暗影使者打入偶数分钟的爆发窗口中。", DRK.JobID, 0)]
         DarkBurstShBOption = 5021,
 
         [ParentCombo(DarkMainComboCDsGroup)]
-        [CustomComboInfo("精雕怒斩 Feature", "Adds 精雕怒斩 on Main Combo while Darkside is up.", DRK.JobID, 0)]
+        [CustomComboInfo("精雕怒斩特性", "当暗黑激活时将精雕怒斩整合到主连击。", DRK.JobID, 0)]
         DarkCnSFeature = 5022,
 
         [ParentCombo(DarkPlungeFeature)]
-        [CustomComboInfo("跳斩 Burst Option", "Pools 跳斩 to use during minute window bursts.", DRK.JobID, 0)]
+        [CustomComboInfo("跳斩爆发设置", "将跳斩打入每分钟的爆发窗口中。", DRK.JobID, 0)]
         DarkPlungeBurstOption = 5023,
 
         [ParentCombo(DarkMainComboCDsGroup)]
-        [CustomComboInfo("腐秽大地 Feature", "Adds 腐秽大地 on Main Combo while Darkside is up, will use Salt and Darkness if unlocked.", DRK.JobID, 0)]
+        [CustomComboInfo("腐秽大地特性", "当暗黑激活时将腐秽大地整合到主连击。将会在你解锁了腐秽黑暗之后生效。", DRK.JobID, 0)]
         DarkSaltedEarthFeature = 5024,
 
         [ParentCombo(DeliriumFeature)]
-        [CustomComboInfo("血乱 on CD", "Adds 血乱 to Main Combo on CD and when Darkside is up. Will also spend 50 blood gauge if 血乱 is nearly ready to protect from overcap.", DRK.JobID, 0)]
+        [CustomComboInfo("血乱CD整合", "当暗黑激活时将血乱整合到主连击，并且会在你拥有50点以上暗血时在血乱将要完成冷却之前打出一个血溅以防暗血溢出。", DRK.JobID, 0)]
         DarkDeliriumOnCD = 5025,
 
         [ParentCombo(DarkMainComboBuffsGroup)]
-        [CustomComboInfo("嗜血 on CD", "Adds 嗜血 to Main Combo on CD and when Darkside is up.", DRK.JobID, 0)]
+        [CustomComboInfo("嗜血CD整合", "当暗黑激活时将嗜血整合到主连击。", DRK.JobID, 0)]
         DarkBloodWeaponOption = 5026,
         
-        [CustomComboInfo("血仇保护机制", "当目标已被赋予血仇效果时，将 血仇 替换为 飞石", DRK.JobID)]
+        [CustomComboInfo("雪仇保护机制", "当目标已被赋予雪仇效果时，将雪仇替换为飞石", DRK.JobID)]
         DarkKnightReprisalProtection = 5030,
 
         #endregion
@@ -1597,7 +1597,7 @@ namespace XIVSlothComboPlugin
         RedMageVerprocComboPlus = 13004,
 
         [ConflictingCombos(RedMageSmartSingleTargetCombo)]
-        [CustomComboInfo("赤飞石（火炎）替换震荡特性2", "脱战后自动替换赤飞石（火炎）为赤疾风（闪雷）。\nR需先启用 赤飞石（火炎）替换震荡特性1。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
+        [CustomComboInfo("赤飞石（火炎）替换摇荡特性2", "脱战后自动替换赤飞石（火炎）为赤疾风（闪雷）。\nR需先启用 赤飞石（火炎）替换震荡特性1。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageVerprocOpenerFeature = 13005,
 
         [CustomComboInfo("决断设置", "若决断可释放，则替换赤飞石（火炎）为决断。 ", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
@@ -1654,7 +1654,7 @@ namespace XIVSlothComboPlugin
         SimpleRedMageOpener = 13020,
 
         [ConflictingCombos(RedMageSmartSingleTargetCombo, RedMageVerprocCombo)]
-        [CustomComboInfo("智能摇荡z替换触发", "当有触发时自动替换摇荡为赤飞石（火炎），若会引起魔元失衡则不会替换。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
+        [CustomComboInfo("智能摇荡替换触发", "当有触发时自动替换摇荡为赤飞石（火炎），若会引起魔元失衡则不会替换。", RDM.JobID, 0, "/ac 即刻咏唱 然后 /ac 赤复活", "要什么输出，拉人才是你应该做的！")]
         RedMageJoltVerprocCombo = 13021,
 
         [CustomComboInfo("自定义醒梦使用", "当MP低于设定数值时自动替换赤疾风、赤闪雷和冲击为醒梦。", RDM.JobID, 0, "醒梦我也要自动插。", "emmm......你他娘的还真是个天才。")]
