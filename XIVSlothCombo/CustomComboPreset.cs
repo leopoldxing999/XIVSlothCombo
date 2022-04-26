@@ -427,204 +427,204 @@ namespace XIVSlothComboPlugin
 
         // Single Target Multibutton Section
         [ConflictingCombos(DancerSimpleFeature, DancerSimpleAoEFeature)]
-        [CustomComboInfo("Single Target Multibutton", "Change 瀑泻 into procs and combos as available.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("单体目标整合", "替换瀑泻为对应触发连击。", DNC.JobID, 0, "", "")]
         DancerSingleTargetMultibutton = 4000,
 
         [ParentCombo(DancerSingleTargetMultibutton)]
-        [CustomComboInfo("ST Esprit Overcap Option", "Adds Saber Dance to the 瀑泻 combo if you are at 85 or more Esprit.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("单体目标伶俐防溢出设置", "当拥有85点或以上伶俐时，将剑舞加入到瀑泻连击中。", DNC.JobID, 0, "", "")]
         DancerEspritOvercapSTFeature = 4001,
 
         [ParentCombo(DancerEspritOvercapSTFeature)]
-        [CustomComboInfo("ST Instant Saber Option", "Adds Saber Dance to the 瀑泻 combo if you have at least 50 Esprit.\nOverrides 'ST Esprit Overcap Option'.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("单体目标剑舞即用设置", "当拥有50点伶俐时，将剑舞加入到瀑泻连击中。\n覆写'单体目标伶俐防溢出设置'。", DNC.JobID, 0, "", "")]
         DancerEspritOvercapSTInstantOption = 4002,
 
         [ParentCombo(DancerSingleTargetMultibutton)]
-        [CustomComboInfo("扇舞·序 Overcap Protection", "Adds Fan Dance 1 onto 瀑泻 when Fourfold Feathers are full.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("幻扇溢出保护", "当幻扇层数满时，将扇舞·序加入到瀑泻连击中。", DNC.JobID, 0, "", "")]
         DancerFanDanceMainComboOvercapFeature = 4003,
 
         [ParentCombo(DancerSingleTargetMultibutton)]
-        [CustomComboInfo("Fan Dance On 瀑泻 Feature", "Adds Fan Dance 3/4 onto 瀑泻 when available.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("扇舞替换瀑泻", "当扇舞·急/扇舞·终可用时自动替换瀑泻。", DNC.JobID, 0, "", "")]
         DancerFanDance34OnMainComboFeature = 4004,
 
 
         // AoE Multibutton Section
         [ConflictingCombos(DancerSimpleFeature, DancerSimpleAoEFeature)]
-        [CustomComboInfo("AoE Multibutton", "Change 风车 into procs and combos as available.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("AoE整合", "替换风车为对应触发连击。", DNC.JobID, 0, "", "")]
         DancerAoEMultibutton = 4010,
 
         [ParentCombo(DancerAoEMultibutton)]
-        [CustomComboInfo("AoE Esprit Overcap Option", "Adds Saber Dance to the 风车 combo if you are at 85 or more Esprit.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("AoE伶俐防溢出设置", "当拥有85点或以上伶俐时，将剑舞加入到风车连击中。", DNC.JobID, 0, "", "")]
         DancerEspritOvercapAoEFeature = 4011,
 
         [ParentCombo(DancerEspritOvercapAoEFeature)]
-        [CustomComboInfo("AoE Instant Saber Option", "Adds Saber Dance to the 风车 combo if you have at least 50 Esprit.\nOverrides 'AoE Esprit Overcap Option'.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("AoE剑舞即用设置", "当拥有50点伶俐时，将剑舞加入到风车连击中。\n覆写'AoE伶俐防溢出设置'。.", DNC.JobID, 0, "", "")]
         DancerEspritOvercapAoEInstantOption = 4012,
 
         [ParentCombo(DancerAoEMultibutton)]
-        [CustomComboInfo("AoE 扇舞·序 Overcap Protection", "Adds Fan Dance 2 onto 风车 when Fourfold Feathers are full.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("AoE幻扇溢出保护", "当幻扇层数满时，将扇舞·破加入到风车连击中。", DNC.JobID, 0, "", "")]
         DancerFanDanceAoEComboOvercapFeature = 4013,
 
         [ParentCombo(DancerAoEMultibutton)]
-        [CustomComboInfo("AoE Fan Dance On 风车 Feature", "Adds FanDance 3/4 Onto 风车 When available.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("AoE扇舞替换风车", "当扇舞·急/扇舞·终可用时自动替换风车。", DNC.JobID, 0, "", "")]
         DancerFanDanceOnAoEComboFeature = 4014,
 
 
         // Dance Features Section (SS/TS)
-        [CustomComboInfo("Dance Features", "Features and options involving 标准舞步 and Technical Step.\nCollapsing this category does NOT disable the features inside.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("跳舞功能", "标准舞步和技巧舞步相关功能与设置\n折叠此选项不会关闭其中的功能。", DNC.JobID, 0, "", "")]
         DancerMenuDanceFeatures = 4020,
 
         [ParentCombo(DancerMenuDanceFeatures)]
         [ConflictingCombos(DancerCombinedDanceFeature, DancerDanceComboCompatibility)]
-        [CustomComboInfo("Dance Step Combo", "Change 标准舞步 and Technical Step into each dance step while dancing.\nWorks with Simple Dancer and Simple Dancer AoE.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("跳舞连击", "跳舞时将标准舞步和技巧舞步替换为对应的舞步技能。\n与'单体一键连击'和'AoE一键连击'兼容", DNC.JobID, 0, "", "")]
         DancerDanceStepCombo = 4021,
 
         [ParentCombo(DancerMenuDanceFeatures)]
         [ConflictingCombos(DancerDanceStepCombo, DancerDanceComboCompatibility, DancerSimpleFeature, DancerSimpleAoEFeature)]
-        [CustomComboInfo("Combined Dance Feature", "Standard And Technical Dance on one button (SS). Standard > Technical. This combos out into Tillana and 流星舞.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("舞步整合", "将标准舞步与机巧舞步整合为一个技能。标准舞步>技巧舞步。 此连击后接续提拉纳和流星舞.", DNC.JobID, 0, "", "")]
         DancerCombinedDanceFeature = 4022,
 
         [ParentCombo(DancerCombinedDanceFeature)]
-        [CustomComboInfo("进攻之探戈 Plus Option", "Adds 进攻之探戈 right after Technical finish.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("进攻之探戈附加设置", "在技巧舞步结束后接续进攻之探戈。", DNC.JobID, 0, "", "")]
         DancerDevilmentOnCombinedDanceFeature = 4023,
 
         [ParentCombo(DancerCombinedDanceFeature)]
-        [CustomComboInfo("百花争艳 Plus Option", "Adds 百花争艳 to the Combined Dance Feature.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("百花争艳附加设置", "将百花争艳加入到舞步整合。", DNC.JobID, 0, "", "")]
         DancerFlourishOnCombinedDanceFeature = 4024,
 
         [ParentCombo(DancerMenuDanceFeatures)]
         [ConflictingCombos(DancerDanceStepCombo, DancerCombinedDanceFeature, DancerSimpleFeature, DancerSimpleAoEFeature)]
-        [CustomComboInfo("Custom Dance Step Feature",
-        "Change custom actions into dance steps while dancing." +
-        "\nThis helps ensure you can still dance with combos on, without using auto dance." +
-        "\nYou can change the respective actions by inputting action IDs below for each dance step." +
-        "\nThe defaults are Cascade, Flourish, Fan Dance and Fan Dance II. If set to 0, they will reset to these actions." +
-        "\nYou can get Action IDs with Garland Tools by searching for the action and clicking the cog.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("自定义舞步功能",
+        "自定义在跳舞时变为舞步技能的技能。" +
+        "\n此功能可以让你开启了其他连击选项时仍然可以自己跳舞。" +
+        "\n你可以通过输入技能ID来改变对应的舞步技能。" +
+        "\n默认替换为瀑泻,百花争艳,扇舞·序,扇舞·破. 设置为0时会重置为这些技能。" +
+        "\n你可以在Garland Tools找到技能的ID。", DNC.JobID, 0, "", "")]
         DancerDanceComboCompatibility = 4025,
 
 
         // Flourishing Features Section
         [ConflictingCombos(DancerSimpleFeature, DancerSimpleAoEFeature)]
-        [CustomComboInfo("百花争艳ing Features", "Features and options involving Fourfold Feathers and 百花争艳.\nCollapsing this category does NOT disable the features inside.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("百花争艳期间功能", "幻扇和百花争艳相关功能与设置\n折叠此选项不会关闭其中的功能。", DNC.JobID, 0, "", "")]
         DancerMenuFlourishingFeatures = 4030,
 
         [ParentCombo(DancerMenuFlourishingFeatures)]
         [ConflictingCombos(DancerSimpleFeature, DancerSimpleAoEFeature)]
-        [CustomComboInfo("百花争艳 Proc Saver Feature", "Change 百花争艳 into any available Feather-generating procs before using.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("百花争艳触发保护", "任意已触发技能可用时将百花争艳替换为对应已触发技能。(对称投掷、非对称投掷、扇舞·急预备、扇舞·终预备)", DNC.JobID, 0, "", "")]
         DancerFlourishProcFeature = 4031,
 
         [ParentCombo(DancerFlourishProcFeature)]
-        [CustomComboInfo("Proc Saver 扇舞·序 Option", "Include 扇舞·序 3 & 4 in the proc saver during weave-windows.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("触发保护扇舞设置", "将扇舞·急与扇舞·终加入到触发保护。?", DNC.JobID, 0, "", "")]
         DancerFlourishProcFanDanceWeaveOption = 4032,
 
 
         // Fan Dance Combo Features Section
         [ParentCombo(DancerMenuFlourishingFeatures)]
         [ConflictingCombos(DancerSimpleFeature, DancerSimpleAoEFeature)]
-        [CustomComboInfo("扇舞·序 Combo Features", "Options for 扇舞·序 combos. 扇舞·序 3 takes priority over 扇舞·序 4.\nCollapsing this category disables the options inside.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("扇舞连击功能", "扇舞·序连击设置。扇舞·急优先级高于扇舞·终。\n折叠此选项不会关闭其中的功能。", DNC.JobID, 0, "", "")]
         DancerFanDanceComboFeatures = 4033,
 
         [ParentCombo(DancerFanDanceComboFeatures)]
-        [CustomComboInfo("扇舞·序 1 -> 3", "Changes 扇舞·序 1 to 扇舞·序 3 when available.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("扇舞·序 -> 扇舞·急", "当可用时，将扇舞·序替换为扇舞·急。", DNC.JobID, 0, "", "")]
         DancerFanDance1_3Combo = 4034,
 
         [ParentCombo(DancerFanDanceComboFeatures)]
-        [CustomComboInfo("扇舞·序 1 -> 4", "Changes 扇舞·序 1 to 扇舞·序 4 when available.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("扇舞·序 -> 扇舞·终", "当可用时，将扇舞·序替换为扇舞·终。", DNC.JobID, 0, "", "")]
         DancerFanDance1_4Combo = 4035,
 
         [ParentCombo(DancerFanDanceComboFeatures)]
-        [CustomComboInfo("扇舞·序 2 -> 3", "Changes 扇舞·序 2 to 扇舞·序 3 when available.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("扇舞·破 -> 扇舞·急", "当可用时，将扇舞·破替换为扇舞·急。", DNC.JobID, 0, "", "")]
         DancerFanDance2_3Combo = 4036,
 
         [ParentCombo(DancerFanDanceComboFeatures)]
-        [CustomComboInfo("扇舞·序 2 -> 4", "Changes 扇舞·序 2 to 扇舞·序 4 when available.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("扇舞·破 -> 扇舞·终", "当可用时，将扇舞·破替换为扇舞·终。", DNC.JobID, 0, "", "")]
         DancerFanDance2_4Combo = 4037,
 
         [ConflictingCombos(DancerSimpleFeature, DancerSimpleAoEFeature)]
-        [CustomComboInfo("进攻之探戈 to Starfall Feature", "Change 进攻之探戈 into Starfall Dance after use.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("进攻之探戈 -> 流星舞", "使用完进攻之探戈后将其替换为流星舞。", DNC.JobID, 0, "", "")]
         DancerDevilmentFeature = 4038,
 
 
         // Simple Dancer Section
         [ConflictingCombos(DancerSingleTargetMultibutton, DancerAoEMultibutton, DancerCombinedDanceFeature, DancerDanceComboCompatibility, DancerMenuFlourishingFeatures, DancerDevilmentFeature)]
-        [CustomComboInfo("Simple Dancer (Single Target)", "BETA - Single button, single target dancer. Includes songs, flourishes and overprotections.\nConflicts with all other non-simple toggles, except 'Dance Step Combo'\nUse at your own risk!", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("单体一键连击", "测试版 - 单体目标，一键连击。 包含跳舞，进攻之探戈，触发/溢出保护。\n与除了'跳舞连击'外的所有单体连击冲突\n后果自负!", DNC.JobID, 0, "", "")]
         DancerSimpleFeature = 4050,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple Interrupt", "Includes an interrupt in the rotation (if your current target can be interrupted).", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("简易中断", "在循环中加入中断(伤头)(如果当前目标可被打断)。", DNC.JobID, 0, "", "")]
         DancerSimpleInterruptFeature = 4051,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple 标准舞步", "Includes 标准舞步 in the rotation.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("简易标准舞步", "将标准舞步加入循环。", DNC.JobID, 0, "", "")]
         DancerSimpleStandardFeature = 4052,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple 技巧舞步", "Includes 技巧舞步 in the rotation.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("简易技巧舞步", "将技巧舞步加入循环。", DNC.JobID, 0, "", "")]
         DancerSimpleTechnicalFeature = 4053,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple Tech 进攻之探戈", "Includes 进攻之探戈 in the rotation (during Technical Finish).", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("简易技巧进攻之探戈", "将进攻之探戈加入循环(技巧舞步结束状态下)。", DNC.JobID, 0, "", "")]
         DancerSimpleDevilmentFeature = 4054,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple 百花争艳", "Includes 百花争艳 in the rotation.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("简易百花争艳", "将百花争艳加入循环。", DNC.JobID, 0, "", "")]
         DancerSimpleFlourishFeature = 4055,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple Feathers", "Includes Feather usage in the rotation.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("简易幻扇", "将幻扇的使用加入循环。", DNC.JobID, 0, "", "")]
         DancerSimpleFeatherFeature = 4056,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple Feather Pooling", "Makes the rotation only use feathers when you have more than 3, or when you're under the effects of 技巧舞步.", DNC.JobID, 0, "")]
+        [CustomComboInfo("简易幻扇囤积", "只在幻扇层数大于3或技巧舞步状态下使用消耗幻扇层数的技能。", DNC.JobID, 0, "")]
         DancerSimpleFeatherPoolingFeature = 4057,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple Panic Heals", "Includes 治疗之华尔兹 and Second Wind in the rotation when available and below 30 and 50 percent HP, respectively.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("简易紧急恢复", "当血量低于30%或50%时对应的使用治疗之华尔兹或内丹。", DNC.JobID, 0, "", "")]
         DancerSimplePanicHealsFeature = 4058,
 
         [ParentCombo(DancerSimpleFeature)]
-        [CustomComboInfo("Simple 即兴表演", "Includes 即兴表演 in the rotation when available.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("简易即兴表演", "当即兴表演可用时将其加入循环。", DNC.JobID, 0, "", "")]
         DancerSimpleImprovFeature = 4059,
 
 
         // Simple Dancer AoE Section
         [ConflictingCombos(DancerSingleTargetMultibutton, DancerAoEMultibutton, DancerCombinedDanceFeature, DancerDanceComboCompatibility, DancerMenuFlourishingFeatures, DancerDevilmentFeature)]
-        [CustomComboInfo("Simple Dancer (AoE)", "BETA - Single button aoe dancer, including songs, flourishes and overprotections.\nConflicts with all other non-simple toggles, except 'Dance Step Combo'.\nUse at your own risk!", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("AoE一键连击", "测试版 - AoE，一键连击。 包含跳舞，进攻之探戈，触发/溢出保护。\n与除了'跳舞连击'外的所有AoE连击冲突。\n后果自负!", DNC.JobID, 0, "", "")]
         DancerSimpleAoEFeature = 4070,
 
         [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE Interrupt", "Includes an interrupt in the AoE rotation (if your current target can be interrupted).", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("简易AoE中断", "在AoE循环中加入中断(伤头)(如果当前目标可被打断)。", DNC.JobID, 0, "", "")]
         DancerSimpleAoEInterruptFeature = 4071,
 
         [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE 标准舞步", "Includes 标准舞步 in the AoE rotation.", DNC.JobID, 0, "")]
+        [CustomComboInfo("简易AoE标准舞步", "将标准舞步加入AoE循环。", DNC.JobID, 0, "")]
         DancerSimpleAoEStandardFeature = 4072,
 
         [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE 技巧舞步", "Includes 技巧舞步 in the AoE rotation.", DNC.JobID, 0, "")]
+        [CustomComboInfo("简易AoE技巧舞步", "将技巧舞步加入AoE循环。", DNC.JobID, 0, "")]
         DancerSimpleAoETechnicalFeature = 4073,
 
         [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE Tech 进攻之探戈", "Includes 进攻之探戈 in the AoE rotation (during Technical Finish).", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("简易AoE技巧进攻之探戈", "将进攻之探戈加入AoE循环(技巧舞步结束状态下)。", DNC.JobID, 0, "", "")]
         DancerSimpleAoEDevilmentFeature = 4074,
 
         [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE 百花争艳", "Includes 百花争艳 in the AoE rotation.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("简易AoE百花争艳", "将百花争艳加入AoE循环。", DNC.JobID, 0, "", "")]
         DancerSimpleAoEFlourishFeature = 4075,
 
         [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE Feathers", "Includes feather usage in the AoE rotation.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("简易AoE幻扇", "将幻扇的使用加入AoE循环。", DNC.JobID, 0, "", "")]
         DancerSimpleAoEFeatherFeature = 4076,
 
         [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE Feather Pooling", "Makes it so the AoE rotation only uses feathers when you have more than 3.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("简易AoE幻扇囤积", "只在幻扇层数大于3或技巧舞步状态下使用消耗幻扇层数的技能。", DNC.JobID, 0, "", "")]
         DancerSimpleAoEFeatherPoolingFeature = 4077,
 
         [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE Panic Heals", "Includes 治疗之华尔兹 and Second Wind in the rotation when available and below 30 and 50 percent HP, respectively.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("简易AoE紧急恢复", "当血量低于30%或50%时对应的使用治疗之华尔兹或内丹。", DNC.JobID, 0, "", "")]
         DancerSimpleAoEPanicHealsFeature = 4078,
 
         [ParentCombo(DancerSimpleAoEFeature)]
-        [CustomComboInfo("Simple AoE 即兴表演", "Includes 即兴表演 in the AoE rotation when available.", DNC.JobID, 0, "", "")]
+        [CustomComboInfo("简易AoE即兴表演", "当即兴表演可用时将其加入AoE循环。", DNC.JobID, 0, "", "")]
         DancerSimpleAoEImprovFeature = 4079,
 
         #endregion
