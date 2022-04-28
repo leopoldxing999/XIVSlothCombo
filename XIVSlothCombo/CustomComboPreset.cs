@@ -1023,79 +1023,79 @@ namespace XIVSlothComboPlugin
 
         #endregion
         // ====================================================================================
-        #region MACHINIST
+         #region MACHINIST
 
-        [CustomComboInfo("(Heated) Shot Combo", "Replace either form of 狙击弹 with its combo chain.", MCH.JobID, 0, "Alright, Hotshot -", "Is there really such a thing as a clean shot? Let's find out.")]
+        [CustomComboInfo("(Heated) Shot Combo", "替换狙击弹为连击循环中的任一技能", MCH.JobID, 0, "Alright, 热弹", "是否真的存在一击必杀呢？让我们试试看吧。")]
         MachinistMainCombo = 8000,
 
-        [CustomComboInfo("Overdrive Feature", "Replace 车式浮空炮塔 and Automaton Queen with Overdrive while active.", MCH.JobID, 0, "Drive (2011) Feature", "Insert synthwave soundtrack here.")]
+        [CustomComboInfo("Overdrive Feature", "在技能可用时，将车式浮空炮塔和后式自走人偶转换为超档车式炮塔和超档自走人偶", MCH.JobID, 0, "Drive (2011) Feature", "Insert synthwave soundtrack here.")]
         MachinistOverdriveFeature = 8002,
 
-        [CustomComboInfo("虹吸弹 / Ricochet Feature", "Replace 虹吸弹 and Ricochet with one or the other depending on which has more charges.", MCH.JobID, 0, "Gatling feature", "It's just a lot of bullets, really.")]
+        [CustomComboInfo("虹吸弹 / Ricochet Feature", "将虹吸弹和弹射替换为一个或其他需要更多充电电能的技能.", MCH.JobID, 0, "Gatling feature", "It's just a lot of bullets, really.")]
         MachinistGaussRoundRicochetFeature = 8003,
 
-        [CustomComboInfo("Drill / Air Anchor (热弹) Feature", "Replace Drill and Air Anchor (热弹) with one or the other (or Chainsaw) depending on which is on cooldown.", MCH.JobID, 0, "Multi-tool", "Why does MCH have a drill and a chainsaw? What is this, DoH?")]
+        [CustomComboInfo("Drill / Air Anchor (热弹) Feature", "将钻头和热弹替换成一个或多个需要冷却时使用的技能", MCH.JobID, 0, "Multi-tool", "Why does MCH have a drill and a chainsaw? What is this, DoH?")]
         MachinistHotShotDrillChainsawFeature = 8004,
 
         [ParentCombo(MachinistMainCombo)]
         [ConflictingCombos(MachinistAlternateMainCombo)]
-        [CustomComboInfo("钻头/Air/Chain Saw Feature On Main Combo", "Air Anchor followed by Drill is added onto main combo if you use 整备.\nIf Air Anchor is on cooldown and you use 整备, Chainsaw will be added to main combo instead.", MCH.JobID, 0, "A bit of everything feature", "Don't rub your last two brain-cells together! We got you!")]
+        [CustomComboInfo("钻头/Air/Chain Saw Feature On Main Combo", "如果使用整备，空气锚后的钻头将会被加入到连击循环.\nIf Air Anchor is on cooldown and you use 整备, Chainsaw will be added to main combo instead.", MCH.JobID, 0, "A bit of everything feature", "Don't rub your last two brain-cells together! We got you!")]
         MachinistDrillAirOnMainCombo = 8005,
 
-        [CustomComboInfo("Single Button 热冲击", "Switches 热冲击 to Hypercharge.", MCH.JobID, 0, "So-called '热冲击'", "Basically a large hair-dryer.")]
+        [CustomComboInfo("Single Button 热冲击", "将热冲击转换为充能.", MCH.JobID, 0, "So-called '热冲击'", "Basically a large hair-dryer.")]
         MachinistHeatblastGaussRicochetFeature = 8006,
 
-        [CustomComboInfo("Single Button 自动弩", "Switches 自动弩 to Hypercharge and weaves gauss/rico.", MCH.JobID, 0, "Laser Crossbow", "It's a crossbow, from the future!")]
+        [CustomComboInfo("Single Button 自动弩", "将自动弩转换为超荷和虹吸弹/rico.", MCH.JobID, 0, "Laser Crossbow", "It's a crossbow, from the future!")]
         MachinistAutoCrossBowGaussRicochetFeature = 8018,
 
         [ParentCombo(MachinistMainCombo)]
         [ConflictingCombos(MachinistDrillAirOnMainCombo)]
-        [CustomComboInfo("Alternate 钻头/Air Feature on Main Combo", "Drill/Air/Hotshot Feature is added onto main combo (Note: It will add them onto main combo ONLY if you are under 整备 Buff\nOr Reasemble is on CD (Will do nothing if 整备 is OFF CD)", MCH.JobID, 0, "Gunbreaker feature", "Look at me - I'm the tank now.")]
+        [CustomComboInfo("Alternate 钻头/Air Feature on Main Combo", "钻头/空气锚/热弹被添加到连击循环中（注意：只有当你在整备Buff\n时才会将它们添加到连击循环。（或整备在CD中时不会使用这些技能）\nOr Reasemble is on CD (Will do nothing if 整备 is OFF CD)", MCH.JobID, 0, "Gunbreaker feature", "Look at me - I'm the tank now.")]
         MachinistAlternateMainCombo = 8007,
 
         [ParentCombo(MachinistMainCombo)]
-        [CustomComboInfo("Single Button HeatBlast On Main Combo Option", "Adds Single Button Heatblast onto the main combo when the option is enabled.", MCH.JobID, 0, "Scalp burner", "Dry your hair even faster! Even hotter! Owch!")]
+        [CustomComboInfo("Single Button HeatBlast On Main Combo Option", "当选项可用时，将单体开关热冲击添加到主连击循环中", MCH.JobID, 0, "Scalp burner", "Dry your hair even faster! Even hotter! Owch!")]
         MachinistHeatBlastOnMainCombo = 8008,
 
         [ParentCombo(MachinistMainCombo)]
-        [CustomComboInfo("Battery Overcap Option", "Overcharge protection for your Battery, If you are at 100 battery charge rook/queen will be added to your (Heated) Shot Combo.", MCH.JobID, 0, "Battery", "Isn't battery like, assault? What's wrong with you?")]
+        [CustomComboInfo("Battery Overcap Option", "为您提供电能过量时的电能保护，如果您的电量达到100，则会在您的过热循环中加入炮台/女王。", MCH.JobID, 0, "Battery", "Isn't battery like, assault? What's wrong with you?")]
         MachinistOverChargeOption = 8009,
 
         [ParentCombo(MachinistSpreadShotFeature)]
-        [CustomComboInfo("Battery AOE Overcap Option", "Adds overcharge protection to 散射/Scattergun.", MCH.JobID, 0, "Battery", "Isn't battery like, assault? What's wrong with you?")]
+        [CustomComboInfo("Battery AOE Overcap Option", "为散射/霰弹枪增加了过电量保护。.", MCH.JobID, 0, "Battery", "Isn't battery like, assault? What's wrong with you?")]
         MachinistAoEOverChargeOption = 8010,
 
         [ParentCombo(MachinistSpreadShotFeature)]
-        [CustomComboInfo("虹吸弹 Ricochet on AOE Feature", "Adds 虹吸弹/Ricochet to the AoE combo during Hypercharge.", MCH.JobID, 0, "Ratchet and Clank Feature", "Bouncing off the walls")]
+        [CustomComboInfo("虹吸弹/弹射AOE Feature", "在超荷过程中为AOE连击循环增加虹吸弹/弹射", MCH.JobID, 0, "Ratchet and Clank Feature", "Bouncing off the walls")]
         MachinistAoEGaussRicochetFeature = 8011,
 
         [ParentCombo(MachinistAoEGaussRicochetFeature)]
-        [CustomComboInfo("Always 虹吸弹/Ricochet on AoE Option", "Adds 虹吸弹/Ricochet to the AoE combo outside of Hypercharge windows.", MCH.JobID, 0, "Ratchet and Clank Feature", "Bouncing off the walls")]
+        [CustomComboInfo("Always 虹吸弹/Ricochet on AoE Option", "在超荷窗口之外的AOE连击循环中加入虹吸弹/弹射.", MCH.JobID, 0, "Ratchet and Clank Feature", "Bouncing off the walls")]
         MachinistAoEGaussOption = 8012,
 
         [ConflictingCombos(MachinistRicochetGaussMainCombo)]
         [ParentCombo(MachinistMainCombo)]
-        [CustomComboInfo("Ricochet & 虹吸弹 Feature", "Adds Ricochet and 虹吸弹 to main combo. Will use all charges.", MCH.JobID, 0, "Pew +1", "All the shots, ALL of the time.")]
+        [CustomComboInfo("弹射 & 虹吸弹 Feature", "将弹射和虹吸弹添加到主连击循环中.这将使用所有电能.", MCH.JobID, 0, "Pew +1", "All the shots, ALL of the time.")]
         MachinistRicochetGaussChargesMainCombo = 8017,
 
         [ConflictingCombos(MachinistRicochetGaussChargesMainCombo)]
         [ParentCombo(MachinistMainCombo)]
-        [CustomComboInfo("Ricochet & 虹吸弹 overcap protection option", "Adds Ricochet and 虹吸弹 to main combo. Will leave 1 charge of each.", MCH.JobID, 0, "", "Never run out of bullets again! Or never have too many! Or something!\nBullets!")]
+        [CustomComboInfo("弹射 & 虹吸弹 overcap protection option", "将弹射和虹吸弹添加到主连击循环中.将各留下一个电能.", MCH.JobID, 0, "", "Never run out of bullets again! Or never have too many! Or something!\nBullets!")]
         MachinistRicochetGaussMainCombo = 8013,
 
         [ParentCombo(MachinistMainCombo)]
-        [CustomComboInfo("枪管加热 drift protection feature", "Adds 枪管加热 onto the main combo if heat is between 5-20.", MCH.JobID, 0, "Third Leg", "Adds Barrel Stabiliser when you're in heat. You heard me.")]
+        [CustomComboInfo("枪管加热 drift protection feature", "如果热量在5-20之间，则将枪管加热添加到主连击循环中。", MCH.JobID, 0, "Third Leg", "Adds Barrel Stabiliser when you're in heat. You heard me.")]
         BarrelStabilizerDrift = 8014,
 
         [ParentCombo(MachinistHeatblastGaussRicochetFeature)]
-        [CustomComboInfo("野火 Feature", "Adds Wildfire to the Single Button Heat Blast Feature if Wildfire is off cooldown and you have enough heat for Hypercharge then Hypercharge will be replaced with Wildfire.\nAlso weaves Ricochet/虹吸弹 on Heat Blast when necessary.", MCH.JobID, 0, "PEW", "PEW PEW PEW PEW, AND PEW.\nALSO WEAVES PEW AND PEW.")]
+        [CustomComboInfo("野火 Feature", "在单体目标热冲击功能中加入野火，如果你有足够的热量用于超荷而野火的cd已经转好，那么超荷将被野火取代。\nAlso weaves Ricochet/虹吸弹 on Heat Blast when necessary.", MCH.JobID, 0, "PEW", "PEW PEW PEW PEW, AND PEW.\nALSO WEAVES PEW AND PEW.")]
         MachinistWildfireFeature = 8015,
 
         [ParentCombo(MachinistSpreadShotFeature)]
-        [CustomComboInfo("毒菌Blaster Feature", "Adds 毒菌冲击 to the Spreadshot feature", MCH.JobID, 0, "War crime feature", "This is like uh, some sort of anthrax? Jeez bro. Relax.\nBanned by the Geneva Convention.")]
+        [CustomComboInfo("毒菌冲击 Feature", "在散射的功能中添加毒菌冲击", MCH.JobID, 0, "War crime feature", "This is like uh, some sort of anthrax? Jeez bro. Relax.\nBanned by the Geneva Convention.")]
         MachinistBioblasterFeature = 8016,
 
-        [CustomComboInfo("Barrel Feature", "Adds Barrel Stabalizer to Single Button 热冲击 and Single Button Auto Crossbow Features when below 50 heat and is off cooldown", MCH.JobID, 0, "Hot Cross Bow", "Now multi-purpose!")]
+        [CustomComboInfo("枪管加热 Feature", "当热能低于50且处于冷却状态时，将枪管充能添加到单目标热冲击和单目标自动弩功能中。", MCH.JobID, 0, "Hot Cross Bow", "Now multi-purpose!")]
         MachinistAutoBarrel = 8019,
 
         [ConflictingCombos(MachinistMainCombo)]
@@ -1103,58 +1103,58 @@ namespace XIVSlothComboPlugin
         MachinistSimpleFeature = 8020,
 
         [ParentCombo(MachinistSimpleFeature)]
-        [CustomComboInfo("Simple Interrupt", "Uses interrupt during simple machinist rotation, if applicable.", MCH.JobID, 0, "Simple Interr-", "Excuse me, I wa-")]
+        [CustomComboInfo("简单打断", "如果适用的话，在机工的简单循环中使用打断技能.", MCH.JobID, 0, "Simple Interr-", "Excuse me, I wa-")]
         MachinistSimpleInterrupt = 8021,
 
         [ParentCombo(MachinistSimpleFeature)]
-        [CustomComboInfo("Simple Gadget", "Adds Queen or Rook uses to the feature, based on your current level.\nTry to use Queen at optimal intervals between :55 to :05 windows.", MCH.JobID, 0, "Gadgeteer", "My queen!")]
+        [CustomComboInfo("简单的机工召唤", "根据你目前的等级，增加超档车式炮塔和超档自走人偶的技能.\n试着在:55到:05窗口之间的最佳间隔期使用超档车式炮塔和超档自走人偶.", MCH.JobID, 0, "Gadgeteer", "My queen!")]
         MachinistSimpleGadget = 8022,
 
         [ParentCombo(MachinistSimpleFeature)]
-        [CustomComboInfo("Simple Assembling", "Pairs reassemble uses with the following skills.\nBefore acquiring Drill it will be used with 狙击弹.", MCH.JobID, 0, "Megablox", "It's like Lego bricks! But worse!")]
+        [CustomComboInfo("简单的组装", "整备将与下面的技能一起使用.\n在获得钻头之前，它将使用与狙击弹共用.", MCH.JobID, 0, "Megablox", "It's like Lego bricks! But worse!")]
         MachinistSimpleAssembling = 8023,
 
         [ParentCombo(MachinistSimpleFeature)]
-        [CustomComboInfo("Simple Gauss 弹射", "Adds 虹吸弹 and Ricochet uses to the feature.", MCH.JobID, 0, "", "More bullets!")]
+        [CustomComboInfo("简单的虹吸弹和弹射", "将虹吸弹和弹射加入到循环中.", MCH.JobID, 0, "", "More bullets!")]
         MachinistSimpleGaussRicochet = 8024,
 
         [ParentCombo(MachinistSimpleFeature)]
-        [CustomComboInfo("Simple Wildcharge", "Adds Hypercharge and 野火 uses to the feature.\nIt respects the 8 second rule of Drill, AirAnchor and Chainsaw.", MCH.JobID, 0, "Simply fantastic", "Is it really THAT simple?")]
+        [CustomComboInfo("简单的野火和超荷", "将超荷和野火加入到循环中.\n它遵从钻头、空气锚和链锯的8秒规则.", MCH.JobID, 0, "Simply fantastic", "Is it really THAT simple?")]
         MachinistSimpleWildCharge = 8025,
 
         [ParentCombo(MachinistSimpleFeature)]
-        [CustomComboInfo("Simple Stabilizer", "Adds Barrel Stabilizer to the feature.\nWhen heat < 50 and 野火 is off CD or about to come off CD.", MCH.JobID, 0, "Third Leg", "Reduces recoil when spraying and praying.")]
+        [CustomComboInfo("枪管加热", "将枪管加热加入到循环中.\n当热量小于50并且野火不在CD或者野火CD快要转好了时使用.", MCH.JobID, 0, "Third Leg", "Reduces recoil when spraying and praying.")]
         MachinistSimpleStabilizer = 8026,
 
         [ParentCombo(MachinistSpreadShotFeature)]
-        [CustomComboInfo("超荷", "Adds hypercharge to the AoE.", MCH.JobID, 0, "Sugar Rush", "I'm gonna slap @augporto for putting in so many damn MCH features.\nHow full of witty one-liners do you think I am?!")]
+        [CustomComboInfo("超荷", "将超荷加入到AOE循环中.", MCH.JobID, 0, "Sugar Rush", "I'm gonna slap @augporto for putting in so many damn MCH features.\nHow full of witty one-liners do you think I am?!")]
         MachinistAoEHyperchargeFeature = 8027,
 
-        [CustomComboInfo("Simple Machinist AOE", "散射 turns into Scattergun when lvl 82 or higher, Both turn into 自动弩 when overheated\nand Bioblaster is used first whenever it is off cooldown.", MCH.JobID, 0, "Dungeon go zzzz", "AoE, but you're just not here. Go make a coffee.")]
+        [CustomComboInfo("简单机工AOE", "当等级为82或者更高时将散射转换为霰弹枪, Both turn into 自动弩 when overheated\nand 毒菌冲击 is used first whenever it is off cooldown.", MCH.JobID, 0, "Dungeon go zzzz", "AoE, but you're just not here. Go make a coffee.")]
         MachinistSpreadShotFeature = 8028,
 
         [ParentCombo(MachinistSimpleAssembling)]
-        [CustomComboInfo("钻头","Use 整备 with Drill when available.", MCH.JobID,0,"刺鱼aDrillBreaker","The 钻头 that will pierce the heavens!")]
+        [CustomComboInfo("钻头","当可以的时候整备与钻头一起使用.", MCH.JobID,0,"刺鱼aDrillBreaker","The 钻头 that will pierce the heavens!")]
         MachinistSimpleAssemblingDrill = 8029,
 
         [ParentCombo(MachinistSimpleAssembling)]
-        [CustomComboInfo("空气锚", "Use 整备 with Air Anchor when available.", MCH.JobID, 0, "Air Guitar", "出卡 the tunes!")]
+        [CustomComboInfo("空气锚", "当可以的时候整备与空气锚一起使用.", MCH.JobID, 0, "空气锚", "出卡 the tunes!")]
         MachinistSimpleAssemblingAirAnchor = 8030,
 
         [ParentCombo(MachinistSimpleAssembling)]
-        [CustomComboInfo("回转飞锯", "Use 整备 with Chain Saw when available.", MCH.JobID, 0, "刺鱼a Sauce", "The secret to life.")]
+        [CustomComboInfo("回转飞锯", "当可以的时候整备与回转飞锯一起使用.", MCH.JobID, 0, "刺鱼a Sauce", "The secret to life.")]
         MachinistSimpleAssemblingChainSaw = 8031,
 
         [ParentCombo(MachinistSimpleAssemblingDrill)]
-        [CustomComboInfo("Only use 钻头...", "...when you have max charges of reassemble.", MCH.JobID, 0, "刺鱼aDrillBreaker MAX", "Mow pow in the pew!")]
+        [CustomComboInfo("只使用钻头...", "...当你整备充能是最大值时.", MCH.JobID, 0, "刺鱼aDrillBreaker MAX", "Mow pow in the pew!")]
         MachinistSimpleAssemblingDrillMaxCharges = 8032,
 
         [ParentCombo(MachinistSimpleAssemblingAirAnchor)]
-        [CustomComboInfo("Only use 空气锚...", "...when you have max charges of reassemble.", MCH.JobID, 0, "刺鱼aDrillBreaker MAX", "Mow pow in the pew!")]
+        [CustomComboInfo("只使用空气锚...", "...当你整备充能是最大值时.", MCH.JobID, 0, "刺鱼aDrillBreaker MAX", "Mow pow in the pew!")]
         MachinistSimpleAssemblingAirAnchorMaxCharges = 8033,
 
         [ParentCombo(MachinistSimpleAssemblingChainSaw)]
-        [CustomComboInfo("Only use 回转飞锯...", "...when you have max charges of reassemble.", MCH.JobID, 0, "刺鱼aDrillBreaker MAX", "Mow pow in the pew!")]
+        [CustomComboInfo("只使用回转飞锯...", "...当你整备充能是最大值时.", MCH.JobID, 0, "刺鱼aDrillBreaker MAX", "Mow pow in the pew!")]
         MachinistSimpleAssemblingChainSawMaxCharges = 8034,
 
         #endregion
