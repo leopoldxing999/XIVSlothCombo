@@ -2055,7 +2055,7 @@ namespace XIVSlothComboPlugin
         WarriorUpheavalMainComboFeature = 18007,
 
         [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("蛮荒崩裂", "在蛮荒崩裂预备状态下，将裂石飞环/地毁人亡替换为蛮荒崩裂", WAR.JobID, 0, "", "Going back to our roots. Let's get Primal!")]
+        [CustomComboInfo("蛮荒崩裂Main AoE combo", "在蛮荒崩裂预备状态下，将裂石飞环/地毁人亡替换为蛮荒崩裂", WAR.JobID, 0, "", "Going back to our roots. Let's get Primal!")]
         WarriorPrimalRendFeature = 18008,
 
         [ParentCombo(WarriorMythrilTempestCombo)]
@@ -2089,7 +2089,7 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("战嚎 on Fell Cleave / Decimate", "Turns Fell Cleave and Decimate into 战嚎 if at or under set rage value", WAR.JobID)]
         WarriorInfuriateFellCleave = 18018,
 
-        [CustomComboInfo("蛮荒崩裂", "在蛮荒崩裂预备状态下，将原初的解放替换为蛮荒崩裂.", WAR.JobID)]
+        [CustomComboInfo("蛮荒崩裂1", "在蛮荒崩裂预备状态下，将原初的解放替换为蛮荒崩裂.", WAR.JobID)]
         WarriorPrimalRendOnInnerRelease = 18019,
         
         [ParentCombo(WarriorStormsPathCombo)]
@@ -2100,7 +2100,7 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("战壕加入绿斩循环", "在没有原初的解放BUFF且不会溢出兽魂时，将战壕加入到绿斩连击", WAR.JobID)]
         WarriorInfuriateonST = 18021,
 
-        [CustomComboInfo("雪仇保护机制", "如果目标已有雪仇，将锁定你的雪仇", WAR.JobID)]
+        [CustomComboInfo("雪仇保护机制", "当目标已被赋予雪仇效果时，将雪仇替换为飞石", WAR.JobID)]
         WarriorReprisalProtection = 18030,
 
         #endregion
