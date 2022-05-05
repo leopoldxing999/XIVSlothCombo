@@ -2055,7 +2055,7 @@ namespace XIVSlothComboPlugin
         WarriorUpheavalMainComboFeature = 18007,
 
         [ParentCombo(WarriorStormsPathCombo)]
-        [CustomComboInfo("蛮荒崩裂Main AoE combo", "在蛮荒崩裂预备状态下，将裂石飞环/地毁人亡替换为蛮荒崩裂", WAR.JobID, 0, "", "Going back to our roots. Let's get Primal!")]
+        [CustomComboInfo("蛮荒崩裂Main combo", "在蛮荒崩裂预备状态下，将裂石飞环/地毁人亡替换为蛮荒崩裂", WAR.JobID, 0, "", "Going back to our roots. Let's get Primal!")]
         WarriorPrimalRendFeature = 18008,
 
         [ParentCombo(WarriorMythrilTempestCombo)]
@@ -2089,7 +2089,7 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("战嚎 on Fell Cleave / Decimate", "Turns Fell Cleave and Decimate into 战嚎 if at or under set rage value", WAR.JobID)]
         WarriorInfuriateFellCleave = 18018,
 
-        [CustomComboInfo("蛮荒崩裂1", "在蛮荒崩裂预备状态下，将原初的解放替换为蛮荒崩裂.", WAR.JobID)]
+        [CustomComboInfo("蛮荒崩裂", "在蛮荒崩裂预备状态下，将原初的解放替换为蛮荒崩裂.", WAR.JobID)]
         WarriorPrimalRendOnInnerRelease = 18019,
         
         [ParentCombo(WarriorStormsPathCombo)]
