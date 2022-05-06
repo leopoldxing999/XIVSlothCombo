@@ -176,7 +176,7 @@ namespace XIVSlothComboPlugin
         AstroEssentialDignity = 1024,
 
         [ParentCombo(AstrologianSimpleSingleTargetHeal)]
-        [CustomComboInfo("天星交错", "添加天行交错进入单体治疗连击", AST.JobID, 0)]
+        [CustomComboInfo("天星交错", "添加天星交错进入单体治疗连击", AST.JobID, 0)]
         CelestialIntersectionFeature = 1025,
 
         [ParentCombo(AstrologianHeliosFeature)]
@@ -188,7 +188,7 @@ namespace XIVSlothComboPlugin
         AspectedBeneficFeature = 1027,
 
         [ParentCombo(AstrologianSimpleSingleTargetHeal)]
-        [CustomComboInfo("Exaltation Feature", "Adds Exaltation.", AST.JobID, 0)]
+        [CustomComboInfo("擢升设置", "添加擢升进入治疗连击", AST.JobID, 0)]
         ExaltationFeature = 1028,
 
 
@@ -230,51 +230,51 @@ namespace XIVSlothComboPlugin
         BlackAoEComboFeature = 2008,
 
         [ParentCombo(BlackEnochianFeature)]
-        [CustomComboInfo("冰结 Paradox Feature", "Adds Paradox onto ice phase combo", BLM.JobID, 0, "The sentence below is false.", "The sentence above is true.")]
+        [CustomComboInfo("悖论加入冰combo", "将悖论加入冰combo", BLM.JobID, 0, "The sentence below is false.", "The sentence above is true.")]
         BlackBlizzardParadoxFeature = 2009,
 
         [ParentCombo(BlackEnochianFeature)]
-        [CustomComboInfo("Aspect Swap Feature", "Changes Scathe to Blizzard 3 when at 0 MP in Astral 火炎 or to 火炎 3 when at 10000 MP in Umbral Ice with 3 Umbral Hearts.", BLM.JobID, 0, "", "")]
+        [CustomComboInfo("火三/冰三", "替换崩溃为冰3在0mp与三档或下，或替换崩溃为火三在三挡冰/10000mp下", BLM.JobID, 0, "", "")]
         BlackAspectSwapFeature = 2010,
 
         [ParentCombo(BlackThunderFeature)]
-        [CustomComboInfo("闪雷 Uptime Feature", "Changes Scathe to 闪雷 1/3 when not detected on target.", BLM.JobID, 0, "Bzzt", "Shocking!")]
+        [CustomComboInfo("闪雷", "未选定目标时崩溃替换闪雷。Changes Scathe to 闪雷 1/3 when not detected on target.", BLM.JobID, 0, "Bzzt", "Shocking!")]
         BlackThunderUptimeFeature = 2011,
 
         [ConflictingCombos(BlackEnochianFeature, BlackScatheFeature)]
-        [CustomComboInfo("Simple BLM", "Adds the whole rotation to one button.", BLM.JobID, 0, "", "")]
+        [CustomComboInfo("一键循环", "将整个循环添加到一个键位", BLM.JobID, 0, "", "")]
         BlackSimpleFeature = 2012,
 
         [ParentCombo(BlackSimpleFeature)]
-        [CustomComboInfo("Simple Buffs Feature", "Adds 魔泉, 激情咏唱, 详述 onto the Simple BLM feature.", BLM.JobID, 0, "", "!")]
+        [CustomComboInfo("一键循环buff设置", "加入魔泉, 激情咏唱至一键循环.", BLM.JobID, 0, "", "!")]
         BlackSimpleBuffsFeature = 2013,
 
         [ParentCombo(BlackSimpleFeature)]
-        [CustomComboInfo("Simple Buffs - 黑魔纹", "Adds 黑魔纹 onto the Simple BLM feature.", BLM.JobID, 0, "", "!")]
+        [CustomComboInfo("一键循环黑魔纹设置", "加入黑魔纹至一键循环.", BLM.JobID, 0, "", "!")]
         BlackSimpleBuffsLeylinesFeature = 2014,
 
         [ParentCombo(BlackSimpleFeature)]
-        [CustomComboInfo("Simple 抛竿s Feature", "Adds 三连咏唱/Swiftcast onto the Simple BLM feature.", BLM.JobID, 0, "", "!")]
+        [CustomComboInfo("一键循环三连咏唱设置", "加入三连咏唱至一键循环.", BLM.JobID, 0, "", "!")]
         BlackSimpleCastsFeature = 2015,
 
         [ParentCombo(BlackSimpleFeature)]
-        [CustomComboInfo("Simple 抛竿s - Pooling", "Keep one triplecast usage for movement in the Simple BLM feature.", BLM.JobID, 0, "", "!")]
+        [CustomComboInfo("一键循环三连咏唱设置2（三连相关）", "一键循环中保留一个三连咏唱便于走位.", BLM.JobID, 0, "", "!")]
         BlackSimpleCastPoolingFeature = 2016,
 
         [ParentCombo(BlackSimpleFeature)]
-        [CustomComboInfo("Simple Pooling", "Keep one xenoglossy usage for movement in the Simple BLM feature.", BLM.JobID, 0, "", "!")]
+        [CustomComboInfo("一键循环异言设置", "一键循环保留一个异言便于走位", BLM.JobID, 0, "", "!")]
         BlackSimplePoolingFeature = 2017,
 
         [ParentCombo(BlackSimpleFeature)]
-        [CustomComboInfo("Simple 火炎3 Opener", "Adds the 火炎 III Opener to Simple BLM.", BLM.JobID, 0, "", "")]
+        [CustomComboInfo("一键循环从火三开始", "将火三作为一键循环的开始", BLM.JobID, 0, "", "")]
         BlackSimpleOpenerFeature = 2018,
 
         [ParentCombo(BlackSimpleFeature)]
-        [CustomComboInfo("Simple 火炎3 Opener - 1 Triplecast", "Modifies the Simple 火炎3 Opener to only use 1 Triplecast.", BLM.JobID, 0, "", "")]
+        [CustomComboInfo("一键循环从火三开始设置2（三连相关）", "火三循环启动后只使用一个三连咏唱", BLM.JobID, 0, "", "")]
         BlackSimpleAltOpenerFeature = 2019,
 
         [ParentCombo(BlackAoEComboFeature)]
-        [CustomComboInfo("Foul / 魔泉 to Flare Option", "Adds foul when available during Astral 火炎. Weaves manafont after foul for additional Flare", BLM.JobID, 0, "", "")]
+        [CustomComboInfo("秽浊 / 魔泉互相替换 灵极火状态", "在火状态下，秽浊后使用魔泉打出更多的火（在魔泉可用时）", BLM.JobID, 0, "", "")]
         BlackAoEFoulOption = 2020,
 
         #endregion
@@ -843,15 +843,15 @@ namespace XIVSlothComboPlugin
         DragoonBuffsFeature = 6510,
 
         [ParentCombo(DragoonBuffsFeature)]
-        [CustomComboInfo("巨龙视线 Sight Feature",
-            "Includes Dragon Sight to the rotation. OPTIONAL: USE REACTION OR MOACTION FOR OPTIMAL TARGETING.",
-            DRG.JobID, 22, "", "This is why your team loves you, too.")]
+        [CustomComboInfo("巨龙视线",
+            "将巨龙视线加入循环。可选项：使用mo宏和手动进行最优的目标选择",
+            DRG.JobID, 22, "", "这也是为什么小队成员这么喜欢龙骑桑的原因")]
         DragoonDragonSightFeature = 6511,
 
         [ParentCombo(DragoonSimple)]
         // [CustomComboInfo("龙剑设置", "在连击中合适的状态和窗口内插入龙剑。", DRG.JobID, 23, "", "Hit them with more feeling!")]
-        [CustomComboInfo("龙剑 Feature",
-            "Includes Life Surge, while under proper buffs, onto proper GCDs, to the rotation.", DRG.JobID, 23, "",
+        [CustomComboInfo("龙剑设置",
+            "在连击中合适的buff和能力技窗口和体力值较低的情况下插入龙剑", DRG.JobID, 23, "",
             "Hit them with more feeling!")]
         DragoonLifeSurgeFeature = 6512,
 
@@ -1025,21 +1025,21 @@ namespace XIVSlothComboPlugin
         // ====================================================================================
          #region MACHINIST
 
-        [CustomComboInfo("(Heated) Shot Combo", "替换狙击弹为连击循环中的任一技能", MCH.JobID, 0, "Alright, 热弹", "是否真的存在一击必杀呢？让我们试试看吧。")]
+        [CustomComboInfo("热弹自动替换", "替换热弹为连击循环中的任一技能", MCH.JobID, 0, "Alright, 热弹", "是否真的存在一击必杀呢？让我们试试看吧。")]
         MachinistMainCombo = 8000,
 
-        [CustomComboInfo("Overdrive Feature", "在技能可用时，将车式浮空炮塔和后式自走人偶转换为超档车式炮塔和超档自走人偶", MCH.JobID, 0, "Drive (2011) Feature", "Insert synthwave soundtrack here.")]
+        [CustomComboInfo("超档炮塔/人偶替换设置", "在技能可用时，将车式浮空炮塔和后式自走人偶转换为超档车式炮塔和超档自走人偶", MCH.JobID, 0, "Drive (2011) Feature", "Insert synthwave soundtrack here.")]
         MachinistOverdriveFeature = 8002,
 
-        [CustomComboInfo("虹吸弹 / Ricochet Feature", "将虹吸弹和弹射替换为一个或其他需要更多充电电能的技能.", MCH.JobID, 0, "Gatling feature", "It's just a lot of bullets, really.")]
+        [CustomComboInfo("虹吸弹 / 弹射设置", "将虹吸弹和弹射替换为一个或其他需要更多充电电能的技能.", MCH.JobID, 0, "Gatling feature", "It's just a lot of bullets, really.")]
         MachinistGaussRoundRicochetFeature = 8003,
 
-        [CustomComboInfo("Drill / Air Anchor (热弹) Feature", "将钻头和热弹替换成一个或多个需要冷却时使用的技能", MCH.JobID, 0, "Multi-tool", "Why does MCH have a drill and a chainsaw? What is this, DoH?")]
+        [CustomComboInfo("钻头与空气锚/热弹按键整合", "将钻头和热弹替换成一个或多个需要冷却时使用的技能", MCH.JobID, 0, "Multi-tool", "Why does MCH have a drill and a chainsaw? What is this, DoH?")]
         MachinistHotShotDrillChainsawFeature = 8004,
 
         [ParentCombo(MachinistMainCombo)]
         [ConflictingCombos(MachinistAlternateMainCombo)]
-        [CustomComboInfo("钻头/Air/Chain Saw Feature On Main Combo", "如果使用整备，空气锚后的钻头将会被加入到连击循环.\nIf Air Anchor is on cooldown and you use 整备, Chainsaw will be added to main combo instead.", MCH.JobID, 0, "A bit of everything feature", "Don't rub your last two brain-cells together! We got you!")]
+        [CustomComboInfo("钻头/Air/Chain Saw Feature On Main Combo 钻头空气锚热弹在整备后加入循环", "如果使用整备，空气锚后的钻头将会被加入到连击循环.\nIf Air Anchor is on cooldown and you use 整备, Chainsaw will be added to main combo instead.", MCH.JobID, 0, "A bit of everything feature", "Don't rub your last two brain-cells together! We got you!")]
         MachinistDrillAirOnMainCombo = 8005,
 
         [CustomComboInfo("Single Button 热冲击", "将热冲击转换为充能.", MCH.JobID, 0, "So-called '热冲击'", "Basically a large hair-dryer.")]
@@ -1050,27 +1050,27 @@ namespace XIVSlothComboPlugin
 
         [ParentCombo(MachinistMainCombo)]
         [ConflictingCombos(MachinistDrillAirOnMainCombo)]
-        [CustomComboInfo("Alternate 钻头/Air Feature on Main Combo", "钻头/空气锚/热弹被添加到连击循环中（注意：只有当你在整备Buff\n时才会将它们添加到连击循环。（或整备在CD中时不会使用这些技能）\nOr Reasemble is on CD (Will do nothing if 整备 is OFF CD)", MCH.JobID, 0, "Gunbreaker feature", "Look at me - I'm the tank now.")]
+        [CustomComboInfo("Alternate 钻头/Air Feature on Main Combo 钻头/空气锚/热弹被添加到连击循环中", "钻头/空气锚/热弹被添加到连击循环中（注意：只有当你在整备Buff\n时才会将它们添加到连击循环。（或整备在CD中时不会使用这些技能）\nOr Reasemble is on CD (Will do nothing if 整备 is OFF CD)", MCH.JobID, 0, "Gunbreaker feature", "Look at me - I'm the tank now.")]
         MachinistAlternateMainCombo = 8007,
 
         [ParentCombo(MachinistMainCombo)]
-        [CustomComboInfo("Single Button HeatBlast On Main Combo Option", "当选项可用时，将单体开关热冲击添加到主连击循环中", MCH.JobID, 0, "Scalp burner", "Dry your hair even faster! Even hotter! Owch!")]
+        [CustomComboInfo("Single Button HeatBlast On Main Combo Option 添加热冲击至主连击循环", "当选项可用时，将单体开关热冲击添加到主连击循环中", MCH.JobID, 0, "Scalp burner", "Dry your hair even faster! Even hotter! Owch!")]
         MachinistHeatBlastOnMainCombo = 8008,
 
         [ParentCombo(MachinistMainCombo)]
-        [CustomComboInfo("Battery Overcap Option", "为您提供电能过量时的电能保护，如果您的电量达到100，则会在您的过热循环中加入炮台/女王。", MCH.JobID, 0, "Battery", "Isn't battery like, assault? What's wrong with you?")]
+        [CustomComboInfo("电量溢出后自动替换炮台/人偶", "为您提供电能过量时的电能保护，如果您的电量达到100，则会在您的过热循环中加入炮台/女王。", MCH.JobID, 0, "Battery", "Isn't battery like, assault? What's wrong with you?")]
         MachinistOverChargeOption = 8009,
 
         [ParentCombo(MachinistSpreadShotFeature)]
-        [CustomComboInfo("Battery AOE Overcap Option", "为散射/霰弹枪增加了过电量保护。.", MCH.JobID, 0, "Battery", "Isn't battery like, assault? What's wrong with you?")]
+        [CustomComboInfo(" aoe电量溢出后自动替换炮台/人偶", "为散射/霰弹枪增加了过电量保护。.", MCH.JobID, 0, "Battery", "Isn't battery like, assault? What's wrong with you?")]
         MachinistAoEOverChargeOption = 8010,
 
         [ParentCombo(MachinistSpreadShotFeature)]
-        [CustomComboInfo("虹吸弹/弹射AOE Feature", "在超荷过程中为AOE连击循环增加虹吸弹/弹射", MCH.JobID, 0, "Ratchet and Clank Feature", "Bouncing off the walls")]
+        [CustomComboInfo("虹吸弹/弹射AOE设置", "在超荷过程中为AOE连击循环增加虹吸弹/弹射", MCH.JobID, 0, "Ratchet and Clank Feature", "Bouncing off the walls")]
         MachinistAoEGaussRicochetFeature = 8011,
 
         [ParentCombo(MachinistAoEGaussRicochetFeature)]
-        [CustomComboInfo("Always 虹吸弹/Ricochet on AoE Option", "在超荷窗口之外的AOE连击循环中加入虹吸弹/弹射.", MCH.JobID, 0, "Ratchet and Clank Feature", "Bouncing off the walls")]
+        [CustomComboInfo("Always 虹吸弹/Ricochet on AoE Option ", "在超荷窗口之外的AOE连击循环中加入虹吸弹/弹射.", MCH.JobID, 0, "Ratchet and Clank Feature", "Bouncing off the walls")]
         MachinistAoEGaussOption = 8012,
 
         [ConflictingCombos(MachinistRicochetGaussMainCombo)]
@@ -1099,7 +1099,7 @@ namespace XIVSlothComboPlugin
         MachinistAutoBarrel = 8019,
 
         [ConflictingCombos(MachinistMainCombo)]
-        [CustomComboInfo("Simple Machinist", "Single button single target machinist, including buffs and overprotections.\nConflicts with other single target toggles!!\nMade to work optimally with a 2.5 GCD.", MCH.JobID, 0, "", "Goodbye, brain!")]
+        [CustomComboInfo("一键简单机工循环", "一个按键，单个目标，自己上buff并避免过热，与单目标切换关联，使用2.5gcd为最佳配合", MCH.JobID, 0, "", "Goodbye, brain!")]
         MachinistSimpleFeature = 8020,
 
         [ParentCombo(MachinistSimpleFeature)]
@@ -1300,7 +1300,7 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("飞刀 Uptime Feature", "当目标超出攻击范围时，将 旋风刃 替换为 飞刀.", NIN.JobID, 0, "", "Would probably make more sense for NIN to be a Ranged DPS, anyway.")]
         NinjaRangedUptimeFeature = 10018,
 
-        [CustomComboInfo("Simple Mudras", "简化忍术结印的操作.", NIN.JobID, 0, "Simple Murder", "Murder, made simple. For the everyday user.")]
+        [CustomComboInfo("简化结印", "简化忍术结印的操作.", NIN.JobID, 0, "Simple Murder", "Murder, made simple. For the everyday user.")]
         NinjaSimpleMudras = 10020,
 
         [ParentCombo(NinjaTCJMeisuiFeature)]
@@ -1308,10 +1308,10 @@ namespace XIVSlothComboPlugin
         NinTCJFeature = 10021,
 
         [ConflictingCombos(NinjaArmorCrushCombo, NinjaAeolianEdgeCombo, NinjaGCDNinjutsuFeature)]
-        [CustomComboInfo("Simple Ninja Single Target", "将 双刃旋 做为单目标一键连击的起始技i.\n在连击中使用忍术、攻其不备，并使用强甲破点突维持风遁buff.\n与很多其他功能相冲突，请只使用Simple Ninja Single Target与Simple Ninja AoE，并禁用其他所有选项.", NIN.JobID, 0, "", "")]
+        [CustomComboInfo("单目标一键连击（双刃旋开始）", "将 双刃旋 做为单目标一键连击的起始技i.\n在连击中使用忍术、攻其不备，并使用强甲破点突维持风遁buff.\n与很多其他功能相冲突，请只使用Simple Ninja Single Target与Simple Ninja AoE，并禁用其他所有选项.", NIN.JobID, 0, "", "")]
         NinSimpleSingleTarget = 10022,
 
-        [CustomComboInfo("Simple Ninja AoE", "将 血雨飞花 做为多目标一键连击的起始技.\n只有在生杀予夺作用下、或是拥有两层结印时才会使用忍术，以确保更多的土遁覆盖时间.", NIN.JobID, 0, "Dote-on AoE", "Uses /dote on every target.")]
+        [CustomComboInfo("aoe一键连击（血雨飞花开始）", "将 血雨飞花 做为多目标一键连击的起始技.\n只有在生杀予夺作用下、或是拥有两层结印时才会使用忍术，以确保更多的土遁覆盖时间.", NIN.JobID, 0, "Dote-on AoE", "Uses /dote on every target.")]
         NinSimpleAoE = 10023,
 
         [ParentCombo(NinSimpleSingleTarget)]
@@ -1367,31 +1367,31 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("悔罪 Combo Feature", "当MP高于2000，且仅剩一层安魂祈祷档数时，将 圣灵/圣环 替换为 悔罪. \n释放 悔罪后，依次变为 信念之剑/真理之剑/英勇之剑.", PLD.JobID, 0, "Confetti Feature", "This is gonna be a nightmare to clean up.")]
         PaladinConfiteorFeature = 11005,
 
-        [CustomComboInfo("Scornful Spirits Feature", "将 深奥之灵 替换为 厄运流转 并优先显示最快冷却的那个.", PLD.JobID, 0, "", "Two for the price of one!")]
+        [CustomComboInfo("深奥之灵 厄运流转同一键位", "将 深奥之灵 替换为 厄运流转 并优先显示最快冷却的那个.", PLD.JobID, 0, "", "Two for the price of one!")]
         PaladinScornfulSpiritsFeature = 11006,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
         [CustomComboInfo("沥血剑 Feature", "在合适的时机插入沥血连.", PLD.JobID, 0, "", "")]
         PaladinRoyalGoringOption = 11007,
 
-        [CustomComboInfo("Standalone 圣灵 Feature", "自身附加安魂祈祷状态时，将 圣灵 设为圣灵-悔罪-信念-真理-英勇连.", PLD.JobID, 0, "", "It's Christmas already?")]
+        [CustomComboInfo("安魂圣灵单体连", "自身附加安魂祈祷状态时，将 圣灵 设为圣灵-悔罪-信念-真理-英勇连.", PLD.JobID, 0, "", "It's Christmas already?")]
         PaladinStandaloneHolySpiritFeature = 11008,
 
-        [CustomComboInfo("Standalone 圣环 Feature", "自身附加安魂祈祷状态时，将 圣灵 设为圣环-悔罪-信念-真理-英勇连.", PLD.JobID, 0, "", "This is MY circle.")]
+        [CustomComboInfo("安魂圣环aoe连", "自身附加安魂祈祷状态时，将 圣灵 设为圣环-悔罪-信念-真理-英勇连.", PLD.JobID, 0, "", "This is MY circle.")]
         PaladinStandaloneHolyCircleFeature = 11009,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [CustomComboInfo("调停 Feature", "当 调停 可用时，将其插入到连击中.", PLD.JobID, 4, "", "It looks like a gap-closer. It smells like a gap-closer...")]
+        [CustomComboInfo("调停加入链接", "当 调停 可用时，将其插入到连击中.", PLD.JobID, 4, "", "It looks like a gap-closer. It smells like a gap-closer...")]
         PaladinInterveneFeature = 11010,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
         [ConflictingCombos(PaladinRangedUptimeFeature2)]
-        [CustomComboInfo("投盾 Uptime Feature", "超出攻击距离时，将 投盾 插入到连击中.", PLD.JobID, 4, "", "Don't throw your shield, you're not Captain America.\nJust get close!")]
+        [CustomComboInfo("投盾加入连击设置", "超出攻击距离时，将 投盾 插入到连击中.", PLD.JobID, 4, "", "Don't throw your shield, you're not Captain America.\nJust get close!")]
         PaladinRangedUptimeFeature = 11012,
 
         [ParentCombo(PaladinFightOrFlightMainComboFeature)]
         [ConflictingCombos(PaladinFightOrFlightFeature)]
-        [CustomComboInfo("战逃反应", "Adds FoF onto the main combo (Testing).", PLD.JobID, 0, "", "What is this, P3S?")]
+        [CustomComboInfo("战逃反应", "将战逃反应加入连击，测试中", PLD.JobID, 0, "", "What is this, P3S?")]
         PaladinFightOrFlightMainComboFeature = 11013,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
@@ -1407,7 +1407,7 @@ namespace XIVSlothComboPlugin
         [CustomComboInfo("战逃反应 Feature", "将 战逃反应 插入到连击中.", PLD.JobID, 2, "", "This feature hurts my brain. Yours too, no doubt")]
         PaladinFightOrFlightFeature = 11017,
 
-        [CustomComboInfo("Interrupt Feature", "当目标可以被打断施法或眩晕且技能处于冷却时，将 盾牌猛击 替换为插言或下踢.", PLD.JobID, 0, "Lower blow", "Blow, but low.")]
+        [CustomComboInfo("盾牌猛击替换 Feature", "当目标可以被打断施法或眩晕且技能处于冷却时，将 盾牌猛击 替换为插言或下踢.", PLD.JobID, 0, "Lower blow", "Blow, but low.")]
         PaladinInterruptFeature = 11019,
 
         [ParentCombo(PaladinProminenceCombo)]
@@ -1415,22 +1415,22 @@ namespace XIVSlothComboPlugin
         PaladinHolyCircleFeature = 11020,
 
         [ParentCombo(PaladinHolyCircleFeature)]
-        [CustomComboInfo("AoE 悔罪 Feature", "Replaces AoE combo with Confiteor when 安魂祈祷 is active and appropiate.", PLD.JobID, 2, "", "")]
+        [CustomComboInfo("AoE 悔罪好了就用 Feature", "Replaces AoE combo with Confiteor when 安魂祈祷 is active and appropiate.", PLD.JobID, 2, "", "")]
         PaladinAoEConfiteorFeature = 11021,
 
         [ParentCombo(PaladinHolyCircleFeature)]
-        [CustomComboInfo("AoE 安魂祈祷 Feature", "当 安魂祈祷 处于冷却时，将其插入到AOE连击中.\n可能并不是最优解.", PLD.JobID, 0, "", "")]
+        [CustomComboInfo("AoE中安魂祈祷好了就用 Feature", "当 安魂祈祷 处于冷却时，将其插入到AOE连击中.\n可能并不是最优解.", PLD.JobID, 0, "", "")]
         PaladinReqAoEComboFeature = 11022,
 
         [ParentCombo(PaladinRoyalAuthorityCombo)]
-        [CustomComboInfo("Expiacion and 厄运流转 Feature", "在连击窗口期插入 偿赎剑 和 厄运流转.", PLD.JobID, 0, "", "")]
+        [CustomComboInfo("厄运流转加入连击", "在连击窗口期插入 偿赎剑 和 厄运流转.", PLD.JobID, 0, "", "")]
         PaladinExpiacionScornFeature = 11023,
 
         [ParentCombo(PaladinProminenceCombo)]
-        [CustomComboInfo("AOE Expiacion / 厄运流转 Feature", "在连击窗口期插入 偿赎剑 和 厄运流转.", PLD.JobID, 0, "", "")]
+        [CustomComboInfo("厄运流转加入aoe连击", "在连击窗口期插入 偿赎剑 和 厄运流转.", PLD.JobID, 0, "", "")]
         PaladinAoEExpiacionScornFeature = 11024,
 
-        [CustomComboInfo("血仇保护机制", "当目标已被赋予血仇效果时，将 血仇 替换为 飞石", PLD.JobID)]
+        [CustomComboInfo("血仇防互顶", "当目标已被赋予血仇效果时，将 血仇 替换为 飞石", PLD.JobID)]
         PaladinReprisalProtection = 11030,
 
         #endregion
@@ -1893,32 +1893,32 @@ namespace XIVSlothComboPlugin
         // ====================================================================================
         #region SCHOLAR
 
-        [CustomComboInfo("Seraph 异想的祥光/慰藉", "炽天使同行状态下，将 异想的祥光 变为 慰藉.", SCH.JobID, 0, "", "Stupid little fairy thing")]
+        [CustomComboInfo("异想的祥光替换慰藉", "炽天使同行状态下，将 异想的祥光 变为 慰藉.", SCH.JobID, 0, "", "Stupid little fairy thing")]
         ScholarSeraphConsolationFeature = 16000,
 
-        [CustomComboInfo("ED 以太超流", "没有豆子的时候，将 能量吸收 变为 以太超流.", SCH.JobID, 0, "", "Stop trying to pretend you're a SMN. You're not fooling anyone")]
+        [CustomComboInfo("无豆子能量吸收变为以太超流", "没有豆子的时候，将 能量吸收 变为 以太超流.", SCH.JobID, 0, "", "Stop trying to pretend you're a SMN. You're not fooling anyone")]
         ScholarEnergyDrainFeature = 16001,
 
         [ConflictingCombos(SCHAlternateRaiseFeature)]
-        [CustomComboInfo("SCH 复活 Feature", "按下 即刻咏唱 后，使其变为 复生.", SCH.JobID, 0, "", "Well, at least PF wants you for something")]
+        [CustomComboInfo("按下即刻后变成复活 Feature", "按下 即刻咏唱 后，使其变为 复生.", SCH.JobID, 0, "", "Well, at least PF wants you for something")]
         SchRaiseFeature = 16002,
 
         [ConflictingCombos(SchRaiseFeature)]
-        [CustomComboInfo("SCH 复活 Alternate Feature", "当 即刻咏唱 处于可用状态时，将 复生 变为 即刻咏唱.", SCH.JobID, 0, "", "Well, this raise stuff and Peloton Extreme, I guess.")]
+        [CustomComboInfo("即刻可用时，复生替换即刻", "当 即刻咏唱 处于可用状态时，将 复生 变为 即刻咏唱.", SCH.JobID, 0, "", "Well, this raise stuff and Peloton Extreme, I guess.")]
         SCHAlternateRaiseFeature = 16008,
 
         [CustomComboInfo("Fairy Feature", "未召唤出小仙女的状态下，技能栏上所有小仙女技能将变为 朝日召唤.", SCH.JobID, 0, "", "You're really gonna forget? Really?")]
         ScholarFairyFeature = 16004,
 
-        [CustomComboInfo("DPS Feature", "战斗状态下，当目标身上没有debuff或即将到期时，将 极炎法/毁灭 变为 蛊毒法/毒菌.", SCH.JobID, 0, "", "Pretend something interesting is going on. DPS Routine!")]
+        [CustomComboInfo("续dot", "战斗状态下，当目标身上没有debuff或即将到期时，将 极炎法/毁灭 变为 蛊毒法/毒菌.", SCH.JobID, 0, "", "Pretend something interesting is going on. DPS Routine!")]
         ScholarDPSFeature = 16005,
 
         [ParentCombo(ScholarDPSFeature)]
-        [CustomComboInfo("DPS Feature Buff Option", "将 连环计 添加进 DPS Feature.", SCH.JobID, 0, "", "Raid buffs for everyone!")]
+        [CustomComboInfo("连环计好了加入循环", "将 连环计 添加进 DPS Feature.", SCH.JobID, 0, "", "Raid buffs for everyone!")]
         ScholarDPSFeatureBuffOption = 16006,
 
         [ParentCombo(ScholarDPSFeature)]
-        [CustomComboInfo("DPS Feature Lucid Dreaming Option", "当MP低于设定值时，将醒梦添加进 DPS feature.", SCH.JobID, 0, "", "Nobody's perfect. Maybe this'll help")]
+        [CustomComboInfo("醒梦好了加入循环", "当MP低于设定值时，将醒梦添加进 DPS feature.", SCH.JobID, 0, "", "Nobody's perfect. Maybe this'll help")]
         ScholarLucidDPSFeature = 16007,
 
         [CustomComboInfo("SCH Extra DPS Feature", "战斗状态下，将 毁坏 变为Dot法术，级别低于38级时将不会生效.", SCH.JobID, 0, "", "People still use 毁灭 2? Shouldn't you be healing or something?")]
