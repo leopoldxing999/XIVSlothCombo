@@ -5,4 +5,16 @@
 ##  https://raw.githubusercontent.com/44451516/XIVSlothCombo/CN/release/pluginmaster.json
 ##  https://raw.fastgit.org/44451516/XIVSlothCombo/CN/release/pluginmaster.json
 ---
-占星汉化：[参考](https://github.com/Nik-Potokar/XIVSlothCombo/blob/2eefaaf3bef73416f6778b7c4ea36d365dc32562/XIVSlothCombo/CustomComboPreset-cn.cs)
+## 快捷指令
+~~~
+//所有选项打钩
+/scombo setall
+//所有选项取消
+/scombo unsetall
+// 逻辑取反
+/scombo toggle SimpleBardFeature
+//启用xx 功能
+/scombo set GunbreakerNoMercyonST
+//取消xx 功能
+/scombo unset SimpleBardFeature
+~~~
