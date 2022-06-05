@@ -1,6 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-
+using XIVSlothCombo;
 using XIVSlothComboPlugin.Combos;
 
 namespace XIVSlothComboPlugin.Attributes
@@ -22,6 +23,13 @@ namespace XIVSlothComboPlugin.Attributes
         /// <param name="memeDescription">Meme description.</param>
         internal CustomComboInfoAttribute(string fancyName, string description, byte jobID, [CallerLineNumber] int order = 0, string memeName = "", string memeDescription = "")
         {
+            Dictionary<string,string> db = Translatezh_CN.db;
+
+            if (db.ContainsKey(fancyName))
+                fancyName = db[fancyName];
+            if (db.ContainsKey(description))
+                description = db[description];
+            
             this.FancyName = fancyName;
             this.Description = description;
             this.JobID = jobID;
