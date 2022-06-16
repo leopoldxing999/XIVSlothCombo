@@ -31,7 +31,11 @@
 		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-		<OutputPath>bin\Release</OutputPath>
+		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<OutputPath>E:\Games\FFVIX\Dalamud6.0\XIVLauncher\devPlugins\XIVSlothCombo\</OutputPath>
+		<!--		<OutputPath>bin\Release</OutputPath>-->
 		<NoWarn>CS1591</NoWarn>
 	</PropertyGroup>
 
@@ -66,7 +70,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="DalamudPackager" Version="2.1.6" />
+		<PackageReference Include="DalamudPackager" Version="2.1.5" />
 		<PackageReference Include="ILRepack" Version="2.0.18" />
 	</ItemGroup>
 
