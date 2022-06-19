@@ -17,7 +17,7 @@ namespace XIVSlothCombo.Window.Tabs
 
             var hideChildren = Service.Configuration.HideChildren;
 
-            if (ImGui.Checkbox("Hide SubCombo Options", ref hideChildren))
+            if (ImGui.Checkbox("(隐藏子选项)Hide SubCombo Options", ref hideChildren))
             {
                 Service.Configuration.HideChildren = hideChildren;
                 Service.Configuration.Save();
@@ -36,7 +36,7 @@ namespace XIVSlothCombo.Window.Tabs
             #region Conflicting
 
             var hideConflicting = Service.Configuration.HideConflictedCombos;
-            if (ImGui.Checkbox("Hide Conflicted Combos", ref hideConflicting))
+            if (ImGui.Checkbox("(隐藏冲突的组合)Hide Conflicted Combos", ref hideConflicting))
             {
                 Service.Configuration.HideConflictedCombos = hideConflicting;
                 Service.Configuration.Save();
@@ -55,7 +55,7 @@ namespace XIVSlothCombo.Window.Tabs
 
             var showCombatLog = Service.Configuration.EnabledOutputLog;
 
-            if (ImGui.Checkbox("Output Log to Chat", ref showCombatLog))
+            if (ImGui.Checkbox("(输出到聊天框)Output Log to Chat", ref showCombatLog))
             {
                 Service.Configuration.EnabledOutputLog = showCombatLog;
                 Service.Configuration.Save();
@@ -95,7 +95,7 @@ namespace XIVSlothCombo.Window.Tabs
             ImGui.PushItemWidth(75);
 
             var inputChangedeth = false;
-            inputChangedeth |= ImGui.InputFloat("Melee Distance Offset", ref offset);
+            inputChangedeth |= ImGui.InputFloat("(近战偏移)Melee Distance Offset", ref offset);
 
             if (inputChangedeth)
             {
