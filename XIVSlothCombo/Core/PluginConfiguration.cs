@@ -68,6 +68,8 @@ namespace XIVSlothCombo.Core
 
         /// <summary> Gets or sets a value indicating whether to hide the children of a feature if it is disabled. </summary>
         public bool HideChildren { get; set; } = false;
+        
+        public string Language { get; set; } = "en";
 
         /// <summary> Gets or sets the offset of the melee range check. Default is 0. </summary>
         public double MeleeOffset { get; set; } = 0;

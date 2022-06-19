@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using System;
 using System.Numerics;
+using Dalamud.Logging;
 using XIVSlothCombo.Services;
 
 namespace XIVSlothCombo.Window.Tabs
@@ -128,6 +129,37 @@ namespace XIVSlothCombo.Window.Tabs
                 ImGui.EndTooltip();
             }
             ImGui.NextColumn();
+
+            #endregion
+
+
+            #region 语言
+
+            var language = Service.Configuration.Language;
+            
+            {
+                // ImGui.SetNextItemWidth(50);
+                if (ImGui.BeginCombo($"Language", language, ImGuiComboFlags.NoArrowButton))
+                {
+
+                    if (ImGui.Selectable("zh-CN", language == "zh-CN"))
+                    {
+                        Service.Configuration.Language =  "zh-CN";
+                        // PluginLog.Information( "选择了中文");
+                        Service.Configuration.Save();
+                    }
+                    
+                    if (ImGui.Selectable("en", language == "en"))
+                    {
+                        Service.Configuration.Language =  "en";
+                        // PluginLog.Information( "选择了en");
+                        Service.Configuration.Save();
+                    }
+                    
+
+                    ImGui.EndCombo();
+                }
+            }
 
             #endregion
 

@@ -1111,8 +1111,898 @@ public class Translatezh_CN
         {"MnkBootshinePvPFeature","Mnk连击PvPFeature"},
         {"Adds Axekick/Smite/TornadoKick on main combo","Adds Axekick/Smite/TornadoKick on main combo"},
         {"BlackEnochianPVPFeature","Black天语PVPFeature"},
-        {"Enochian Stance Switcher","天语 Stance Switcher"}
+        {"Enochian Stance Switcher","天语 Stance Switcher"},
         //#endregio
 
+        #region 新版
+        //#region PvE Combos
+        //#region Misc
+        //#endregion
+        //#region GLOBAL FEATURES
+        //#region Global Tank Features
+        {"Global Tank Features","等待翻译"},
+        {"Features and options involving shared role actions for Tanks.\nCollapsing this category does NOT disable the features inside.","这个选项并没有什么实际作用"},
+        {"Tank: Interrupt Feature","打断 Feature"},
+        {"Replaces Low Blow (Stun) with Interject (Interrupt) when the target can be interrupted.\nPLDs can slot Shield Bash to have the feature to work with Shield Bash.","当目标可被打断时，使用插言替换掉下踢。\nPLDs can slot Shield Bash to have the feature to work with Shield Bash."},
+        {"Tank: Double Reprisal Protection","血仇保护机制"},
+        {"Prevents the use of Reprisal when target already has the effect by replacing it with Stone.","当目标已被赋予雪仇效果时，将雪仇替换为飞石"},
+        //#endregion
+        //#region Global Healer Features
+        {"Global Healer Features","等待翻译"},
+        {"Features and options involving shared role actions for Healers.\nCollapsing this category does NOT disable the features inside.","这个选项并没有什么实际作用"},
+        {"Healer: Raise Feature","复活 Feature"},
+        {"Changes the class' Raise Ability into Swiftcast.","即可咏唱替换复活"},
+        //#endregion
+        //#region Global Magical Ranged Features
+        {"Global Magical Ranged Features","等待翻译"},
+        {"Features and options involving shared role actions for Magical Ranged DPS.\nCollapsing this category does NOT disable the features inside.","这个选项并没有什么实际作用"},
+        {"Magical Ranged DPS: Double Addle Protection","等待翻译"},
+        {"Prevents the use of Addle when target already has the effect by replacing it with Fell Cleave.","等待翻译"},
+        {"Magical Ranged DPS: Raise Feature","等待翻译"},
+        {"Changes the class' Raise Ability into Swiftcast or Dualcast in the case of RDM.","等待翻译"},
+        //#endregion
+        //#region Global Melee Features
+        {"Global Melee DPS Features","等待翻译"},
+        {"Features and options involving shared role actions for Melee DPS.\nCollapsing this category does NOT disable the features inside.","这个选项并没有什么实际作用"},
+        {"Melee DPS: Double Feint Protection","等待翻译"},
+        {"Prevents the use of Feint when target already has the effect by replacing it with Fire.","等待翻译"},
+        //#endregion
+        //#region Global Ranged Physical Features
+        {"Global Physical Ranged Features","等待翻译"},
+        {"Features and options involving shared role actions for Physical Ranged DPS.\nCollapsing this category does NOT disable the features inside.","这个选项并没有什么实际作用"},
+        {"Physical Ranged DPS: Double Mitigation Protection","等待翻译"},
+        //行吟//策动防守之桑巴
+        {"Prevents the use of Tactician/Troubadour/Shield Samba when target already has one of those three effects by replacing it with Stardiver.","大义防止行吟/策动/防守之桑巴 重复使用"},
+        //#endregion
+        {"Output Combat Log","等待翻译"},
+        {"Outputs your performed actions to the chat.","等待翻译"},
+        //#endregion
+        //#region ASTROLOGIAN
+        //#region DPS
+        {"Replaces Malefic or Combust with options below","等待翻译"},
+        {"Combust Uptime Option","等待翻译"},
+        {"Adds Combust to the DPS feature if it's not present on current target, or is about to expire.","等待翻译"},
+        {"Every option below (Lucid/AutoDraws/Astrodyne/etc) will also be added to Gravity","等待翻译"},
+        {"Lightspeed Weave Option","等待翻译"},
+        {"Adds Lightspeed","等待翻译"},
+        {"Lucid Dreaming Weave Option","等待翻译"},
+        {"Adds Lucid Dreaming when MP drops below slider value","等待翻译"},
+        {"Divination Weave Option","等待翻译"},
+        {"Adds Divination","等待翻译"},
+        {"Card Draw Weave Option","等待翻译"},
+        {"Draws your card","等待翻译"},
+        {"Astrodyne Weave Option","等待翻译"},
+        {"Adds Astrodyne when you have 3 seals","等待翻译"},
+        {"Crown Card Draw Weave Option","等待翻译"},
+        {"Adds Auto Crown Card Draw","等待翻译"},
+        {"Lord of Crowns Weave Option","等待翻译"},
+        {"Adds Lord Of Crowns","等待翻译"},
+        //#endregion
+        //#region Healing
+        {"Simple Heals (Single Target)","等待翻译"},
+        {"Benefic 2 Downgrade","等待翻译"},
+        {"Changes Benefic 2 to Benefic when Benefic 2 is not unlocked or available.","等待翻译"},
+        //#endregion
+        //#region Utility
+        {"Alternative Raise Feature","等待翻译"},
+        //#endregion
+        //#region Cards
+        {"Quick Target Cards","等待翻译"},
+        {"Grabs a suitable target from the party list when you draw a card and targets them for you.","等待翻译"},
+        {"Keep Target Locked","等待翻译"},
+        {"Keeps your target locked until you play the card","等待翻译"},
+        {"Add Tanks/Healers to Auto-Target","等待翻译"},
+        {"Targets a tank or healer if no DPS remain for quick target selection","等待翻译"},
+        {"Redraw Feature","等待翻译"},
+        {"Sets Draw to Redraw if you pull a card with a seal you already have and you can use Redraw.","等待翻译"},
+        {"Target Previous Feature","等待翻译"},
+        {"Once you've played your card, switch back to your previously manually selected target. (May also be who you played the card on)","等待翻译"},
+        {"Target Focus Feature","等待翻译"},
+        {"Once you've played your card, switch back to your focus target.","等待翻译"},
+        //#endregion
+        //#endregion
+        //#region BLACK MAGE
+        {"Scathe Feature","等待翻译"},
+        {"Replaces Scathe with Fire 4 or Blizzard 4 depending on Astral Fire/Umbral Ice.","等待翻译"},
+        {"Umbral Soul/Transpose Feature","等待翻译"},
+        {"Replaces Transpose with Umbral Soul when Umbral Soul is available.","等待翻译"},
+        {"Between the Ley Lines Feature","等待翻译"},
+        {"Replaces Ley Lines with Between the Ley Lines when Ley Lines is active.","等待翻译"},
+        {"Replaces Blizzard 1 with Blizzard 3 when out of Umbral Ice. Replaces Freeze with Blizzard 2 when synced.","等待翻译"},
+        {"Xenoglossy Feature","等待翻译"},
+        {"Replaces Scathe with Xenoglossy when available.","等待翻译"},
+        {"Fire 1/3 Feature","等待翻译"},
+        {"Replaces Fire 1 with Fire 3 outside of Astral Fire or when Firestarter proc is up.","等待翻译"},
+        {"Thundercloud Option","等待翻译"},
+        {"Replaces Scathe with Thunder 1/3 when the debuff isn't present or expiring and Thundercloud is available.","等待翻译"},
+        {"Despair Option","等待翻译"},
+        {"Replaces Fire 4 with Despair when below 2400 MP.","等待翻译"},
+        {"Simple AoE Feature","等待翻译"},
+        {"Replaces Flare with a full one button rotation.","等待翻译"},
+        {"Aspect Swap Option","等待翻译"},
+        {"Replaces Scathe with Blizzard 3 when at 0 MP in Astral Fire or with Fire 3 when at 10000 MP in Umbral Ice with 3 Umbral Hearts.","等待翻译"},
+        {"Thunder 1/3 Option","等待翻译"},
+        {"Replaces Scathe with Thunder 1/3 when the debuff isn't present or expiring.","等待翻译"},
+        {"Simple BLM Feature","等待翻译"},
+        {"Replaces Scathe with a full one button rotation.","等待翻译"},
+        {"CDs Option","等待翻译"},
+        {"Ley Lines Option","等待翻译"},
+        {"Triplecast / Swiftcast Option","等待翻译"},
+        {"Pool Triplecast / Swiftcast Option","等待翻译"},
+        {"Keep one triplecast usage and swiftcast for movement in the Simple BLM feature.","等待翻译"},
+        {"Pool Xenoglossy Option","等待翻译"},
+        {"Fire 3 Opener","等待翻译"},
+        {"Adds the Fire 3 Opener to Simple BLM.","等待翻译"},
+        {"Fire 3 Opener - 1 Triplecast","等待翻译"},
+        {"Modifies the Simple Fire 3 Opener to only use 1 Triplecast.","等待翻译"},
+        {"Foul / Manafont Flare Option","等待翻译"},
+        {"Adds Foul when available during Astral Fire. Weaves Manafont after Foul for additional Flare","等待翻译"},
+        {"Advanced BLM Feature","等待翻译"},
+        {"Replaces Scathe with a full one button rotation that uses Transpose. Requires level 90.","等待翻译"},
+        {"Pool Triplecast Option","等待翻译"},
+        {"Keep one triplecast usage for movement in the Advanced BLM feature.","等待翻译"},
+        {"Paradox BLM Feature","等待翻译"},
+        {"Replaces Scathe with a full one button rotation that has minimal casts (~9-13%% less damage than Simple BLM). Requires level 90.","等待翻译"},
+        {"Adds Ley Lines onto the Advanced BLM feature.","等待翻译"},
+        {"Adds Ley Lines onto the Paradox BLM feature.","等待翻译"},
+        {"Swiftcast/Triplecast Moving Option","等待翻译"},
+        {"Use Swiftcast/Triplecast when moving.","等待翻译"},
+        {"Xenoglossy Moving Option","等待翻译"},
+        {"Use Xenoglossy when moving.","等待翻译"},
+        {"Scathe Moving Option","等待翻译"},
+        {"Use Scathe when moving.","等待翻译"},
+        //#endregion
+        //#region BLUE MAGE
+        {"Solo Mode","等待翻译"},
+        {"Uses Basic Instinct if you're in an instance and on your own.","等待翻译"},
+        {"Hydro Pull Setup","等待翻译"},
+        {"Uses Hydro Pull before using Ram's Voice.","等待翻译"},
+        //#endregion
+        //#region BARD
+        {"Simple Bard DoTs","等待翻译"},
+        {"Simple Bard Songs","等待翻译"},
+        {"Simple AoE Bard Song","等待翻译"},
+        {"Simple Buffs","等待翻译"},
+        {"Simple No Waste Mode","等待翻译"},
+        {"Adds enemy health checking on mobs for buffs, dots and songs.\nThey will not be reapplied if less than specified.","等待翻译"},
+        {"Pools Bloodletter charges to allow for optimum burst phases.","等待翻译"},
+        {"Simple Raging Jaws","等待翻译"},
+        {"Opener Only","等待翻译"},
+        {"Until the first auto-refresh you can DoT new targets automatically.","等待翻译"},
+        {"Exclude Wanderer's Minuet","等待翻译"},
+        {"Dont use Wanderer's Minuet.","等待翻译"},
+        //#endregion
+        //#region DANCER
+        //#region Single Target Multibutton
+        {"Single Target Multibutton Feature","等待翻译"},
+        {"Single target combo with Fan Dances and Esprit use.","等待翻译"},
+        {"Adds Saber Dance above the set Esprit threshold.","等待翻译"},
+        {"Adds Fan Dance 1 when Fourfold Feathers are full.","等待翻译"},
+        {"Fan Dance Option","等待翻译"},
+        {"Adds Fan Dance 3/4 when available.","等待翻译"},
+        //#endregion
+        //#region AoE Multibutton
+        {"AoE Multibutton Feature","等待翻译"},
+        {"AoE combo with Fan Dances and Esprit use.","等待翻译"},
+        {"Adds Fan Dance 2 when Fourfold Feathers are full.","等待翻译"},
+        {"AoE Fan Dance Option","等待翻译"},
+        //#endregion
+        //#region Dance Features
+        //#region Combined Dance Feature
+        //#endregion
+        //#endregion
+        //#region Flourishing Features
+        {"Flourishing Fan Dance Feature","等待翻译"},
+        {"Replace Flourish with Fan Dance 3 & 4 during weave-windows, when Flourish is on cooldown.","等待翻译"},
+        //#endregion
+        //#region Fan Dance Combo Features
+        {"Fan Dance Combo Feature","等待翻译"},
+        {"Options for Fan Dance combos. Fan Dance 3 takes priority over Fan Dance 4.","等待翻译"},
+        //#endregion
+        {"Dance Step Combo Feature","等待翻译"},
+        //#region Simple Dancer (Single Target)
+        {"Simple Dancer (Single Target) Feature","等待翻译"},
+        {"Single button, single target. Includes songs, flourishes and overprotections.\nConflicts with all other non-simple toggles, except 'Dance Step Combo'.","等待翻译"},
+        {"Includes an interrupt in the rotation (if applicable to your current target).","等待翻译"},
+        {"Simple Standard Dance Option","等待翻译"},
+        {"Includes Standard Step (and all steps) in the rotation.","等待翻译"},
+        {"Simple Technical Dance Option","等待翻译"},
+        {"Includes Technical Step, all dance steps and Technical Finish in the rotation.","等待翻译"},
+        {"Simple Tech Fill Option","等待翻译"},
+        {"Adds ONLY Technical dance steps and Technical Finish to the rotation.\nTechnical Step itself needs to be initiated manually when using this option.","等待翻译"},
+        {"Includes Devilment in the rotation.\nWill activate only during Technical Finish if you are Lv70 or above.","等待翻译"},
+        {"Expends a feather in the next available weave window when capped.\nWeaves feathers where possible during Technical Finish.\nWeaves feathers outside of burst when target is below set HP percentage.","等待翻译"},
+        {"Includes Curing Waltz and Second Wind in the rotation when available and your HP is below the set percentages.","等待翻译"},
+        //#endregion
+        //#region Simple Dancer (AoE)
+        {"Simple Dancer (AoE) Feature","等待翻译"},
+        {"Single button, AoE. Includes songs, flourishes and overprotections.\nConflicts with all other non-simple toggles, except 'Dance Step Combo'.","等待翻译"},
+        {"Simple AoE Standard Dance Option","等待翻译"},
+        {"Includes Standard Step (and all steps) in the AoE rotation.","等待翻译"},
+        {"Simple AoE Technical Dance Option","等待翻译"},
+        {"Includes Technical Step, all dance steps and Technical Finish in the AoE rotation.","等待翻译"},
+        {"Simple AoE Tech Fill Option","等待翻译"},
+        {"Adds ONLY Technical dance steps and Technical Finish to the AoE rotation.\nTechnical Step itself needs to be initiated manually when using this option.","等待翻译"},
+        {"Includes Devilment in the AoE rotation.\nWill activate only during Technical Finish if you Lv70 or above.","等待翻译"},
+        {"Expends a feather in the next available weave window when capped.","等待翻译"},
+        {"Includes Curing Waltz and Second Wind in the AoE rotation when available and your HP is below the set percentages.","等待翻译"},
+        //#endregion
+        //#endregion
+        //#region DARK KNIGHT
+        {"Shadowbringer oGCD Feature","等待翻译"},
+        {"Melee Plunge Option","等待翻译"},
+        {"Uses Plunge when under Darkside and in the target ring (1 yalm).\nWill use as many stacks as selected in the above slider.","等待翻译"},
+        {"Blood Weapon Option","等待翻译"},
+        {"Adds Blood Weapon to AOE Combo on CD and when Darkside is up.","等待翻译"},
+        {"Delirium Option","等待翻译"},
+        {"Adds Deliriun to AOE Combo on CD and when Darkside is up.","等待翻译"},
+        {"Salted Earth Option","等待翻译"},
+        {"Adds Salted Earth and Salt and Darkness to AOE on CD and when Darkside is up.","等待翻译"},
+        {"Living Shadow Option","等待翻译"},
+        {"Adds Living Shadow to AOE on CD and when Darkside is up.","等待翻译"},
+        //#endregion
+        //#region DRAGOON
+        //#region Chaos Thrust Combo
+        //#endregion
+        //#region Full Thrust Combo
+        //#endregion
+        //#region Full Thrust Combo Plus
+        //#endregion
+        //#region Simple Dragoon
+        {"Replaces Full Thrust with the entire DRG combo chain. Conflicts with every non-AoE feature.","等待翻译"},
+        {"Level 88+. Use True North on prepull to activate. Adds opener to the Simple Dragoon rotation. Not recommended for use in dungeons. OPTIONAL: USE REACTION OR MOACTION FOR OPTIMAL TARGETING.","等待翻译"},
+        {"Lance Charge Feature","等待翻译"},
+        {"Includes Lance Charge to the rotation.","等待翻译"},
+        {"Battle Litany Feature","等待翻译"},
+        {"Includes Battle Litany to the rotation.","等待翻译"},
+        {"Ranged Uptime Option","等待翻译"},
+        {"Replaces Main Combo with Piercing Talon when you are out of melee range.\nNOT OPTIMAL.","等待翻译"},
+        //#endregion
+        //#region Simple Dragoon AoE
+        //#region Buffs AoE Feature
+        //#endregion
+        {"Replaces Main AoE Combo with Piercing Talon when you are out of melee range.\nNOT OPTIMAL.","等待翻译"},
+        //#endregion
+        //#endregion
+        //#region GUNBREAKER
+        {"Adds Sonic Break/Bow Shock/Blasting Zone on Gnashing Fang, order dependent on No Mercy buff. \nBurst Strike and Hypervelocity added if there's charges while No Mercy buff is up.","等待翻译"},
+        {"Burst Strike Continuation","等待翻译"},
+        {"Adds Hypervelocity on Burst Strike.","等待翻译"},
+        {"No Mercy AOE Option","等待翻译"},
+        {"Adds No Mercy to AOE Combo when it's available.","等待翻译"},
+        {"Adds Burst Strike and Hypervelocity (when available) to Main Combo when under No Mercy and Gnashing Fang is over.","等待翻译"},
+        {"Bloodfest AOE Option","等待翻译"},
+        {"Adds Bloodfest to AOE Combo when it's available. Will dump Ammo through Fated Circle to prepare for Bloodfest.","等待翻译"},
+        {"Double Down AOE Option","等待翻译"},
+        {"Adds Double Down to AOE Combo when it's available and there is 2 or more ammo.","等待翻译"},
+        {"Double Down on Burst Strike Feature","等待翻译"},
+        {"Adds Double Down to Burst Strike when under No Mercy and ammo is above 2.","等待翻译"},
+        {"Melee Rough Divide Option","等待翻译"},
+        {"Uses Rough Divide when under No Mercy, burst CDs on CD, and in the target ring (1 yalm).\nWill use as many stacks as selected in the above slider.","等待翻译"},
+        {"Aurora Protection Feature","极光保护机制"},
+        {"Turns Aurora into Nascent Flash if Aurora's effect is on the player.","等待翻译"},
+        //#endregion
+        //#region MACHINIST
+        {"(Heated) Shot Combo Feature","等待翻译"},
+        {"Replace Drill and Air Anchor (Hot Shot) with one or the other (or Chain Saw) depending on which is on cooldown.","等待翻译"},
+        {"Drill/Air/Chain Saw on Main Combo Feature","等待翻译"},
+        {"Air Anchor followed by Drill is added onto main combo if you use Reassemble.\nIf Air Anchor is on cooldown and you use Reassemble, Chain Saw will be added to main combo instead.","等待翻译"},
+        {"Drill/Air/Hotshot Feature is added onto main combo (Note: It will add them onto main combo ONLY if you are under Reassemble Buff\nOr Reasemble is on CD (will do nothing if Reassemble is OFF CD)","等待翻译"},
+        {"Battery AoE Overcap Option","等待翻译"},
+        {"Gauss Round Ricochet on AoE Feature","等待翻译"},
+        {"Adds Hypercharge and Wildfire uses to the feature.\nIt respects the 8 second rule of Drill, AirAnchor and Chain Saw.","等待翻译"},
+        {"Simple Machinist AoE","等待翻译"},
+        {"Spread Shot turns into Scattergun when Lv82 or higher. Both turn into Auto Crossbow when Overheated.\nBioblaster is used first whenever it is off cooldown.","等待翻译"},
+        {"Wildfire Only","等待翻译"},
+        {"Only use it to prepare for Wildfire use.","等待翻译"},
+        //#endregion
+        //#region MONK
+        {"Arm of the Destroyer Combo","等待翻译"},
+        {"Replaces Arm Of The Destroyer with its combo chain.","等待翻译"},
+        {"Dragon Kick --> Bootshine Feature","等待翻译"},
+        {"Replace Bootshine with its combo chain. \nIf all sub options are selected will turn into a full one button rotation (Simple Monk). Slider values can be used to control Disciplined Fist + Demolish uptime.","等待翻译"},
+        {"Adds Masterful Blitz to the AoE Combo.","等待翻译"},
+        {"Start with the Lunar Solar Opener on the Main Combo. Requires level 68 for Riddle of Fire.\nA 1.93/1.94 GCD is highly recommended.","等待翻译"},
+        {"Main Combo on Demolish Option","等待翻译"},
+        {"Replaces Demolish with the Main Combo, except without any oCDs added. Useful for saving burst.","等待翻译"},
+        {"CDs on AoE Combo","等待翻译"},
+        {"Adds various CDs to the AoE Combo when under Riddle of Fire or when Riddle of Fire is on cooldown.","等待翻译"},
+        {"Riddle of Wind on AoE Combo","等待翻译"},
+        {"Adds Riddle of Wind to the AoE Combo.","等待翻译"},
+        {"Perfect Balance on AoE Combo","等待翻译"},
+        {"Adds Perfect Balance to the AoE Combo.","等待翻译"},
+        {"Brotherhood on AoE Combo","等待翻译"},
+        {"Adds Brotherhood to the AoE Combo.","等待翻译"},
+        {"Meditation on AoE Combo","等待翻译"},
+        {"Adds Meditation to the AoE Combo.","等待翻译"},
+        {"Thunderclap on AoE Combo","等待翻译"},
+        {"Adds Thunderclap when out of combat to the AoE Combo.","等待翻译"},
+        {"Thunderclap on Main Combo","等待翻译"},
+        {"Adds Thunderclap when out of combat to the Main Combo.","等待翻译"},
+        //#endregion
+        //#region NINJA
+        {"Raiju on Main Combo","等待翻译"},
+        {"Huraijin on Main Combo","等待翻译"},
+        {"Bunshin on Main Combo","等待翻译"},
+        {"Bhavacakra on Main Combo","等待翻译"},
+        {"Adds Bhavacakra you have gauge for it on main combo.","等待翻译"},
+        {"Turns Spinning Edge into a one-button full single target rotation.\nUses Ninjitsus, applies Trick Attack and uses Armor Crush to upkeep Huton buff.","等待翻译"},
+        {"Turns Death Blossom into a one-button full AoE rotation.","等待翻译"},
+        {"Add Mug","等待翻译"},
+        {"Adds Mug to this Simple Feature.","等待翻译"},
+        {"Huraijin / Armor Crush Combo","等待翻译"},
+        {"Replace Huraijin with Armor Crush after using Gust Slash","等待翻译"},
+        {"Ninki Pooling Feature - Bunshin","等待翻译"},
+        {"Allows you to have a minimum amount of Ninki saved before spending on Bunshin.","等待翻译"},
+        {"Ninki Pooling Feature - Bhavacakra","等待翻译"},
+        {"Allows you to have a minimum amount of Ninki saved before spending on Bhavacakra.","等待翻译"},
+        //#endregion
+        //#region PALADIN
+        {"Atonement drop Feature","等待翻译"},
+        {"Will drop the last Atonement charge right before FoF comes back off cooldown.\nPlease note that this assumes you use both FoF and Req according to the full FoF opener and standard loop\nRequires a GCD speed of 2.40-2.45s","等待翻译"},
+        {"Replaces Royal Authority combo with Holy Spirit if you don't have the Fight or Flight buff","等待翻译"},
+        {"Adds Fight or Flight onto the main combo (Testing).","等待翻译"},
+        {"Requiescat gets added onto the main combo when the Fight or Flight buff has 17 seconds remaining or less.","等待翻译"},
+        {"Adds Fight or Flight onto the main combo with a delayed weave.","等待翻译"},
+        {"Replaces AoE combo with Requiescat when it's off cooldown.","等待翻译"},
+        {"Adds Expiacion and Circle of Scorn onto the main AoE combo during weave windows","等待翻译"},
+        {"Melee Intervene Option","等待翻译"},
+        {"Uses Intervene when under Fight or Flight and in the target ring (1 yalm).\nWill use as many stacks as selected in the above slider.","等待翻译"},
+        {"Expiacion and Circle of Scorn Option","等待翻译"},
+        {"Uses Circle of Scorn and Expiacion when under Fight or Flight or when Fight or Flight is on cooldown","等待翻译"},
+        {"FoF Opener Feature","等待翻译"},
+        {"Adds the FoF opener to the main combo.\nWill execute the full FoF opener by default, but if FoF is activated 18s pre-pull, the 18s pre-pull opener will be executed. Requires Lv68.","等待翻译"},
+        {"Intervene Option","等待翻译"},
+        {"Adds Intervene to the Fight or Flight opener.","等待翻译"},
+        //#endregion
+        //#region REAPER
+        {"Positional Preference","等待翻译"},
+        {"Choose positional order for all positional related features.\nSupports turning Slice/Shadow of Death into all positionals or Slice and Shadow of Death being two separate positionals.","等待翻译"},
+        //#region Single Target (Slice) Combo Section
+        {"Replace Slice with its combo chain.\nIf all sub options are toggled will turn into a full one button rotation (Simple Reaper)","等待翻译"},
+        {"Adds Soul Slice to Slice Combo when Soul Gauge is 50 or less and when current target is afflicted with Death's Design.","等待翻译"},
+        {"Adds Shadow of Death to Slice Combo if Death's Design is not present on current target, or is about to expire.","等待翻译"},
+        {"Double SoD Enshroud Option","等待翻译"},
+        {"Uses Shadow of Death twice during the first of the two Enshroud Bursts during the 2-minute windows (Double Enshroud Burst).","等待翻译"},
+        {"Adds Leg Sweep to main combo when target is performing an interruptible cast.","等待翻译"},
+        {"Adds Bloodbath and Second Wind to the combo at 65%% and 40%% HP, respectively.","等待翻译"},
+        {"Enshroud Option","等待翻译"},
+        {"Adds Enshroud to the combo when at 50 Shroud or greater and when current target is afflicted with Death's Design.","等待翻译"},
+        {"Enshroud Burst (Double Enshroud) Option","等待翻译"},
+        {"Uses Enshroud at 50 Shroud during Arcane Circle (mimics the 2-minute Double Enshroud window), but will pool Shroud outside of burst windows.\nBelow level 88, will use Enshroud at 50 gauge.","等待翻译"},
+        {"Lemure's Slice Option","等待翻译"},
+        {"Adds Lemure's Slice to the combo when there are 2 Void Shroud charges.","等待翻译"},
+        {"Communio Finisher Option","等待翻译"},
+        {"Adds Communio to the combo when there is 1 charge of Lemure Shroud left.","等待翻译"},
+        {"Arcane Circle Option","等待翻译"},
+        {"Adds Arcane Circle to the combo when available and when current target is afflicted with Death's Design.","等待翻译"},
+        {"Plentiful Harvest Option","等待翻译"},
+        {"Adds Plentiful Harvest to the combo when available.","等待翻译"},
+        {"Gibbet and Gallows Option","等待翻译"},
+        {"Adds Gibbet and Gallows to the combo when current target is afflicted with Death's Design.\nWill use Void/Cross Reaping during Enshroud.","等待翻译"},
+        {"Gibbet and Gallows on SoD Option","等待翻译"},
+        {"Adds Gibbet and Gallows to Shadow of Death as well if chosen in positional preferences.","等待翻译"},
+        {"Gluttony and Blood Stalk Option","等待翻译"},
+        {"Adds Gluttony and Blood Stalk to the combo when target is afflicted with Death's Design, and the skills are off cooldown and < 50 soul.","等待翻译"},
+        //#endregion
+        //#region AoE (Scythe) Combo Section
+        {"Replace Spinning Scythe with its combo chain.\nIf all sub options are toggled will turn into a full one button rotation (Simple AOE)","等待翻译"},
+        {"Adds Soul Scythe to AoE Combo when Soul Gauge is 50 or less and current target is afflicted with Death's Design.","等待翻译"},
+        {"Adds Whorl of Death to AoE Combo if Death's Design is not present on current target, or is about to expire.","等待翻译"},
+        {"Guillotine Option","等待翻译"},
+        {"Adds Guillotine to AoE combo when under Soul Reaver and when current target is afflicted with Death's Design.\nWill use Grim Reaping during Enshroud.","等待翻译"},
+        {"Adds Arcane Circle to AoE combo when off cooldown.","等待翻译"},
+        {"Adds Plentiful Harvest to AoE combo when off cooldown and ready.","等待翻译"},
+        {"Adds Enshroud to the AoE combo when at 50 Shroud and greater and when current target is afflicted with Death's Design.","等待翻译"},
+        {"Adds Lemure's Slice to the AoE combo when there are 2 Void Shrouds.","等待翻译"},
+        {"Adds Communio to the AoE combo when there is 1 Lemure Shroud left.","等待翻译"},
+        {"Gluttony and Grim Swathe Option","等待翻译"},
+        {"Adds Gluttony and Grim Swathe to the AoE combo when current target is afflicted with Death's Design and Soul Gauge < 50.","等待翻译"},
+        //#endregion
+        //#region Blood Stalk/Grim Swathe Combo Section
+        {"Gluttony on Blood Stalk/Grim Swathe Feature","等待翻译"},
+        {"Blood Stalk and Grim Swathe will turn into Gluttony when it is available.","等待翻译"},
+        {"Gibbet and Gallows/Guillotine on Blood Stalk/Grim Swathe Feature","等待翻译"},
+        {"Adds Gibbet and Gallows on Blood Stalk.\nAdds Guillotine on Grim Swathe.","等待翻译"},
+        {"Enshroud Combo Option","等待翻译"},
+        {"Adds Enshroud Combo (Void/Cross Reaping, Communio, and Lemure's Slice) on Blood Stalk and Grim Swathe.","等待翻译"},
+        //#endregion
+        //#region Miscellaneous
+        {"Replaces Arcane Circle with Plentiful Harvest when you have stacks of Immortal Sacrifice.","等待翻译"},
+        {"Changes both Hell's Ingress and Hell's Egress turn into Regress when Threshold is active.","等待翻译"},
+        {"Soulsow Reminder Feature","等待翻译"},
+        {"Adds Soulsow to Slice, Spinning Scythe, Shadow of Death, Harpe, and Blood Stalk when out of combat.","等待翻译"},
+        {"Replaces Harpe with Harvest Moon when you are in combat with Soulsow active.","等待翻译"},
+        {"Prevent Harvest Moon replacing Harpe when Enhanced Harpe is active.","等待翻译"},
+        {"Prevent Harvest Moon replacing Harpe when you are not in combat.","等待翻译"},
+        {"Enshroud Protection Feature","等待翻译"},
+        {"Turns Enshroud into Gibbet/Gallows to protect Soul Reaver waste.","等待翻译"},
+        {"Communio on Gibbet/Gallows and Guillotine Feature","等待翻译"},
+        {"Adds Communio to Gibbet/Gallows and Guillotine.","等待翻译"},
+        {"Lemure's Slice/Scythe Option","等待翻译"},
+        {"Adds Lemure's Slice to Gibbet/Gallows and Lemure's Scythe to Guillotine.","等待翻译"},
+        {"Enshroud to Communio Feature","等待翻译"},
+        {"Turns Enshroud to Communio when available to use.","等待翻译"},
+        {"True North Feature","等待翻译"},
+        {"Adds True North to Slice, Shadow of Death, Enshroud, and Blood Stalk when under Gluttony and if Gibbet/Gallows options are selected to replace those skills.","等待翻译"},
+        //#endregion
+        //#endregion
+        //#region RED MAGE
+        //#region Section 1 - Openers
+        {"Balance Opener Feature [Lv.90]","等待翻译"},
+        {"Replaces Jolt with the Balance opener ending with Resolution\n**Must move into melee range before melee combo**","等待翻译"},
+        {"Use Opener at any Mana Option","等待翻译"},
+        {"Removes 0/0 Mana reqirement to reset opener\n**All other actions must be off cooldown**","等待翻译"},
+        //#endregion
+        //#region Sections 2 to 3 - Rotation
+        {"Verthunder/Veraero Feature","等待翻译"},
+        {"Replace Jolt with Verthunder and Veraero","等待翻译"},
+        {"Single Target Acceleration Option","等待翻译"},
+        {"Add Acceleration when no Verfire/Verstone proc is available","等待翻译"},
+        {"Include Swiftcast Option","等待翻译"},
+        {"Add Swiftcast when all Acceleration charges are used","等待翻译"},
+        {"Verfire/Verstone Feature","等待翻译"},
+        {"Replace Jolt with Verfire and Verstone","等待翻译"},
+        {"Weave oGCD Damage Feature","等待翻译"},
+        {"Use oGCD actions on specified action(s)","等待翻译"},
+        {"Fleche Option","等待翻译"},
+        {"Use Fleche on above specified action(s)","等待翻译"},
+        {"Contra Sixte Option","等待翻译"},
+        {"Use Contre Sixte on above specified action(s)","等待翻译"},
+        {"Engagement Option","等待翻译"},
+        {"Use Engagement on above specified action(s) when in melee range","等待翻译"},
+        {"Hold one charge Option","等待翻译"},
+        {"Pool one charge of Engagement/Displacement for manual use","等待翻译"},
+        {"Corps-a-corps Option","等待翻译"},
+        {"Use Corps-a-corps on above specified action(s)","等待翻译"},
+        {"Only in Melee Range Option","等待翻译"},
+        {"Use Corps-a-corps only when in melee range","等待翻译"},
+        {"Pool one charge of Corp-a-corps for manual use","等待翻译"},
+        {"Verthunder II/Veraero II Feature","等待翻译"},
+        {"Replace Scatter/Impact with Verthunder II or Veraero II","等待翻译"},
+        {"AoE Acceleration Feature","等待翻译"},
+        {"Use Acceleration on Scatter/Impact for increased damage","等待翻译"},
+        {"Add Swiftcast when all Acceleration charges are used or when below level 50","等待翻译"},
+        {"Weave Acceleration Option","等待翻译"},
+        {"Only use acceleration during weave windows","等待翻译"},
+        //#endregion
+        //# region Sections 4 to 5 - Melee
+        {"Single Target Melee Combo Feature","等待翻译"},
+        {"Stack Reposte Combo on specified action(s)\n**Must be in melee range or have Gap close with Corps-a-corps enabled**","等待翻译"},
+        {"Use Manafication and Embolden Option","等待翻译"},
+        {"Add Manafication and Embolden on specified action(s)\n**Must be in melee range or have Gap close with Corps-a-corps enabled**","等待翻译"},
+        {"Hold for Double Melee Combo Option [Lv.90]","等待翻译"},
+        {"Hold both actions until you can perform a double melee combo","等待翻译"},
+        {"AoE Melee Combo Feature","等待翻译"},
+        {"Use Moulinet on Scatter/Impact when over 60/60 mana","等待翻译"},
+        {"Add Manafication and Embolden to Scatter/Impact\n**Must be in range of Moulinet**","等待翻译"},
+        {"Gap close with Corps-a-corps Option","等待翻译"},
+        {"Use Corp-a-corps when out of melee range and you have enough mana to start the melee combo","等待翻译"},
+        {"Unbalance Mana Option","等待翻译"},
+        {"Use Acceleration to unbalance mana prior to starting melee combo","等待翻译"},
+        {"Melee Finisher Feature","等待翻译"},
+        {"Add Verflare/Verholy and other finishing moves to specified action(s)","等待翻译"},
+        //#endregion
+        //#region Sections 6 to 7 - QoL
+        {"Use Lucid Dreaming on Jolt 1/2, Veraero 1/2/3, Verthunder 1/2/3, and Scatter/Impact when below threshold.","等待翻译"},
+        {"Verraise Feature","等待翻译"},
+        {"Changes Swiftcast to Verraise when under the effect of Swiftcast or Dualcast.","等待翻译"},
+        //#endregion
+        //#region Sections 8 to 9 - Miscellaneous
+        {"Displacement <> Corps-a-corps Feature","等待翻译"},
+        {"Replace Displacement with Corps-a-corps when out of range.","等待翻译"},
+        {"Embolden to Manafication Feature","等待翻译"},
+        {"Changes Embolden to Manafication when on cooldown.","等待翻译"},
+        {"Magick Barrier to Addle Feature","等待翻译"},
+        {"Changes Magick Barrier to Addle when on cooldown.","等待翻译"},
+        //#endregion
+        //#endregion
+        //#region SAGE
+        //#region Single Target DPS Feature
+        {"Single Target DPS Feature","等待翻译"},
+        {"Adds Lucid Dreaming to Dosis when MP drops below slider value","等待翻译"},
+        {"Eukrasian Dosis Option","等待翻译"},
+        {"Automatic DoT Uptime","等待翻译"},
+        {"Toxikon Movement Option","等待翻译"},
+        {"Use Toxikon when you have Addersting charges and are moving","等待翻译"},
+        //#endregion
+        //#region AoE DPS Feature
+        {"No Phlegma to Toxikon Option","等待翻译"},
+        {"Use Toxikon when out of Phlegma charges\nTakes priority over Dyskrasia","等待翻译"},
+        {"Toxikon Distance Option","等待翻译"},
+        {"Use Toxikon when out of Phlemga's Range\nTakes priority over Dyskrasia","等待翻译"},
+        {"No Phlegma to Dyskrasia Option","等待翻译"},
+        {"Use Dyskrasia when out of Phlegma charges","等待翻译"},
+        {"Dyskrasia No-Target Option","等待翻译"},
+        {"Use Dyskrasia when no target is selected","等待翻译"},
+        {"Adds Lucid Dreaming to Phlegma when MP drops below slider value","等待翻译"},
+        //#endregion
+        //#region Diagnosis Simple Single Target Heal
+        {"Diagnosis Simple Single Target Heal Feature","等待翻译"},
+        {"You must target a party member (including yourself) for some features to work.","等待翻译"},
+        {"Eukrasian Diagnosis Option","等待翻译"},
+        {"Soteria Option","等待翻译"},
+        {"Zoe Option","等待翻译"},
+        {"Pepsis Option","等待翻译"},
+        {"Taurochole Option","等待翻译"},
+        {"Haima Option","等待翻译"},
+        {"Rhizomata Option","等待翻译"},
+        {"Adds Rhizomata when Addersgall is 0","等待翻译"},
+        {"Krasis Option","等待翻译"},
+        {"Druochole Option","等待翻译"},
+        //#endregion
+        //#region Sage Simple AoE Heal
+        {"Sage Simple AoE Heal Feature","等待翻译"},
+        {"Customize your AoE healing to your liking","等待翻译"},
+        {"Physis Option","等待翻译"},
+        {"Eukrasian Prognosis Option","等待翻译"},
+        {"Holos Option","等待翻译"},
+        {"Panhaima Option","等待翻译"},
+        {"Ixochole Option","等待翻译"},
+        {"Kerachole Option","等待翻译"},
+        //#endregion
+        //#region Misc Healing
+        {"Rhizomata Feature","等待翻译"},
+        {"Replaces Addersgall skills with Rhizomata when empty.","等待翻译"},
+        {"Druochole to Taurochole Feature","等待翻译"},
+        {"Upgrades Druochole to Taurochole when Taurochole is available","等待翻译"},
+        {"Zoe Buff for Pneuma Feature","等待翻译"},
+        {"Places Zoe ontop of Pneuma when both actions are on cooldown","等待翻译"},
+        //#endregion
+        //#region Utility
+        {"Swiftcast Raise Feature","等待翻译"},
+        {"Changes Swiftcast to Egeiro while Swiftcast is on cooldown.","等待翻译"},
+        {"Soteria to Kardia Feature","等待翻译"},
+        //#endregion
+        //#endregion
+        //#region SAMURAI
+        //#region Overcap Features
+        {"Samurai Overcap Feature","等待翻译"},
+        {"Adds Shinten onto main combo when Kenki is at the selected amount or more","等待翻译"},
+        {"Samurai AoE Overcap Feature","等待翻译"},
+        {"Adds Kyuten onto main AoE combos when Kenki is at the selected amount or more","等待翻译"},
+        //#endregion
+        //#region Main Combo (Gekko) Features
+        {"Replace Gekko with its combo chain.\nIf all sub options are selected will turn into a full one button rotation (Simple Samurai)","等待翻译"},
+        {"Enpi Uptime Feature","等待翻译"},
+        {"Replace Main Combo with Enpi when you are out of range.","等待翻译"},
+        {"Yukikaze Combo on Main Combo","等待翻译"},
+        {"Adds Yukikaze Combo to Main Combo. Will add Yukikaze during Meikyo Shisui as well","等待翻译"},
+        {"Kasha Combo on Main Combo","等待翻译"},
+        {"Adds Kasha Combo to Main Combo. Will add Kasha during Meikyo Shisui as well.","等待翻译"},
+        {"Level 90 Samurai Opener","等待翻译"},
+        {"Adds the Level 90 Opener to the Main Combo.\nOpener triggered by using Meikyo Shisui before combat. If you have any Sen, Hagakure will be used to clear them.\nWill work at any levels of Kenki, requires 2 charges of Meikyo Shisui and all CDs ready. If conditions aren't met it will skip into the regular rotation. \nIf the Opener is interrupted, it will exit the opener via a Goken and a Kaeshi: Goken at the end or via the last Yukikaze. If the latter, CDs will be used on cooldown regardless of burst options.","等待翻译"},
+        {"Filler Combo Feature","等待翻译"},
+        {"Adds selected Filler Combos to Main Combo at the appropriate time.\nChoose Skill Speed tier with Fuka buff below.\nWill disable if you die or if you don't activate the opener.","等待翻译"},
+        //#region CDs on Main Combo
+        {"Collection of CD features on Main Combo.","等待翻译"},
+        {"Ikishoten on Main Combo","等待翻译"},
+        {"Adds Ikishoten to Gekko and Mangetsu combos when at or below 50 Kenki.\nWill dump Kenki at 10 seconds left to allow Ikishoten to be used.","等待翻译"},
+        {"Iaijutsu on Main Combo","等待翻译"},
+        {"Adds Midare: Setsugekka, Higanbana, and Kaeshi: Setsugekka when ready and when you're not moving to Main Combo.","等待翻译"},
+        //#region Ogi Namikiri on Main Combo
+        {"Ogi Namikiri on Main Combo","等待翻译"},
+        {"Ogi Namikiri and Kaeshi: Namikiri when ready and when you're not moving to Main Combo.","等待翻译"},
+        {"Ogi Namikiri Burst Feature","等待翻译"},
+        {"Saves Ogi Namikiri for even minute burst windows.\nIf you don't activate the opener or die, Ogi Namikiri will instead be used on CD.","等待翻译"},
+        //#endregion
+        {"Meikyo Shisui on Main Combo","等待翻译"},
+        {"Adds Meikyo Shisui to Main Combo when off cooldown.","等待翻译"},
+        //#region Meikyo Shisui on Main Combo
+        {"Meikyo Shisui Burst Feature","等待翻译"},
+        {"Saves Meikyo Shisui for burst windows.\nIf you don't activate the opener or die, Meikyo Shisui will instead be used on CD.","等待翻译"},
+        //#endregion
+        {"Shoha on Main Combo","等待翻译"},
+        {"Adds Shoha to Main Combo when there are three meditation stacks.","等待翻译"},
+        {"Senei on Main Combo","等待翻译"},
+        {"Adds Senei to Main Combo when off cooldown and above 25 Kenki.","等待翻译"},
+        {"Senei Burst Feature","等待翻译"},
+        {"Saves Senei for even minute burst windows.\nIf you don't activate the opener or die, Senei will instead be used on CD.","等待翻译"},
+        //#endregion
+        //#endregion
+        //#region Yukikaze/Kasha Combos
+        //#endregion
+        //#region AoE Combos
+        {"Replace Mangetsu with its combo chain.\nIf all sub options are toggled will turn into a full one button AoE rotation.","等待翻译"},
+        {"Oka to Mangetsu Combo","等待翻译"},
+        {"Adds Oka combo after Mangetsu combo loop.\nWill add Oka if needed during Meikyo Shisui.","等待翻译"},
+        {"Iaijutsu on Mangetsu Combo","等待翻译"},
+        {"Adds Tenka Goken and Midare: Setsugekka and their relevant Kaeshi when ready and when you're not moving to Mangetsu combo.","等待翻译"},
+        {"Ogi Namikiri on Mangetsu Combo","等待翻译"},
+        {"Adds Ogi Namikiri and Kaeshi: Namikiri when ready and when you're not moving to Mangetsu combo.","等待翻译"},
+        {"Shoha 2 on Mangetsu Combo","等待翻译"},
+        {"Adds Shoha 2 when you have 3 meditation stacks to Mangetsu combo.","等待翻译"},
+        {"Guren on Mangetsu Combo","等待翻译"},
+        {"Adds Guren when it's off cooldown and you have 25 Kenki to Mangetsu combo.","等待翻译"},
+        {"Oka Two Target Rotation Feature","等待翻译"},
+        {"Adds the Yukikaze Combo, Mangetsu Combo, Senei, Shinten, and Shoha to Oka Combo.\nUsed for two targets only and when Lv86 and above.","等待翻译"},
+        //#endregion
+        //#region CD Features
+        {"Replace Meikyo Shisui with Jinpu, Shifu, and Yukikaze depending on what is needed.","等待翻译"},
+        //#endregion
+        //#region Iaijutsu Features
+        {"Iaijutsu Features","等待翻译"},
+        {"Collection of Iaijutsu Features.","等待翻译"},
+        {"Iaijutsu to Tsubame-Gaeshi","等待翻译"},
+        {"Replace Iaijutsu with  Tsubame-gaeshi when Sen is empty.","等待翻译"},
+        {"Iaijutsu to Ogi Namikiri","等待翻译"},
+        {"Replace Iaijutsu with Ogi Namikiri and Kaeshi: Namikiri when buffed with Ogi Namikiri Ready.","等待翻译"},
+        //#endregion
+        //#region Shinten Features
+        //#endregion
+        //#region Kyuten Features
+        //#endregion
+        //#region Other
+        {"Adds True North on all ST Combos if Meikyo Shisui's buff is on you.","等待翻译"},
+        //#endregion
+        //#endregion
+        //#region SCHOLAR
+        //#region DPS
+        {"Replace Ruin I / Broils or Bios with options below","等待翻译"},
+        {"Adds Lucid Dreaming when MP drops below slider value:","等待翻译"},
+        {"Chain Stratagem Weave Option","等待翻译"},
+        {"Adds Chain Stratagem on Cooldown with overlap protection","等待翻译"},
+        {"Aetherflow Weave Option","等待翻译"},
+        {"Use Aetherflow when out of aetherflow stacks","等待翻译"},
+        {"Ruin II Moving Option","等待翻译"},
+        {"Use Ruin 2 when you have to move","等待翻译"},
+        {"Bio / Biolysis Option","等待翻译"},
+        //#endregion
+        //#region Healing
+        {"Fey Blessing to Seraph's Consolation Feature","等待翻译"},
+        //#endregion
+        //#region Utilities
+        {"Aetherflow Helper Feature","等待翻译"},
+        {"Change Aetherflow-using skills to Aetherflow, Recitation, or Dissipation as selected","等待翻译"},
+        {"Recitation Option","等待翻译"},
+        {"Prioritizes Recitation usage on Excogitation or Indominability","等待翻译"},
+        {"On Excogitation Option","等待翻译"},
+        {"On Indominability Option","等待翻译"},
+        {"Dissipation Option","等待翻译"},
+        {"If Aetherflow itself is on cooldown, show Dissipation instead","等待翻译"},
+        {"Swiftcast Raise Combo Feature","等待翻译"},
+        {"Changes Swiftcast to Resurrection while Swiftcast is on cooldown","等待翻译"},
+        {"Change all fairy actions into Fairy Summons if you do not have a fairy summoned.","等待翻译"},
+        //#endregion
+        //#endregion
+        //#region SUMMONER
+        {"Enable Single Target Combo Features","等待翻译"},
+        {"Enables features tied to Ruin, or Ruin II.\nIf all sub options are toggled will turn into a full one button rotation (Simple Summoner)\nRuin III is kept untouched for mobility.","等待翻译"},
+        {"Enable AoE Combo Features","等待翻译"},
+        {"Enables features tied to Tridisaster.\nIf all sub options are toggled will turn into a full one button rotation (Simple AOE)","等待翻译"},
+        {"Demi Attacks on Main Combo","等待翻译"},
+        {"Adds Deathflare/Ahk Morn/Revelation to the Main Combo.","等待翻译"},
+        {"AoE Demi Attacks on AoE Combo","等待翻译"},
+        {"Adds Deathflare/Ahk Morn/Revelation to the AOE Combo.","等待翻译"},
+        {"Gemshine on Main Combo","等待翻译"},
+        {"Adds Egi Attacks (Gemshine) to the Main Combo.","等待翻译"},
+        {"Adds Slipstream on RuinI/Ruin II/Tri-disaster.","等待翻译"},
+        {"Adds Crimson Cyclone/Crimson Strike on RuinI/Ruin II/Tri-disaster.","等待翻译"},
+        {"Adds Mountain Buster on RuinI/Ruin II/Tri-disaster.","等待翻译"},
+        {"Change Fester into Energy Drain when out of Aetherflow stacks.","等待翻译"},
+        {"Reminds you to summon Carbuncle by replacing most actions with Summon Carbuncle.","等待翻译"},
+        {"Ruin 4 on Main Combo","等待翻译"},
+        {"Adds Ruin 4 to the Main Combo when there are currently no summons active.","等待翻译"},
+        {"Adds Ruin4 on AoE Combo when there are currently no summons active.","等待翻译"},
+        {"Ruin 4 Fester Option","等待翻译"},
+        {"Changes Fester to Ruin 4 when out of Aetherflow stacks, Energy Drain is on cooldown, and Ruin 4 is up.","等待翻译"},
+        {"Energy Drain/Fester on Main Combo","等待翻译"},
+        {"Adds ED/Fester to the Main Combo. Will use on cooldown.","等待翻译"},
+        {"Egi Summon Order","等待翻译"},
+        {"Sets the order you summon egis.","等待翻译"},
+        {"Energy Siphon/Painflare on AoE Combo","等待翻译"},
+        {"Adds Energy Siphon/Painflare to the AoE Combo","等待翻译"},
+        {"Searing Light on Single Target/AoE combo","等待翻译"},
+        {"Adds Searing Light to the Single target, and AoE combos. Will be used on cooldown.","等待翻译"},
+        {"Searing Light Burst Option","等待翻译"},
+        {"Casts Searing Light only during Bahamut/Phoenix Phase.\nChoose which phase to burst in under 'Burst Phase Choice' option.\nNot recommended for SpS Builds.","等待翻译"},
+        {"Demi Summons on Main Combo","等待翻译"},
+        {"Adds Demi Summons to the Main Combo.","等待翻译"},
+        {"Demi Summons AoE Combo","等待翻译"},
+        {"Adds Demi Summons to the AoE Combo.","等待翻译"},
+        {"Swiftcast Egi Ability Option","等待翻译"},
+        {"Swiftcasts during the selected Primal Summon.","等待翻译"},
+        {"Astral Flow/Enkindle on Bahamut/Phoenix","等待翻译"},
+        {"Adds Astral Flow and Enkindle to Bahamut/Phoenix.","等待翻译"},
+        {"Pooled oGCDs Feature","等待翻译"},
+        {"Pools damage OGCDs to use under Searing Light and in Bahamut/Phoenix Phase.\nChoose which phase to burst in under 'Burst Phase Choice' option.","等待翻译"},
+        {"Precious Brilliance on AoE Combo","等待翻译"},
+        {"Adds Egi attacks (Precious Brilliance) to the AoE Combo.","等待翻译"},
+        {"Changes Swiftcast to Raise when on cooldown","等待翻译"},
+        {"Rekindle on Main Combo option","等待翻译"},
+        {"Adds Rekindle to the Main Combo.","等待翻译"},
+        {"Rekindle on AoE Combo option","等待翻译"},
+        {"Adds Rekindle to the AoE Combo.","等待翻译"},
+        {"Ruin III Mobility Feature","等待翻译"},
+        {"Puts Ruin III on Ruin IV when you don't have Further Ruin.","等待翻译"},
+        {"Adds Lucid dreaming to the Main Combo when below set MP value.","等待翻译"},
+        {"Burst Phase Choice","等待翻译"},
+        {"Chooses which phase to burst in for all relevant burst features. Fester and Searing Light will only be used during Bahamut/Phoenix windows.","等待翻译"},
+        {"Egi Abilities on Egi Summons","等待翻译"},
+        {"Adds Egi Abilities (Astral Flow) to Egi Summons when ready.\nEgi Abilities will appear on their respective Egi Summon Ability, as well as, Titan.","等待翻译"},
+        {"Egi and Demi Summon features","等待翻译"},
+        {"Features related to changing Egi and Demi summons.\nCollapsing this category does NOT disable the features inside.","等待翻译"},
+        {"Single target only Searing Light Option","等待翻译"},
+        {"Only use Searing Light on Single Target combo.","等待翻译"},
+        {"Single target only Pooled oGCD Option","等待翻译"},
+        {"Only use damage oGCDs on single target combo.","等待翻译"},
+        {"Single target only Swiftcast Egis Option","等待翻译"},
+        {"Only use Swiftcast on single target combo.","等待翻译"},
+        {"Ruin 4 Painflare Option","等待翻译"},
+        {"Changes Painflare to Ruin 4 when out of Aetherflow stacks, Energy Siphon is on cooldown, and Ruin 4 is up.","等待翻译"},
+        //#endregion
+        //#region WARRIOR
+        {"Adds Fell Cleave to main combo when gauge is at 50 or more and adds Decimate to the AoE combo .\nWill use Inner Chaos/Chaotic Cyclone if Infuriate is used and Fell Cleave/Steel Cyclone during Inner Release.\nWill begin pooling resources when Inner Release is under 30s","等待翻译"},
+        {"Infuriate AOE Feature","等待翻译"},
+        {"Adds Infuriate to AoE Combo when gauge is below 50 and not under Inner Release.","等待翻译"},
+        {"Inner Release AoE Feature","等待翻译"},
+        {"Adds Inner Release to Storm's Path Combo.","等待翻译"},
+        {"Use Inner Release Stacks First","等待翻译"},
+        {"Prevents the use of Infuriate while you have Inner Release stacks available.","等待翻译"},
+        {"Primal Rend Melee Feature","等待翻译"},
+        {"Uses Primal Rend when in the target's target ring (1 yalm) and closer otherwise will use it when buff is less than 10 seconds.","等待翻译"},
+        {"Melee Onslaught Option","等待翻译"},
+        {"Uses Onslaught when under Surging Tempest and in the target ring (1 yalm).\nWill use as many stacks as selected in the above slider.","等待翻译"},
+        //#endregion
+        //#region WHITE MAGE
+        {"CDs on Glare/Stone","等待翻译"},
+        {"Collection of CDs and spell features on Glare/Stone.","等待翻译"},
+        {"WHM Alternative Raise Feature","等待翻译"},
+        {"Adds DoT to Glare/Stone","等待翻译"},
+        {"Adds DoT to DPS feature and refreshes it with 3 seconds remaining.","等待翻译"},
+        {"Lily Overcap Protection","等待翻译"},
+        {"Adds Afflatus Rapture (AoE Heal) to glare when at 3 lilies.","等待翻译"},
+        {"Adds Afflatus Misery to Glare/Stone","等待翻译"},
+        {"Adds Afflatus Misery to Glare when Blood Lily is in full bloom.","等待翻译"},
+        {"oGCD Heals/Shields","等待翻译"},
+        {"Adds oGCD Healing and Shields to Cure II","等待翻译"},
+        {"Use Tetragrammaton on oGCD.","等待翻译"},
+        {"Only shows Tetragrammaton during oGCD weave window when HP conditions are met.","等待翻译"},
+        {"Use Tetragrammaton on GCD.","等待翻译"},
+        {"Shows Tetragrammaton when HP conditions are met.","等待翻译"},
+        {"Use Devine Benison on oGCD","等待翻译"},
+        {"Only shows Devine Benison during oGCD weave window when target is not already under the effect.","等待翻译"},
+        {"Use Devine Benison on GCD","等待翻译"},
+        {"Shows Devine Benison when target is not already under the effect.","等待翻译"},
+        {"No Swift Opener Option","等待翻译"},
+        {"Delays all oGCDs until after 3rd Glare 3 cast.\n>> Glare III ONLY <<","等待翻译"},
+        {"Prioritize oGCD Heals/Shields on Cure II when available.","等待翻译"},
+        {"Displays oGCD Heals/Shields over Afflatus.\n(Only applies to GCD options for Tetragrammaton and Divine Benison)","等待翻译"},
+        {"CDs on Holy/Holy3","等待翻译"},
+        {"Collection of CDs and spell features on Holy/Holy3.","等待翻译"},
+        {"Adds Lucid dreaming to the AoE DPS feature when below set MP value.","等待翻译"},
+        {"Adds Assize as oGCD to Holy/Holy3","等待翻译"},
+        {"Adds Afflatus Rapture (AoE Heal) to Holy/Holy3 when at 3 lilies.","等待翻译"},
+        {"Adds Afflatus Misery to Holy/Holy3","等待翻译"},
+        {"Adds Afflatus Misery to Holy/Holy3 when Blood Lily is in full bloom.","等待翻译"},
+        //#endregion
+        //#region DOH
+        //#endregion
+        //#region DOL
+        //#endregion
+        //#endregion
+        //#region PvP Combos
+        //#region ASTROLOGIAN
+        //#endregion
+        //#region MACHINIST
+        {"Burst Mode","等待翻译"},
+        {"Turns Blast Charge into an all-in-one damage button.","等待翻译"},
+        {"Alternate Drill Mode","等待翻译"},
+        {"Saves drill for use after wildfire.","等待翻译"},
+        {"Alternate Analysis Mode","等待翻译"},
+        {"Uses analysis with Air Anchor instead of Chain Saw.","等待翻译"},
+        //#endregion
+        //#region BARD
+        {"Turns Powerful Shot into an all-in-one damage button.","等待翻译"},
+        //#endregion
+        //#region RED MAGE
+        {"Turns Verstone/Verfire into an all-in-one damage button.","等待翻译"},
+        //#endregion
+        //#region WARRIOR
+        {"Turns Heavy Swing into an all-in-one damage button.","等待翻译"},
+        {"Bloodwhetting Option","等待翻译"},
+        {"Allows usage of bloodwhetting anytime, not just inbetween GCDs.","等待翻译"},
+        {"Blota Option","等待翻译"},
+        {"Removes blota from main combo if Primal Rend has 5 seconds or less on its cooldown.","等待翻译"},
+        //#endregion
+        //#region NINJA
+        {"Turns Aeolian Edge Combo into an all-in-one damage button.","等待翻译"},
+        {"AoE Burst Mode","等待翻译"},
+        {"Turns Fuma Shuriken into an all-in-one AoE damage button.","等待翻译"},
+        //#endregion
+        //#region SAGE
+        {"Turns Dosis III into an all-in-one damage button.","等待翻译"},
+        //#endregion
+        //#region DANCER
+        {"Turns Fountain Combo into an all-in-one damage button.","等待翻译"},
+        {"Honing Dance Option","等待翻译"},
+        {"Adds Honing Dance to the main combo when in melee range (for pack pushing, respects global offset).\nThis option prevents early use of Honing Ovation!\nKeep Honing Dance bound to another key if you want to end early.","等待翻译"},
+        {"Curing Waltz Option","等待翻译"},
+        {"Adds Curing Waltz to the main combo when available, and your HP is at or below the set percentage.","等待翻译"},
+        //#endregion
+        //#region SAMURAI
+        //#region Burst Mode
+        {"Adds Meikyo Shisui, Midare:Setsugekka, Ogi Namikiri, Kaeshi: Namikiri and Soten to Meikyo Shisui.\nWill only cast Midare and Ogi Namikiri when you're not moving.\nWill not use if target is guarding.","等待翻译"},
+        {"Add Chiten","等待翻译"},
+        {"Adds Chiten to the Burst Mode when in combat and HP is below 95%.","等待翻译"},
+        {"Add Mineuchi","等待翻译"},
+        {"Adds Mineuchi to the Burst Mode.","等待翻译"},
+        {"Burst Mode on Kasha Combo","等待翻译"},
+        {"Adds Burst Mode to Kasha Combo instead.","等待翻译"},
+        //#endregion
+        //#region Kasha Features
+        {"PvP Features for Kasha Combo","等待翻译"},
+        {"Collection of Features for Kasha Combo.","等待翻译"},
+        {"Soten Gap Closer Option","等待翻译"},
+        {"Adds Soten when outside melee range to the Kasha Combo.","等待翻译"},
+        {"AoE Melee Protection","等待翻译"},
+        {"Makes the AOE combos unusable if not in melee range of target.","等待翻译"},
+        //#endregion
+        //#endregion
+        //#region BLACK MAGE
+        {"Turns Fire and Blizzard into all-in-one damage buttons.","等待翻译"},
+        {"Add Night Wing","等待翻译"},
+        {"Adds Night Wing to the Burst Mode","等待翻译"},
+        {"Add Aetherial Manipulation","等待翻译"},
+        {"Uses Aetherial Manipulation to gap close if Burst is off cooldown.","等待翻译"},
+        //#endregion
+        //#region REAPER
+        {"Turns Slice Combo into an all-in-one damage button.\nAdds Soul Slice to the main combo.","等待翻译"},
+        {"Grim Swathe Option","等待翻译"},
+        {"Weaves Grim Swathe onto the main combo when available.","等待翻译"},
+        {"Death Warrant Option","等待翻译"},
+        {"Adds Death Warrant onto the main combo when Plentiful Harvest is ready to use, or when Plentiful Harvest's cooldown is longer than Death Warrant's.\nRespects Immortal Sacrifice Pooling Option.","等待翻译"},
+        {"Plentiful Harvest Opener Option","等待翻译"},
+        {"Starts combat with Plentiful Harvest to immediately begin Limit Break generation.","等待翻译"},
+        {"Plentiful Harvest + Immortal Sacrifice Pooling Option - BETA","等待翻译"},
+        {"Pools stacks of Immortal Sacrifice before using Plentiful Harvest.\nAlso holds Plentiful Harvest if Death Warrant is on cooldown.\nSet the value to 3 or below to use Plentiful as soon as it's suitable.","等待翻译"},
+        {"Enshrouded Burst Option","等待翻译"},
+        {"Puts Lemure's Slice on the main combo during Enshrouded Burst Phase.\nContains burst options.","等待翻译"},
+        //#region RPR Enshrouded Option
+        {"Enshrouded Death Warrant Option","等待翻译"},
+        {"Adds Death Warrant onto the main combo during the Enshroud burst when available.","等待翻译"},
+        {"Adds Communio onto the main combo when you have 1 stack of Enshroud remaining.\nWill not trigger if you are moving.","等待翻译"},
+        //#endregion
+        {"Ranged Harvest Moon Option","等待翻译"},
+        {"Puts Harvest Moon onto the main combo when you're out of melee range, the GCD is not rolling and it is available for use.","等待翻译"},
+        {"Adds Arcane Circle to the main combo when under a set HP perecentage.","等待翻译"},
+        //#endregion
+        //#region MONK
+        {"Turns Phantom Rush Combo into all-in-one damage button.","等待翻译"},
+        {"Add Thunderclap","等待翻译"},
+        {"Adds Thunderclap to jump to Enemy Target when not buffed with Wind Resonance.","等待翻译"},
+        {"Add Riddle of Earth","等待翻译"},
+        {"Adds Riddle of Earth and Earth's Reply to the Burst Mode when in combat.","等待翻译"},
+        //#endregion
+        //#region DARK KNIGHT
+        //#endregion
+        //#region DRAGOON
+        //#endregion
+        //#region GUNBREAKER
+        //#endregion
+        //#region PALADIN
+        //#endregion
+        //#region SCHOLAR
+        //#endregion
+        //#region SUMMONER
+        //#endregion
+        //#region WARRIOR
+        //#endregion
+        //#region WHITE MAGE
+        //#endregion
+        //#endregion
+        //#region PvPGlobals // Pending insertion into above region
+        {"Emergency Heals","等待翻译"},
+        {"Uses Recuperate when your HP is under a certain threshold and you have the MP.","等待翻译"},
+        {"Emergency Guard","等待翻译"},
+        {"Uses Guard when your HP is under a certain threshold.","等待翻译"},
+        {"Quick Purify","等待翻译"},
+        {"Uses Purify when afflicted with any selected debuff.","等待翻译"},
+        {"Prevent Mash Cancelling","等待翻译"},
+        {"Stops you cancelling your guard if you're mashing buttons","等待翻译"},
+        //#endregio
+        
+
+        #endregion
     };
 }

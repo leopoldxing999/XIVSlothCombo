@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Dalamud.Logging;
 using XIVSlothCombo.Combos.PvE;
+using XIVSlothCombo.Services;
 
 namespace XIVSlothCombo.Attributes
 {
@@ -19,59 +20,62 @@ namespace XIVSlothCombo.Attributes
         /// <param name="memeDescription"> Meme description. </param>
         internal CustomComboInfoAttribute(string fancyName, string description, byte jobID, [CallerLineNumber] int order = 0, string memeName = "", string memeDescription = "")
         {
-            Dictionary<string, string> db = Translatezh_CN.db;
-            Dictionary<string, string> db1 = Translatezh_CN.db1;
 
-            if (db.ContainsKey(fancyName))
+            var 原始fancyName = fancyName;
+            var 原始description = description;
+
+            // if (Service.Configuration != null)
             {
-                fancyName = db[fancyName];
-            }
-            else
-            {
-                if (!db1.ContainsKey(fancyName))
+                // if (Service.Configuration.Language == "zh-CN")
                 {
-                    db1.Add(fancyName,"");
-                    PluginLog.Information($"没有适配6:{JobIDToName(jobID)} {{\"{fancyName}\"}},{{\"\"}},");   
+                    Dictionary<string, string> db = Translatezh_CN.db;
+                    // Dictionary<string, string> db1 = Translatezh_CN.db1;
+
+                    if (db.ContainsKey(fancyName))
+                    {
+                        fancyName = db[fancyName];
+                    }
+          
+
+                    if (db.ContainsKey(description))
+                    {
+                        description = db[description];
+                    }
+             
+                    
+                    try
+                    {
+                        var replaceOption = fancyName.Replace(" Option", "");
+
+                        if (db.ContainsKey($"{replaceOption}"))
+                        {
+                            fancyName = db[$"{replaceOption}"];
+                        }
+
+                        if (db.ContainsKey($"{replaceOption}"))
+                        {
+                            description = db[$"{replaceOption}"];
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        // PluginLog.Information($"log fancyName:{fancyName} description:{description} {e.Message}");
+
+                        // Console.WriteLine(e);
+                        // throw;
+                    }
                 }
- 
+            }
+            if (fancyName == "等待翻译")
+            {
+                fancyName = 原始fancyName;
+            }
+            
+            if (description == "等待翻译")
+            {
+                description = 原始description;
             }
 
-
-            if (db.ContainsKey(description))
-            {
-                description = db[description];
-            }else
-            {
-                if (!db1.ContainsKey(description))
-                {
-                    db1.Add(description,"");
-                    PluginLog.Information($"没有适配6:{JobIDToName(jobID)} {{\"{description}\"}},{{\"\"}},");     
-                }
-            }
-
-
-
-            try
-            {
-                var replaceOption = fancyName.Replace(" Option", "");
-
-                if (db.ContainsKey($"{replaceOption}"))
-                {
-                    fancyName = db[$"{replaceOption}"];
-                }
-
-                if (db.ContainsKey($"{replaceOption}"))
-                {
-                    description = db[$"{replaceOption}"];
-                }
-            }
-            catch (Exception e)
-            {
-                PluginLog.Information($"log fancyName:{fancyName} description:{description} {e.Message}");
-
-                // Console.WriteLine(e);
-                // throw;
-            }
 
 
             FancyName = fancyName;
@@ -109,7 +113,7 @@ namespace XIVSlothCombo.Attributes
         private static string JobIDToName(byte key) =>
             key switch
             {
-                0 => "Adventurer",
+                0 => "冒险者(通用设置)",
                 1 => "Gladiator",
                 2 => "Pugilist",
                 3 => "Marauder",
@@ -152,7 +156,7 @@ namespace XIVSlothCombo.Attributes
                 40 => "贤者",
                 99 => "Global",
                 DOH.JobID => "Disciples of the Hand",
-                DoL.JobID => "Disciples of the Land",
+                DoL.JobID => "大地使者",
                 _ => "Unknown",
             };
 
@@ -202,7 +206,7 @@ namespace XIVSlothCombo.Attributes
                 40 => "贤者",
                 99 => "Global",
                 DOH.JobID => "Disciples of the Hand",
-                DoL.JobID => "Disciples of the Land",
+                DoL.JobID => "大地使者",
                 _ => "Unknown",
             };
     }
