@@ -116,7 +116,7 @@ namespace XIVSlothCombo.Window.Tabs
 
             var motd = Service.Configuration.HideMessageOfTheDay;
 
-            if (ImGui.Checkbox("Hide Message of the Day", ref motd))
+            if (ImGui.Checkbox("(隐藏登录时候的提示)Hide Message of the Day", ref motd))
             {
                 Service.Configuration.HideMessageOfTheDay = motd;
                 Service.Configuration.Save();
