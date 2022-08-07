@@ -1,9 +1,10 @@
-﻿using Dalamud.Interface.Colors;
-using Dalamud.Utility;
-using ImGuiNET;
-using System;
+﻿using System;
 using System.Linq;
 using System.Numerics;
+using Dalamud.Game.ClientState.Objects.SubKinds;
+using Dalamud.Interface.Colors;
+using Dalamud.Utility;
+using ImGuiNET;
 using XIVSlothCombo.Combos;
 using XIVSlothCombo.Combos.PvE;
 using XIVSlothCombo.Combos.PvP;
@@ -23,9 +24,12 @@ namespace XIVSlothCombo.Window.Functions
         /// <param name="sliderIncrement"> How much you want the user to increment the slider by. Uses SliderIncrements as a preset. </param>
         public static void DrawSliderInt(int minValue, int maxValue, string config, string sliderDescription, float itemWidth = 150, uint sliderIncrement = SliderIncrements.Ones)
         {
-            var output = PluginConfiguration.GetCustomIntValue(config, minValue);
-            var inputChanged = false;
+            int output = PluginConfiguration.GetCustomIntValue(config, minValue);
+            bool inputChanged = false;
             ImGui.PushItemWidth(itemWidth);
+            ImGui.SameLine();
+            ImGui.Dummy(new Vector2(21, 0));
+            ImGui.SameLine();
             inputChanged |= ImGui.SliderInt($"{sliderDescription}###{config}", ref output, minValue, maxValue);
 
             if (inputChanged)
@@ -52,9 +56,12 @@ namespace XIVSlothCombo.Window.Functions
         /// <param name="itemWidth"> How long the slider should be. </param>
         public static void DrawSliderFloat(float minValue, float maxValue, string config, string sliderDescription, float itemWidth = 150)
         {
-            var output = PluginConfiguration.GetCustomFloatValue(config, minValue);
-            var inputChanged = false;
+            float output = PluginConfiguration.GetCustomFloatValue(config, minValue);
+            bool inputChanged = false;
             ImGui.PushItemWidth(itemWidth);
+            ImGui.SameLine();
+            ImGui.Dummy(new Vector2(21, 0));
+            ImGui.SameLine();
             inputChanged |= ImGui.SliderFloat($"{sliderDescription}###{config}", ref output, minValue, maxValue);
 
             if (inputChanged)
@@ -74,9 +81,12 @@ namespace XIVSlothCombo.Window.Functions
         /// <param name="itemWidth"> How long the slider should be. </param>
         public static void DrawRoundedSliderFloat(float minValue, float maxValue, string config, string sliderDescription, float itemWidth = 150)
         {
-            var output = PluginConfiguration.GetCustomFloatValue(config, minValue);
-            var inputChanged = false;
+            float output = PluginConfiguration.GetCustomFloatValue(config, minValue);
+            bool inputChanged = false;
             ImGui.PushItemWidth(itemWidth);
+            ImGui.SameLine();
+            ImGui.Dummy(new Vector2(21, 0));
+            ImGui.SameLine();
             inputChanged |= ImGui.SliderFloat($"{sliderDescription}###{config}", ref output, minValue, maxValue, "%.1f");
 
             if (inputChanged)
@@ -99,9 +109,12 @@ namespace XIVSlothCombo.Window.Functions
         {
             ImGui.Indent();
             if (descriptionColor == new Vector4()) descriptionColor = ImGuiColors.DalamudYellow;
-            var output = PluginConfiguration.GetCustomIntValue(config, outputValue);
+            int output = PluginConfiguration.GetCustomIntValue(config, outputValue);
             ImGui.PushItemWidth(itemWidth);
-            var enabled = output == outputValue;
+            ImGui.SameLine();
+            ImGui.Dummy(new Vector2(21, 0));
+            ImGui.SameLine();
+            bool enabled = output == outputValue;
 
             if (ImGui.Checkbox($"{checkBoxName}###{config}{outputValue}", ref enabled))
             {
@@ -110,11 +123,12 @@ namespace XIVSlothCombo.Window.Functions
             }
 
             if (!checkboxDescription.IsNullOrEmpty())
-            { 
+            {
                 ImGui.PushStyleColor(ImGuiCol.Text, descriptionColor);
                 ImGui.TextWrapped(checkboxDescription);
                 ImGui.PopStyleColor();
             }
+
             ImGui.Unindent();
             ImGui.Spacing();
         }
@@ -130,12 +144,12 @@ namespace XIVSlothCombo.Window.Functions
         {
             ImGui.Indent();
             if (descriptionColor == new Vector4()) descriptionColor = ImGuiColors.DalamudYellow;
-            var output = PluginConfiguration.GetCustomIntValue(config);
+            int output = PluginConfiguration.GetCustomIntValue(config);
             ImGui.PushItemWidth(itemWidth);
             ImGui.SameLine();
             ImGui.Dummy(new Vector2(21, 0));
             ImGui.SameLine();
-            var enabled = output == outputValue;
+            bool enabled = output == outputValue;
 
             ImGui.PushStyleColor(ImGuiCol.Text, descriptionColor);
             if (ImGui.Checkbox($"{checkBoxName}###{config}{outputValue}", ref enabled))
@@ -150,6 +164,46 @@ namespace XIVSlothCombo.Window.Functions
                 ImGui.TextUnformatted(checkboxDescription);
                 ImGui.EndTooltip();
             }
+
+            ImGui.PopStyleColor();
+
+            ImGui.Unindent();
+        }
+
+        /// <summary> Draws multi choice checkboxes in a horizontal configuration. </summary>
+        /// <param name="config"> The config ID. </param>
+        /// <param name="checkBoxName"> The name of the feature. </param>
+        /// <param name="checkboxDescription"> The description of the feature. </param>
+        /// <param name="totalChoices"> The total number of options for the feature </param>
+        /// /// <param name="choice"> If the user ticks this box, this is the value the config will be set to. </param>
+        /// <param name="itemWidth"></param>
+        /// <param name="descriptionColor"></param>
+        public static void DrawHorizontalMultiChoice(string config, string checkBoxName, string checkboxDescription, int totalChoices, int choice, float itemWidth = 150, Vector4 descriptionColor = new Vector4())
+        {
+            ImGui.Indent();
+            if (descriptionColor == new Vector4()) descriptionColor = ImGuiColors.DalamudWhite;
+            ImGui.PushItemWidth(itemWidth);
+            ImGui.SameLine();
+            ImGui.Dummy(new Vector2(21, 0));
+            ImGui.SameLine(); 
+            bool[]? values = PluginConfiguration.GetCustomBoolArrayValue(config);
+
+            if (values.Length == 0) Array.Resize(ref values, totalChoices);
+
+            ImGui.PushStyleColor(ImGuiCol.Text, descriptionColor);
+            if (ImGui.Checkbox($"{checkBoxName}###{config}{choice}", ref values[choice]))
+            {
+                PluginConfiguration.SetCustomBoolArrayValue(config, values);
+                Service.Configuration.Save();
+            }
+            
+            if (!checkboxDescription.IsNullOrEmpty() && ImGui.IsItemHovered())
+            {
+                ImGui.BeginTooltip();
+                ImGui.TextUnformatted(checkboxDescription);
+                ImGui.EndTooltip();
+            }
+            
             ImGui.PopStyleColor();
 
             ImGui.Unindent();
@@ -157,11 +211,11 @@ namespace XIVSlothCombo.Window.Functions
 
         public static void DrawPvPStatusMultiChoice(string config)
         {
-            var values = PluginConfiguration.GetCustomBoolArrayValue(config);
+            bool[]? values = PluginConfiguration.GetCustomBoolArrayValue(config);
 
             ImGui.Columns(7, $"{config}", false);
 
-            if (values.Length == 0) Array.Resize<bool>(ref values, 7);
+            if (values.Length == 0) Array.Resize(ref values, 7);
 
             ImGui.PushStyleColor(ImGuiCol.Text, ImGuiColors.ParsedPink);
 
@@ -226,11 +280,11 @@ namespace XIVSlothCombo.Window.Functions
 
         public static void DrawRoleGridMultiChoice(string config)
         {
-            var values = PluginConfiguration.GetCustomBoolArrayValue(config);
+            bool[]? values = PluginConfiguration.GetCustomBoolArrayValue(config);
 
             ImGui.Columns(5, $"{config}", false);
 
-            if (values.Length == 0) Array.Resize<bool>(ref values, 5);
+            if (values.Length == 0) Array.Resize(ref values, 5);
 
             ImGui.PushStyleColor(ImGuiCol.Text, ImGuiColors.TankBlue);
 
@@ -287,7 +341,7 @@ namespace XIVSlothCombo.Window.Functions
 
         public static void DrawRoleGridSingleChoice(string config)
         {
-            var value = PluginConfiguration.GetCustomIntValue(config);
+            int value = PluginConfiguration.GetCustomIntValue(config);
             bool[] values = new bool[20];
 
             for (int i = 0; i <= 4; i++)
@@ -299,7 +353,7 @@ namespace XIVSlothCombo.Window.Functions
 
             ImGui.Columns(5, $"{config}", false);
 
-            if (values.Length == 0) Array.Resize<bool>(ref values, 5);
+            if (values.Length == 0) Array.Resize(ref values, 5);
 
             ImGui.PushStyleColor(ImGuiCol.Text, ImGuiColors.TankBlue);
 
@@ -356,11 +410,11 @@ namespace XIVSlothCombo.Window.Functions
 
         public static void DrawJobGridMultiChoice(string config)
         {
-            var values = PluginConfiguration.GetCustomBoolArrayValue(config);
+            bool[]? values = PluginConfiguration.GetCustomBoolArrayValue(config);
 
             ImGui.Columns(5, $"{config}", false);
 
-            if (values.Length == 0) Array.Resize<bool>(ref values, 20);
+            if (values.Length == 0) Array.Resize(ref values, 20);
 
             ImGui.PushStyleColor(ImGuiCol.Text, ImGuiColors.TankBlue);
 
@@ -369,6 +423,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Warrior###{config}1", ref values[1]))
@@ -376,6 +431,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Dark Knight###{config}2", ref values[2]))
@@ -383,6 +439,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Gunbreaker###{config}3", ref values[3]))
@@ -390,6 +447,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
             ImGui.NextColumn();
 
@@ -401,6 +459,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Scholar###{config}5", ref values[5]))
@@ -408,6 +467,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Astrologian###{config}6", ref values[6]))
@@ -415,6 +475,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Sage###{config}7", ref values[7]))
@@ -422,6 +483,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
             ImGui.NextColumn();
 
@@ -433,6 +495,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Dragoon###{config}9", ref values[9]))
@@ -440,6 +503,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Ninja###{config}10", ref values[10]))
@@ -447,6 +511,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Samurai###{config}11", ref values[11]))
@@ -454,6 +519,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Reaper###{config}12", ref values[12]))
@@ -461,6 +527,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.PopStyleColor();
             ImGui.PushStyleColor(ImGuiCol.Text, ImGuiColors.DalamudYellow);
             ImGui.NextColumn();
@@ -470,6 +537,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Machinist###{config}14", ref values[14]))
@@ -477,6 +545,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Dancer###{config}15", ref values[15]))
@@ -484,6 +553,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
             ImGui.NextColumn();
             ImGui.NextColumn();
@@ -496,6 +566,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Summoner###{config}17", ref values[17]))
@@ -503,6 +574,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Red Mage###{config}18", ref values[18]))
@@ -510,6 +582,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Blue Mage###{config}19", ref values[19]))
@@ -517,6 +590,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
             }
+
             ImGui.PopStyleColor();
             ImGui.NextColumn();
             ImGui.Columns(1);
@@ -525,7 +599,7 @@ namespace XIVSlothCombo.Window.Functions
 
         public static void DrawJobGridSingleChoice(string config)
         {
-            var value = PluginConfiguration.GetCustomIntValue(config);
+            int value = PluginConfiguration.GetCustomIntValue(config);
             bool[] values = new bool[20];
 
             for (int i = 0; i <= 19; i++)
@@ -686,6 +760,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomIntValue(config, 16);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Summoner###{config}17", ref values[17]))
@@ -693,6 +768,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomIntValue(config, 17);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Red Mage###{config}18", ref values[18]))
@@ -700,6 +776,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomIntValue(config, 18);
                 Service.Configuration.Save();
             }
+
             ImGui.NextColumn();
 
             if (ImGui.Checkbox($"Blue Mage###{config}19", ref values[19]))
@@ -707,6 +784,7 @@ namespace XIVSlothCombo.Window.Functions
                 PluginConfiguration.SetCustomIntValue(config, 19);
                 Service.Configuration.Save();
             }
+
             ImGui.PopStyleColor();
             ImGui.NextColumn();
             ImGui.Columns(1);
@@ -768,7 +846,7 @@ namespace XIVSlothCombo.Window.Functions
             if (preset == CustomComboPreset.BLM_AoE_Simple_Foul)
                 UserConfig.DrawSliderInt(0, 2, BLM.Config.BLM_PolyglotsStored, "Number of Polyglot charges to store.\n(2 = Only use Polyglot with Manafont)");
 
-            if (preset == CustomComboPreset.BLM_SimpleMode || preset == CustomComboPreset.BLM_Simple_Transpose)
+            if (preset is CustomComboPreset.BLM_SimpleMode or CustomComboPreset.BLM_Simple_Transpose)
                 UserConfig.DrawRoundedSliderFloat(3.0f, 8.0f, BLM.Config.BLM_AstralFireRefresh, "Seconds before refreshing Astral Fire.\n(6s = Recommended)");
 
             if (preset == CustomComboPreset.BLM_Simple_CastMovement)
@@ -794,8 +872,8 @@ namespace XIVSlothCombo.Window.Functions
 
             if (preset == CustomComboPreset.DNC_DanceComboReplacer)
             {
-                var actions = Service.Configuration.DancerDanceCompatActionIDs.Cast<int>().ToArray();
-                var inputChanged = false;
+                int[]? actions = Service.Configuration.DancerDanceCompatActionIDs.Cast<int>().ToArray();
+                bool inputChanged = false;
 
                 inputChanged |= ImGui.InputInt("Emboite (Red) ActionID", ref actions[0], 0);
                 inputChanged |= ImGui.InputInt("Entrechat (Blue) ActionID", ref actions[1], 0);
@@ -900,7 +978,7 @@ namespace XIVSlothCombo.Window.Functions
 
             if (preset == CustomComboPreset.NIN_Simple_Mudras)
             {
-                var mudrapath = Service.Configuration.MudraPathSelection;
+                int mudrapath = Service.Configuration.MudraPathSelection;
                 bool path1 = mudrapath == 1;
                 bool path2 = mudrapath == 2;
 
@@ -1001,6 +1079,15 @@ namespace XIVSlothCombo.Window.Functions
                 UserConfig.DrawSliderInt(0, 5, RPR.Config.RPR_SoDThreshold, "Set a HP% Threshold for when SoD will not be automatically applied to the target.", 150, SliderIncrements.Ones);
             }
 
+            if (preset == CustomComboPreset.RPR_Soulsow && enabled)
+            {
+                UserConfig.DrawHorizontalMultiChoice(RPR.Config.RPR_SoulsowOptions, "Harpe", "Adds Soulsow to Harpe.", 5, 0);
+                UserConfig.DrawHorizontalMultiChoice(RPR.Config.RPR_SoulsowOptions, "Slice", "Adds Soulsow to Slice.", 5, 1);
+                UserConfig.DrawHorizontalMultiChoice(RPR.Config.RPR_SoulsowOptions, "Spinning Scythe", "Adds Soulsow to Spinning Scythe", 5, 2);
+                UserConfig.DrawHorizontalMultiChoice(RPR.Config.RPR_SoulsowOptions, "Shadow of Death", "Adds Soulsow to Shadow of Death.", 5, 3);
+                UserConfig.DrawHorizontalMultiChoice(RPR.Config.RPR_SoulsowOptions, "Blood Stalk", "Adds Soulsow to Blood Stalk.", 5, 4);  
+            }
+            
             #endregion
             // ====================================================================================
             #region RED MAGE
@@ -1062,28 +1149,35 @@ namespace XIVSlothCombo.Window.Functions
                 UserConfig.DrawSliderInt(4000, 9500, SGE.Config.SGE_AoE_Phlegma_Lucid, "MP Threshold", 150, SliderIncrements.Hundreds);
 
             if (preset is CustomComboPreset.SGE_ST_Heal_Soteria)
-                UserConfig.DrawSliderInt(0, 100, SGE.Config.SGE_ST_Heal_Soteria, "Set HP percentage value for Soteria to trigger");
+                UserConfig.DrawSliderInt(0, 100, SGE.Config.SGE_ST_Heal_Soteria, "Use Soteria when Target HP is at or below set percentage");
 
             if (preset is CustomComboPreset.SGE_ST_Heal_Zoe)
-                UserConfig.DrawSliderInt(0, 100, SGE.Config.SGE_ST_Heal_Zoe, "Set HP percentage value for Zoe to trigger");
+                UserConfig.DrawSliderInt(0, 100, SGE.Config.SGE_ST_Heal_Zoe, "Use Zoe when Target HP is at or below set percentage");
 
             if (preset is CustomComboPreset.SGE_ST_Heal_Pepsis)
-                UserConfig.DrawSliderInt(0, 100, SGE.Config.SGE_ST_Heal_Pepsis, "Set HP percentage value for Pepsis to trigger");
+                UserConfig.DrawSliderInt(0, 100, SGE.Config.SGE_ST_Heal_Pepsis, "Use Pepsis when Target HP is at or below set percentage");
 
             if (preset is CustomComboPreset.SGE_ST_Heal_Taurochole)
-                UserConfig.DrawSliderInt(0, 100, SGE.Config.SGE_ST_Heal_Taurochole, "Set HP percentage value for Taurochole to trigger");
+                UserConfig.DrawSliderInt(0, 100, SGE.Config.SGE_ST_Heal_Taurochole, "Use Taurochole when Target HP is at or below set percentage");
 
             if (preset is CustomComboPreset.SGE_ST_Heal_Haima)
-                UserConfig.DrawSliderInt(0, 100, SGE.Config.SGE_ST_Heal_Haima, "Set HP percentage value for Haima to trigger");
+                UserConfig.DrawSliderInt(0, 100, SGE.Config.SGE_ST_Heal_Haima, "Use Haima when Target HP is at or below set percentage");
 
             if (preset is CustomComboPreset.SGE_ST_Heal_Krasis)
-                UserConfig.DrawSliderInt(0, 100, SGE.Config.SGE_ST_Heal_Krasis, "Set HP percentage value for Krasis to trigger");
+                UserConfig.DrawSliderInt(0, 100, SGE.Config.SGE_ST_Heal_Krasis, "Use Krasis when Target HP is at or below set percentage");
 
             if (preset is CustomComboPreset.SGE_ST_Heal_Druochole)
-                UserConfig.DrawSliderInt(0, 100, SGE.Config.SGE_ST_Heal_Druochole, "Set HP percentage value for Druochole to trigger");
+                UserConfig.DrawSliderInt(0, 100, SGE.Config.SGE_ST_Heal_Druochole, "Use Druochole when Target HP is at or below set percentage");
 
             if (preset is CustomComboPreset.SGE_ST_Heal_Diagnosis)
-                UserConfig.DrawSliderInt(0, 100, SGE.Config.SGE_ST_Heal_Diagnosis, "Set HP percentage value for Eukrasian Diagnosis to trigger");
+                UserConfig.DrawSliderInt(0, 100, SGE.Config.SGE_ST_Heal_Diagnosis, "Use Diagnosis when Target HP is at or below set percentage");
+
+            if (preset is CustomComboPreset.SGE_Eukrasia)
+            {
+                UserConfig.DrawRadioButton(SGE.Config.SGE_Eukrasia_Mode, "Eukrasian Dosis", "", 0);
+                UserConfig.DrawRadioButton(SGE.Config.SGE_Eukrasia_Mode, "Eukrasian Diagnosis", "", 1);
+                UserConfig.DrawRadioButton(SGE.Config.SGE_Eukrasia_Mode, "Eukrasian Prognosis", "", 2);
+            }
 
             #endregion
             // ====================================================================================
@@ -1157,29 +1251,44 @@ namespace XIVSlothCombo.Window.Functions
             // ====================================================================================
             #region SUMMONER
 
+            #region PvE
             if (preset == CustomComboPreset.SMN_DemiEgiMenu_EgiOrder)
             {
-                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_PrimalChoice, "Titan first", "Summons Titan first, Garuda second, Ifrit third", 1);
-                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_PrimalChoice, "Garuda first", "Summons Garuda first, Titan second, Ifrit third", 2);
+                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_PrimalChoice, "Titan first", "Summons Titan, Garuda then Ifrit.", 1);
+                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_PrimalChoice, "Garuda first", "Summons Garuda, Titan then Ifrit.", 2);
             }
 
-            if (preset == CustomComboPreset.SMN_DemiEgiMenu_BurstChoice)
+            if (preset == CustomComboPreset.SMN_DemiEgiMenu_oGCDPooling)
+                UserConfig.DrawSliderInt(0, 3, SMN.Config.SMN_Burst_Delay, "Sets the amount of GCDs under Demi summon to wait for oGCD use.", 150, SliderIncrements.Ones);
+
+            if (preset == CustomComboPreset.SMN_DemiEgiMenu_oGCDPooling)
             {
-                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_BurstPhase, "Bahamut", "Burst during Bahamut Phase", 1);
-                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_BurstPhase, "Phoenix", "Burst during Phoenix Phase", 2);
-                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_BurstPhase, "Bahamut or Phoenix", "Burst during Bahamut or Phoenix Phase (whichever happens first)", 3);
-                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_BurstPhase, "SpS Friendly Option", "Bursts when Searing Light is ready regardless of Phase", 4);
+                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_BurstPhase, "Bahamut", "Bursts during Bahamut phase.", 1);
+                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_BurstPhase, "Phoenix", "Bursts during Phoenix phase.", 2);
+                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_BurstPhase, "Bahamut or Phoenix", "Bursts during Bahamut or Phoenix phase (whichever comes first).", 3);
+                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_BurstPhase, "Flexible (SpS) Option", "Bursts when Searing Light is ready, regardless of phase.", 4);
             }
 
             if (preset == CustomComboPreset.SMN_DemiEgiMenu_SwiftcastEgi)
             {
-                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_SwiftcastPhase, "Garuda", "Swiftcast Slipstream", 1);
-                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_SwiftcastPhase, "Ifrit", "Swiftcast Ruby Ruin/Rite", 2);
-                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_SwiftcastPhase, "SpS Friendly Option", "Swiftcasts whichever Primal is available when Swiftcast is ready", 3);
+                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_SwiftcastPhase, "Garuda", "Swiftcasts Slipstream", 1);
+                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_SwiftcastPhase, "Ifrit", "Swiftcasts Ruby Ruin/Ruby Rite", 2);
+                UserConfig.DrawHorizontalRadioButton(SMN.Config.SMN_SwiftcastPhase, "Flexible (SpS) Option", "Swiftcasts the first available Egi when Swiftcast is ready.", 3);
             }
 
             if (preset == CustomComboPreset.SMN_Lucid)
-                UserConfig.DrawSliderInt(4000, 9500, SMN.Config.SMN_Lucid, "Set value for your MP to be at or under for this feature to work", 150, SliderIncrements.Hundreds);
+                UserConfig.DrawSliderInt(4000, 9500, SMN.Config.SMN_Lucid, "Set value for your MP to be at or under for this feature to take effect.", 150, SliderIncrements.Hundreds);
+            #endregion
+
+            #region PvP
+
+            if (preset == CustomComboPreset.SMNPvP_BurstMode)
+                UserConfig.DrawSliderInt(50, 100, SMNPvP.Config.SMNPvP_FesterThreshold, "Target HP% to cast Fester below.\nSet to 100 use Fester as soon as it's available.###SMNPvP", 150, SliderIncrements.Ones);
+
+            if (preset == CustomComboPreset.SMNPvP_BurstMode_RadiantAegis)
+                UserConfig.DrawSliderInt(0, 90, SMNPvP.Config.SMNPvP_RadiantAegisThreshold, "Caps at 90 to prevent waste.###SMNPvP", 150, SliderIncrements.Ones);
+
+            #endregion
 
             #endregion
             // ====================================================================================
@@ -1200,6 +1309,8 @@ namespace XIVSlothCombo.Window.Functions
 
             if (preset == CustomComboPreset.WHM_ST_MainCombo_Lucid)
                 UserConfig.DrawSliderInt(4000, 9500, WHM.Config.WHM_ST_Lucid, "Set value for your MP to be at or under for this feature to work", 150, SliderIncrements.Hundreds);
+            if (preset is CustomComboPreset.WHM_ST_MainCombo_DoT)
+                UserConfig.DrawSliderInt(0, 100, WHM.Config.WHM_ST_MainCombo_DoT, "Stop using at Enemy HP %. Set to Zero to disable this check");
 
             if (preset == CustomComboPreset.WHM_AoE_DPS_Lucid)
                 UserConfig.DrawSliderInt(4000, 9500, WHM.Config.WHM_AoE_Lucid, "Set value for your MP to be at or under for this feature to work", 150, SliderIncrements.Hundreds);
@@ -1219,17 +1330,18 @@ namespace XIVSlothCombo.Window.Functions
             // ====================================================================================
             #region PvP VALUES
 
+            PlayerCharacter? pc = Service.ClientState.LocalPlayer;
+
             if (preset == CustomComboPreset.PvP_EmergencyHeals)
             {
-                var pc = Service.ClientState.LocalPlayer;
                 if (pc != null)
                 {
-                    var maxHP = Service.ClientState.LocalPlayer?.MaxHp <= 15000 ? 0 : Service.ClientState.LocalPlayer.MaxHp - 15000;
+                    uint maxHP = Service.ClientState.LocalPlayer?.MaxHp <= 15000 ? 0 : Service.ClientState.LocalPlayer.MaxHp - 15000;
 
                     if (maxHP > 0)
                     {
-                        var setting = PluginConfiguration.GetCustomIntValue(PvPCommon.Config.EmergencyHealThreshold);
-                        var hpThreshold = ((float)maxHP / 100 * setting);
+                        int setting = PluginConfiguration.GetCustomIntValue(PvPCommon.Config.EmergencyHealThreshold);
+                        float hpThreshold = (float)maxHP / 100 * setting;
 
                         UserConfig.DrawSliderInt(1, 100, PvPCommon.Config.EmergencyHealThreshold, $"Set the percentage to be at or under for the feature to kick in.\n100% is considered to start at 15,000 less than your max HP to prevent wastage.\nHP Value to be at or under: {hpThreshold}");
                     }
@@ -1251,6 +1363,45 @@ namespace XIVSlothCombo.Window.Functions
 
             if (preset == CustomComboPreset.PvP_QuickPurify)
                 UserConfig.DrawPvPStatusMultiChoice(PvPCommon.Config.QuickPurifyStatuses);
+
+            if (preset == CustomComboPreset.NINPvP_ST_Meisui)
+            {
+                string description = "Set the HP percentage to be at or under for the feature to kick in.\n100% is considered to start at 8,000 less than your max HP to prevent wastage.";
+
+                if (pc != null)
+                {
+                    uint maxHP = pc.MaxHp <= 8000 ? 0 : pc.MaxHp - 8000;
+                    if (maxHP > 0)
+                    {
+                        int setting = PluginConfiguration.GetCustomIntValue(NINPVP.Config.NINPvP_Meisui_ST);
+                        float hpThreshold = (float)maxHP / 100 * setting;
+
+                        description += $"\nHP Value to be at or under: {hpThreshold}";
+                    }
+                }
+
+                UserConfig.DrawSliderInt(1, 100, NINPVP.Config.NINPvP_Meisui_ST, description);
+            }
+
+            if (preset == CustomComboPreset.NINPvP_AoE_Meisui)
+            {
+                string description = "Set the HP percentage to be at or under for the feature to kick in.\n100% is considered to start at 8,000 less than your max HP to prevent wastage.";
+
+                if (pc != null)
+                {
+                    uint maxHP = pc.MaxHp <= 8000 ? 0 : pc.MaxHp - 8000;
+                    if (maxHP > 0)
+                    {
+                        int setting = PluginConfiguration.GetCustomIntValue(NINPVP.Config.NINPvP_Meisui_AoE);
+                        float hpThreshold = (float)maxHP / 100 * setting;
+
+                        description += $"\nHP Value to be at or under: {hpThreshold}";
+                    }
+                }
+
+                UserConfig.DrawSliderInt(1, 100, NINPVP.Config.NINPvP_Meisui_AoE, description);
+            }
+
 
             #endregion
         }

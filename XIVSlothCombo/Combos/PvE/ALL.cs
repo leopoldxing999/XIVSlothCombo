@@ -132,12 +132,13 @@ namespace XIVSlothCombo.Combos.PvE
 
             protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
             {
-                if (actionID is WHM.Raise or SCH.Resurrection or AST.Ascend or SGE.Egeiro)
+                if ((actionID is WHM.Raise or AST.Ascend or SGE.Egeiro) 
+                    || (actionID is SCH.Resurrection && LocalPlayer.ClassJob.Id is SCH.JobID))
                 {
                     if (IsOffCooldown(Swiftcast))
                         return Swiftcast;
 
-                    if (actionID == WHM.Raise && IsEnabled(CustomComboPreset.WHM_ThinAirRaise) && GetRemainingCharges(WHM.ThinAir) > 0 && !HasEffect(WHM.Buffs.ThinAir) && level >= WHM.Levels.ThinAir)
+                    if (actionID == WHM.Raise && IsEnabled(CustomComboPreset.WHM_ThinAirRaise) && GetRemainingCharges(WHM.ThinAir) > 0 && !HasEffect(WHM.Buffs.ThinAir) && LevelChecked(WHM.ThinAir))
                         return WHM.ThinAir;
 
                     return actionID;
@@ -170,7 +171,8 @@ namespace XIVSlothCombo.Combos.PvE
 
             protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
             {
-                if (actionID is BLU.AngelWhisper or RDM.Verraise or SMN.Resurrection)
+                if ((actionID is BLU.AngelWhisper or RDM.Verraise) 
+                    || (actionID is SMN.Resurrection && LocalPlayer.ClassJob.Id is SMN.JobID))
                 {
                     if (HasEffect(Buffs.Swiftcast) || HasEffect(RDM.Buffs.Dualcast))
                         return actionID;
@@ -232,31 +234,15 @@ namespace XIVSlothCombo.Combos.PvE
             }
         }
 
-
-        /*
-        internal class DoMSwiftcastFeature : CustomCombo
+        internal class ALL_Ranged_Interrupt : CustomCombo
         {
-            protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.DoMSwiftcastFeature;
+            protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.ALL_Ranged_Interrupt;
 
             protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
             {
-                if (IsEnabled(CustomComboPreset.DoMSwiftcastFeature))
-                {
-                    if (actionID == WHM.Raise || actionID == SMN.Resurrection || actionID == SGE.Egeiro || actionID == AST.Ascend || actionID == RDM.Verraise)
-                    {
-                        var swiftCD = GetCooldown(All.Swiftcast);
-                        if ((swiftCD.CooldownRemaining == 0 && !HasEffect(RDM.Buffs.Dualcast))
-                            || level <= All.Levels.Raise
-                            || (level <= RDM.Levels.Verraise && actionID == RDM.Verraise))
-                            return All.Swiftcast;
-                    }
-                }
-
-                return actionID;
+                return (actionID is FootGraze && CanInterruptEnemy() && IsOffCooldown(HeadGraze) && level >= Levels.HeadGraze) ? HeadGraze : actionID;
             }
         }
-
-        */
     }
 }
 
