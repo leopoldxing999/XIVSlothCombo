@@ -20,49 +20,53 @@ namespace XIVSlothCombo.Attributes
         /// <param name="memeDescription"> Meme description. </param>
         internal CustomComboInfoAttribute(string fancyName, string description, byte jobID, [CallerLineNumber] int order = 0, string memeName = "", string memeDescription = "")
         {
-
             var 原始fancyName = fancyName;
             var 原始description = description;
+            var 增加搜索 = true;
+
 
             // if (Service.Configuration != null)
             {
                 // if (Service.Configuration.Language == "zh-CN")
                 {
                     Dictionary<string, string> db = Translatezh_CN.db;
-                    // Dictionary<string, string> db1 = Translatezh_CN.db1;
 
                     if (db.ContainsKey(fancyName))
                     {
                         fancyName = db[fancyName];
+                        增加搜索 = false;
                     }
-          
+
 
                     if (db.ContainsKey(description))
                     {
                         description = db[description];
                     }
-             
-                    
-                    try
+
+
+                    if (增加搜索)
                     {
-                        var replaceOption = fancyName.Replace(" Option", "");
-
-                        if (db.ContainsKey($"{replaceOption}"))
+                        try
                         {
-                            fancyName = db[$"{replaceOption}"];
-                        }
+                            var replaceOption = fancyName.Replace(" Option", "");
 
-                        if (db.ContainsKey($"{replaceOption}"))
+                            if (db.ContainsKey($"{replaceOption}"))
+                            {
+                                fancyName = db[$"{replaceOption}"];
+                            }
+
+                            if (db.ContainsKey($"{replaceOption}"))
+                            {
+                                description = db[$"{replaceOption}"];
+                            }
+                        }
+                        catch (Exception e)
                         {
-                            description = db[$"{replaceOption}"];
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        // PluginLog.Information($"log fancyName:{fancyName} description:{description} {e.Message}");
+                            // PluginLog.Information($"log fancyName:{fancyName} description:{description} {e.Message}");
 
-                        // Console.WriteLine(e);
-                        // throw;
+                            // Console.WriteLine(e);
+                            // throw;
+                        }
                     }
                 }
             }
@@ -70,12 +74,17 @@ namespace XIVSlothCombo.Attributes
             {
                 fancyName = 原始fancyName;
             }
-            
+
             if (description == "等待翻译")
             {
                 description = 原始description;
             }
 
+
+            // if (fancyName .Equals("No Mercy AOE Option.") )
+            // {
+            //     fancyName = "我是你爹啊";
+            // }
 
 
             FancyName = fancyName;
