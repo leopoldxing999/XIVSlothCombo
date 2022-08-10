@@ -1,30 +1,36 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-
+using System.Net.Http;
+using System.Threading.Tasks;
+using Dalamud.Game.ClientState.Statuses;
 using Dalamud.Game.Command;
-using Dalamud.Interface.Windowing;
+using Dalamud.Game.Text;
+using Dalamud.Game.Text.SeStringHandling;
+using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Plugin;
+using XIVSlothCombo.Combos;
+using XIVSlothCombo.Core;
+using XIVSlothCombo.Data;
+using XIVSlothCombo.Services;
+using XIVSlothCombo.Window;
 
-namespace XIVSlothComboPlugin
+namespace XIVSlothCombo
 {
-    /// <summary>
-    /// Main plugin implementation.
-    /// </summary>
-    public sealed partial class XIVComboExpandedPlugin : IDalamudPlugin
+    /// <summary> Main plugin implementation. </summary>
+    public sealed partial class XIVSlothCombo : IDalamudPlugin
     {
         private const string Command = "/scombo";
 
-        private readonly WindowSystem windowSystem;
         private readonly ConfigWindow configWindow;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="XIVComboExpandedPlugin"/> class.
-        /// </summary>
-        /// <param name="pluginInterface">Dalamud plugin interface.</param>
-        public XIVComboExpandedPlugin(DalamudPluginInterface pluginInterface)
-        {
-            FFXIVClientStructs.Resolver.Initialize();
+        private readonly TextPayload starterMotd = new("[Sloth Message of the Day] ");
 
+        /// <summary> Initializes a new instance of the <see cref="XIVSlothCombo"/> class. </summary>
+        /// <param name="pluginInterface"> Dalamud plugin interface. </param>
+        public XIVSlothCombo(DalamudPluginInterface pluginInterface)
+        {
             pluginInterface.Create<Service>();
 
             Service.Configuration = pluginInterface.GetPluginConfig() as PluginConfiguration ?? new PluginConfiguration();
@@ -32,23 +38,73 @@ namespace XIVSlothComboPlugin
             Service.Address.Setup();
 
             if (Service.Configuration.Version == 4)
-                this.UpgradeConfig4();
+                UpgradeConfig4();
 
             Service.ComboCache = new CustomComboCache();
             Service.IconReplacer = new IconReplacer();
+            ActionWatching.Enable();
 
-            this.configWindow = new();
-            this.windowSystem = new("XIVSlothCombo");
-            this.windowSystem.AddWindow(this.configWindow);
+            configWindow = new();
 
-            Service.Interface.UiBuilder.OpenConfigUi += this.OnOpenConfigUi;
-            Service.Interface.UiBuilder.Draw += this.windowSystem.Draw;
+            Service.Interface.UiBuilder.Draw += DrawUI;
+            Service.Interface.UiBuilder.OpenConfigUi += OnOpenConfigUi;
 
-            Service.CommandManager.AddHandler(Command, new CommandInfo(this.OnCommand)
+            Service.CommandManager.AddHandler(Command, new CommandInfo(OnCommand)
             {
                 HelpMessage = "Open a window to edit custom combo settings.",
                 ShowInHelp = true,
             });
+
+            Service.ClientState.Login += PrintLoginMessage;
+
+            KillRedundantIDs();
+        }
+
+        private static void KillRedundantIDs()
+        {
+            List<int> redundantIDs = Service.Configuration.EnabledActions.Where(x => int.TryParse(x.ToString(), out _)).OrderBy(x => x).Cast<int>().ToList();
+            foreach (int id in redundantIDs)
+            {
+                Service.Configuration.EnabledActions.RemoveWhere(x => (int)x == id);
+            }
+
+            Service.Configuration.Save();
+        }
+
+        private void DrawUI() => configWindow.Draw();
+
+        private void PrintLoginMessage(object? sender, EventArgs e)
+        {
+            if (!Service.Configuration.HideMessageOfTheDay)
+                Task.Delay(TimeSpan.FromSeconds(3)).ContinueWith(task => PrintMotD());
+        }
+
+        private void PrintMotD()
+        {
+            try
+            {
+                using HttpResponseMessage? motd = Dalamud.Utility.Util.HttpClient.GetAsync("https://raw.githubusercontent.com/Nik-Potokar/XIVSlothCombo/main/res/motd.txt").Result;
+                motd.EnsureSuccessStatusCode();
+                string? data = motd.Content.ReadAsStringAsync().Result;
+                List<Payload>? payloads = new()
+                {
+                    starterMotd,
+                    EmphasisItalicPayload.ItalicsOn,
+                    new TextPayload(data.Trim()),
+                    EmphasisItalicPayload.ItalicsOff
+                };
+
+                Service.ChatGui.PrintChat(new XivChatEntry
+                {
+                    Message = new SeString(payloads),
+                    Type = XivChatType.Echo
+                });
+            }
+
+            catch (Exception ex)
+            {
+                Dalamud.Logging.PluginLog.Error(ex, "Unable to retrieve MotD");
+            }
         }
 
         /// <inheritdoc/>
@@ -57,39 +113,31 @@ namespace XIVSlothComboPlugin
         /// <inheritdoc/>
         public void Dispose()
         {
+            configWindow?.Dispose();
+
             Service.CommandManager.RemoveHandler(Command);
 
-            Service.Interface.UiBuilder.OpenConfigUi -= this.OnOpenConfigUi;
-            Service.Interface.UiBuilder.Draw -= this.windowSystem.Draw;
+            Service.Interface.UiBuilder.OpenConfigUi -= OnOpenConfigUi;
+            Service.Interface.UiBuilder.Draw -= DrawUI;
 
             Service.IconReplacer?.Dispose();
             Service.ComboCache?.Dispose();
+            ActionWatching.Dispose();
+
+            Service.ClientState.Login -= PrintLoginMessage;
         }
 
-        private void OnOpenConfigUi()
-            => this.configWindow.IsOpen = true;
+        private void OnOpenConfigUi() => configWindow.Visible = !configWindow.Visible;
 
         private void OnCommand(string command, string arguments)
         {
-            var argumentsParts = arguments.Split();
+            string[]? argumentsParts = arguments.Split();
 
-            switch (argumentsParts[0])
+            switch (argumentsParts[0].ToLower())
             {
-                case "setall":
+                case "unsetall": // unset all features
                     {
-                        foreach (var preset in Enum.GetValues<CustomComboPreset>())
-                        {
-                            Service.Configuration.EnabledActions.Add(preset);
-                        }
-
-                        Service.ChatGui.Print("All SET");
-                        Service.Configuration.Save();
-                        break;
-                    }
-
-                case "unsetall":
-                    {
-                        foreach (var preset in Enum.GetValues<CustomComboPreset>())
+                        foreach (CustomComboPreset preset in Enum.GetValues<CustomComboPreset>())
                         {
                             Service.Configuration.EnabledActions.Remove(preset);
                         }
@@ -99,103 +147,122 @@ namespace XIVSlothComboPlugin
                         break;
                     }
 
-                case "set":
+                case "set": // set a feature
                     {
-                        var targetPreset = argumentsParts[1].ToLowerInvariant();
-                        foreach (var preset in Enum.GetValues<CustomComboPreset>())
+                        if (!Service.Condition[Dalamud.Game.ClientState.Conditions.ConditionFlag.InCombat])
                         {
-                            if (preset.ToString().ToLowerInvariant() != targetPreset)
-                                continue;
-
-                            Service.Configuration.EnabledActions.Add(preset);
-                            Service.ChatGui.Print($"{preset} SET");
-                        }
-
-                        Service.Configuration.Save();
-                        break;
-                    }
-
-                case "secrets":
-                    {
-                        Service.Configuration.EnableSecretCombos = !Service.Configuration.EnableSecretCombos;
-
-                        Service.ChatGui.Print(Service.Configuration.EnableSecretCombos
-                            ? $"Secret combos are now shown"
-                            : $"Secret combos are now hidden");
-
-                        Service.Configuration.Save();
-                        break;
-                    }
-
-                case "toggle":
-                    {
-                        var targetPreset = argumentsParts[1].ToLowerInvariant();
-                        foreach (var preset in Enum.GetValues<CustomComboPreset>())
-                        {
-                            if (preset.ToString().ToLowerInvariant() != targetPreset)
-                                continue;
-
-                            if (Service.Configuration.EnabledActions.Contains(preset))
+                            string? targetPreset = argumentsParts[1].ToLowerInvariant();
+                            foreach (CustomComboPreset preset in Enum.GetValues<CustomComboPreset>())
                             {
-                                Service.Configuration.EnabledActions.Remove(preset);
-                                Service.ChatGui.Print($"{preset} UNSET");
-                            }
-                            else
-                            {
+                                if (preset.ToString().ToLowerInvariant() != targetPreset)
+                                    continue;
+
                                 Service.Configuration.EnabledActions.Add(preset);
                                 Service.ChatGui.Print($"{preset} SET");
                             }
+
+                            Service.Configuration.Save();
                         }
 
-                        Service.Configuration.Save();
-                        break;
-                    }
-
-                case "unset":
-                    {
-                        var targetPreset = argumentsParts[1].ToLowerInvariant();
-                        foreach (var preset in Enum.GetValues<CustomComboPreset>())
+                        else
                         {
-                            if (preset.ToString().ToLowerInvariant() != targetPreset)
-                                continue;
-
-                            Service.Configuration.EnabledActions.Remove(preset);
-                            Service.ChatGui.Print($"{preset} UNSET");
+                            Service.ChatGui.PrintError("Features cannot be set in combat.");
                         }
 
-                        Service.Configuration.Save();
                         break;
                     }
 
-                case "list":
+                case "toggle": // toggle a feature
                     {
-                        var filter = argumentsParts.Length > 1
+                        if (!Service.Condition[Dalamud.Game.ClientState.Conditions.ConditionFlag.InCombat])
+                        {
+                            string? targetPreset = argumentsParts[1].ToLowerInvariant();
+                            foreach (CustomComboPreset preset in Enum.GetValues<CustomComboPreset>())
+                            {
+                                if (preset.ToString().ToLowerInvariant() != targetPreset)
+                                    continue;
+
+                                if (Service.Configuration.EnabledActions.Contains(preset))
+                                {
+                                    Service.Configuration.EnabledActions.Remove(preset);
+                                    Service.ChatGui.Print($"{preset} UNSET");
+                                }
+
+                                else
+                                {
+                                    Service.Configuration.EnabledActions.Add(preset);
+                                    Service.ChatGui.Print($"{preset} SET");
+                                }
+                            }
+
+                            Service.Configuration.Save();
+                        }
+
+                        else
+                        {
+                            Service.ChatGui.PrintError("Features cannot be toggled in combat.");
+                        }
+
+                        break;
+                    }
+
+                case "unset": // unset a feature
+                    {
+                        if (!Service.Condition[Dalamud.Game.ClientState.Conditions.ConditionFlag.InCombat])
+                        {
+                            string? targetPreset = argumentsParts[1].ToLowerInvariant();
+                            foreach (CustomComboPreset preset in Enum.GetValues<CustomComboPreset>())
+                            {
+                                if (preset.ToString().ToLowerInvariant() != targetPreset)
+                                    continue;
+
+                                Service.Configuration.EnabledActions.Remove(preset);
+                                Service.ChatGui.Print($"{preset} UNSET");
+                            }
+
+                            Service.Configuration.Save();
+                        }
+
+                        else
+                        {
+                            Service.ChatGui.PrintError("Features cannot be unset in combat.");
+                        }
+
+                        break;
+                    }
+
+                case "list": // list features
+                    {
+                        string? filter = argumentsParts.Length > 1
                             ? argumentsParts[1].ToLowerInvariant()
                             : "all";
 
-                        if (filter == "set")
+                        if (filter == "set") // list set features
                         {
-                            foreach (var preset in Enum.GetValues<CustomComboPreset>()
+                            foreach (bool preset in Enum.GetValues<CustomComboPreset>()
                                 .Select(preset => Service.Configuration.IsEnabled(preset)))
                             {
                                 Service.ChatGui.Print(preset.ToString());
                             }
                         }
-                        else if (filter == "unset")
+
+                        else if (filter == "unset") // list unset features
                         {
-                            foreach (var preset in Enum.GetValues<CustomComboPreset>()
+                            foreach (bool preset in Enum.GetValues<CustomComboPreset>()
                                 .Select(preset => !Service.Configuration.IsEnabled(preset)))
                             {
                                 Service.ChatGui.Print(preset.ToString());
                             }
                         }
-                        else if (filter == "all")
+
+                        else if (filter == "all") // list all features
                         {
-                            foreach (var preset in Enum.GetValues<CustomComboPreset>())
+                            foreach (CustomComboPreset preset in Enum.GetValues<CustomComboPreset>())
                             {
                                 Service.ChatGui.Print(preset.ToString());
                             }
                         }
+
                         else
                         {
                             Service.ChatGui.PrintError("Available list filters: set, unset, all");
@@ -204,15 +271,118 @@ namespace XIVSlothComboPlugin
                         break;
                     }
 
+                case "enabled": // list all currently enabled features
+                    {
+                        foreach (CustomComboPreset preset in Service.Configuration.EnabledActions.OrderBy(x => x))
+                        {
+                            if (int.TryParse(preset.ToString(), out int pres)) continue;
+                            Service.ChatGui.Print($"{(int)preset} - {preset}");
+                        }
+
+                        break;
+                    }
+
+                case "debug": // debug logging
+                    {
+                        try
+                        {
+                            string? specificJob = argumentsParts.Length == 2 ? argumentsParts[1].ToLower() : "";
+
+                            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                            using StreamWriter file = new($"{desktopPath}/SlothDebug.txt", append: false);  // Output path
+
+                            file.WriteLine("START DEBUG LOG");
+                            file.WriteLine("");
+                            file.WriteLine($"Plugin Version: {GetType().Assembly.GetName().Version}");                          // Plugin version
+                            file.WriteLine("");
+                            file.WriteLine($"Current Job: " +                                                                   // Current Job
+                                $"{Service.ClientState.LocalPlayer.ClassJob.GameData.Name} / " +                                // - Client Name
+                                $"{Service.ClientState.LocalPlayer.ClassJob.GameData.NameEnglish} / " +                         // - EN Name
+                                $"{Service.ClientState.LocalPlayer.ClassJob.GameData.Abbreviation}");                           // - Abbreviation
+                            file.WriteLine($"Current Job Index: {Service.ClientState.LocalPlayer.ClassJob.GameData.JobIndex}"); // Job Index
+                            file.WriteLine("");
+                            file.WriteLine($"Current Zone: {Service.ClientState.TerritoryType}");                               // Current zone location
+                            file.WriteLine($"Current Party Size: {Service.PartyList.Length}");                                  // Current party size
+                            file.WriteLine("");
+                            file.WriteLine($"START ENABLED FEATURES");
+
+                            int i = 0;
+                            if (string.IsNullOrEmpty(specificJob))
+                            {
+                                foreach (CustomComboPreset preset in Service.Configuration.EnabledActions.OrderBy(x => x))
+                                {
+                                    if (int.TryParse(preset.ToString(), out _)) { i++; continue; }
+
+                                    file.WriteLine($"{(int)preset} - {preset}");
+                                }
+                            }
+
+                            else
+                            {
+                                foreach (CustomComboPreset preset in Service.Configuration.EnabledActions.OrderBy(x => x))
+                                {
+                                    if (int.TryParse(preset.ToString(), out _)) { i++; continue; }
+
+                                    if (preset.ToString()[..3].ToLower() == specificJob ||  // Job identifier
+                                        preset.ToString()[..3].ToLower() == "all" ||        // Adds in Globals
+                                        preset.ToString()[..3].ToLower() == "pvp")          // Adds in PvP Globals
+                                        file.WriteLine($"{(int)preset} - {preset}");
+                                }
+                            }
+
+                            file.WriteLine($"END ENABLED FEATURES");
+                            file.WriteLine("");
+                            file.WriteLine($"Redundant IDs found: {i}");
+
+                            if (i > 0)
+                            {
+                                file.WriteLine($"START REDUNDANT IDs");
+                                foreach (CustomComboPreset preset in Service.Configuration.EnabledActions.Where(x => int.TryParse(x.ToString(), out _)).OrderBy(x => x))
+                                {
+                                    file.WriteLine($"{(int)preset}");
+                                }
+
+                                file.WriteLine($"END REDUNDANT IDs");
+                                file.WriteLine("");
+                            }
+
+                            file.WriteLine($"Status Effect Count: {Service.ClientState.LocalPlayer.StatusList.Count(x => x != null)}");
+
+                            if (Service.ClientState.LocalPlayer.StatusList.Length > 0)
+                            {
+                                file.WriteLine($"START STATUS EFFECTS");
+                                foreach (Status? status in Service.ClientState.LocalPlayer.StatusList)
+                                {
+                                    file.WriteLine($"ID: {status.StatusId}, COUNT: {status.StackCount}, SOURCE: {status.SourceID}");
+                                }
+
+                                file.WriteLine($"END STATUS EFFECTS");
+                            }
+
+                            file.WriteLine("END DEBUG LOG");
+                            Service.ChatGui.Print("Please check your desktop for SlothDebug.txt and upload this file where requested.");
+
+                            break;
+                        }
+
+                        catch (Exception ex)
+                        {
+                            Dalamud.Logging.PluginLog.Error(ex, "Debug Log");
+                            Service.ChatGui.Print("Unable to write Debug log.");
+                            break;
+                        }
+                    }
+
                 default:
-                    this.configWindow.Toggle();
+                    configWindow.Visible = !configWindow.Visible;
                     break;
             }
 
             Service.Configuration.Save();
         }
 
-        private void UpgradeConfig4()
+        private static void UpgradeConfig4()
         {
             Service.Configuration.Version = 5;
             Service.Configuration.EnabledActions = Service.Configuration.EnabledActions4
