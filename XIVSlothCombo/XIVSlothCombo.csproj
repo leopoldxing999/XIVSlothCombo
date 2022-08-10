@@ -35,7 +35,6 @@
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<OutputPath>E:\Games\FFVIX\Dalamud6.0\XIVLauncher\devPlugins\XIVSlothCombo\</OutputPath>
-		<!--		<OutputPath>bin\Release</OutputPath>-->
 		<NoWarn>CS1591</NoWarn>
 	</PropertyGroup>
 
