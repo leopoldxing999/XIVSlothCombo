@@ -6,10 +6,10 @@
         "Description": "Condenses combos and mutually exclusive abilities onto a single button - and then some.",
         "Changelog": "cn6.1",
         "InternalName": "XIVSlothCombo",
-        "AssemblyVersion": "3.0.9.24",
+        "AssemblyVersion": "3.0.16.5",
         "RepoUrl": "https://github.com/Nik-Potokar/XIVSlothCombo",
         "ApplicableVersion": "any",
-        "DalamudApiLevel": 5,
+        "DalamudApiLevel": 6,
         "LoadPriority": 0,
         "IconUrl": "https://i.imgur.com/UeRukF8.png",
         "ImageUrls": [
