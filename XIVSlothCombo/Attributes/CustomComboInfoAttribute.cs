@@ -23,6 +23,7 @@ namespace XIVSlothCombo.Attributes
             var 原始fancyName = fancyName;
             var 原始description = description;
             var 增加搜索 = true;
+            var 技能翻译 = true;
 
 
             // if (Service.Configuration != null)
@@ -30,17 +31,59 @@ namespace XIVSlothCombo.Attributes
                 // if (Service.Configuration.Language == "zh-CN")
                 {
                     Dictionary<string, string> db = Translatezh_CN.db;
+                    Dictionary<string, string> dbActionName = Translatezh_CN.dbActionName;
 
                     if (db.ContainsKey(fancyName))
                     {
                         fancyName = db[fancyName];
                         增加搜索 = false;
+                        技能翻译 = false;
                     }
 
 
                     if (db.ContainsKey(description))
                     {
                         description = db[description];
+                        技能翻译 = false;
+                    }
+                    if (技能翻译)
+                    {
+                        var split_description = description.Replace('\n',' ').Split(' ');
+                        var find = false;
+                        for (int i = 0; i < split_description.Length; i++)
+                        {                            
+                            if (i < split_description.Length - 2)
+                            {
+                                var new_word = split_description[i] + " " + split_description[i + 1] + " " + split_description[i + 2];
+                                if (dbActionName.ContainsKey(new_word))
+                                {
+                                    description = description.Replace(new_word, dbActionName[new_word]);
+                                    find = true;
+                                    continue;
+                                }
+                            }
+                            if (i < split_description.Length - 1)
+                            {
+                                var new_word = split_description[i] + " " + split_description[i + 1];
+                                if (dbActionName.ContainsKey(new_word))
+                                {
+                                    description = description.Replace(new_word, dbActionName[new_word]);
+                                    find = true;
+                                    continue;
+                                }
+                            }
+                            if (dbActionName.ContainsKey(split_description[i]))
+                            {
+                                description = description.Replace(split_description[i], dbActionName[split_description[i]]);
+                                find = true;
+                            }
+
+                        }
+                        if (find)
+                        {
+                            db[原始description] = description;
+                            增加搜索 = false;
+                        }
                     }
 
 
