@@ -1125,7 +1125,7 @@ public class Translatezh_CN
         {"Adds Axekick/Smite/TornadoKick on main combo","Adds Axekick/Smite/TornadoKick on main combo"},
         {"BlackEnochianPVPFeature","Black天语PVPFeature"},
         {"Enochian Stance Switcher","天语 Stance Switcher"},
-        //#endregio
+        //#endregion
 
         #region 新版
         //#region PvE Combos
@@ -1133,42 +1133,42 @@ public class Translatezh_CN
         //#endregion
         //#region GLOBAL FEATURES
         //#region Global Tank Features
-        {"Global Tank Features","等待翻译"},
-        {"Features and options involving shared role actions for Tanks.\nCollapsing this category does NOT disable the features inside.","这个选项并没有什么实际作用"},
-        {"Tank: Interrupt Feature","打断 Feature"},
+        {"Global Tank Features","全局防护职业功能"},
+        {"Features and options involving shared role actions for Tanks.\nCollapsing this category does NOT disable the features inside.","防护职业的通用功能和选项\n这个选项并没有什么实际作用"},
+        {"Tank: Interrupt Feature","防护：打断 Feature"},
         {"Replaces Low Blow (Stun) with Interject (Interrupt) when the target can be interrupted.\nPLDs can slot Shield Bash to have the feature to work with Shield Bash.","当目标可被打断时，使用插言替换掉下踢。\nPLDs can slot Shield Bash to have the feature to work with Shield Bash."},
-        {"Tank: Double Reprisal Protection","血仇保护机制"},
+        {"Tank: Double Reprisal Protection","防护：血仇保护机制"},
         {"Prevents the use of Reprisal when target already has the effect by replacing it with Stone.","当目标已被赋予雪仇效果时，将雪仇替换为飞石"},
         //#endregion
         //#region Global Healer Features
-        {"Global Healer Features","等待翻译"},
-        {"Features and options involving shared role actions for Healers.\nCollapsing this category does NOT disable the features inside.","这个选项并没有什么实际作用"},
-        {"Healer: Raise Feature","复活 Feature"},
+        {"Global Healer Features","全局治疗职业功能"},
+        {"Features and options involving shared role actions for Healers.\nCollapsing this category does NOT disable the features inside.","治疗职业的通用功能和选项\n这个选项并没有什么实际作用"},
+        {"Healer: Raise Feature","治疗：复活 Feature"},
         {"Changes the class' Raise Ability into Swiftcast.","即可咏唱替换复活"},
         //#endregion
         //#region Global Magical Ranged Features
-        {"Global Magical Ranged Features","等待翻译"},
-        {"Features and options involving shared role actions for Magical Ranged DPS.\nCollapsing this category does NOT disable the features inside.","这个选项并没有什么实际作用"},
-        {"Magical Ranged DPS: Double Addle Protection","等待翻译"},
-        {"Prevents the use of Addle when target already has the effect by replacing it with Fell Cleave.","等待翻译"},
-        {"Magical Ranged DPS: Raise Feature","等待翻译"},
-        {"Changes the class' Raise Ability into Swiftcast or Dualcast in the case of RDM.","等待翻译"},
+        {"Global Magical Ranged Features","全局远程魔法进攻职业功能"},
+        {"Features and options involving shared role actions for Magical Ranged DPS.\nCollapsing this category does NOT disable the features inside.","远程魔法进攻职业的通用功能和选项\n这个选项并没有什么实际作用"},
+        {"Magical Ranged DPS: Double Addle Protection","远程魔法进攻: 昏乱保护机制"},
+        {"Prevents the use of Addle when target already has the effect by replacing it with Fell Cleave.","当目标已被赋予昏乱效果时，将昏乱替换为裂石飞环"},
+        {"Magical Ranged DPS: Raise Feature","远程魔法进攻：复活 Feature"},
+        {"Changes the class' Raise Ability into Swiftcast or Dualcast in the case of RDM.","将职业的复活技能替换为即刻咏唱或是赤魔法师就替换为连续咏唱"},
         //#endregion
         //#region Global Melee Features
-        {"Global Melee DPS Features","等待翻译"},
-        {"Features and options involving shared role actions for Melee DPS.\nCollapsing this category does NOT disable the features inside.","这个选项并没有什么实际作用"},
-        {"Melee DPS: Double Feint Protection","等待翻译"},
-        {"Prevents the use of Feint when target already has the effect by replacing it with Fire.","等待翻译"},
+        {"Global Melee DPS Features","全局近战进攻职业功能"},
+        {"Features and options involving shared role actions for Melee DPS.\nCollapsing this category does NOT disable the features inside.","近战进攻职业功能的通用功能和选项\n这个选项并没有什么实际作用"},
+        {"Melee DPS: Double Feint Protection","近战进攻：牵制保护机制"},
+        {"Prevents the use of Feint when target already has the effect by replacing it with Fire.","当目标已被赋予牵制效果时，将牵制替换为火炎"},
         //#endregion
         //#region Global Ranged Physical Features
-        {"Global Physical Ranged Features","等待翻译"},
-        {"Features and options involving shared role actions for Physical Ranged DPS.\nCollapsing this category does NOT disable the features inside.","这个选项并没有什么实际作用"},
-        {"Physical Ranged DPS: Double Mitigation Protection","等待翻译"},
+        {"Global Physical Ranged Features","全局物理远程职业功能"},
+        {"Features and options involving shared role actions for Physical Ranged DPS.\nCollapsing this category does NOT disable the features inside.","物理远程职业功能的通用功能和选项\n这个选项并没有什么实际作用"},
+        {"Physical Ranged DPS: Double Mitigation Protection","物理远程进攻：减伤保护机制"},
         //行吟//策动防守之桑巴
         {"Prevents the use of Tactician/Troubadour/Shield Samba when target already has one of those three effects by replacing it with Stardiver.","大义防止行吟/策动/防守之桑巴 重复使用"},
         //#endregion
-        {"Output Combat Log","等待翻译"},
-        {"Outputs your performed actions to the chat.","等待翻译"},
+        {"Output Combat Log","输出战斗日志"},
+        {"Outputs your performed actions to the chat.","将你使用的技能输出到聊天框"},
         //#endregion
         //#region ASTROLOGIAN
         //#region DPS
