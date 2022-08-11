@@ -1910,7 +1910,7 @@ public class Translatezh_CN
         #region ASTROLOGIAN
         #endregion
         #region MACHINIST
-        {"Burst Mode","水晶冲突"},
+        {"Burst Mode","爆发模式"},
         {"Turns Blast Charge into an all-in-one damage button.","把蓄力冲击改为伤害combo按键"},
         {"Alternate Drill Mode","等待翻译"},
         {"Saves drill for use after wildfire.","保留钻头次数并在野火后使用"},
