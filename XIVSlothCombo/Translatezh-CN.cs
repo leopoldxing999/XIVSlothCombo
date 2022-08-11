@@ -1286,12 +1286,13 @@ public class Translatezh_CN
         {"Simple No Waste Mode","简易无浪费模式"},
         {"Adds enemy health checking on mobs for buffs, dots and songs.\nThey will not be reapplied if less than specified.",
         "在使用buff，dots和唱歌时，加入敌人血量检测。\n如果血量少于指定值，则不会再次重新应用。"},
-        {"Pools Bloodletter charges to allow for optimum burst phases.","等待翻译"},
+        {"Pools Bloodletter charges to allow for optimum burst phases.", "将失血箭集中于最佳爆发期" },
         {"Simple Raging Jaws","简易猛者中续伶牙俐齿"},
-        {"Opener Only","起手专用"},
-        {"Until the first auto-refresh you can DoT new targets automatically.","等待校对 你可以自动对新目标释放Dots直到第一次自动刷新"},
-        {"Exclude Wanderer's Minuet","等待翻译"},
-        {"Dont use Wanderer's Minuet.","等待翻译"},
+        {"Opener Only","只有起手"},
+        {"Until the first auto-refresh you can DoT new targets automatically.",
+        "你可以自动对新目标释放Dots直到第一次自动刷新(伶牙俐齿)\n即启用本选项后，在第一次自动刷新(伶牙俐齿)后不会对新目标上Dot(包括同一目标上天断Dot后)"},
+        {"Exclude Wanderer's Minuet", "除外放浪神的小步舞曲" },
+        {"Dont use Wanderer's Minuet.", "不使用放浪神的小步舞曲" },
         #endregion
         #region DANCER
         #region Single Target Multibutton
