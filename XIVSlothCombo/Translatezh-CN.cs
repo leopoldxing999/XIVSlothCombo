@@ -1900,7 +1900,7 @@ public class Translatezh_CN
         //#region ASTROLOGIAN
         //#endregion
         //#region MACHINIST
-        {"Burst Mode","等待翻译"},
+        {"Burst Mode","水晶冲突"},
         {"Turns Blast Charge into an all-in-one damage button.","等待翻译"},
         {"Alternate Drill Mode","等待翻译"},
         {"Saves drill for use after wildfire.","等待翻译"},
@@ -1983,9 +1983,9 @@ public class Translatezh_CN
         {"Adds Arcane Circle to the main combo when under a set HP perecentage.","等待翻译"},
         //#endregion
         //#region MONK
-        {"Turns Phantom Rush Combo into all-in-one damage button.","等待翻译"},
-        {"Add Thunderclap","等待翻译"},
-        {"Adds Thunderclap to jump to Enemy Target when not buffed with Wind Resonance.","等待翻译"},
+        {"Turns Phantom Rush Combo into all-in-one damage button.","将六合星导脚、凤凰舞插入连击"},
+        {"Add Thunderclap","轻声步法"},
+        {"Adds Thunderclap to jump to Enemy Target when not buffed with Wind Resonance.","没有极风神髓状态，将轻声步法替换连击"},
         {"Add Riddle of Earth","等待翻译"},
         {"Adds Riddle of Earth and Earth's Reply to the Burst Mode when in combat.","等待翻译"},
         //#endregion
