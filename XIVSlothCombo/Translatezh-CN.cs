@@ -1911,39 +1911,39 @@ public class Translatezh_CN
         #endregion
         #region MACHINIST
         {"Burst Mode","水晶冲突"},
-        {"Turns Blast Charge into an all-in-one damage button.","等待翻译"},
+        {"Turns Blast Charge into an all-in-one damage button.","把蓄力冲击改为伤害combo按键"},
         {"Alternate Drill Mode","等待翻译"},
-        {"Saves drill for use after wildfire.","等待翻译"},
+        {"Saves drill for use after wildfire.","保留钻头次数并在野火后使用"},
         {"Alternate Analysis Mode","等待翻译"},
-        {"Uses analysis with Air Anchor instead of Chain Saw.","等待翻译"},
+        {"Uses analysis with Air Anchor instead of Chain Saw.","分析后使用空气锚，不使用回转飞锯"},
         #endregion
         #region BARD
-        {"Turns Powerful Shot into an all-in-one damage button.","等待翻译"},
+        {"Turns Powerful Shot into an all-in-one damage button.","把强劲射击改为伤害combo按键"},
         #endregion
         #region RED MAGE
-        {"Turns Verstone/Verfire into an all-in-one damage button.","等待翻译"},
+        {"Turns Verstone/Verfire into an all-in-one damage button.","赤飞石/赤火炎改为伤害combo按键"},
         #endregion
         #region WARRIOR
-        {"Turns Heavy Swing into an all-in-one damage button.","等待翻译"},
-        {"Bloodwhetting Option","等待翻译"},
-        {"Allows usage of bloodwhetting anytime, not just inbetween GCDs.","等待翻译"},
-        {"Blota Option","等待翻译"},
-        {"Removes blota from main combo if Primal Rend has 5 seconds or less on its cooldown.","等待翻译"},
+        {"Turns Heavy Swing into an all-in-one damage button.","把重劈改为伤害combo按键"},
+        {"Bloodwhetting Option","血气选项"},
+        {"Allows usage of bloodwhetting anytime, not just inbetween GCDs.","允许随时使用原初的血气，而不是必须在GCD之间插入"},
+        {"Blota Option","献身选项"},
+        {"Removes blota from main combo if Primal Rend has 5 seconds or less on its cooldown.","如果蛮荒崩裂的冷却时间为 5 秒或更短，则从主要连击中移除献身"},
         #endregion
         #region NINJA
-        {"Turns Aeolian Edge Combo into an all-in-one damage button.","等待翻译"},
-        {"AoE Burst Mode","等待翻译"},
-        {"Turns Fuma Shuriken into an all-in-one AoE damage button.","等待翻译"},
+        {"Turns Aeolian Edge Combo into an all-in-one damage button.","把旋风刃连击改为伤害combo按键"},
+        {"AoE Burst Mode","AOE爆发模式"},
+        {"Turns Fuma Shuriken into an all-in-one AoE damage button.","把风魔手里剑改为AOE伤害combo按键"},
         #endregion
         #region SAGE
-        {"Turns Dosis III into an all-in-one damage button.","等待翻译"},
+        {"Turns Dosis III into an all-in-one damage button.","把注药 III 改成伤害combo按键"},
         #endregion
         #region DANCER
-        {"Turns Fountain Combo into an all-in-one damage button.","等待翻译"},
-        {"Honing Dance Option","等待翻译"},
-        {"Adds Honing Dance to the main combo when in melee range (for pack pushing, respects global offset).\nThis option prevents early use of Honing Ovation!\nKeep Honing Dance bound to another key if you want to end early.","等待翻译"},
-        {"Curing Waltz Option","等待翻译"},
-        {"Adds Curing Waltz to the main combo when available, and your HP is at or below the set percentage.","等待翻译"},
+        {"Turns Fountain Combo into an all-in-one damage button.","把喷泉连改成伤害combo按键"},
+        {"Honing Dance Option","刃舞选项"},
+        {"Adds Honing Dance to the main combo when in melee range (for pack pushing, respects global offset).\nThis option prevents early use of Honing Ovation!\nKeep Honing Dance bound to another key if you want to end early.","在近战范围内将刃舞添加到combo。此选项可防止提早使用刃舞·终！如果您想提前结束，请将刃舞绑定到另一个键"},
+        {"Curing Waltz Option","治疗之华尔兹选项"},
+        {"Adds Curing Waltz to the main combo when available, and your HP is at or below the set percentage."," 你的HP等于或低于设定百分比时把治疗华尔兹加入到combo中"},
         #endregion
         #region SAMURAI
         #region Burst Mode
@@ -1956,8 +1956,8 @@ public class Translatezh_CN
         {"Adds Burst Mode to Kasha Combo instead.","等待翻译"},
         #endregion
         #region Kasha Features
-        {"PvP Features for Kasha Combo","等待翻译"},
-        {"Collection of Features for Kasha Combo.","等待翻译"},
+        {"PvP Features for Kasha Combo","花车连PVP特性"},
+        {"Collection of Features for Kasha Combo.","花车连的功能集合"},
         {"Soten Gap Closer Option","等待翻译"},
         {"Adds Soten when outside melee range to the Kasha Combo.","等待翻译"},
         {"AoE Melee Protection","等待翻译"},
@@ -1965,19 +1965,19 @@ public class Translatezh_CN
         #endregion
         #endregion
         #region BLACK MAGE
-        {"Turns Fire and Blizzard into all-in-one damage buttons.","等待翻译"},
-        {"Add Night Wing","等待翻译"},
-        {"Adds Night Wing to the Burst Mode","等待翻译"},
-        {"Add Aetherial Manipulation","等待翻译"},
-        {"Uses Aetherial Manipulation to gap close if Burst is off cooldown.","等待翻译"},
+        {"Turns Fire and Blizzard into all-in-one damage buttons.","把火炎和冰结改为伤害combo按键"},
+        {"Add Night Wing","添加夜翼"},
+        {"Adds Night Wing to the Burst Mode","添加夜翼到爆发模式"},
+        {"Add Aetherial Manipulation","添加以太步"},
+        {"Uses Aetherial Manipulation to gap close if Burst is off cooldown.","爆发CD没好的时候，使用以太步拉近距离"},
         #endregion
         #region REAPER
-        {"Turns Slice Combo into an all-in-one damage button.\nAdds Soul Slice to the main combo.","等待翻译"},
-        {"Grim Swathe Option","等待翻译"},
-        {"Weaves Grim Swathe onto the main combo when available.","等待翻译"},
-        {"Death Warrant Option","等待翻译"},
-        {"Adds Death Warrant onto the main combo when Plentiful Harvest is ready to use, or when Plentiful Harvest's cooldown is longer than Death Warrant's.\nRespects Immortal Sacrifice Pooling Option.","等待翻译"},
-        {"Plentiful Harvest Opener Option","等待翻译"},
+        {"Turns Slice Combo into an all-in-one damage button.\nAdds Soul Slice to the main combo.","把切割改为伤害combo按键 \n添加灵魂切割到主连击 "},
+        {"Grim Swathe Option","束缚挥割选项"},
+        {"Weaves Grim Swathe onto the main combo when available.","束缚挥割可用时，添加到主连击上"},
+        {"Death Warrant Option","斩首令选项"},
+        {"Adds Death Warrant onto the main combo when Plentiful Harvest is ready to use, or when Plentiful Harvest's cooldown is longer than Death Warrant's.\nRespects Immortal Sacrifice Pooling Option.","当大丰收可以使用时，或者当大丰收的冷却时间比死亡令的冷却时间长时，将斩首令添加到主连击中 \n 可以和死亡祭品的选项一同使用"},
+        {"Plentiful Harvest Opener Option","大丰收开启选项"},
         {"Starts combat with Plentiful Harvest to immediately begin Limit Break generation.","等待翻译"},
         {"Plentiful Harvest + Immortal Sacrifice Pooling Option - BETA","等待翻译"},
         {"Pools stacks of Immortal Sacrifice before using Plentiful Harvest.\nAlso holds Plentiful Harvest if Death Warrant is on cooldown.\nSet the value to 3 or below to use Plentiful as soon as it's suitable.","等待翻译"},
@@ -2018,14 +2018,14 @@ public class Translatezh_CN
         #endregion
         #endregion
         #region PvPGlobals // Pending insertion into above region
-        {"Emergency Heals","等待翻译"},
-        {"Uses Recuperate when your HP is under a certain threshold and you have the MP.","等待翻译"},
-        {"Emergency Guard","等待翻译"},
-        {"Uses Guard when your HP is under a certain threshold.","等待翻译"},
-        {"Quick Purify","等待翻译"},
-        {"Uses Purify when afflicted with any selected debuff.","等待翻译"},
-        {"Prevent Mash Cancelling","等待翻译"},
-        {"Stops you cancelling your guard if you're mashing buttons","等待翻译"},
+        {"Emergency Heals","紧急自愈"},
+        {"Uses Recuperate when your HP is under a certain threshold and you have the MP.","有蓝且血量低于阈值时使用自愈"},
+        {"Emergency Guard","紧急防御"},
+        {"Uses Guard when your HP is under a certain threshold.","血量低于阈值时使用防御"},
+        {"Quick Purify","快速净化"},
+        {"Uses Purify when afflicted with any selected debuff.","受到选定的debuff时使用净化"},
+        {"Prevent Mash Cancelling","防止取消防御"},
+        {"Stops you cancelling your guard if you're mashing buttons","阻止你取消防御"},
         #endregio
         
 
