@@ -2027,10 +2027,6 @@ public class Translatezh_CN
         {"Uses Purify when afflicted with any selected debuff.","受到选定的debuff时使用净化"},
         {"Prevent Mash Cancelling","防止取消防御"},
         {"Stops you cancelling your guard if you're mashing buttons","阻止你取消防御"},
-        #endregio
-        
-
-
         #endregion
         
         {"Melee DPS: True North Protection","等待翻译"},
