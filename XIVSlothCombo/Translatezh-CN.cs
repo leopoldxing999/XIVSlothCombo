@@ -1947,21 +1947,21 @@ public class Translatezh_CN
         #endregion
         #region SAMURAI
         #region Burst Mode
-        {"Adds Meikyo Shisui, Midare:Setsugekka, Ogi Namikiri, Kaeshi: Namikiri and Soten to Meikyo Shisui.\nWill only cast Midare and Ogi Namikiri when you're not moving.\nWill not use if target is guarding.","等待翻译"},
-        {"Add Chiten","等待翻译"},
-        {"Adds Chiten to the Burst Mode when in combat and HP is below 95%.","等待翻译"},
-        {"Add Mineuchi","等待翻译"},
-        {"Adds Mineuchi to the Burst Mode.","等待翻译"},
-        {"Burst Mode on Kasha Combo","等待翻译"},
-        {"Adds Burst Mode to Kasha Combo instead.","等待翻译"},
+        {"Adds Meikyo Shisui, Midare:Setsugekka, Ogi Namikiri, Kaeshi: Namikiri and Soten to Meikyo Shisui.\nWill only cast Midare and Ogi Namikiri when you're not moving.\nWill not use if target is guarding.","加入明镜止水，纷乱雪月花，奥义斩浪，回返斩浪，必杀剑·早天进明镜止水。 \n只会在你不移动时使用纷乱雪月花和奥义斩浪。\n如果目标处于防御状态，将不会使用。"},
+        {"Add Chiten","添加必杀剑·地天"},
+        {"Adds Chiten to the Burst Mode when in combat and HP is below 95%.","HP低于95%时的爆发模式加入必杀剑·地天"},
+        {"Add Mineuchi","添加刀背击打"},
+        {"Adds Mineuchi to the Burst Mode.","添加刀背击打进爆发模式"},
+        {"Burst Mode on Kasha Combo","花车连击的爆发模式"},
+        {"Adds Burst Mode to Kasha Combo instead.","爆发模式加入花车连击"},
         #endregion
         #region Kasha Features
         {"PvP Features for Kasha Combo","花车连PVP特性"},
         {"Collection of Features for Kasha Combo.","花车连的功能集合"},
-        {"Soten Gap Closer Option","等待翻译"},
-        {"Adds Soten when outside melee range to the Kasha Combo.","等待翻译"},
-        {"AoE Melee Protection","等待翻译"},
-        {"Makes the AOE combos unusable if not in melee range of target.","等待翻译"},
+        {"Soten Gap Closer Option","使用必杀剑·早天拉近距离"},
+        {"Adds Soten when outside melee range to the Kasha Combo.","花车连击时目标在近战范围外时使用必杀剑·早天"},
+        {"AoE Melee Protection","AOE范围近战保护"},
+        {"Makes the AOE combos unusable if not in melee range of target.","敌人不在近战范围,不使用AOE"},
         #endregion
         #endregion
         #region BLACK MAGE
