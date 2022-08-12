@@ -31,7 +31,7 @@ namespace XIVSlothCombo.Attributes
                 // if (Service.Configuration.Language == "zh-CN")
                 {
                     Dictionary<string, string> db = Translatezh_CN.db;
-                    Dictionary<string, string> dbActionName = Translatezh_CN.dbActionName;
+                    Dictionary<string, string> dbActionName = Translatezh_CN_DBActionName.dbActionName;
 
                     if (db.ContainsKey(fancyName))
                     {
