@@ -23,7 +23,9 @@ namespace XIVSlothCombo.Attributes
             var 原始fancyName = fancyName;
             var 原始description = description;
             var 增加搜索 = true;
-            var 技能翻译 = true;
+            var fancyName技能翻译 = true;
+            var description技能翻译 = true;
+            var saveWord = "等待翻译";
 
 
             // if (Service.Configuration != null)
@@ -33,53 +35,41 @@ namespace XIVSlothCombo.Attributes
                     Dictionary<string, string> db = Translatezh_CN.db;
                     Dictionary<string, string> dbActionName = Translatezh_CN_DBActionName.dbActionName;
 
-                    if (db.ContainsKey(fancyName))
+                    if (db.ContainsKey(原始fancyName))
                     {
-                        fancyName = db[fancyName];
-                        增加搜索 = false;
-                        技能翻译 = false;
-                    }
-
-
-                    if (db.ContainsKey(description))
-                    {
-                        description = db[description];
-                        技能翻译 = false;
-                    }
-                    if (技能翻译)
-                    {
-                        var split_description = description.Replace('\n',' ').Split(' ');
-                        var find = false;
-                        for (int i = 0; i < split_description.Length; i++)
-                        {                            
-                            if (i < split_description.Length - 2)
-                            {
-                                var new_word = split_description[i] + " " + split_description[i + 1] + " " + split_description[i + 2];
-                                if (dbActionName.ContainsKey(new_word))
-                                {
-                                    description = description.Replace(new_word, dbActionName[new_word]);
-                                    find = true;
-                                    continue;
-                                }
-                            }
-                            if (i < split_description.Length - 1)
-                            {
-                                var new_word = split_description[i] + " " + split_description[i + 1];
-                                if (dbActionName.ContainsKey(new_word))
-                                {
-                                    description = description.Replace(new_word, dbActionName[new_word]);
-                                    find = true;
-                                    continue;
-                                }
-                            }
-                            if (dbActionName.ContainsKey(split_description[i]))
-                            {
-                                description = description.Replace(split_description[i], dbActionName[split_description[i]]);
-                                find = true;
-                            }
-
+                        if (!db[原始fancyName].Contains(saveWord))
+                        {
+                            fancyName = db[原始fancyName];
+                            增加搜索 = false;
+                            fancyName技能翻译 = false;
                         }
-                        if (find)
+                    }
+
+                    if (fancyName技能翻译)
+                    {
+                        ProcessingActionName(原始fancyName, dbActionName, out fancyName);
+                        if(fancyName != 原始fancyName)
+                        {
+                            db[原始fancyName] = fancyName;
+                            增加搜索 = false;
+                        }
+                    }
+
+
+                    if (db.ContainsKey(原始description))
+                    {
+                        if (!db[原始description].Contains(saveWord))
+                        {
+                            description = db[原始description];
+                            description技能翻译 = false;
+                        }
+                    }
+                    
+                    if (description技能翻译)
+                    {
+                        ProcessingActionName(原始description, dbActionName, out description);
+
+                        if (description!= 原始description)
                         {
                             db[原始description] = description;
                             增加搜索 = false;
@@ -113,22 +103,24 @@ namespace XIVSlothCombo.Attributes
                     }
                 }
             }
-            if (fancyName == "等待翻译")
-            {
-                fancyName = 原始fancyName;
-            }
-
-            if (description == "等待翻译")
-            {
-                description = 原始description;
-            }
-
 
             // if (fancyName .Equals("No Mercy AOE Option.") )
             // {
             //     fancyName = "我是你爹啊";
             // }
+            if (增加搜索)
+            {
+                if (fancyName == saveWord)
+                {
+                    fancyName = 原始fancyName;
+                }
 
+                if (description == saveWord)
+                {
+                    description = 原始description;
+                }
+            }
+            
 
             FancyName = fancyName;
             Description = description;
@@ -136,6 +128,45 @@ namespace XIVSlothCombo.Attributes
             Order = order;
             MemeName = memeName;
             MemeDescription = memeDescription;
+        }
+
+        public static void ProcessingActionName(string sentence, Dictionary<string, string> dbActionName, out string output)
+        {
+            output = sentence;
+            var split_sentence = sentence.Replace('\n', ' ').Split(' ');
+            for (int i = 0; i < split_sentence.Length; i++)
+            {
+                if (split_sentence[i].Contains("/"))
+                {
+                    if (dbActionName.ContainsKey(split_sentence[i]))
+                    {
+                        split_sentence[i] = dbActionName[split_sentence[i]];
+                    }
+                }
+                if (i < split_sentence.Length - 2)
+                {
+                    var new_word = split_sentence[i] + " " + split_sentence[i + 1] + " " + split_sentence[i + 2];
+                    if (dbActionName.ContainsKey(new_word))
+                    {
+                        output = output.Replace(new_word, dbActionName[new_word]);
+                        continue;
+                    }
+                }
+                if (i < split_sentence.Length - 1)
+                {
+                    var new_word = split_sentence[i] + " " + split_sentence[i + 1];
+                    if (dbActionName.ContainsKey(new_word))
+                    {
+                        output = output.Replace(new_word, dbActionName[new_word]);
+                        continue;
+                    }
+                }
+                if (dbActionName.ContainsKey(split_sentence[i]))
+                {
+                    output = output.Replace(split_sentence[i], dbActionName[split_sentence[i]]);
+
+                }
+            }
         }
 
         /// <summary> Gets the display name. </summary>
