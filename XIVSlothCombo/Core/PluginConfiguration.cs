@@ -8,6 +8,7 @@ using XIVSlothCombo.Attributes;
 using XIVSlothCombo.Combos;
 using XIVSlothCombo.Combos.PvE;
 using XIVSlothCombo.Services;
+using XIVSlothCombo.Extensions;
 
 namespace XIVSlothCombo.Core
 {
@@ -116,16 +117,17 @@ namespace XIVSlothCombo.Core
         /// <summary> Gets a custom float value. </summary>
         public static float GetCustomFloatValue(string config, float defaultMinValue = 0)
         {
-            if (!CustomFloatValues.TryGetValue(config, out float configValue)) { SetCustomFloatValue(config, defaultMinValue); return defaultMinValue; }
+            if (!CustomFloatValues.TryGetValue(config, out float configValue))
+            {
+                SetCustomFloatValue(config, defaultMinValue);
+                return defaultMinValue;
+            }
 
             return configValue;
         }
 
         /// <summary> Sets a custom float value. </summary>
-        public static void SetCustomFloatValue(string config, float value)
-        {
-            CustomFloatValues[config] = value;
-        }
+        public static void SetCustomFloatValue(string config, float value) => CustomFloatValues[config] = value;
 
         #endregion
 
@@ -137,16 +139,17 @@ namespace XIVSlothCombo.Core
         /// <summary> Gets a custom integer value. </summary>
         public static int GetCustomIntValue(string config, int defaultMinVal = 0)
         {
-            if (!CustomIntValues.TryGetValue(config, out int configValue)) { SetCustomIntValue(config, defaultMinVal); return defaultMinVal; }
+            if (!CustomIntValues.TryGetValue(config, out int configValue))
+            {
+                SetCustomIntValue(config, defaultMinVal);
+                return defaultMinVal;
+            }
 
             return configValue;
         }
 
         /// <summary> Sets a custom integer value. </summary>
-        public static void SetCustomIntValue(string config, int value)
-        {
-            CustomIntValues[config] = value;
-        }
+        public static void SetCustomIntValue(string config, int value) => CustomIntValues[config] = value;
 
         #endregion
 
@@ -158,16 +161,17 @@ namespace XIVSlothCombo.Core
         /// <summary> Gets a custom boolean value. </summary>
         public static bool GetCustomBoolValue(string config)
         {
-            if (!CustomBoolValues.TryGetValue(config, out bool configValue)) { SetCustomBoolValue(config, false); return false; }
+            if (!CustomBoolValues.TryGetValue(config, out bool configValue))
+            {
+                SetCustomBoolValue(config, false);
+                return false;
+            }
 
             return configValue;
         }
 
         /// <summary> Sets a custom boolean value. </summary>
-        public static void SetCustomBoolValue(string config, bool value)
-        {
-            CustomBoolValues[config] = value;
-        }
+        public static void SetCustomBoolValue(string config, bool value) => CustomBoolValues[config] = value;
 
         #endregion
 
@@ -179,16 +183,17 @@ namespace XIVSlothCombo.Core
         /// <summary> Gets a custom boolean array value. </summary>
         public static bool[] GetCustomBoolArrayValue(string config)
         {
-            if (!CustomBoolArrayValues.TryGetValue(config, out bool[]? configValue)) { SetCustomBoolArrayValue(config, Array.Empty<bool>()); return Array.Empty<bool>(); }
+            if (!CustomBoolArrayValues.TryGetValue(config, out bool[]? configValue))
+            {
+                SetCustomBoolArrayValue(config, Array.Empty<bool>());
+                return Array.Empty<bool>();
+            }
 
             return configValue;
         }
 
         /// <summary> Sets a custom boolean array value. </summary>
-        public static void SetCustomBoolArrayValue(string config, bool[] value)
-        {
-            CustomBoolArrayValues[config] = value;
-        }
+        public static void SetCustomBoolArrayValue(string config, bool[] value) => CustomBoolArrayValues[config] = value;
 
         #endregion
 
@@ -206,8 +211,63 @@ namespace XIVSlothCombo.Core
             DNC.FanDance2,
         };
 
-        /// <summary> Handles Mudra path selection for <see cref="CustomComboPreset.NIN_Simple_Mudras"/>. </summary>
-        public int MudraPathSelection { get; set; } = 0;
+        #endregion
+
+        #region Preset Resetting
+
+        [JsonProperty]
+        private static Dictionary<string, bool> ResetFeatureCatalog { get; set; } = new Dictionary<string, bool>();
+
+        private bool GetResetValues(string config)
+        {
+            if (ResetFeatureCatalog.TryGetValue(config, out var value)) return value;
+
+            return false;
+        }
+
+        private void SetResetValues(string config, bool value)
+        {
+            ResetFeatureCatalog[config] = value;
+        }
+
+        public void ResetFeatures(string config, int[] values)
+        {
+            Dalamud.Logging.PluginLog.Debug($"{config} {GetResetValues(config)}");
+            if (!GetResetValues(config))
+            {
+                bool needToResetMessagePrinted = false;
+
+                var presets = Enum.GetValues<CustomComboPreset>().Cast<int>();
+
+                foreach (int value in values)
+                {
+                    Dalamud.Logging.PluginLog.Debug(value.ToString());
+                    if (presets.Contains(value))
+                    {
+                        var preset = Enum.GetValues<CustomComboPreset>()
+                            .Where(preset => (int)preset == value)
+                            .First();
+
+                        if (!IsEnabled(preset)) continue;
+
+                        if (!needToResetMessagePrinted)
+                        {
+                            Service.ChatGui.PrintError($"[XIV Sloth Combo] Some features have been un-enabled due to an update:");
+                            needToResetMessagePrinted = !needToResetMessagePrinted;
+                        }
+
+                        var info = preset.GetComboAttribute();
+                        Service.ChatGui.PrintError($"[XIV Sloth Combo] - {info.JobName}: {info.FancyName}");
+                        EnabledActions.Remove(preset);
+                    }
+                }
+                
+                if (needToResetMessagePrinted)
+                Service.ChatGui.PrintError($"[XIV Sloth Combo] Please re-enable these features if you wish to use them again. We apologise for the inconvenience.");
+            }
+            SetResetValues(config, true);
+            Save();
+        }
 
         #endregion
 
@@ -216,7 +276,7 @@ namespace XIVSlothCombo.Core
         /// <summary> Handles 'special event' feature naming. </summary>
         public bool SpecialEvent { get; set; } = false;
 
-        /// <summary> Hide MotD. </summary>
+        /// <summary> Hides the message of the day. </summary>
         public bool HideMessageOfTheDay { get; set; } = false;
 
         /// <summary> Save the configuration to disk. </summary>
