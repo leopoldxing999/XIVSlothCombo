@@ -219,7 +219,7 @@ namespace XIVSlothCombo.Window.Functions
 
             ImGui.PushStyleColor(ImGuiCol.Text, ImGuiColors.ParsedPink);
 
-            if (ImGui.Checkbox($"Stun###{config}0", ref values[0]))
+            if (ImGui.Checkbox($"[眩晕]###{config}0", ref values[0]))
             {
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
@@ -227,7 +227,7 @@ namespace XIVSlothCombo.Window.Functions
 
             ImGui.NextColumn();
 
-            if (ImGui.Checkbox($"Deep Freeze###{config}1", ref values[1]))
+            if (ImGui.Checkbox($"[冻结]###{config}1", ref values[1]))
             {
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
@@ -235,7 +235,7 @@ namespace XIVSlothCombo.Window.Functions
 
             ImGui.NextColumn();
 
-            if (ImGui.Checkbox($"Half Asleep###{config}2", ref values[2]))
+            if (ImGui.Checkbox($"[渐渐睡眠]###{config}2", ref values[2]))
             {
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
@@ -243,7 +243,7 @@ namespace XIVSlothCombo.Window.Functions
 
             ImGui.NextColumn();
 
-            if (ImGui.Checkbox($"Sleep###{config}3", ref values[3]))
+            if (ImGui.Checkbox($"[睡眠]###{config}3", ref values[3]))
             {
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
@@ -251,7 +251,7 @@ namespace XIVSlothCombo.Window.Functions
 
             ImGui.NextColumn();
 
-            if (ImGui.Checkbox($"Bind###{config}4", ref values[4]))
+            if (ImGui.Checkbox($"[止步]###{config}4", ref values[4]))
             {
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
@@ -259,7 +259,7 @@ namespace XIVSlothCombo.Window.Functions
 
             ImGui.NextColumn();
 
-            if (ImGui.Checkbox($"Heavy###{config}5", ref values[5]))
+            if (ImGui.Checkbox($"[加重]###{config}5", ref values[5]))
             {
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();
@@ -267,7 +267,7 @@ namespace XIVSlothCombo.Window.Functions
 
             ImGui.NextColumn();
 
-            if (ImGui.Checkbox($"Silence###{config}6", ref values[6]))
+            if (ImGui.Checkbox($"[沉默]###{config}6", ref values[6]))
             {
                 PluginConfiguration.SetCustomBoolArrayValue(config, values);
                 Service.Configuration.Save();

@@ -106,7 +106,7 @@ namespace XIVSlothCombo.Attributes
 
             // if (fancyName .Equals("No Mercy AOE Option.") )
             // {
-            //     fancyName = "我是你爹啊";
+            //     fancyName = "adsadas";
             // }
             if (增加搜索)
             {

@@ -2085,7 +2085,7 @@ public class Translatezh_CN
         {"Flood of Shadow Overcap Feature","等待翻译"},
         {"Uses Flood of Shadow if you are above 8.5k mana or Darkside is about to expire (10sec or less)","等待翻译"},
         {"Adds Shadowbringer on main combo while Darkside is up. Will use all stacks on cooldown.","等待翻译"},
-        {"Edge of Shadow Burst Option","等待翻译"},
+        {"Edge of Shadow Burst Option","暗影锋爆发"},
         {"Uses Edge of Shadow until chosen MP limit is reached during minute window bursts.","等待翻译"},
         {"Adds Carve and Spit on main combo while Darkside is up.","等待翻译"},
         {"Adds Salted Earth on main combo while Darkside is up, will use Salt and Darkness if unlocked.","等待翻译"},
