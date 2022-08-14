@@ -472,7 +472,13 @@ public class Translatezh_CN
         {"Adds Double Down to No Mercy when No Mercy is on cooldown","Adds Double Down to 无情 when 无情 is on cooldown"},
         {"Sonic Break/Bow Shock Option","音速破/弓形冲波 Option"},
         {"Adds Sonic Break and Bow Shock to No Mercy when No Mercy is on cooldown","Adds 音速破 and 弓形冲波 to 无情 when 无情 is on cooldown"},
-        
+        {"Replace Solid Barrel with its combo chain. \nIf all sub options are selected will turn into a full one button rotation (Advanced Gunbreaker)","等待翻译"},
+        {"Adds Bow Shock to the main combo.","等待翻译"},
+        {"Adds Sonic Break to the main combo.","等待翻译"},
+        {"Sonic Break/Bow Shock on No Mercy","等待翻译"},
+        {"Adds Sonic Break and Bow Shock to No Mercy when it is on cooldown.","等待翻译"},
+        {"Adds Danger Zone to the AoE combo when it's off cooldown.","等待翻译"},
+        {"Adds Sonic Break to the AoE combo when it's off cooldown.","等待翻译"},        
         // [CustomComboInfo("Cooldowns on No Mercy", "Adds Cooldowns to No Mercy when No Mercy is on cooldown.", GNB.JobID, 0, "", "")]
         
         #endregion
@@ -643,6 +649,78 @@ public class Translatezh_CN
         {"Adds Doton and Katon/Goka Mekkyaku to the combo.","将 土遁、火遁/劫火灭却之术 加入连击序列."},
         {"Bunshin Feature","分身之术 Feature"},
         {"Adds Bunshin and Phantom Kamaitachi to the combo.","将 分身之术 和 残影镰鼬 加入攻击序列."},
+        {"Simple Mode - Single Target","等待翻译"},
+        {"Replaces Spinning Edge with a one-button full single target rotation.\nThis is the ideal option for newcomers to the job.","等待翻译"},
+        {"Balance Opener Feature","等待翻译"},
+        {"Starts with the Balance opener.\nDoes pre-pull first, if you enter combat before hiding the opener will fail.\nLikewise, moving during TCJ will cause the opener to fail too.\nRequires you to be out of combat with majority of your cooldowns available for it to work.","等待翻译"},
+        {"Simple Mode - AoE","等待翻译"},
+        {"Advanced Mode - Single Target","等待翻译"},
+        {"Replace Spinning Edge with a one-button full single target rotation.\nThese features are ideal if you want to customize the rotation.","等待翻译"},
+        {"Adds Throwing Dagger to Advanced Mode if out of melee range.","等待翻译"},
+        {"Adds Mug to Advanced Mode.","等待翻译"},
+        {"Align Mug with Trick Attack","等待翻译"},
+        {"Only uses Mug whilst the target has Trick Attack, otherwise will use on cooldown.","等待翻译"},
+        {"Use Mug before Trick Attack","等待翻译"},
+        {"Aligns Mug with Trick Attack but weaves it at least 1 GCD before Trick Attack.","等待翻译"},
+        {"Trick Attack Feature","等待翻译"},
+        {"Adds Trick Attack to Advanced Mode.","等待翻译"},
+        {"Save Cooldowns Before Trick Attack","等待翻译"},
+        {"Stops using abilities with longer cooldowns up to 15 seconds before Trick Attack comes off cooldown.","等待翻译"},
+        {"Delayed Trick Attack Feature","等待翻译"},
+        {"Waits at least 8 seconds into combat before using Trick Attack.","等待翻译"},
+        {"Ninjitsu Feature","等待翻译"},
+        {"Adds Ninjitsus to Advanced Mode.","等待翻译"},
+        {"Hold 1 Charge","等待翻译"},
+        {"Prevent using both charges of Mudra.","等待翻译"},
+        {"Use Fuma Shuriken","等待翻译"},
+        {"Spends Mudra charges on Fuma Shuriken (only before Raiton is available).","等待翻译"},
+        {"Use Raiton","等待翻译"},
+        {"Spends Mudra charges on Raiton.","等待翻译"},
+        {"Use Suiton","等待翻译"},
+        {"Spends Mudra charges on Suiton.","等待翻译"},
+        {"Use Huton","等待翻译"},
+        {"Spends Mudra charges on Huton.","等待翻译"},
+        {"Adds Assassinate and Dream Within a Dream to Advanced Mode.","等待翻译"},
+        {"Kassatsu Feature","等待翻译"},
+        {"Adds Kassatsu to Advanced Mode.","等待翻译"},
+        {"Use Hyosho Ranryu","等待翻译"},
+        {"Spends Kassatsu on Hyosho Ranryu.","等待翻译"},
+        {"Adds Armor Crush to Advanced Mode.","等待翻译"},
+        {"Huraijin Feature","等待翻译"},
+        {"Adds Huraijin to Advanced Mode.","等待翻译"},
+        {"Bhavacakra Feature","等待翻译"},
+        {"Adds Bhavacakra to Advanced Mode.","等待翻译"},
+        {"Adds Ten Chi Jin (the cooldown) to Advanced Mode.","等待翻译"},
+        {"Adds Meisui to Advanced Mode.","等待翻译"},
+        {"Adds Bunshin to Advanced Mode.","等待翻译"},
+        {"Phantom Kamaitachi Feature","等待翻译"},
+        {"Adds Phantom Kamaitachi to Advanced Mode.","等待翻译"},
+        {"Adds Fleeting/Forked Raiju to Advanced Mode.","等待翻译"},
+        {"Forked Raiju Gapcloser Feature","等待翻译"},
+        {"Uses Forked Raiju when out of range.","等待翻译"},
+        {"Adds True North to Advanced Mode.","等待翻译"},
+        {"Use Before Armor Crush Only","等待翻译"},
+        {"Only triggers the use of True North before Armor Crush.","等待翻译"},
+        {"Second Wind Feature","等待翻译"},
+        {"Adds Second Wind to Advanced Mode.","等待翻译"},
+        {"Shade Shift Feature","等待翻译"},
+        {"Adds Shade Shift to Advanced Mode.","等待翻译"},
+        {"Bloodbath Feature","等待翻译"},
+        {"Adds Bloodbath to Advanced Mode.","等待翻译"},
+        {"Advanced Mode - AoE","等待翻译"},
+        {"Replace Death Blossom with a one-button full AoE rotation.\nThese features are ideal if you want to customize the rotation.","等待翻译"},
+        {"Adds Assassinate/Dream Within a Dream to Advanced Mode.","等待翻译"},
+        {"Ninjitsus Feature","等待翻译"},
+        {"Use Katon","等待翻译"},
+        {"Spends Mudra charges on Katon.","等待翻译"},
+        {"Use Doton","等待翻译"},
+        {"Spends Mudra charges on Doton.","等待翻译"},
+        {"Goka Mekkyaku Feature","等待翻译"},
+        {"Adds Goka Mekkyaku to Advanced Mode.","等待翻译"},
+        {"Adds Hellfrog Medium to Advanced Mode.","等待翻译"},
+        {"Hide to Mug/Trick Attack","等待翻译"},
+        {"Replaces Hide with Mug while in combat and Trick Attack whilst Hidden.","等待翻译"},
+        {"Replace Huraijin with Armor Crush after using Gust Slash.","等待翻译"},        
         #endregion
         #region PALADIN
         {"Goring Blade Combo","沥血剑 Combo"},
@@ -1362,6 +1440,39 @@ public class Translatezh_CN
         {"Adds Living Shadow to AOE on CD and when Darkside is up.","等待翻译"},
         #endregion
         #region DRAGOON
+        #region Advanced Dragoon AoE
+        {"Advanced Dragoon AoE","等待翻译"},
+        {"Replaces Coerthan Torment with its combo chain","等待翻译"},
+        {"Includes Wyrmwind Thrust to the AoE rotation.","等待翻译"},
+        {"Includes Geirskogul and Nastrond to the AoE rotation.","等待翻译"},
+        {"Includes Spineshatter Dive, Dragonfire Dive and Stardiver to the AoE rotation.","等待翻译"},
+        {"Includes High Jump to the AoE rotation.","等待翻译"},
+        {"Includes Mirage to the AoE rotation.","等待翻译"},
+        #endregion
+        #region Advanced Dragoon
+        {"Advanced Dragoon","等待翻译"},
+        {"Replaces Full Thrust with the entire ST combo chain.","等待翻译"},
+        {"Level 88+ Opener","等待翻译"},
+        {"Adds opener to the rotation.\nActivates when Battle Litany and Lance Charge are off cooldown and when True North is used outside of combat. OPTIONAL: USE REACTION OR MOACTION FOR OPTIMAL TARGETING.","等待翻译"},
+        {"Collection of Buff features on Main Combo.","等待翻译"},
+        {"Wyrmwind Thrust Option","等待翻译"},
+        {"Includes Wyrmwind Thrust to the rotation.","等待翻译"},
+        {"Geirskogul and Nastrond Option","等待翻译"},
+        {"Includes Geirskogul and Nastrond to the rotation.","等待翻译"},
+        {"Dives Option","等待翻译"},
+        {"Adds Spineshatter Dive, Dragonfire Dive, and Stardiver to the rotation.\n Select options below for when to use dives.","等待翻译"},
+        {"High Jump Option","等待翻译"},
+        {"Includes High Jump/Jump to the rotation.","等待翻译"},
+        {"Mirage Option","等待翻译"},
+        {"Includes Mirage Dive to the rotation.","等待翻译"},
+        {"Lance Charge Option","等待翻译"},
+        {"Dragon Sight Option","等待翻译"},
+        {"Battle Litany Option","等待翻译"},
+        {"Life Surge Option","等待翻译"},
+        {"Replaces Main Combo with Piercing Talon when you are out of melee range.","等待翻译"},
+        {"Melee Dives Option","等待翻译"},
+        {"Uses Spineshatter Dive, Dragonfire Dive, and Stardiver when in the target's target ring (1 yalm) and closer.","等待翻译"},
+        #endregion
         #region Chaos Thrust Combo
         #endregion
         #region Full Thrust Combo
@@ -1378,10 +1489,16 @@ public class Translatezh_CN
         {"Ranged Uptime Option","等待翻译"},
         {"Replaces Main Combo with Piercing Talon when you are out of melee range.\nNOT OPTIMAL.","等待翻译"},
         #endregion
+        
         #region Simple Dragoon AoE
         #region Buffs AoE Feature
         #endregion
-        {"Replaces Main AoE Combo with Piercing Talon when you are out of melee range.\nNOT OPTIMAL.","等待翻译"},
+        {"Replaces Main AoE Combo with Piercing Talon when you are out of melee range.","等待翻译"},
+        {"Stardiver Feature","等待翻译"},
+        {"Turns Stardiver into Nastrond during Life of the Dragon, and Geirskogul outside of Life of the Dragon.","等待翻译"},
+        {"Lance Charge to Battle Litany Feature","等待翻译"},
+        {"Turns Lance Charge into Battle Litany when the former is on cooldown.","等待翻译"},
+        {"Adds Dragon Sight to Lance Charge, will take precedence over Battle Litany.","等待翻译"},
         #endregion
         #endregion
         #region GUNBREAKER
@@ -1482,6 +1599,7 @@ public class Translatezh_CN
         {"Choose positional order for all positional related features.\nSupports turning Slice/Shadow of Death into all positionals or Slice and Shadow of Death being two separate positionals.",
         "为身位相关的功能选择身位喜好,支持为切割和死亡之影统一或分开设置"},
         #region Single Target (Slice) Combo Section
+        {"Replace Slice with its combo chain.\nIf all sub options are toggled will turn into a full one button rotation (Advanced Reaper)","将切割替换为切割连击。如果启用了所有子选项将变为一键循环(Advanced 镰刀)"},
         {"Replace Slice with its combo chain.\nIf all sub options are toggled will turn into a full one button rotation (Simple Reaper)", "将切割替换为切割连击。如果启用了所有子选项将变为一键循环(简易镰刀)" },
         {"Adds Soul Slice to Slice Combo when Soul Gauge is 50 or less and when current target is afflicted with Death's Design.", "当魂衣值低于50点，并且目标拥有死亡烙印Debuff时，将灵魂切割加入连击。" },
         {"Adds Shadow of Death to Slice Combo if Death's Design is not present on current target, or is about to expire.", "当目标没有或者死亡烙印Debuff即将到期时，将死亡之影加入连击。" },
@@ -1687,7 +1805,7 @@ public class Translatezh_CN
         {"Adds Kyuten onto main AoE combos when Kenki is at the selected amount or more","等待翻译"},
         #endregion
         #region Main Combo (Gekko) Features
-        {"Replace Gekko with its combo chain.\nIf all sub options are selected will turn into a full one button rotation (Simple Samurai)","等待翻译"},
+        {"Replace Gekko with its combo chain.\nIf all sub options are selected will turn into a full one button rotation (Advanced Samurai)","等待翻译"},
         {"Enpi Uptime Feature","等待翻译"},
         {"Replace Main Combo with Enpi when you are out of range.","等待翻译"},
         {"Yukikaze Combo on Main Combo","等待翻译"},
@@ -1856,6 +1974,7 @@ public class Translatezh_CN
         {"Changes Painflare to Ruin 4 when out of Aetherflow stacks, Energy Siphon is on cooldown, and Ruin 4 is up.","等待翻译"},
         #endregion
         #region WARRIOR
+        {"All in one main combo feature adds Storm's Eye/Path. \nIf all sub options and Fell Cleave/Decimate Options are toggled will turn into a full one button rotation (Advanced Warrior)","等待翻译"},
         {"Adds Fell Cleave to main combo when gauge is at 50 or more and adds Decimate to the AoE combo .\nWill use Inner Chaos/Chaotic Cyclone if Infuriate is used and Fell Cleave/Steel Cyclone during Inner Release.\nWill begin pooling resources when Inner Release is under 30s","等待翻译"},
         {"Infuriate AoE Feature","战嚎 AoE Feature"},
         {"Adds Infuriate to AoE Combo when gauge is below 50 and not under Inner Release.","Adds 战嚎 to AoE Combo when gauge is below 50 and not under Inner Release."},
@@ -2002,8 +2121,7 @@ public class Translatezh_CN
         #endregion
         #region DRAGOON
         #endregion
-        #region GUNBREAKER
-        #endregion
+
         #region PALADIN
         #endregion
         #endregion
