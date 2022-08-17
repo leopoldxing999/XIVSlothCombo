@@ -1224,7 +1224,7 @@ public class Translatezh_CN
         {"Global Healer Features","全局治疗职业功能"},
         {"Features and options involving shared role actions for Healers.\nCollapsing this category does NOT disable the features inside.","治疗职业的通用功能和选项\n这个选项并没有什么实际作用"},
         {"Healer: Raise Feature","治疗：复活 Feature"},
-        {"Changes the class' Raise Ability into Swiftcast.","即可咏唱替换复活"},
+        {"Changes the class' Raise Ability into Swiftcast.","即刻咏唱替换复活"},
         #endregion
         #region Global Magical Ranged Features
         {"Global Magical Ranged Features","全局远程魔法进攻职业功能"},
@@ -1682,7 +1682,7 @@ public class Translatezh_CN
         {"Single Target Acceleration Option","对单目标时使用促进 设置"},
         {"Add Acceleration when no Verfire/Verstone proc is available","当赤火炎/赤飞石未被触发时自动插入促进."},
         {"Include Swiftcast Option","对单目标时使用即刻咏唱 设置"},
-        {"Add Swiftcast when all Acceleration charges are used","当促进全部使用完后插入即可咏唱瞬发赤闪雷/赤疾风."},
+        {"Add Swiftcast when all Acceleration charges are used","当促进全部使用完后插入即刻咏唱瞬发赤闪雷/赤疾风."},
         {"Verfire/Verstone Feature","赤火炎/赤飞石 设置"},
         {"Replace Jolt with Verfire and Verstone","触发赤火炎/赤飞石后自动将摇荡替换."},
         {"Weave oGCD Damage Feature","伤害能力技插入 设置"},
@@ -1704,7 +1704,7 @@ public class Translatezh_CN
         {"Replace Scatter/Impact with Verthunder II or Veraero II","使用赤震雷/赤烈风后自动将其替换为散碎/冲击."},
         {"AoE Acceleration Feature","AoE攻击时使用促进 设置"},
         {"Use Acceleration on Scatter/Impact for increased damage","使用促进瞬发散碎/冲击."},
-        {"Add Swiftcast when all Acceleration charges are used or when below level 50","50级以下时，当促进全部使用完后插入即可咏唱瞬发散碎/冲击."},
+        {"Add Swiftcast when all Acceleration charges are used or when below level 50","50级以下时，当促进全部使用完后插入即刻咏唱瞬发散碎/冲击."},
         {"Weave Acceleration Option","使用促进 设置"},
         {"Only use acceleration during weave windows","仅使用促进瞬发技能."},
         #endregion
@@ -1728,7 +1728,7 @@ public class Translatezh_CN
         #region Sections 6 to 7 - QoL
         {"Use Lucid Dreaming on Jolt 1/2, Veraero 1/2/3, Verthunder 1/2/3, and Scatter/Impact when below threshold.","当mp低于设定值时，在可用窗口中插入使用醒梦."},
         {"Verraise Feature","赤复活 设置"},
-        {"Changes Swiftcast to Verraise when under the effect of Swiftcast or Dualcast.","当存在连续咏唱状态或使用即可咏唱后，将即可咏唱替换为赤复活."},
+        {"Changes Swiftcast to Verraise when under the effect of Swiftcast or Dualcast.","当存在连续咏唱状态或使用即刻咏唱后，将即刻咏唱替换为赤复活."},
         #endregion
         #region Sections 8 to 9 - Miscellaneous
         {"Displacement <> Corps-a-corps Feature","移转与短兵相接替换 设置"},
