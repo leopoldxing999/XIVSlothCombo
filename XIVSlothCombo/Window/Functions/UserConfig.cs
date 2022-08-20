@@ -1370,40 +1370,40 @@ namespace XIVSlothCombo.Window.Functions
 
             if (preset == CustomComboPreset.RDM_oGCD)
             {
-                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_OGCD_OnAction, "-Fleche", "", 1);
-                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_OGCD_OnAction, "-Jolt\n-Jolt II", "Select for one button rotation", 2);
-                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_OGCD_OnAction, "-Scatter\n-Impact", "Select for one button rotation", 3);
-                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_OGCD_OnAction, "-Jolt\n-Jolt II\n-Scatter\n-Impact", "Select for one button rotation", 4);
-                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_OGCD_OnAction, "-Riposte\n-Moulinet", "", 5);
-                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_OGCD_OnAction, "-Fleche\n-Riposte\n-Moulinet", "", 6);
+                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_OGCD_OnAction, "-飞刺", "", 1);
+                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_OGCD_OnAction, "-摇荡\n-震荡", "选择此项可适用于一键连", 2);
+                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_OGCD_OnAction, "-散碎\n-冲击", "选择此项可适用于一键连", 3);
+                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_OGCD_OnAction, "-摇荡\n-震荡\n-散碎\n-冲击", "选择此项可适用于一键连", 4);
+                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_OGCD_OnAction, "-回刺\n-划圆斩", "", 5);
+                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_OGCD_OnAction, "-飞刺\n-回刺\n-划圆斩", "", 6);
             }
 
             if (preset == CustomComboPreset.RDM_ST_MeleeCombo)
             {
-                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_ST_MeleeCombo_OnAction, "-Riposte", "", 1);
-                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_ST_MeleeCombo_OnAction, "-Jolt\n-Jolt II", "Select for one button rotation", 2);
-                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_ST_MeleeCombo_OnAction, "-Riposte\n-Jolt\n-Jolt II", "Select for one button rotation", 3);
+                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_ST_MeleeCombo_OnAction, "-回刺", "", 1);
+                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_ST_MeleeCombo_OnAction, "-摇荡\n-震荡", "选择此项可适用于一键连", 2);
+                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_ST_MeleeCombo_OnAction, "-回刺\n-摇荡\n-震荡", "选择此项可适用于一键连", 3);
             }
 
             if (preset == CustomComboPreset.RDM_AoE_MeleeCombo)
             {
-                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_AoE_MeleeCombo_OnAction, "-Moulinet", "", 1);
-                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_AoE_MeleeCombo_OnAction, "-Moulinet\n-Scatter\n-Impact", "Select for one button rotation", 2);
+                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_AoE_MeleeCombo_OnAction, "-划圆斩", "", 1);
+                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_AoE_MeleeCombo_OnAction, "-划圆斩\n-散碎\n-冲击", "选择此项可适用于一键连", 2);
             }
 
             if (preset == CustomComboPreset.RDM_MeleeFinisher)
             {
-                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_MeleeFinisher_OnAction, "-Riposte\n-Moulinet", "", 1);
-                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_MeleeFinisher_OnAction, "-Jolt\n-Jolt II\n-Scatter\n-Impact", "Select for one button rotation", 2);
-                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_MeleeFinisher_OnAction, "-Riposte\n-Moulinet\n-Jolt\n-Jolt II\n-Scatter\n-Impact", "Select for one button rotation", 3);
-                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_MeleeFinisher_OnAction, "-Veraero 1/2/3\n-Verthunder 1/2/3", "", 4);
+                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_MeleeFinisher_OnAction, "-回刺\n-划圆斩", "", 1);
+                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_MeleeFinisher_OnAction, "-摇荡\n-震荡\n-散碎\n-冲击", "选择此项可适用于一键连", 2);
+                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_MeleeFinisher_OnAction, "-回刺\n-划圆斩\n-摇荡\n-震荡\n-散碎\n-冲击", "选择此项可适用于一键连", 3);
+                UserConfig.DrawHorizontalRadioButton(RDM.Config.RDM_MeleeFinisher_OnAction, "-赤疾风/赤烈风/赤暴风\n-赤闪雷/赤震雷/赤暴雷", "", 4);
             }
 
             if (preset == CustomComboPreset.RDM_Lucid && enabled)
-                UserConfig.DrawSliderInt(0, 10000, RDM.Config.RDM_Lucid_Threshold, "Add Lucid Dreaming when below this MP", 300, SliderIncrements.Hundreds);
+                UserConfig.DrawSliderInt(0, 10000, RDM.Config.RDM_Lucid_Threshold, "设定插入醒梦时的MP值", 300, SliderIncrements.Hundreds);
 
             if (preset == CustomComboPreset.RDM_AoE_MeleeCombo && enabled)
-                UserConfig.DrawSliderInt(3, 8, RDM.Config.RDM_MoulinetRange, "Range to use first Moulinet; no range restrictions after first Moulinet", 150, SliderIncrements.Ones);
+                UserConfig.DrawSliderInt(3, 8, RDM.Config.RDM_MoulinetRange, "设定插入第一次魔划圆斩时与目标的最远距离(米); 后两次魔划圆斩则没有距离限制", 150, SliderIncrements.Ones);
 
             #endregion
             // ====================================================================================
@@ -1417,8 +1417,8 @@ namespace XIVSlothCombo.Window.Functions
 
             if (preset is CustomComboPreset.SGE_ST_Dosis_Toxikon)
             {
-                UserConfig.DrawRadioButton(SGE.Config.SGE_ST_Dosis_Toxikon, "仅在移动时展示", "", 0);
-                UserConfig.DrawRadioButton(SGE.Config.SGE_ST_Dosis_Toxikon, "在任何时间展示", "", 1);
+                UserConfig.DrawRadioButton(SGE.Config.SGE_ST_Dosis_Toxikon, "仅在进行移动时插入箭毒", "", 0);
+                UserConfig.DrawRadioButton(SGE.Config.SGE_ST_Dosis_Toxikon, "不论是否在移动均会插入箭毒", "", 1);
             }
 
             if (preset is CustomComboPreset.SGE_AoE_Phlegma_Lucid)
