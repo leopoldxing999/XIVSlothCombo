@@ -1338,7 +1338,7 @@ public class Translatezh_CN
         {"Pool Triplecast Option","保留三连咏唱选项"},
         {"Keep one triplecast usage for movement in the Advanced BLM feature.","保留一层三连咏唱用于移动时瞬发技能."},
         {"Paradox BLM Feature","悖论循环"},
-        {"Replaces Scathe with a full one button rotation that has minimal casts (~9-13%% less damage than Simple BLM). Requires level 90.","将崩溃整合为 Paradox 循环（需要90级）。它的读条数很少，但比标准循环的伤害低 9-13%。"},
+        {"Replaces Scathe with a full one button rotation that has minimal casts (~9-13%% less damage than Simple BLM). Requires level 90.","将崩溃整合为悖论循环（需要90级）。\n它的读条数很少，但比标准循环的伤害低 9-13%%。"},
         {"Adds Ley Lines onto the Advanced BLM feature.","在星灵循环中插入黑魔纹。"},
         {"Adds Ley Lines onto the Paradox BLM feature.","在悖论循环中插入黑魔纹。"},
         {"Swiftcast/Triplecast Moving Option","瞬发走位选项"},

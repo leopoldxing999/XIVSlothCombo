@@ -22,8 +22,7 @@ namespace XIVSlothCombo.Window.Tabs
             ImGui.PushStyleColor(ImGuiCol.Button, ImGuiColors.ParsedPurple);
             ImGui.PushStyleColor(ImGuiCol.ButtonHovered, ImGuiColors.HealerGreen);
 
-            //if (ImGui.Button("Click here to join our Discord Server!"))
-            if (ImGui.Button("点击加入我们的 Discord 服务器!"))
+            if (ImGui.Button("Click here to join our Discord Server!"))
             {
                 Util.OpenLink("https://discord.gg/xT7zyjzjtY");
             }
@@ -31,10 +30,15 @@ namespace XIVSlothCombo.Window.Tabs
             ImGui.PopStyleColor();
             ImGui.PopStyleColor();
 
-            //if (ImGui.Button("Got an issue? Click this button and report it!"))
-            if (ImGui.Button("有什么问题？点我汇报！"))
+            if (ImGui.Button("Got an issue? Click this button and report it!"))
             {
                 Util.OpenLink("https://github.com/Nik-Potokar/XIVSlothCombo/issues");
+            }
+
+            // 添加一个帮助翻译按钮
+            if (ImGui.Button("中文翻译太烂了？"))
+            {
+                Util.OpenLink("https://github.com/44451516/XIVSlothCombo");
             }
 
             ImGui.EndChild();

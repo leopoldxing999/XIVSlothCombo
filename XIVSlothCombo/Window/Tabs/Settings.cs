@@ -148,19 +148,19 @@ namespace XIVSlothCombo.Window.Tabs
 
             {
                 // ImGui.SetNextItemWidth(50);
-                if (ImGui.BeginCombo($"Language", language, ImGuiComboFlags.NoArrowButton))
+                if (ImGui.BeginCombo($"语言", language, ImGuiComboFlags.NoArrowButton))
                 {
 
-                    if (ImGui.Selectable("zh-CN", language == "zh-CN"))
+                    if (ImGui.Selectable("简体中文", language == "zh-CN"))
                     {
-                        Service.Configuration.Language = "zh-CN";
+                        Service.Configuration.Language = "简体中文";
                         // PluginLog.Information("选择了中文");
                         Service.Configuration.Save();
                     }
 
-                    if (ImGui.Selectable("en", language == "en"))
+                    if (ImGui.Selectable("English", language == "en"))
                     {
-                        Service.Configuration.Language = "en";
+                        Service.Configuration.Language = "English";
                         // PluginLog.Information("选择了en");
                         Service.Configuration.Save();
                     }

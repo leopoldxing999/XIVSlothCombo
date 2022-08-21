@@ -107,7 +107,7 @@ namespace XIVSlothCombo.Window
                     }
 
                     //if (ImGui.BeginTabItem("About XIVSlothCombo / Report an Issue"))
-                    if (ImGui.BeginTabItem("关于 XIVSlothCombo / 提出 Issue"))
+                    if (ImGui.BeginTabItem("关于/反馈"))
                     {
                         AboutUs.Draw();
                         ImGui.EndTabItem();
