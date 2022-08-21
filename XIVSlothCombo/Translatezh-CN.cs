@@ -287,6 +287,7 @@ public class Translatezh_CN
         {"Collection of CDs to add to Main Combo","将CD类技能整合到主连击。"},
         {"Souleater Combo","噬魂斩连击"},
         {"Replace Souleater with its combo chain. \nIf all sub options are selected will turn into a full one button rotation (Simple Dark Knight)","用基础循环替换掉噬魂斩。 \n如果所有的次级选项都被开启，那么就可以进行一键循环(简单黑骑)"},
+        {"Replace Souleater with its combo chain. \nIf all sub options are selected will turn into a full one button rotation (Advanced Dark Knight)","用基础循环替换掉噬魂斩。 \n如果所有的次级选项都被开启，那么就可以进行一键循环(简单黑骑)"},
         {"Stalwart Soul Combo","刚魂连击"},
         {"Replace Stalwart Soul with its combo chain.","用基础循环替换掉刚魂。"},
         {"Delirium Feature","血乱特性"},
