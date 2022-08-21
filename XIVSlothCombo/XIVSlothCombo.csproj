@@ -13,7 +13,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<DalamudLibPath>E:\Games\FFVIX\Dalamud6.0\addon\Hooks\6.4.0.46\</DalamudLibPath>
+		<DalamudLibPath>D:\FF14\XIVLauncherCN\Roaming\addon\Hooks\dev\</DalamudLibPath>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
@@ -28,7 +28,7 @@
 		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-		<OutputPath>E:\Games\FFVIX\Dalamud6.0\XIVLauncher\devPlugins\XIVSlothCombo\</OutputPath>
+		<OutputPath>D:\FF14\XIVLauncherCN\Roaming\devPlugins\XIVSlothCombo\release\</OutputPath>
 		<NoWarn>CS1591</NoWarn>
 	</PropertyGroup>
 

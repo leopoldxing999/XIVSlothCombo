@@ -1,7 +1,6 @@
 ﻿using ImGuiNET;
 using System;
 using System.Numerics;
-using Dalamud.Logging;
 using XIVSlothCombo.Services;
 
 namespace XIVSlothCombo.Window.Tabs
@@ -11,13 +10,15 @@ namespace XIVSlothCombo.Window.Tabs
         internal static new void Draw()
         {
             ImGui.BeginChild("main", new Vector2(0, 0), true);
-            ImGui.Text("This tab allows you to customise your options when enabling features.");
+            //ImGui.Text("This tab allows you to customise your options when enabling features.");
+            ImGui.Text("这个选项卡可以配置已启用功能。");
 
             #region SubCombos
 
             var hideChildren = Service.Configuration.HideChildren;
 
-            if (ImGui.Checkbox("(隐藏子选项)Hide SubCombo Options", ref hideChildren))
+            //if (ImGui.Checkbox("Hide SubCombo Options", ref hideChildren))
+            if (ImGui.Checkbox("隐藏子选项", ref hideChildren))
             {
                 Service.Configuration.HideChildren = hideChildren;
                 Service.Configuration.Save();
@@ -26,7 +27,8 @@ namespace XIVSlothCombo.Window.Tabs
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.TextUnformatted("Hides the sub-options of disabled features.");
+                //ImGui.TextUnformatted("Hides the sub-options of disabled features.");
+                ImGui.TextUnformatted("隐藏所有已禁用功能的子选项。");
                 ImGui.EndTooltip();
             }
             ImGui.NextColumn();
@@ -36,7 +38,8 @@ namespace XIVSlothCombo.Window.Tabs
             #region Conflicting
 
             var hideConflicting = Service.Configuration.HideConflictedCombos;
-            if (ImGui.Checkbox("(隐藏冲突的组合)Hide Conflicted Combos", ref hideConflicting))
+            //if (ImGui.Checkbox("Hide Conflicted Combos", ref hideConflicting))
+            if (ImGui.Checkbox("隐藏冲突功能", ref hideConflicting))
             {
                 Service.Configuration.HideConflictedCombos = hideConflicting;
                 Service.Configuration.Save();
@@ -45,7 +48,8 @@ namespace XIVSlothCombo.Window.Tabs
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.TextUnformatted("Hides any combos that conflict with others you have selected.");
+                //ImGui.TextUnformatted("Hides any combos that conflict with others you have selected.");
+                ImGui.TextUnformatted("隐藏所有与已启用功能冲突的功能。");
                 ImGui.EndTooltip();
             }
 
@@ -55,7 +59,8 @@ namespace XIVSlothCombo.Window.Tabs
 
             var showCombatLog = Service.Configuration.EnabledOutputLog;
 
-            if (ImGui.Checkbox("(输出到聊天框)Output Log to Chat", ref showCombatLog))
+            //if (ImGui.Checkbox("Output Log to Chat", ref showCombatLog))
+            if (ImGui.Checkbox("日志输出到聊天框", ref showCombatLog))
             {
                 Service.Configuration.EnabledOutputLog = showCombatLog;
                 Service.Configuration.Save();
@@ -64,7 +69,8 @@ namespace XIVSlothCombo.Window.Tabs
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.TextUnformatted("Every time you use an action, the plugin will print it to the chat.");
+                //ImGui.TextUnformatted("Every time you use an action, the plugin will print it to the chat.");
+                ImGui.TextUnformatted("把你对插件的操作实时输出到聊天框中。");
                 ImGui.EndTooltip();
             }
             #endregion
@@ -95,7 +101,8 @@ namespace XIVSlothCombo.Window.Tabs
             ImGui.PushItemWidth(75);
 
             var inputChangedeth = false;
-            inputChangedeth |= ImGui.InputFloat("(近战偏移)Melee Distance Offset", ref offset);
+            //inputChangedeth |= ImGui.InputFloat("Melee Distance Offset", ref offset);
+            inputChangedeth |= ImGui.InputFloat("近战距离偏移量", ref offset);
 
             if (inputChangedeth)
             {
@@ -106,7 +113,8 @@ namespace XIVSlothCombo.Window.Tabs
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.TextUnformatted("Offset of melee check distance for features that use it. For those who don't want to immediately use their ranged attack if the boss walks slightly out of range.");
+                //ImGui.TextUnformatted("Offset of melee check distance for features that use it. For those who don't want to immediately use their ranged attack if the boss walks slightly out of range.");
+                ImGui.TextUnformatted("如果不想 BOSS 稍微走出近战范围就立即使用远程攻击，那么可以对有近战距离检查的功能设置一个偏移量。");
                 ImGui.EndTooltip();
             }
 
@@ -116,7 +124,8 @@ namespace XIVSlothCombo.Window.Tabs
 
             var motd = Service.Configuration.HideMessageOfTheDay;
 
-            if (ImGui.Checkbox("(隐藏登录时候的提示)Hide Message of the Day", ref motd))
+            //if (ImGui.Checkbox("Hide Message of the Day", ref motd))
+            if (ImGui.Checkbox("关闭\"今日消息\"", ref motd))
             {
                 Service.Configuration.HideMessageOfTheDay = motd;
                 Service.Configuration.Save();
@@ -125,18 +134,18 @@ namespace XIVSlothCombo.Window.Tabs
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.TextUnformatted("Disables the Message of the Day message in your chat when you login.");
+                //ImGui.TextUnformatted("Disables the Message of the Day message in your chat when you login.");
+                ImGui.TextUnformatted("禁用登录时聊天框中的\"今日消息\"。");
                 ImGui.EndTooltip();
             }
             ImGui.NextColumn();
 
             #endregion
 
-
             #region 语言
 
             var language = Service.Configuration.Language;
-            
+
             {
                 // ImGui.SetNextItemWidth(50);
                 if (ImGui.BeginCombo($"Language", language, ImGuiComboFlags.NoArrowButton))
@@ -144,18 +153,18 @@ namespace XIVSlothCombo.Window.Tabs
 
                     if (ImGui.Selectable("zh-CN", language == "zh-CN"))
                     {
-                        Service.Configuration.Language =  "zh-CN";
-                        // PluginLog.Information( "选择了中文");
+                        Service.Configuration.Language = "zh-CN";
+                        // PluginLog.Information("选择了中文");
                         Service.Configuration.Save();
                     }
-                    
+
                     if (ImGui.Selectable("en", language == "en"))
                     {
-                        Service.Configuration.Language =  "en";
-                        // PluginLog.Information( "选择了en");
+                        Service.Configuration.Language = "en";
+                        // PluginLog.Information("选择了en");
                         Service.Configuration.Save();
                     }
-                    
+
 
                     ImGui.EndCombo();
                 }

@@ -1,7 +1,7 @@
-﻿using System.Linq;
-using System.Numerics;
-using Dalamud.Interface;
+﻿using Dalamud.Interface;
 using ImGuiNET;
+using System.Linq;
+using System.Numerics;
 using XIVSlothCombo.Core;
 using XIVSlothCombo.Services;
 using XIVSlothCombo.Window.Functions;
@@ -12,13 +12,15 @@ namespace XIVSlothCombo.Window.Tabs
     {
         internal static new void Draw()
         {
-            ImGui.Text("This tab allows you to select which PvP combos and features you wish to enable.");
+            //ImGui.Text("This tab allows you to select which PvP combos and features you wish to enable.");
+            ImGui.Text("这个选项卡可以启用 PvP 连击和功能。");
 
             ImGui.PushFont(UiBuilder.IconFont);
             ImGui.Text($"{FontAwesomeIcon.SkullCrossbones.ToIconString()}");
             ImGui.PopFont();
             ImGui.SameLine();
-            ImGui.TextUnformatted("These are PvP features. They will only work in PvP-enabled zones.");
+            //ImGui.TextUnformatted("These are PvP features. They will only work in PvP-enabled zones.");
+            ImGui.TextUnformatted("这些是 PvP 功能，只会在 PvP 区域生效。");
             ImGui.SameLine();
             ImGui.PushFont(UiBuilder.IconFont);
             ImGui.Text($"{FontAwesomeIcon.SkullCrossbones.ToIconString()}");
