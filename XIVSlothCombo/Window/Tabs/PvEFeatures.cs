@@ -1,7 +1,7 @@
-﻿using System.Linq;
-using System.Numerics;
-using Dalamud.Interface;
+﻿using Dalamud.Interface;
 using ImGuiNET;
+using System.Linq;
+using System.Numerics;
 using XIVSlothCombo.Core;
 using XIVSlothCombo.Services;
 using XIVSlothCombo.Window.Functions;
@@ -23,7 +23,8 @@ namespace XIVSlothCombo.Window.Tabs
 //             }
 // #endif
 
-            ImGui.Text("This tab allows you to select which PvE combos and features you wish to enable.");
+            //ImGui.Text("This tab allows you to select which PvE combos and features you wish to enable.");
+            ImGui.Text("这个选项卡可以启用 PvE 连击和功能。");
             ImGui.BeginChild("scrolling", new Vector2(ImGui.GetContentRegionAvail().X, ImGui.GetContentRegionAvail().Y), true);
 
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, 5));
