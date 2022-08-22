@@ -11,7 +11,7 @@ namespace XIVSlothCombo.Window.Tabs
         {
             ImGui.BeginChild("main", new Vector2(0, 0), true);
             //ImGui.Text("This tab allows you to customise your options when enabling features.");
-            ImGui.Text("这个选项卡可以配置已启用功能。");
+            ImGui.Text("这个选项卡可以在启用功能时定制你的选项。");
 
             #region SubCombos
 
