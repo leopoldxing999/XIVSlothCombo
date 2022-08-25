@@ -64,7 +64,6 @@ namespace XIVSlothCombo
 #if DEBUG
             Service.Framework.Update += OnFramework;
 #endif
-           
 
 
             KillRedundantIDs();
@@ -72,26 +71,22 @@ namespace XIVSlothCombo
 
         private unsafe void OnFramework(Framework framework)
         {
-            
-      
             if ((DateTime.Now - lastAutoActionTime).TotalMilliseconds > 100)
             {
-                
-                if(Service.ClientState.LocalPlayer==null)
-                    return;
-            
-                if(Service.ClientState.IsLoggedIn==false)
+                lastAutoActionTime = DateTime.Now;
+
+                if (Service.ClientState.LocalPlayer == null)
                     return;
 
-                
+                if (Service.ClientState.IsLoggedIn == false)
+                    return;
+
                 uint localPlayerTargetObjectId = Service.ClientState.LocalPlayer.TargetObjectId;
 
-                if (autoActionId != 0&&localPlayerTargetObjectId!=0)
+                if (autoActionId != 0 && localPlayerTargetObjectId != 0)
                 {
                     ActionManager.pInstance->UseAction(ActionType.Spell, autoActionId, localPlayerTargetObjectId);
                 }
-
-                lastAutoActionTime = DateTime.Now;
             }
         }
 
@@ -162,7 +157,7 @@ namespace XIVSlothCombo
 #if DEBUG
             Service.Framework.Update -= OnFramework;
 #endif
-     
+
 
             Service.ClientState.Login -= PrintLoginMessage;
         }
@@ -416,9 +411,8 @@ namespace XIVSlothCombo
                         Service.ChatGui.Print("Unable to write Debug log.");
                         break;
                     }
-                    
                 }
-            
+
                 case "auto":
                 {
                     autoActionId = 0;
@@ -431,7 +425,7 @@ namespace XIVSlothCombo
                         autoActionId = 0;
                         Dalamud.Logging.PluginLog.Error(exception, "Debug Log");
                     }
-                   
+
 
                     break;
                 }
