@@ -1,9 +1,9 @@
+using Dalamud.Utility;
+using ImGuiNET;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using Dalamud.Utility;
-using ImGuiNET;
 using XIVSlothCombo.Attributes;
 using XIVSlothCombo.Combos;
 using XIVSlothCombo.Core;
@@ -80,29 +80,34 @@ namespace XIVSlothCombo.Window
                 return;
             }
 
-            if (ImGui.Begin("Sloth Combo Setup", ref visible))
+            //if (ImGui.Begin("Sloth Combo Setup", ref visible))
+            if (ImGui.Begin("Sloth Combo 设置", ref visible))
             {
                 if (ImGui.BeginTabBar("SlothBar"))
                 {
-                    if (ImGui.BeginTabItem("PvE Features"))
+                    //if (ImGui.BeginTabItem("PvE Features"))
+                    if (ImGui.BeginTabItem("PvE 功能"))
                     {
                         PvEFeatures.Draw();
                         ImGui.EndTabItem();
                     }
 
-                    if (ImGui.BeginTabItem("PvP Features"))
+                    //if (ImGui.BeginTabItem("PvP Features"))
+                    if (ImGui.BeginTabItem("PvP 功能"))
                     {
                         PvPFeatures.Draw();
                         ImGui.EndTabItem();
                     }
 
-                    if (ImGui.BeginTabItem("Settings"))
+                    //if (ImGui.BeginTabItem("Settings"))
+                    if (ImGui.BeginTabItem("设置"))
                     {
                         Settings.Draw();
                         ImGui.EndTabItem();
                     }
 
-                    if (ImGui.BeginTabItem("About XIVSlothCombo / Report an Issue"))
+                    //if (ImGui.BeginTabItem("About XIVSlothCombo / Report an Issue"))
+                    if (ImGui.BeginTabItem("关于/反馈"))
                     {
                         AboutUs.Draw();
                         ImGui.EndTabItem();
@@ -122,7 +127,7 @@ namespace XIVSlothCombo.Window
 
         public void Dispose()
         {
-            
+
         }
     }
 }

@@ -35,6 +35,12 @@ namespace XIVSlothCombo.Window.Tabs
                 Util.OpenLink("https://github.com/Nik-Potokar/XIVSlothCombo/issues");
             }
 
+            // 添加一个帮助翻译按钮
+            if (ImGui.Button("中文翻译太烂了？"))
+            {
+                Util.OpenLink("https://github.com/44451516/XIVSlothCombo");
+            }
+
             ImGui.EndChild();
         }
     }
