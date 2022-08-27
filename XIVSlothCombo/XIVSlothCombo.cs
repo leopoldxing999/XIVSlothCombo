@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Dalamud.Game;
+using Dalamud.Game.ClientState.Objects.Enums;
+using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Game.Command;
 using Dalamud.Game.Text;
 using Dalamud.Game.Text.SeStringHandling;
@@ -83,9 +85,22 @@ namespace XIVSlothCombo
 
                 uint localPlayerTargetObjectId = Service.ClientState.LocalPlayer.TargetObjectId;
 
+           
+                
                 if (autoActionId != 0 && localPlayerTargetObjectId != 0)
                 {
-                    ActionManager.pInstance->UseAction(ActionType.Spell, autoActionId, localPlayerTargetObjectId);
+                    GameObject? targetObject = Service.ClientState.LocalPlayer.TargetObject;
+
+                    if (targetObject!=null&& targetObject is BattleChara battleChara)
+                    {
+                        if (battleChara.ObjectKind != ObjectKind.Player)
+                        {
+                            ActionManager.pInstance->UseAction(ActionType.Spell, autoActionId, localPlayerTargetObjectId);
+                        }
+                    }
+
+
+                   
                 }
             }
         }
