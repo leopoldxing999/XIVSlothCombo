@@ -4,7 +4,7 @@
 	<PropertyGroup>
 		<Authors>Aki, k-kz, ele-starshade, damolitionn, Taurenkey, Augporto, grimgal</Authors>
 		<Company>-</Company>
-		<Version>3.0.16.14</Version>
+		<Version>3.0.16.15</Version>
 		<!-- This is the version that will be used when pushing to the repo.-->
 		<Description>XIVCombo for lazy players</Description>
 		<Copyright>Copyleft attick 2021 thanks attick UwU</Copyright>
@@ -13,7 +13,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<DalamudLibPath>E:\Games\FFVIX\Dalamud6.0\addon\Hooks\6.4.0.46\</DalamudLibPath>
+		<DalamudLibPath>E:\Games\FFVIX\Dalamud6.0\addon\Hooks\6.4.0.48\</DalamudLibPath>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'Release'">

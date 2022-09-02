@@ -85,22 +85,24 @@ namespace XIVSlothCombo
 
                 uint localPlayerTargetObjectId = Service.ClientState.LocalPlayer.TargetObjectId;
 
-           
-                
-                if (autoActionId != 0 && localPlayerTargetObjectId != 0)
-                {
-                    GameObject? targetObject = Service.ClientState.LocalPlayer.TargetObject;
 
-                    if (targetObject!=null&& targetObject is BattleChara battleChara)
+                if (autoActionId != 0)
+                {
+                    if (localPlayerTargetObjectId != 0)
                     {
-                        if (battleChara.ObjectKind != ObjectKind.Player)
+                        GameObject? targetObject = Service.ClientState.LocalPlayer.TargetObject;
+
+                        if (targetObject != null && targetObject is BattleChara battleChara)
                         {
-                            ActionManager.pInstance->UseAction(ActionType.Spell, autoActionId, localPlayerTargetObjectId);
+                            if (battleChara.ObjectKind == ObjectKind.BattleNpc)
+                            {
+                                // if(ActionManager.pInstance->GetActionStatus(ActionType.Spell, autoActionId, localPlayerTargetObjectId) == 0)
+                                {
+                                    ActionManager.pInstance->UseAction(ActionType.Spell, autoActionId, localPlayerTargetObjectId);
+                                }
+                            }
                         }
                     }
-
-
-                   
                 }
             }
         }
