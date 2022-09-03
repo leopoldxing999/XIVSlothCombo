@@ -55,13 +55,7 @@ namespace XIVSlothCombo.Attributes
                         }
                     }
 
-                    if (原始description == "Replace main combo with Shield Lob/Holy Spirit when out of range.\nWill use Holy Spirit if you're not moving or have the Requiescat buff\nOtherwise will use Shield lob when moving and if you don't have the Requiescat buff.")
-                    {
-                        int i = 0;
-                        
-                    }
-
-
+                    
 
                     if (db.ContainsKey(原始description))
                     {
