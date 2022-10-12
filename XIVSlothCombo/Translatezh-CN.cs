@@ -388,6 +388,8 @@ public class Translatezh_CN
         { "Single button, single target. Includes songs, flourishes and overprotections.\nConflicts with all other non-simple toggles, except 'Dance Step Combo'.", "舞者单目标一键连击。包含唱，跳，Rap，打篮球，百花齐放和溢出保护。几乎与所以其他非一键选项冲突，除了上面的舞步连击" },
         { "Simple Interrupt Option", "单体连击打断技能设置" },
         { "Includes an interrupt in the rotation (if applicable to your current target).", "循环加入打断技能" },
+        { "Simple Dancer (Double Targets) Feature.", "简易舞步(双目标)" },
+        { "Single button, double targets. Includes songs, flourishes and overprotections.\nConflicts with all other non-simple toggles, except 'Dance Step Combo'.", "等待翻译" },
         { "Simple Standard Dance Option", "简易标准舞步选项" },
         { "Includes Standard Step (and all steps) in the rotation.", "循环加入标准舞步" },
         { "Simple Standard Fill Option", "等待翻译" },

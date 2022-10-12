@@ -753,12 +753,12 @@ namespace XIVSlothCombo.Combos
         "\nWorks with Simple Dancer and Simple Dancer AoE.", DNC.JobID, 0, "", "")]
         DNC_DanceStepCombo = 4039,
 
-        #region Simple Dancer (Single Target)
-        [ReplaceSkill(DNC.Cascade)]
-        [ConflictingCombos(DNC_ST_MultiButton, DNC_AoE_MultiButton, DNC_CombinedDances, DNC_DanceComboReplacer, DNC_FlourishingFeatures_Menu, DNC_Starfall_Devilment)]
-        [CustomComboInfo("Simple Dancer (Single Target) Feature", "Single button, single target. Includes songs, flourishes and overprotections." +
-        "\nConflicts with all other non-simple toggles, except 'Dance Step Combo'.", DNC.JobID, 0, "", "")]
-        DNC_ST_SimpleMode = 4050,
+            #region Simple Dancer (Single Target)
+            [ReplaceSkill(DNC.Cascade)]
+            [ConflictingCombos(DNC_ST_MultiButton, DNC_AoE_MultiButton, DNC_CombinedDances, DNC_DanceComboReplacer, DNC_FlourishingFeatures_Menu, DNC_Starfall_Devilment, DNC_DT_SimpleMode)]
+            [CustomComboInfo("Simple Dancer (Single Target) Feature", "Single button, single target. Includes songs, flourishes and overprotections." +
+                                                                      "\nConflicts with all other non-simple toggles, except 'Dance Step Combo'.", DNC.JobID, 0, "", "")]
+            DNC_ST_SimpleMode = 4050,
 
             [ParentCombo(DNC_ST_SimpleMode)]
             [CustomComboInfo("Simple Interrupt Option", "Includes an interrupt in the rotation (if applicable to your current target).", DNC.JobID, 5, "", "")]
@@ -818,6 +818,26 @@ namespace XIVSlothCombo.Combos
             "\nWill not override Dance Step Combo Feature.", DNC.JobID, 5, "", "")]
             DNC_ST_Simple_Peloton = 4062,
             #endregion
+            
+            #region Simple Dancer (Double Targets)
+            [ReplaceSkill(DNC.Cascade)]
+            [ConflictingCombos(DNC_ST_MultiButton, DNC_AoE_MultiButton, DNC_CombinedDances, DNC_DanceComboReplacer, DNC_FlourishingFeatures_Menu, DNC_Starfall_Devilment, DNC_ST_SimpleMode)]
+            [CustomComboInfo("Simple Dancer (Double Targets) Feature", "Single button, double targets. Includes songs, flourishes and overprotections.\nConflicts with all other non-simple toggles, except 'Dance Step Combo'.", DNC.JobID, 0, "", "")]
+            DNC_DT_SimpleMode = 4065,
+
+            [ParentCombo(DNC_DT_SimpleMode)]
+            [CustomComboInfo("Simple Standard Dance Option", "Includes Standard Step (and all steps) in the rotation.", DNC.JobID, 0, "", "")]
+            DNC_DT_Simple_SS = 4066,
+
+            [ParentCombo(DNC_DT_SimpleMode)]
+            [CustomComboInfo("Simple Technical Dance Option", "Includes Technical Step, all dance steps and Technical Finish in the rotation.", DNC.JobID, 1, "", "")]
+            DNC_DT_Simple_TS = 4067,
+
+            [ParentCombo(DNC_DT_SimpleMode)]
+            [CustomComboInfo("Simple Flourish Option", "Includes Flourish in the rotation.", DNC.JobID, 2, "", "")]
+            DNC_DT_Simple_Flourish = 4068,
+            #endregion
+
 
         #region Simple Dancer (AoE)
         [ReplaceSkill(DNC.Windmill)]
