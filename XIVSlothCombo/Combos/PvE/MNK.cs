@@ -85,9 +85,13 @@ namespace XIVSlothCombo.Combos.PvE
         public static class Config
         {
             public const string
-                MNK_Demolish_Apply = "MnkDemolishApply";
-            public const string
-                MNK_DisciplinedFist_Apply = "MnkDisciplinedFistApply";
+                MNK_Demolish_Apply = "MnkDemolishApply",
+                MNK_DisciplinedFist_Apply = "MnkDisciplinedFistApply",
+                MNK_STSecondWindThreshold = "MNK_STSecondWindThreshold",
+                MNK_STBloodbathThreshold = "MNK_STBloodbathThreshold",
+                MNK_AoESecondWindThreshold = "MNK_AoESecondWindThreshold",
+                MNK_AoEBloodbathThreshold = "MNK_AoEBloodbathThreshold",
+                MNK_VariantCure = "MNK_VariantCure";
         }
 
         internal class MNK_AoE_SimpleMode : CustomCombo
@@ -124,9 +128,17 @@ namespace XIVSlothCombo.Combos.PvE
                         }
                     }
 
+                    if (IsEnabled(CustomComboPreset.MNK_Variant_Cure) && IsEnabled(Variant.VariantCure) && PlayerHealthPercentageHp() <= GetOptionValue(Config.MNK_VariantCure))
+                        return Variant.VariantCure;
+
                     // Buffs
                     if (inCombat && canWeave)
                     {
+                        if (IsEnabled(CustomComboPreset.MNK_Variant_Rampart) &&
+                            IsEnabled(Variant.VariantRampart) &&
+                            IsOffCooldown(Variant.VariantRampart))
+                            return Variant.VariantRampart;
+
                         if (IsEnabled(CustomComboPreset.MNK_AoE_Simple_CDs))
                         {
                             if (level >= Levels.RiddleOfFire && !IsOnCooldown(RiddleOfFire))
@@ -167,6 +179,15 @@ namespace XIVSlothCombo.Combos.PvE
                             level < Levels.TwinSnakes) && canWeaveChakra)
                         {
                             return level >= Levels.Enlightenment ? OriginalHook(Enlightenment) : OriginalHook(Meditation);
+                        }
+
+                        // healing - please move if not appropriate this high priority
+                        if (IsEnabled(CustomComboPreset.MNK_ST_ComboHeals))
+                        {
+                            if (PlayerHealthPercentageHp() <= PluginConfiguration.GetCustomIntValue(Config.MNK_AoESecondWindThreshold) && LevelChecked(All.SecondWind) && IsOffCooldown(All.SecondWind))
+                                return All.SecondWind;
+                            if (PlayerHealthPercentageHp() <= PluginConfiguration.GetCustomIntValue(Config.MNK_AoEBloodbathThreshold) && LevelChecked(All.Bloodbath) && IsOffCooldown(All.Bloodbath))
+                                return All.Bloodbath;
                         }
                     }
 
@@ -235,9 +256,7 @@ namespace XIVSlothCombo.Combos.PvE
                     if (HasEffect(Buffs.LeadenFist) &&
                         (HasEffect(Buffs.FormlessFist) ||
                         HasEffect(Buffs.PerfectBalance) ||
-                        HasEffect(Buffs.OpoOpoForm) ||
-                        HasEffect(Buffs.RaptorForm) ||
-                        HasEffect(Buffs.CoerlForm)))
+                        HasEffect(Buffs.OpoOpoForm)))
                         return Bootshine;
 
                     if (level < Levels.DragonKick)
@@ -338,6 +357,9 @@ namespace XIVSlothCombo.Combos.PvE
                     var lunarNadi = gauge.Nadi == Nadi.LUNAR;
                     var solarNadi = gauge.Nadi == Nadi.SOLAR;
 
+                    if (IsEnabled(CustomComboPreset.MNK_Variant_Cure) && IsEnabled(Variant.VariantCure) && PlayerHealthPercentageHp() <= GetOptionValue(Config.MNK_VariantCure))
+                        return Variant.VariantCure;
+
                     // Opener for MNK
                     if (IsEnabled(CustomComboPreset.MNK_ST_Simple_LunarSolarOpener))
                     {
@@ -411,6 +433,15 @@ namespace XIVSlothCombo.Combos.PvE
                                             return OriginalHook(Meditation);
                                         }
                                     }
+
+                                    // healing - please move if not appropriate this high priority
+                                    if (IsEnabled(CustomComboPreset.MNK_ST_ComboHeals))
+                                    {
+                                        if (PlayerHealthPercentageHp() <= PluginConfiguration.GetCustomIntValue(Config.MNK_STSecondWindThreshold) && LevelChecked(All.SecondWind) && IsOffCooldown(All.SecondWind))
+                                            return All.SecondWind;
+                                        if (PlayerHealthPercentageHp() <= PluginConfiguration.GetCustomIntValue(Config.MNK_STBloodbathThreshold) && LevelChecked(All.Bloodbath) && IsOffCooldown(All.Bloodbath))
+                                            return All.Bloodbath;
+                                    }
                                 }
                             }
 
@@ -445,10 +476,17 @@ namespace XIVSlothCombo.Combos.PvE
                     // Buffs
                     if (inCombat && !inOpener)
                     {
+                        if (IsEnabled(CustomComboPreset.MNK_Variant_Rampart) &&
+                            IsEnabled(Variant.VariantRampart) &&
+                            IsOffCooldown(Variant.VariantRampart) &&
+                            canWeave)
+                            return Variant.VariantRampart;
+
                         if (IsEnabled(CustomComboPreset.MNK_ST_Simple_CDs))
                         {
                             if (canWeave)
                             {
+
                                 if (IsEnabled(CustomComboPreset.MNK_ST_Simple_CDs_PerfectBalance) && !HasEffect(Buffs.FormlessFist) &&
                                     level >= Levels.PerfectBalance && !HasEffect(Buffs.PerfectBalance) && HasEffect(Buffs.DisciplinedFist) &&
                                     OriginalHook(MasterfulBlitz) == MasterfulBlitz)
@@ -478,6 +516,17 @@ namespace XIVSlothCombo.Combos.PvE
                                 {
                                     return RiddleOfFire;
                                 }
+
+                                if (TargetNeedsPositionals() && IsEnabled(CustomComboPreset.MNK_TrueNorthDynamic) && LevelChecked(All.TrueNorth) && GetRemainingCharges(All.TrueNorth) > 0 && !HasEffect(All.Buffs.TrueNorth) && LevelChecked(Demolish) && HasEffect(Buffs.CoerlForm))
+                                {
+                                    if (!TargetHasEffect(Debuffs.Demolish) || demolishDuration <= PluginConfiguration.GetCustomFloatValue(Config.MNK_Demolish_Apply))
+                                    {
+                                        if (!OnTargetsRear())
+                                            return All.TrueNorth;
+                                    }
+                                    else if (!OnTargetsFlank())
+                                        return All.TrueNorth;
+                                }
                             }
 
                             if (canWeave)
@@ -492,6 +541,15 @@ namespace XIVSlothCombo.Combos.PvE
                                    !IsOnCooldown(RiddleOfWind) && IsOnCooldown(RiddleOfFire) && IsOnCooldown(Brotherhood))
                                 {
                                     return RiddleOfWind;
+                                }
+
+                                // healing - please move if not appropriate this high priority
+                                if (IsEnabled(CustomComboPreset.MNK_ST_ComboHeals))
+                                {
+                                    if (PlayerHealthPercentageHp() <= PluginConfiguration.GetCustomIntValue(Config.MNK_STSecondWindThreshold) && LevelChecked(All.SecondWind) && IsOffCooldown(All.SecondWind))
+                                        return All.SecondWind;
+                                    if (PlayerHealthPercentageHp() <= PluginConfiguration.GetCustomIntValue(Config.MNK_STBloodbathThreshold) && LevelChecked(All.Bloodbath) && IsOffCooldown(All.Bloodbath))
+                                        return All.Bloodbath;
                                 }
                             }
                         }
@@ -556,27 +614,39 @@ namespace XIVSlothCombo.Combos.PvE
                     }
 
                     // Monk Rotation
-                    if ((level >= Levels.DragonKick && HasEffect(Buffs.OpoOpoForm)) || HasEffect(Buffs.FormlessFist))
+                    if (IsEnabled(CustomComboPreset.MNK_ST_Meditation_Uptime) && !InMeleeRange() && gauge.Chakra < 5 && LevelChecked(Meditation))
                     {
-                        return HasEffect(Buffs.LeadenFist) ? Bootshine : DragonKick;
+                        return Meditation;
                     }
 
-                    if (level >= Levels.TrueStrike && HasEffect(Buffs.RaptorForm))
+                    if (!HasEffect(Buffs.PerfectBalance))
                     {
-                        if (level >= Levels.TwinSnakes && (!HasEffect(Buffs.DisciplinedFist) || twinsnakeDuration <= PluginConfiguration.GetCustomFloatValue(Config.MNK_DisciplinedFist_Apply)))
+                        if (HasEffect(Buffs.FormlessFist) || HasEffect(Buffs.OpoOpoForm))
                         {
-                            return TwinSnakes;
+                            return !LevelChecked(DragonKick) || HasEffect(Buffs.LeadenFist)
+                                ? MNK.Bootshine
+                                : MNK.DragonKick;
                         }
-                        return TrueStrike;
                     }
 
-                    if (level >= Levels.SnapPunch && HasEffect(Buffs.CoerlForm))
+                    if (!HasEffect(Buffs.FormlessFist) && HasEffect(Buffs.RaptorForm))
                     {
-                        if (level >= Levels.Demolish && HasEffect(Buffs.DisciplinedFist) && (!TargetHasEffect(Debuffs.Demolish) || demolishDuration <= PluginConfiguration.GetCustomFloatValue(Config.MNK_Demolish_Apply)))
+                        if (!LevelChecked(TrueStrike)) 
                         {
-                            return Demolish;
+                            return Bootshine;
                         }
-                        return SnapPunch;
+
+                        return !LevelChecked(TwinSnakes) || (twinsnakeDuration >= PluginConfiguration.GetCustomFloatValue(Config.MNK_DisciplinedFist_Apply))
+                            ? TrueStrike
+                            : TwinSnakes;
+                    }
+                    if (!HasEffect(Buffs.FormlessFist) && HasEffect(Buffs.CoerlForm))
+                    {
+                        return !LevelChecked(SnapPunch)
+                            ? Bootshine
+                            : !LevelChecked(Demolish) || (demolishDuration >= PluginConfiguration.GetCustomFloatValue(Config.MNK_Demolish_Apply))
+                                ? SnapPunch
+                                : Demolish;
                     }
                 }
                 return actionID;

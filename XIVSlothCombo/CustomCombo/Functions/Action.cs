@@ -16,10 +16,15 @@ namespace XIVSlothCombo.CustomComboNS.Functions
         /// <returns> A value indicating whether the action would be modified. </returns>
         public static bool IsOriginal(uint actionID) => Service.IconReplacer.OriginalHook(actionID) == actionID;
 
-        /// <summary> Checks if the player is high enough level to use the passed ID. </summary>
-        /// <param name="id"> ID of the action. </param>
+        /// <summary> Checks if the player is high enough level to use the passed Action ID. </summary>
+        /// <param name="actionid"> ID of the action. </param>
         /// <returns></returns>
-        public static bool LevelChecked(uint id) => LocalPlayer.Level >= GetLevel(id);
+        public static bool LevelChecked(uint actionid) => LocalPlayer.Level >= GetLevel(actionid);
+
+        /// <summary> Checks if the player is high enough level to use the passed Trait ID. </summary>
+        /// <param name="traitid"> ID of the action. </param>
+        /// <returns></returns>
+        public static bool TraitLevelChecked(uint traitid) => LocalPlayer.Level >= GetTraitLevel(traitid);
 
         /// <summary> Returns the name of an action from its ID. </summary>
         /// <param name="id"> ID of the action. </param>
@@ -30,6 +35,44 @@ namespace XIVSlothCombo.CustomComboNS.Functions
         /// <param name="id"> ID of the action. </param>
         /// <returns></returns>
         public static int GetLevel(uint id) => ActionWatching.GetLevel(id);
+
+        /// <summary> Checks if the player is in range to use an action. Best used with actions with irregular ranges.</summary>
+        /// <param name="id"> ID of the action. </param>
+        /// <returns></returns>
+        public static bool InActionRange(uint id)
+        {
+            int range = ActionWatching.GetActionRange(id);
+            switch (range)
+            {
+                case -2:
+                    return false; //Error catch, Doesn't exist in ActionWatching
+                case -1:
+                    return InMeleeRange();//In the Sheet, all Melee skills appear to be -1
+                case 0: //Self Use Skills (Second Wind) or attacks (Art of War, Dyskrasia)
+                    {
+                        //NOTES: HOUSING DUMMIES ARE FUCKING CURSED BASTARDS THAT DON'T REGISTER ATTACKS CORRECTLY WITH SELF RADIUS ATTACKS
+                        //Use Explorer Mode dungeon, field map dummies, or let Thancred tank.
+
+                        //Check if there is a radius
+                        float radius = ActionWatching.GetActionEffectRange(id);
+                        //Player has a 0.5y radius inside hitbox.
+                        //GetTargetDistance measures hitbox to hitbox (correct usage for ranged abilities so far)
+                        //But attacks from player must include personal space (0.5y).
+                        if (radius > 0)
+                        {   //Do not nest with above
+                            if (HasTarget()) return GetTargetDistance() <= (radius - 0.5f); else return false;
+                        }
+                        else return true; //Self use targets (Second Wind) have no radius
+                    }
+                default:
+                    return GetTargetDistance() <= range;
+            }
+        } 
+
+        /// <summary> Returns the level of a trait. </summary>
+        /// <param name="id"> ID of the action. </param>
+        /// <returns></returns>
+        public static int GetTraitLevel(uint id) => ActionWatching.GetTraitLevel(id);
 
         /// <summary> Checks if the player can use an action based on the level required and off cooldown / has charges.</summary>
         /// <param name="id"> ID of the action. </param>

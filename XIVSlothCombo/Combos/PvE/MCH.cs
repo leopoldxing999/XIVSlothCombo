@@ -1,4 +1,5 @@
 using Dalamud.Game.ClientState.JobGauge.Types;
+using XIVSlothCombo.Core;
 using XIVSlothCombo.CustomComboNS;
 
 namespace XIVSlothCombo.Combos.PvE
@@ -46,6 +47,13 @@ namespace XIVSlothCombo.Combos.PvE
         public static class Debuffs
         {
             // public const short placeholder = 0;
+        }
+        public static class Config
+        {
+            public const string
+                MCH_ST_SecondWindThreshold = "MCH_ST_SecondWindThreshold",
+                MCH_AoE_SecondWindThreshold = "MCH_AoE_SecondWindThreshold",
+                MCH_VariantCure = "MCH_VariantCure";
         }
 
         public static class Levels
@@ -95,6 +103,15 @@ namespace XIVSlothCombo.Combos.PvE
                     var battery = GetJobGauge<MCHGauge>().Battery;
                     var heat = GetJobGauge<MCHGauge>().Heat;
                     var canWeave = CanWeave(actionID);
+
+                    if (IsEnabled(CustomComboPreset.MCH_Variant_Cure) && IsEnabled(Variant.VariantCure) && PlayerHealthPercentageHp() <= GetOptionValue(Config.MCH_VariantCure))
+                        return Variant.VariantCure;
+
+                    if (IsEnabled(CustomComboPreset.MCH_Variant_Rampart) &&
+                        IsEnabled(Variant.VariantRampart) &&
+                        IsOffCooldown(Variant.VariantRampart) &&
+                        canWeave)
+                        return Variant.VariantRampart;
 
                     if (IsEnabled(CustomComboPreset.MCH_ST_BarrelStabilizer_DriftProtection))
                     {
@@ -167,7 +184,7 @@ namespace XIVSlothCombo.Combos.PvE
                             return AutomatonQueen;
                     }
 
-                    if (comboTime > 0)
+                if (comboTime > 0)
                     {
                         if (lastComboMove == SplitShot && level >= Levels.SlugShot)
                             return OriginalHook(SlugShot);
@@ -268,6 +285,15 @@ namespace XIVSlothCombo.Combos.PvE
                     var gauge = GetJobGauge<MCHGauge>();
                     var battery = GetJobGauge<MCHGauge>().Battery;
 
+                    if (IsEnabled(CustomComboPreset.MCH_Variant_Cure) && IsEnabled(Variant.VariantCure) && PlayerHealthPercentageHp() <= GetOptionValue(Config.MCH_VariantCure))
+                        return Variant.VariantCure;
+
+                    if (IsEnabled(CustomComboPreset.MCH_Variant_Rampart) &&
+                        IsEnabled(Variant.VariantRampart) &&
+                        IsOffCooldown(Variant.VariantRampart) &&
+                        canWeave)
+                        return Variant.VariantRampart;
+
                     if (IsEnabled(CustomComboPreset.MCH_AoE_OverCharge) && canWeave)
                     {
                         if (battery == 100 && level >= Levels.QueenOverdrive)
@@ -296,6 +322,12 @@ namespace XIVSlothCombo.Combos.PvE
                     {
                         if (gauge.Heat >= 50 && level >= Levels.AutoCrossbow && !gauge.IsOverheated)
                             return Hypercharge;
+                    }
+
+                    if (IsEnabled(CustomComboPreset.MCH_AoE_SecondWind) && CanWeave(actionID, 0.6))
+                    {
+                        if (PlayerHealthPercentageHp() <= PluginConfiguration.GetCustomIntValue(Config.MCH_AoE_SecondWindThreshold) && (LevelChecked(All.SecondWind) && IsOffCooldown(All.SecondWind)))
+                            return All.SecondWind;
                     }
 
                     if (gauge.IsOverheated && level >= Levels.AutoCrossbow)
@@ -434,18 +466,18 @@ namespace XIVSlothCombo.Combos.PvE
                     if (CanWeave(actionID) && openerFinished && !gauge.IsRobotActive && IsEnabled(CustomComboPreset.MCH_ST_Simple_Gadget) && (wildfireCDTime >= 2 && !WasLastAbility(Wildfire) || level < Levels.Wildfire))
                     {
                         //overflow protection
-                        if (gauge.Battery == 100 && level >= Levels.RookOverdrive)
+                        if (level >= Levels.RookOverdrive && gauge.Battery == 100 && CombatEngageDuration().Seconds < 55)
                         {
                             return OriginalHook(RookAutoturret);
                         }
-                        else if (gauge.Battery >= 50 && level >= Levels.RookOverdrive && (CombatEngageDuration().Seconds >= 55 || CombatEngageDuration().Seconds <= 05 || (CombatEngageDuration().Minutes == 0 && !WasLastWeaponskill(OriginalHook(CleanShot))) ))
+                        else if (level >= Levels.RookOverdrive && gauge.Battery >= 50 && (CombatEngageDuration().Seconds >= 59 || CombatEngageDuration().Seconds <= 05 || (CombatEngageDuration().Minutes == 0 && !WasLastWeaponskill(OriginalHook(CleanShot))) ))
                         {
                             return OriginalHook(RookAutoturret);
                         }
-                        else if (gauge.Battery >= 80 && level >= Levels.RookOverdrive && (CombatEngageDuration().Seconds >= 50 || CombatEngageDuration().Seconds <= 05))
-                        {
-                            return OriginalHook(RookAutoturret);
-                        }
+                        //else if (gauge.Battery >= 50 && level >= Levels.RookOverdrive && (CombatEngageDuration().Seconds >= 58 || CombatEngageDuration().Seconds <= 05))
+                        //{
+                        //    return OriginalHook(RookAutoturret);
+                        //}
 
                     }
 
@@ -512,6 +544,13 @@ namespace XIVSlothCombo.Combos.PvE
                         {
                             if (UseHypercharge(gauge, wildfireCDTime)) return Hypercharge; 
                         }
+                    }
+
+                    // healing - please move if not appropriate priority
+                    if (IsEnabled(CustomComboPreset.MCH_ST_SecondWind) && CanWeave(actionID, 0.6))
+                    {
+                        if (PlayerHealthPercentageHp() <= PluginConfiguration.GetCustomIntValue(Config.MCH_ST_SecondWindThreshold) && LevelChecked(All.SecondWind) && IsOffCooldown(All.SecondWind))
+                            return All.SecondWind;
                     }
 
                     if ((IsOffCooldown(AirAnchor) || GetCooldownRemainingTime(AirAnchor) < 1) && level >= Levels.AirAnchor)

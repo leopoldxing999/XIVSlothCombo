@@ -129,7 +129,8 @@ namespace XIVSlothCombo.Combos.PvE
                 SMN_BurstPhase = "SMN_BurstPhase",
                 SMN_PrimalChoice = "SMN_PrimalChoice",
                 SMN_SwiftcastPhase = "SMN_SwiftcastPhase",
-                SMN_Burst_Delay = "SMN_Burst_Delay";
+                SMN_Burst_Delay = "SMN_Burst_Delay",
+                SMN_VariantCure = "SMN_VariantCure";
         }
 
         internal class SMN_Raise : CustomCombo
@@ -140,6 +141,9 @@ namespace XIVSlothCombo.Combos.PvE
             {
                 if (actionID == All.Swiftcast)
                 {
+                    if (HasEffect(All.Buffs.Swiftcast) && IsEnabled(CustomComboPreset.SMN_Variant_Raise) && IsEnabled(Variant.VariantRaise))
+                        return Variant.VariantRaise;
+
                     if (IsOnCooldown(All.Swiftcast))
                         return Resurrection;
                 }
@@ -190,16 +194,18 @@ namespace XIVSlothCombo.Combos.PvE
 
             protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
             {
-                if (actionID == Painflare)
+                var gauge = GetJobGauge<SMNGauge>();
+                
+                if (actionID == Painflare && LevelChecked(Painflare) && !gauge.HasAetherflowStacks)
                 {
-                    var gauge = GetJobGauge<SMNGauge>();
-
-                    if (HasEffect(Buffs.FurtherRuin) && IsOnCooldown(EnergySiphon) && !gauge.HasAetherflowStacks && IsEnabled(CustomComboPreset.SMN_ESPainflare_Ruin4))
+                    if (HasEffect(Buffs.FurtherRuin) && IsOnCooldown(EnergySiphon) && IsEnabled(CustomComboPreset.SMN_ESPainflare_Ruin4))
                         return Ruin4;
 
-                    if (LevelChecked(EnergySiphon) && !gauge.HasAetherflowStacks)
+                    if (LevelChecked(EnergySiphon))
                         return EnergySiphon;
-
+                    
+                    if (LevelChecked(EnergyDrain))
+                        return EnergyDrain;
                 }
 
                 return actionID;
@@ -216,19 +222,28 @@ namespace XIVSlothCombo.Combos.PvE
                 var STCombo = actionID is Ruin or Ruin2;
                 var AoECombo = actionID is Outburst or Tridisaster;
 
-                if (actionID is Ruin or Ruin2 or Outburst or Tridisaster && InCombat())
+                if (actionID is Ruin or Ruin2 or Outburst or Tridisaster)
                 {
+                    if (IsEnabled(CustomComboPreset.SMN_Variant_Cure) && IsEnabled(Variant.VariantCure) && PlayerHealthPercentageHp() <= GetOptionValue(Config.SMN_VariantCure))
+                        return Variant.VariantCure;
+
+                    if (IsEnabled(CustomComboPreset.SMN_Variant_Rampart) &&
+                        IsEnabled(Variant.VariantRampart) &&
+                        IsOffCooldown(Variant.VariantRampart) &&
+                        CanSpellWeave(actionID))
+                        return Variant.VariantRampart;
+
                     if (CanSpellWeave(actionID))
                     {
                         if (IsOffCooldown(SearingLight) && LevelChecked(SearingLight) && OriginalHook(Ruin) == AstralImpulse)
                             return SearingLight;
 
-                        if (!gauge.HasAetherflowStacks)
+                        if (!gauge.HasAetherflowStacks && IsOffCooldown(EnergyDrain))
                         {
-                            if (STCombo && LevelChecked(EnergyDrain) && IsOffCooldown(EnergyDrain))
+                            if ((STCombo || (AoECombo && !LevelChecked(EnergySiphon))) && LevelChecked(EnergyDrain))
                                 return EnergyDrain;
 
-                            if (AoECombo && LevelChecked(EnergySiphon) && IsOffCooldown(EnergySiphon))
+                            if (AoECombo && LevelChecked(EnergySiphon))
                                 return EnergySiphon;
                         }
                         
@@ -265,17 +280,17 @@ namespace XIVSlothCombo.Combos.PvE
                             }
                         }
 
-                        if (IsOffCooldown(All.LucidDreaming) && LocalPlayer.CurrentMp <= 4000 && level >= All.Levels.LucidDreaming)
+                        if (ActionReady(All.LucidDreaming) && LocalPlayer.CurrentMp <= 4000)
                             return All.LucidDreaming;
                     }
                     
-                    if (gauge.SummonTimerRemaining == 0 && IsOffCooldown(OriginalHook(Aethercharge)) &&
+                    if (InCombat() && gauge.SummonTimerRemaining == 0 && IsOffCooldown(OriginalHook(Aethercharge)) &&
                         (LevelChecked(Aethercharge) && !LevelChecked(SummonBahamut) ||
                          gauge.IsBahamutReady && LevelChecked(SummonBahamut) ||
                          gauge.IsPhoenixReady && LevelChecked(SummonPhoenix)))
                         return OriginalHook(Aethercharge);
                     
-                    if (level >= All.Levels.Swiftcast)
+                    if (LevelChecked(All.Swiftcast))
                     {
                         if (LevelChecked(Slipstream) && HasEffect(Buffs.GarudasFavor))
                         {
@@ -304,7 +319,7 @@ namespace XIVSlothCombo.Combos.PvE
                         HasEffect(Buffs.IfritsFavor) && (IsMoving || gauge.Attunement is 0) || lastComboMove == CrimsonCyclone)
                         return OriginalHook(AstralFlow);
 
-                    if (gauge.IsIfritAttuned && IsMoving && HasEffect(Buffs.FurtherRuin))
+                    if (HasEffect(Buffs.FurtherRuin) && ((!HasEffect(All.Buffs.Swiftcast) && gauge.IsIfritAttuned && IsMoving) || (GetCooldownRemainingTime(OriginalHook(Aethercharge)) is < 2.5f and > 0)))
                         return Ruin4;
                     
                     if (gauge.IsGarudaAttuned || gauge.IsTitanAttuned || gauge.IsIfritAttuned)
@@ -371,8 +386,17 @@ namespace XIVSlothCombo.Combos.PvE
                 //CHECK_DEMIATTACK_USE_RESET
                 if (UsedDemiAttack && GetCooldownRemainingTime(AstralImpulse) < 1) UsedDemiAttack = false;  // Resets block to allow CHECK_DEMIATTACK_USE
 
-                if (actionID is Ruin or Ruin2 or Outburst or Tridisaster && InCombat())
+                if (actionID is Ruin or Ruin2 or Outburst or Tridisaster)
                 {
+                    if (IsEnabled(CustomComboPreset.SMN_Variant_Cure) && IsEnabled(Variant.VariantCure) && PlayerHealthPercentageHp() <= GetOptionValue(Config.SMN_VariantCure))
+                        return Variant.VariantCure;
+
+                    if (IsEnabled(CustomComboPreset.SMN_Variant_Rampart) &&
+                        IsEnabled(Variant.VariantRampart) &&
+                        IsOffCooldown(Variant.VariantRampart) &&
+                        CanSpellWeave(actionID))
+                        return Variant.VariantRampart;
+
                     if (CanSpellWeave(actionID))
                     {
                         // Searing Light
@@ -414,12 +438,12 @@ namespace XIVSlothCombo.Combos.PvE
                         }
                         
                         // ED/ES
-                        if (IsEnabled(CustomComboPreset.SMN_Advanced_Combo_EDFester) && !gauge.HasAetherflowStacks && (!inOpener || DemiAttackCount >= burstDelay))
+                        if (IsEnabled(CustomComboPreset.SMN_Advanced_Combo_EDFester) && !gauge.HasAetherflowStacks && IsOffCooldown(EnergyDrain) && (!LevelChecked(DreadwyrmTrance) || (!inOpener || DemiAttackCount >= burstDelay)))
                         {
-                            if (STCombo && LevelChecked(EnergyDrain) && IsOffCooldown(EnergyDrain))
+                            if ((STCombo || (AoECombo && !LevelChecked(EnergySiphon))) && LevelChecked(EnergyDrain))
                                 return EnergyDrain;
 
-                            if (AoECombo && LevelChecked(EnergySiphon) && IsOffCooldown(EnergySiphon))
+                            if (AoECombo && LevelChecked(EnergySiphon))
                                 return EnergySiphon;
                         }
                         
@@ -428,8 +452,8 @@ namespace XIVSlothCombo.Combos.PvE
                         {
                             if (GetCooldown(EnergyDrain).CooldownRemaining <= 3.2)
                             {
-                                if (HasEffect(Buffs.SearingLight) &&
-                                    (SummonerBurstPhase is 0 or 1 or 2 or 3) ||
+                                if ((HasEffect(Buffs.SearingLight) && IsNotEnabled(CustomComboPreset.SMN_Advanced_Burst_Any_Option) || HasEffectAny(Buffs.SearingLight)) &&
+                                    (SummonerBurstPhase is not 4) ||
                                     (SummonerBurstPhase == 4 && !HasEffect(Buffs.TitansFavor)))
                                 {
                                     if (STCombo)
@@ -486,7 +510,7 @@ namespace XIVSlothCombo.Combos.PvE
                                             return Painflare;
                                     }
 
-                                    if (HasEffect(Buffs.SearingLight) &&
+                                    if ((HasEffect(Buffs.SearingLight) && IsNotEnabled(CustomComboPreset.SMN_Advanced_Burst_Any_Option) || HasEffectAny(Buffs.SearingLight)) &&
                                         (SummonerBurstPhase is 0 or 1 or 2 or 3 && DemiAttackCount >= burstDelay) ||
                                         (SummonerBurstPhase == 4 && !HasEffect(Buffs.TitansFavor)))
                                     {
@@ -501,27 +525,28 @@ namespace XIVSlothCombo.Combos.PvE
                         }
 
                         // Lucid Dreaming
-                        if (IsEnabled(CustomComboPreset.SMN_Lucid) && IsOffCooldown(All.LucidDreaming) && LocalPlayer.CurrentMp <= lucidThreshold && level >= All.Levels.LucidDreaming)
+                        if (IsEnabled(CustomComboPreset.SMN_Lucid) && ActionReady(All.LucidDreaming) && LocalPlayer.CurrentMp <= lucidThreshold)
                             return All.LucidDreaming;
                     }
 
                     // Demi
                     if (IsEnabled(CustomComboPreset.SMN_Advanced_Combo_DemiSummons))
                     {
-                        if (gauge.SummonTimerRemaining == 0 && IsOffCooldown(OriginalHook(Aethercharge)) &&
+                        if (InCombat() && gauge.SummonTimerRemaining == 0 && IsOffCooldown(OriginalHook(Aethercharge)) &&
                             (LevelChecked(Aethercharge) && !LevelChecked(SummonBahamut) ||   // Pre-Bahamut Phase
                              gauge.IsBahamutReady && LevelChecked(SummonBahamut) ||            // Bahamut Phase
                              gauge.IsPhoenixReady && LevelChecked(SummonPhoenix)))             // Phoenix Phase
                             return OriginalHook(Aethercharge);
                     }
                     
-                    //Movement Ruin4 in Egi Phases
-                    if (IsEnabled(CustomComboPreset.SMN_Advanced_Combo_Ruin4) && !HasEffect(All.Buffs.Swiftcast) && IsMoving && HasEffect(Buffs.FurtherRuin) &&
-                        ((HasEffect(Buffs.GarudasFavor) && !gauge.IsGarudaAttuned) || (gauge.IsIfritAttuned && lastComboMove is not CrimsonCyclone)))
+                    //Ruin4 in Egi Phases
+                    if (IsEnabled(CustomComboPreset.SMN_Advanced_Combo_Ruin4) && HasEffect(Buffs.FurtherRuin) && 
+                        ((!HasEffect(All.Buffs.Swiftcast) && IsMoving && ((HasEffect(Buffs.GarudasFavor) && !gauge.IsGarudaAttuned) || (gauge.IsIfritAttuned && lastComboMove is not CrimsonCyclone))) || 
+                        GetCooldownRemainingTime(OriginalHook(Aethercharge)) is < 2.5f and > 0))
                         return Ruin4;
                     
                     // Egi Features
-                    if (IsEnabled(CustomComboPreset.SMN_DemiEgiMenu_SwiftcastEgi) && level >= All.Levels.Swiftcast)
+                    if (IsEnabled(CustomComboPreset.SMN_DemiEgiMenu_SwiftcastEgi) && LevelChecked(All.Swiftcast))
                     {
                         // Swiftcast Garuda Feature
                         if (swiftcastPhase is 0 or 1 && LevelChecked(Slipstream) && HasEffect(Buffs.GarudasFavor))

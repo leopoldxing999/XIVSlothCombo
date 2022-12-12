@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Numerics;
+using Dalamud.Game.ClientState.Objects;
 using Dalamud.Game.ClientState.Objects.Enums;
 using Dalamud.Game.ClientState.Objects.Types;
+using XIVSlothCombo.Data;
 using XIVSlothCombo.Services;
 using StructsObject = FFXIVClientStructs.FFXIV.Client.Game.Object;
 
@@ -100,16 +102,41 @@ namespace XIVSlothCombo.CustomComboNS.Functions
             {
                 //Fallback to CurrentTarget
                 OurTarget = CurrentTarget;
-                if (OurTarget is null) 
+                if (OurTarget is null)
                     return false;
             }
 
             //Humans
-            if (OurTarget.ObjectKind is ObjectKind.Player) 
+            if (OurTarget.ObjectKind is ObjectKind.Player)
                 return true;
             //AI
             if (OurTarget is BattleNpc) return (OurTarget as BattleNpc).BattleNpcKind is not BattleNpcSubKind.Enemy;
             return false;
+        }
+
+        /// <summary> Grabs healable target. Checks Soft Target then Hard Target. 
+        /// If Party UI Mouseover is enabled, find the target and return that. Else return the player. </summary>
+        /// <returns> GameObject of a player target. </returns>
+        public static unsafe GameObject? GetHealTarget(bool checkMOPartyUI = false)
+        {
+            GameObject? healTarget = null;
+            TargetManager tm = Service.TargetManager;
+            
+            if (HasFriendlyTarget(tm.SoftTarget)) healTarget = tm.SoftTarget;
+            if (healTarget is null && HasFriendlyTarget(CurrentTarget)) healTarget = CurrentTarget;
+            //if (checkMO && HasFriendlyTarget(tm.MouseOverTarget)) healTarget = tm.MouseOverTarget;
+            if (checkMOPartyUI)
+            {
+                StructsObject.GameObject* t = PartyTargetingService.UITarget;
+                if (t != null)
+                {
+                    long o = PartyTargetingService.GetObjectID(t);
+                    GameObject? uiTarget =  Service.ObjectTable.Where(x => x.ObjectId == o).First();
+                    if (HasFriendlyTarget(uiTarget)) healTarget = uiTarget;
+                }
+            }
+            healTarget ??= LocalPlayer;
+            return healTarget;
         }
 
         /// <summary> Determines if the enemy can be interrupted if they are currently casting. </summary>
@@ -138,6 +165,13 @@ namespace XIVSlothCombo.CustomComboNS.Functions
                 return false;
 
             return true;
+        }
+
+        public static bool TargetNeedsPositionals()
+        {
+            if (!HasBattleTarget()) return false;
+            if (ActionWatching.BNpcSheet.TryGetValue(CurrentTarget.DataId, out var bnpc) && !bnpc.Unknown10) return true;
+            return false;
         }
 
         /// <summary> Attempts to target the given party member </summary>
@@ -228,5 +262,117 @@ namespace XIVSlothCombo.CustomComboNS.Functions
             P7,
             P8
         }
+
+        /// <summary>
+        /// Get angle to target.
+        /// </summary>
+        /// <returns>Angle relative to target</returns>
+        public float angleToTarget()
+        {
+            if (CurrentTarget is null || LocalPlayer is null)
+               return 0;
+
+            if (CurrentTarget is not BattleChara chara || CurrentTarget.ObjectKind != Dalamud.Game.ClientState.Objects.Enums.ObjectKind.BattleNpc)
+                return 0;
+
+            var targetPosition = new Vector2(CurrentTarget.Position.X, CurrentTarget.Position.Z);
+            var angle = PositionalMath.AngleXZ(CurrentTarget.Position, LocalPlayer.Position) - CurrentTarget.Rotation;
+
+            var regionDegrees = PositionalMath.Degrees(angle);
+            if(regionDegrees < 0) {
+                regionDegrees = 360 + regionDegrees;
+            }
+
+            if( ( regionDegrees >= 45 ) && ( regionDegrees <= 135 ) ) {
+                return 1;
+            }
+            if( ( regionDegrees >= 135 ) && ( regionDegrees <= 225 ) ) {
+                return 2;
+            }
+            if( ( regionDegrees >= 225 ) && ( regionDegrees <= 315 ) ) {
+                return 3;
+            }
+            if( ( regionDegrees >= 315 ) || ( regionDegrees <= 45 ) ) {
+                return 4;
+            }
+            return 0;
+        }
+
+        /// <summary>
+        /// Is player on target's rear.
+        /// </summary>
+        /// <returns>True or false.</returns>
+        public bool OnTargetsRear()
+        {
+            if (CurrentTarget is null || LocalPlayer is null)
+                return false;
+
+            if (CurrentTarget is not BattleChara chara || CurrentTarget.ObjectKind != Dalamud.Game.ClientState.Objects.Enums.ObjectKind.BattleNpc)
+                return false;
+
+            var targetPosition = new Vector2(CurrentTarget.Position.X, CurrentTarget.Position.Z);
+            var angle = PositionalMath.AngleXZ(CurrentTarget.Position, LocalPlayer.Position) - CurrentTarget.Rotation;
+
+            var regionDegrees = PositionalMath.Degrees(angle);
+            if( regionDegrees < 0 ) {
+                regionDegrees = 360 + regionDegrees;
+            }
+
+            if( ( regionDegrees >= 135 ) && ( regionDegrees <= 225 ) ) {
+                return true;
+            }            
+            return false;
+        }
+
+        /// <summary>
+        /// Is player on target's flank.
+        /// </summary>
+        /// <returns>True or false.</returns>
+        public bool OnTargetsFlank()
+        {
+            if (CurrentTarget is null || LocalPlayer is null)
+                return false;
+
+            if (CurrentTarget is not BattleChara chara || CurrentTarget.ObjectKind != Dalamud.Game.ClientState.Objects.Enums.ObjectKind.BattleNpc)
+                return false;
+
+            var targetPosition = new Vector2(CurrentTarget.Position.X, CurrentTarget.Position.Z);
+            var angle = PositionalMath.AngleXZ(CurrentTarget.Position, LocalPlayer.Position) - CurrentTarget.Rotation;
+
+            var regionDegrees = PositionalMath.Degrees(angle);
+            if( regionDegrees < 0 ) {
+                regionDegrees = 360 + regionDegrees;
+            }
+
+            // left flank
+            if( ( regionDegrees >= 45 ) && ( regionDegrees <= 135 ) ) {
+                return true;
+            }
+            // right flank
+            if( ( regionDegrees >= 225 ) && ( regionDegrees <= 315 ) ) {            
+                return true;
+            }
+            return false;
+        }
+
+        // the following is all lifted from the excellent Resonant plugin
+        internal static class PositionalMath
+        {
+            static internal float Radians(float degrees)
+            {
+                return (float)Math.PI * degrees / 180.0f;
+            }
+
+            static internal double Degrees(float radians)
+            {
+                return (180 / Math.PI) * radians;
+            }
+
+            static internal float AngleXZ(Vector3 a, Vector3 b)
+            {
+                return (float)Math.Atan2(b.X - a.X, b.Z - a.Z);
+            }
+        }
+    
     }
 }

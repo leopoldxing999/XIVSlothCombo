@@ -1,9 +1,9 @@
-using Dalamud.Utility;
-using ImGuiNET;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using Dalamud.Utility;
+using ImGuiNET;
 using XIVSlothCombo.Attributes;
 using XIVSlothCombo.Combos;
 using XIVSlothCombo.Core;
@@ -24,7 +24,8 @@ namespace XIVSlothCombo.Window
             .Where(preset => (int)preset > 100 && preset != CustomComboPreset.Disabled)
             .Select(preset => (Preset: preset, Info: preset.GetAttribute<CustomComboInfoAttribute>()))
             .Where(tpl => tpl.Info != null && PluginConfiguration.GetParent(tpl.Preset) == null)
-            .OrderBy(tpl => tpl.Info.JobName)
+            .OrderByDescending(tpl => tpl.Info.JobID == 0)
+            .ThenBy(tpl => tpl.Info.JobName)
             .ThenBy(tpl => tpl.Info.Order)
             .GroupBy(tpl => tpl.Info.JobName)
             .ToDictionary(
@@ -60,7 +61,7 @@ namespace XIVSlothCombo.Window
         }
 
         /// <summary> Initializes a new instance of the <see cref="ConfigWindow"/> class. </summary>
-        public ConfigWindow() : base("Sloth Combo Setup", ImGuiWindowFlags.AlwaysAutoResize)
+        public ConfigWindow() : base("XIVSlothCombo Configuration", ImGuiWindowFlags.AlwaysAutoResize)
         {
             RespectCloseHotkey = true;
 
@@ -80,33 +81,28 @@ namespace XIVSlothCombo.Window
                 return;
             }
 
-            //if (ImGui.Begin("Sloth Combo Setup", ref visible))
-            if (ImGui.Begin("Sloth Combo 设置", ref visible))
+            if (ImGui.Begin("XIVSlothCombo Configuration", ref visible))
             {
-                if (ImGui.BeginTabBar("SlothBar"))
+                if (ImGui.BeginTabBar("Config Tabs"))
                 {
-                    //if (ImGui.BeginTabItem("PvE Features"))
                     if (ImGui.BeginTabItem("PvE 功能"))
                     {
                         PvEFeatures.Draw();
                         ImGui.EndTabItem();
                     }
 
-                    //if (ImGui.BeginTabItem("PvP Features"))
                     if (ImGui.BeginTabItem("PvP 功能"))
                     {
                         PvPFeatures.Draw();
                         ImGui.EndTabItem();
                     }
 
-                    //if (ImGui.BeginTabItem("Settings"))
                     if (ImGui.BeginTabItem("设置"))
                     {
                         Settings.Draw();
                         ImGui.EndTabItem();
                     }
 
-                    //if (ImGui.BeginTabItem("About XIVSlothCombo / Report an Issue"))
                     if (ImGui.BeginTabItem("关于/反馈"))
                     {
                         AboutUs.Draw();
@@ -127,7 +123,7 @@ namespace XIVSlothCombo.Window
 
         public void Dispose()
         {
-
+            
         }
     }
 }

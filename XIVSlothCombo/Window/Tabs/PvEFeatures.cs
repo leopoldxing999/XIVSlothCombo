@@ -1,7 +1,11 @@
-﻿using Dalamud.Interface;
-using ImGuiNET;
+﻿using System;
 using System.Linq;
 using System.Numerics;
+using Dalamud.Interface;
+using Dalamud.Interface.Colors;
+using Dalamud.Utility;
+using ImGuiNET;
+using XIVSlothCombo.Attributes;
 using XIVSlothCombo.Core;
 using XIVSlothCombo.Services;
 using XIVSlothCombo.Window.Functions;
@@ -15,16 +19,15 @@ namespace XIVSlothCombo.Window.Tabs
 
         internal static new void Draw()
         {
-// #if !DEBUG
-//             if (Service.ClassLocked)
-//             {
-//                 ImGui.Text("Equip your job stone to re-unlock features.");
-//                 return;
-//             }
-// #endif
+#if !DEBUG
+            if (Service.ClassLocked)
+            {
+                ImGui.Text("Equip your job stone to re-unlock features.");
+                return;
+            }
+#endif
 
-            //ImGui.Text("This tab allows you to select which PvE combos and features you wish to enable.");
-            ImGui.Text("这个选项卡可以启用 PvE 连击和功能。");
+            ImGui.Text("This tab allows you to select which PvE combos and features you wish to enable.");
             ImGui.BeginChild("scrolling", new Vector2(ImGui.GetContentRegionAvail().X, ImGui.GetContentRegionAvail().Y), true);
 
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, 5));
@@ -40,7 +43,41 @@ namespace XIVSlothCombo.Window.Tabs
                         ImGui.GetStateStorage().SetInt(ImGui.GetID(otherJob), 0);
                     }
 
-                    DrawHeadingContents(jobName, i);
+                    if (ImGui.BeginTabBar($"subTab{jobName}", ImGuiTabBarFlags.Reorderable | ImGuiTabBarFlags.AutoSelectNewTabs))
+                    {
+                        if (ImGui.BeginTabItem("Normal"))
+                        {
+                            DrawHeadingContents(jobName, i);
+                            ImGui.EndTabItem();
+                        }
+
+                        if (groupedPresets[jobName].Any(x => PluginConfiguration.IsVariant(x.Preset)))
+                        {
+                            if (ImGui.BeginTabItem("Variant Dungeons"))
+                            {
+                                DrawVariantContents(jobName);
+                                ImGui.EndTabItem();
+                            }
+                        }
+
+                        if (groupedPresets[jobName].Any(x => PluginConfiguration.IsBozja(x.Preset)))
+                        {
+                            if (ImGui.BeginTabItem("Bozja"))
+                            {
+                                ImGui.EndTabItem();
+                            }
+                        }
+
+                        if (groupedPresets[jobName].Any(x => PluginConfiguration.IsEureka(x.Preset)))
+                        {
+                            if (ImGui.BeginTabItem("Eureka"))
+                            {
+                                ImGui.EndTabItem();
+                            }
+                        }
+
+                        ImGui.EndTabBar();
+                    }
                 }
                 else
                 {
@@ -56,11 +93,25 @@ namespace XIVSlothCombo.Window.Tabs
             ImGui.EndChild();
         }
 
+        private static void DrawVariantContents(string jobName)
+        {
+            foreach (var (preset, info) in groupedPresets[jobName].Where(x => PluginConfiguration.IsVariant(x.Preset)))
+            {
+                int i = -1;
+                InfoBox presetBox = new() { Color = Colors.Grey, BorderThickness = 1f, CurveRadius = 8f, ContentsAction = () => { Presets.DrawPreset(preset, info, ref i); } };
+                presetBox.Draw();
+                ImGuiHelpers.ScaledDummy(12.0f);
+            }
+        }
+
         internal static void DrawHeadingContents(string jobName, int i)
         {
             if (!Messages.PrintBLUMessage(jobName)) return;
 
-            foreach (var (preset, info) in groupedPresets[jobName].Where(x => !PluginConfiguration.IsSecret(x.Preset)))
+            foreach (var (preset, info) in groupedPresets[jobName].Where(x =>   !PluginConfiguration.IsSecret(x.Preset) && 
+                                                                                !PluginConfiguration.IsVariant(x.Preset) &&
+                                                                                !PluginConfiguration.IsBozja(x.Preset) &&
+                                                                                !PluginConfiguration.IsEureka(x.Preset)))
             {
                 InfoBox presetBox = new() { Color = Colors.Grey, BorderThickness = 1f, CurveRadius = 8f, ContentsAction = () => { Presets.DrawPreset(preset, info, ref i); } };
 
