@@ -63,9 +63,9 @@ namespace XIVSlothCombo
             if (Service.ClientState.IsLoggedIn) ResetFeatures();
 
 
-#if DEBUG
+// #if DEBUG
             Service.Framework.Update += OnFramework;
-#endif
+// #endif
 
 
             KillRedundantIDs();
@@ -171,9 +171,9 @@ namespace XIVSlothCombo
             Service.ComboCache?.Dispose();
             ActionWatching.Dispose();
 
-#if DEBUG
+// #if DEBUG
             Service.Framework.Update -= OnFramework;
-#endif
+// #endif
 
 
             Service.ClientState.Login -= PrintLoginMessage;
