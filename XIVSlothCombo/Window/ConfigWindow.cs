@@ -61,7 +61,7 @@ namespace XIVSlothCombo.Window
         }
 
         /// <summary> Initializes a new instance of the <see cref="ConfigWindow"/> class. </summary>
-        public ConfigWindow() : base("XIVSlothCombo Configuration", ImGuiWindowFlags.AlwaysAutoResize)
+        public ConfigWindow() : base("XIVSlothComboÈÖçÁΩÆ", ImGuiWindowFlags.AlwaysAutoResize)
         {
             RespectCloseHotkey = true;
 
@@ -81,36 +81,36 @@ namespace XIVSlothCombo.Window
                 return;
             }
 
-            if (ImGui.Begin("XIVSlothCombo Configuration", ref visible))
+            if (ImGui.Begin("XIVSlothComboÈÖçÁΩÆ", ref visible))
             {
-                if (ImGui.BeginTabBar("Config Tabs"))
+                if (ImGui.BeginTabBar("ÈÖçÁΩÆÊ†è"))
                 {
-                    if (ImGui.BeginTabItem("PvE π¶ƒ‹"))
+                    if (ImGui.BeginTabItem("PvEÂäüËÉΩ"))
                     {
                         PvEFeatures.Draw();
                         ImGui.EndTabItem();
                     }
 
-                    if (ImGui.BeginTabItem("PvP π¶ƒ‹"))
+                    if (ImGui.BeginTabItem("PvPÂäüËÉΩ"))
                     {
                         PvPFeatures.Draw();
                         ImGui.EndTabItem();
                     }
 
-                    if (ImGui.BeginTabItem("…Ë÷√"))
+                    if (ImGui.BeginTabItem("ËÆæÁΩÆ"))
                     {
                         Settings.Draw();
                         ImGui.EndTabItem();
                     }
 
-                    if (ImGui.BeginTabItem("πÿ”⁄/∑¥¿°"))
+                    if (ImGui.BeginTabItem("ÂÖ≥‰∫éXIVSlothCombo/ÂèçÈ¶à"))
                     {
                         AboutUs.Draw();
                         ImGui.EndTabItem();
                     }
 
 #if DEBUG
-                    if (ImGui.BeginTabItem("Debug Mode"))
+                    if (ImGui.BeginTabItem("DebugÊ®°Âºè"))
                     {
                         Debug.Draw();
                         ImGui.EndTabItem();
