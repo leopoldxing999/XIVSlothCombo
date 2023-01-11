@@ -2,6 +2,7 @@ using Dalamud.Game.ClientState.JobGauge.Types;
 using Dalamud.Game.ClientState.Statuses;
 using XIVSlothCombo.Core;
 using XIVSlothCombo.CustomComboNS;
+using XIVSlothCombo.Services;
 
 namespace XIVSlothCombo.Combos.PvE
 {
@@ -38,9 +39,11 @@ namespace XIVSlothCombo.Combos.PvE
         public static class Buffs
         {
             public const ushort
+                //ÊÈÑª
                 BloodWeapon = 742,
                 Darkside = 751,
                 BlackestNight = 1178,
+                //ÑªÂÒ
                 Delirium = 1972,
                 SaltedEarth = 749;
         }
@@ -157,15 +160,16 @@ namespace XIVSlothCombo.Combos.PvE
                         //Delirium Features
                         if (LevelChecked(Delirium) && IsEnabled(CustomComboPreset.DRK_Bloodspiller) && IsEnabled(CustomComboPreset.DRK_MainComboCDs_Group))
                         {
-                         
-                            if (GetBuffStacks(Buffs.Delirium) < 8 )
+
+                            //·ÀÖ¹Ñª½¦Ã»ÓÐ´òÍê
+                            if (GetBuffStacks(Buffs.Delirium) > 0 && GetBuffRemainingTime(Buffs.Delirium) <= 7.5 )
                                 return Bloodspiller;
                             
                             //Regular Delirium
                             if (GetBuffStacks(Buffs.Delirium) > 0 && IsNotEnabled(CustomComboPreset.DRK_DelayedBloodspiller))
                                 return Bloodspiller;
 
-                            //Delayed Delirium
+                            //Delayed Delirium ÑÓ³ÙÑªÂÒ
                             if (IsEnabled(CustomComboPreset.DRK_DelayedBloodspiller) && GetBuffStacks(Buffs.Delirium) > 0 && IsOnCooldown(BloodWeapon) && GetBuffStacks(Buffs.BloodWeapon) < 2)
                                 return Bloodspiller;
 
