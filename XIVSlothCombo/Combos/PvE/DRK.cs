@@ -19,6 +19,7 @@ namespace XIVSlothCombo.Combos.PvE
             CarveAndSpit = 3643,
             Delirium = 7390,
             Quietus = 7391,
+            //Ñª½¦
             Bloodspiller = 7392,
             FloodOfDarkness = 16466,
             EdgeOfDarkness = 16467,
@@ -30,6 +31,7 @@ namespace XIVSlothCombo.Combos.PvE
             Oblation = 25754,
             Shadowbringer = 25757,
             Plunge = 3640,
+            //ÊÈÑª
             BloodWeapon = 3625,
             Unmend = 3624;
 
@@ -155,6 +157,10 @@ namespace XIVSlothCombo.Combos.PvE
                         //Delirium Features
                         if (LevelChecked(Delirium) && IsEnabled(CustomComboPreset.DRK_Bloodspiller) && IsEnabled(CustomComboPreset.DRK_MainComboCDs_Group))
                         {
+                         
+                            if (GetBuffStacks(Buffs.Delirium) < 8 )
+                                return Bloodspiller;
+                            
                             //Regular Delirium
                             if (GetBuffStacks(Buffs.Delirium) > 0 && IsNotEnabled(CustomComboPreset.DRK_DelayedBloodspiller))
                                 return Bloodspiller;
