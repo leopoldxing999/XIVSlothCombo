@@ -21,7 +21,7 @@ namespace XIVSlothCombo.Combos.PvE
             Delirium = 7390,
             Quietus = 7391,
             //Ñª½¦
-            Bloodspiller = 7392,
+            Ñª½¦ = 7392,
             FloodOfDarkness = 16466,
             EdgeOfDarkness = 16467,
             StalwartSoul = 16468,
@@ -161,22 +161,39 @@ namespace XIVSlothCombo.Combos.PvE
                         if (LevelChecked(Delirium) && IsEnabled(CustomComboPreset.DRK_Bloodspiller) && IsEnabled(CustomComboPreset.DRK_MainComboCDs_Group))
                         {
 
+                            //·ÀÖ¹°µÑªÒç³ö
+                            if (gauge.Blood >= 80 && GetBuffStacks(Buffs.BloodWeapon) > 0)
+                            {
+                                return Ñª½¦;
+                            } 
+                            
+                            if (gauge.Blood >= 80 && GetCooldownRemainingTime(BloodWeapon) is > 0 and < 3)
+                            {
+                                return Ñª½¦;
+                            } 
+                            
+                            if (gauge.Blood >= 80 && IsOffCooldown(BloodWeapon))
+                            {
+                                return Ñª½¦;
+                            } 
+                            
+                            
                             //·ÀÖ¹Ñª½¦Ã»ÓÐ´òÍê
                             if (GetBuffStacks(Buffs.Delirium) > 0 && GetBuffRemainingTime(Buffs.Delirium) <= 7.5 )
-                                return Bloodspiller;
+                                return Ñª½¦;
                             
-                            //Regular Delirium
+                            //Regular Delirium  
                             if (GetBuffStacks(Buffs.Delirium) > 0 && IsNotEnabled(CustomComboPreset.DRK_DelayedBloodspiller))
-                                return Bloodspiller;
+                                return Ñª½¦;
 
                             //Delayed Delirium ÑÓ³ÙÑªÂÒ
-                            if (IsEnabled(CustomComboPreset.DRK_DelayedBloodspiller) && GetBuffStacks(Buffs.Delirium) > 0 && IsOnCooldown(BloodWeapon) && GetBuffStacks(Buffs.BloodWeapon) < 2)
-                                return Bloodspiller;
+                            if (IsEnabled(CustomComboPreset.DRK_DelayedBloodspiller) && GetBuffStacks(Buffs.Delirium) > 0 && IsOnCooldown(BloodWeapon) && GetBuffStacks(Buffs.BloodWeapon) is > 0 and < 3)
+                                return Ñª½¦;
 
                             //Blood management before Delirium
-                            if (IsEnabled(CustomComboPreset.DRK_Delirium) &&
-                                ((gauge.Blood >= 60 && GetCooldownRemainingTime(BloodWeapon) is > 0 and < 3) || (gauge.Blood >= 50 && GetCooldownRemainingTime(Delirium) > 37 && !HasEffect(Buffs.Delirium))))
-                                return Bloodspiller;
+                            // if (IsEnabled(CustomComboPreset.DRK_Delirium) &&
+                            //     ((gauge.Blood >= 60 && GetCooldownRemainingTime(BloodWeapon) is > 0 and < 3) || (gauge.Blood >= 50 && GetCooldownRemainingTime(Delirium) > 37 && !HasEffect(Buffs.Delirium))))
+                            //     return Ñª½¦;
                         }
 
                         // 1-2-3 combo
@@ -186,8 +203,8 @@ namespace XIVSlothCombo.Combos.PvE
                                 return SyphonStrike;
                             if (lastComboMove == SyphonStrike && LevelChecked(Souleater))
                             {
-                                if (IsEnabled(CustomComboPreset.DRK_BloodGaugeOvercap) && LevelChecked(Bloodspiller) && gauge.Blood >= 90)
-                                    return Bloodspiller;
+                                if (IsEnabled(CustomComboPreset.DRK_BloodGaugeOvercap) && LevelChecked(Ñª½¦) && gauge.Blood >= 80)
+                                    return Ñª½¦;
                                 return Souleater;
                             }
                         }
