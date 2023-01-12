@@ -1190,8 +1190,8 @@ namespace XIVSlothCombo.Window.Functions
             if (preset == CustomComboPreset.DNC_AoE_EspritOvercap)
                 UserConfig.DrawSliderInt(50, 100, DNC.Config.DNCEspritThreshold_AoE, "Esprit", 150, SliderIncrements.Fives);
 
-            if (preset == CustomComboPreset.DNC_Variant_Cure)
-                UserConfig.DrawSliderInt(1, 100, DNC.Config.DNCVariantCurePercent, "HP% to be at or under", 200);
+            // if (preset == CustomComboPreset.DNC_Variant_Cure)
+            //     UserConfig.DrawSliderInt(1, 100, DNC.Config.DNCVariantCurePercent, "HP% to be at or under", 200);
 
             #region Simple ST Sliders
 
@@ -1204,8 +1204,8 @@ namespace XIVSlothCombo.Window.Functions
             if (preset == CustomComboPreset.DNC_ST_Simple_Feathers)
                 UserConfig.DrawSliderInt(0, 5, DNC.Config.DNCSimpleFeatherBurstPercent, "Target HP% to dump all pooled feathers below", 75, SliderIncrements.Ones);
 
-            if (preset == CustomComboPreset.DNC_ST_Simple_SaberDance)
-                UserConfig.DrawSliderInt(50, 100, DNC.Config.DNCSimpleSaberThreshold, "Esprit", 150, SliderIncrements.Fives);
+            // if (preset == CustomComboPreset.DNC_ST_Simple_SaberDance)
+            //     UserConfig.DrawSliderInt(50, 100, DNC.Config.DNCSimpleSaberThreshold, "Esprit", 150, SliderIncrements.Fives);
 
             if (preset == CustomComboPreset.DNC_ST_Simple_PanicHeals)
                 UserConfig.DrawSliderInt(0, 100, DNC.Config.DNCSimplePanicHealWaltzPercent, "Curing Waltz HP%", 200, SliderIncrements.Ones);
@@ -1223,8 +1223,8 @@ namespace XIVSlothCombo.Window.Functions
             if (preset == CustomComboPreset.DNC_AoE_Simple_TS)
                 UserConfig.DrawSliderInt(0, 10, DNC.Config.DNCSimpleTSAoEBurstPercent, "Target HP% to stop using Technical Step below", 75, SliderIncrements.Ones);
 
-            if (preset == CustomComboPreset.DNC_AoE_Simple_SaberDance)
-                UserConfig.DrawSliderInt(50, 100, DNC.Config.DNCSimpleAoESaberThreshold, "Esprit", 150, SliderIncrements.Fives);
+            // if (preset == CustomComboPreset.DNC_AoE_Simple_SaberDance)
+            //     UserConfig.DrawSliderInt(50, 100, DNC.Config.DNCSimpleAoESaberThreshold, "Esprit", 150, SliderIncrements.Fives);
 
             if (preset == CustomComboPreset.DNC_AoE_Simple_PanicHeals)
                 UserConfig.DrawSliderInt(0, 100, DNC.Config.DNCSimpleAoEPanicHealWaltzPercent, "Curing Waltz HP%", 200, SliderIncrements.Ones);
