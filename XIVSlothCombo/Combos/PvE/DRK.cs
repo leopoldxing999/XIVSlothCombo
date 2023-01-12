@@ -162,38 +162,38 @@ namespace XIVSlothCombo.Combos.PvE
                         {
 
                             //·ÀÖ¹°µÑªÒç³ö
-                            if (gauge.Blood >= 80 && GetBuffStacks(Buffs.BloodWeapon) > 0)
+                            if (gauge.Blood >= 70 && GetBuffStacks(Buffs.BloodWeapon) > 0)
                             {
                                 return Ñª½¦;
                             } 
                             
-                            if (gauge.Blood >= 80 && GetCooldownRemainingTime(BloodWeapon) is > 0 and < 3)
+                            if (gauge.Blood >= 70 && GetCooldownRemainingTime(BloodWeapon) is > 0 and < 5)
                             {
                                 return Ñª½¦;
                             } 
                             
-                            if (gauge.Blood >= 80 && IsOffCooldown(BloodWeapon))
+                            if (gauge.Blood >= 70 && IsOffCooldown(BloodWeapon))
                             {
                                 return Ñª½¦;
                             } 
                             
                             
                             //·ÀÖ¹Ñª½¦Ã»ÓÐ´òÍê
-                            if (GetBuffStacks(Buffs.Delirium) > 0 && GetBuffRemainingTime(Buffs.Delirium) <= 7.5 )
+                            if (GetBuffStacks(Buffs.Delirium) > 0 && GetBuffRemainingTime(Buffs.Delirium) is > 0 and < 8f)
                                 return Ñª½¦;
                             
                             //Regular Delirium  
-                            if (GetBuffStacks(Buffs.Delirium) > 0 && IsNotEnabled(CustomComboPreset.DRK_DelayedBloodspiller))
-                                return Ñª½¦;
+                             if (GetBuffStacks(Buffs.Delirium) > 0 && IsNotEnabled(CustomComboPreset.DRK_DelayedBloodspiller))
+                                 return Ñª½¦;
 
                             //Delayed Delirium ÑÓ³ÙÑªÂÒ
-                            if (IsEnabled(CustomComboPreset.DRK_DelayedBloodspiller) && GetBuffStacks(Buffs.Delirium) > 0 && IsOnCooldown(BloodWeapon) && GetBuffStacks(Buffs.BloodWeapon) is > 0 and < 3)
-                                return Ñª½¦;
+                             if (IsEnabled(CustomComboPreset.DRK_DelayedBloodspiller) && GetBuffStacks(Buffs.Delirium) > 0 && IsOnCooldown(BloodWeapon) && GetBuffStacks(Buffs.BloodWeapon) is > 0 and < 3)
+                                 return Ñª½¦;
 
-                            //Blood management before Delirium
-                            // if (IsEnabled(CustomComboPreset.DRK_Delirium) &&
-                            //     ((gauge.Blood >= 60 && GetCooldownRemainingTime(BloodWeapon) is > 0 and < 3) || (gauge.Blood >= 50 && GetCooldownRemainingTime(Delirium) > 37 && !HasEffect(Buffs.Delirium))))
-                            //     return Ñª½¦;
+                           // Blood management before Delirium
+                             if (IsEnabled(CustomComboPreset.DRK_Delirium) &&
+                                 ((gauge.Blood >= 60 && GetCooldownRemainingTime(BloodWeapon) is > 0 and < 3) || (gauge.Blood >= 50 && GetCooldownRemainingTime(Delirium) > 37 && !HasEffect(Buffs.Delirium))))
+                                 return Ñª½¦;
                         }
 
                         // 1-2-3 combo
