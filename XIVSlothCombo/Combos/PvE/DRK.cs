@@ -191,8 +191,8 @@ namespace XIVSlothCombo.Combos.PvE
                                  return Ñª½¦;
 
                            // Blood management before Delirium
-                             if (IsEnabled(CustomComboPreset.DRK_Delirium) &&
-                                 ((gauge.Blood >= 60 && GetCooldownRemainingTime(BloodWeapon) is > 0 and < 3) || (gauge.Blood >= 50 && GetCooldownRemainingTime(Delirium) > 37 && !HasEffect(Buffs.Delirium))))
+                             if (IsEnabled(CustomComboPreset.DRK_Delirium) && ((gauge.Blood >= 60 && GetCooldownRemainingTime(BloodWeapon) is > 0 and < 4.9f) ))
+                             // if (IsEnabled(CustomComboPreset.DRK_Delirium) && ((gauge.Blood >= 60 && GetCooldownRemainingTime(BloodWeapon) is > 0 and < 3) || (gauge.Blood >= 50 && GetCooldownRemainingTime(Delirium) > 37 && !HasEffect(Buffs.Delirium))))
                                  return Ñª½¦;
                         }
 
