@@ -10,8 +10,8 @@ public class Translatezh_CN
         #region Misc
         #endregion
         #region GLOBAL FEATURES
-        {"Island Sanctuary Sprint Feature","等待翻译"},
-        {"Replaces Sprint with Isle Sprint.\nOnly works at the Island Sanctuary. Icon does not change.\nDo not use with SimpleTweaks' Island Sanctuary Sprint fix.","等待翻译"},
+        {"Island Sanctuary Sprint Feature","无人岛冲刺"},
+        {"Replaces Sprint with Isle Sprint.\nOnly works at the Island Sanctuary. Icon does not change.\nDo not use with SimpleTweaks' Island Sanctuary Sprint fix.","将冲刺替换为无人岛冲刺.\n仅在无人岛使用.\n图标不会更改.\n不要和SimpleTweaks的[海岛冲刺替换]一起使用."},
         #region Global Tank Features
         {"Global Tank Features","全局防护职业功能"},
         {"Features and options involving shared role actions for Tanks.\nCollapsing this category does NOT disable the features inside.","防护职业的通用功能和选项\n取消勾选这个选项不会禁用里面的功能。"},
