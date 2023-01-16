@@ -723,7 +723,7 @@ public class Translatezh_CN
         {"Brotherhood on Main Combo","义结金兰整合"},
         {"Adds Brotherhood to the main combo.","将义结金兰整合进连击。"},
         {"Meditation on Main Combo","斗气整合"},
-        {"Adds Meditation spender to the main combo.","等待翻译"},
+        {"Adds Meditation spender to the main combo.","在主循环中加入消耗斗气的技能"},
         {"Lunar Solar Opener","阴阳开场"},
         {"Start with the Lunar Solar Opener on the main combo. Requires level 68 for Riddle of Fire.\nA 1.93/1.94 GCD is highly recommended.","在一键循环中使用阴阳开场。使用红莲极意需要在 68 级以上。\n强烈建议使用 1.93/1.94 GCD 配装。"},
         {"CDs on AoE Combo","AoE 循环中的能力技使用"},
@@ -741,9 +741,9 @@ public class Translatezh_CN
         {"Thunderclap on Main Combo","轻身步法应用于单体循环"},
         {"Adds Thunderclap when out of combat to the main combo.","将轻身步法添加进一键单体循环。"},
         {"Mediation Uptime Feature","等待翻译"},
-        {"Replaces Main Combo with Mediation when you are out of range and out of opener/burst.","等待翻译"},
-        {"Dynamic True North Option","等待翻译"},
-        {"Adds True North to the main combo right before positionals if you aren't in the correct position for their bonuses.","等待翻译"},
+        {"Replaces Main Combo with Mediation when you are out of range and out of opener/burst.","在超出距离且无爆发时将主循环切换为斗气"},
+        {"Dynamic True North Option","动态真北"},
+        {"Adds True North to the main combo right before positionals if you aren't in the correct position for their bonuses.","主循环身位错误时提前添加真北"},
         #endregion
         #region NINJA
         {"Simple Mode - Single Target","下忍模式 - 单目标"},
@@ -1005,9 +1005,9 @@ public class Translatezh_CN
         {"Soulsow Reminder during Combat","战斗中播魂种提醒"},
         {"Adds Soulsow to Harpe during combat when no target is selected.","没有目标选择时 将播魂种替换至勾刃上"},
         {"Dynamic True North Feature","动态真北"},
-        {"Adds True North to Slice before Gibbet/Gallows when you are not in the correct position for the enhanced potency bonus.","等待翻译"},
-        {"Hold True North for Gluttony Option","等待翻译"},
-        {"Will hold the last charge of True North for use with Gluttony, even when out of position for Gibbet/Gallows potency bonuses.","等待翻译"},
+        {"Adds True North to Slice before Gibbet/Gallows when you are not in the correct position for the enhanced potency bonus.","在绞决或缢杀之前的切割技能添加真北来获得正确身位的伤害增幅"},
+        {"Hold True North for Gluttony Option","为暴食保留真北"},
+        {"Will hold the last charge of True North for use with Gluttony, even when out of position for Gibbet/Gallows potency bonuses.","为暴食保留一个真北，即使绞决或缢杀没有打中身位"},
         #endregion
         #endregion
         #region RED MAGE
